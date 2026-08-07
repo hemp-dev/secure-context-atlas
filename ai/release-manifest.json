@@ -2,9 +2,9 @@
   "file_count": 385,
   "files": [
     {
-      "bytes": 743,
+      "bytes": 746,
       "path": ".github/workflows/quality.yml",
-      "sha256": "696ad6d26c1fea3b10d92d8f4fd4edc9c0019f491e4e9fb91d002809acc94326"
+      "sha256": "5b4d53c0151bc86c561d82bd7267117a90b56debbf040c3796954711e08bd9d8"
     },
     {
       "bytes": 1096,
@@ -42,9 +42,9 @@
       "sha256": "b6144ccd3bfdab25748e388a711d7509a1ea6135b8120ca47e02b898809bcfda"
     },
     {
-      "bytes": 15577,
+      "bytes": 15575,
       "path": "RELEASE.md",
-      "sha256": "9d60bb6d3cdd27cf8c108fc0140a6248efa871fdde803f42ae37426678e8e726"
+      "sha256": "5f6fc1070815670bc989c9f6925cfe4c10f37b5cb29bc359637dc62b43169c65"
     },
     {
       "bytes": 1102,
