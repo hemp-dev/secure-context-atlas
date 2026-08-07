@@ -15,11 +15,14 @@ SCHEMA_FILES = [
     "schemas/threat-model.schema.json",
     "schemas/context-pack.schema.json",
     "schemas/advisory.schema.json",
+    "schemas/advisory-bundle.schema.json",
     "schemas/provenance.schema.json",
     "schemas/source.schema.json",
     "schemas/eval-fixture.schema.json",
     "schemas/eval-manifest.schema.json",
+    "schemas/agentic-eval.schema.json",
     "schemas/detector-contract.schema.json",
+    "schemas/sbom.schema.json",
     "release-manifest.schema.json",
 ]
 
@@ -52,7 +55,9 @@ def inline_external_refs(schema: Any, external: dict[str, Any]) -> Any:
     if not isinstance(schema, dict):
         return schema
     if schema.get("$ref") == "evidence.schema.json":
-        return external
+        return external["evidence"]
+    if schema.get("$ref") == "advisory.schema.json":
+        return external["advisory"]
     return {key: inline_external_refs(value, external) for key, value in schema.items()}
 
 
@@ -87,12 +92,15 @@ def main() -> int:
         return 1
 
     evidence_schema = schemas["schemas/evidence.schema.json"]
-    finding_schema = inline_external_refs(schemas["schemas/finding.schema.json"], evidence_schema)
+    advisory_schema = schemas["schemas/advisory.schema.json"]
+    finding_schema = inline_external_refs(schemas["schemas/finding.schema.json"], {"evidence": evidence_schema, "advisory": advisory_schema})
+    advisory_bundle_schema = inline_external_refs(schemas["schemas/advisory-bundle.schema.json"], {"evidence": evidence_schema, "advisory": advisory_schema})
     validators = {
         name: Draft202012Validator(schema, format_checker=FormatChecker())
         for name, schema in schemas.items()
     }
     validators["schemas/finding.schema.json"] = Draft202012Validator(finding_schema, format_checker=FormatChecker())
+    validators["schemas/advisory-bundle.schema.json"] = Draft202012Validator(advisory_bundle_schema, format_checker=FormatChecker())
 
     for path in sorted((ROOT / "vulnerabilities").rglob("*.md")):
         if path.name == "README.md":
@@ -116,6 +124,7 @@ def main() -> int:
         ("schemas/provenance.schema.json", "sources/lock.json"),
         ("schemas/detector-contract.schema.json", "rules/manifest.json"),
         ("schemas/eval-manifest.schema.json", "evals/manifest.json"),
+        ("schemas/sbom.schema.json", "ai/sbom.spdx.json"),
     ]
     for schema_name, relative in instance_checks:
         path = ROOT / relative
@@ -149,9 +158,26 @@ def main() -> int:
     advisory_validator = validators["schemas/advisory.schema.json"]
     for path in sorted((ROOT / "advisories/fixtures").glob("*.json")):
         try:
-            validate_instance(advisory_validator, load_json(path), str(path.relative_to(ROOT)), errors)
+            instance = load_json(path)
+            if isinstance(instance, dict) and "advisories" in instance:
+                validate_instance(validators["schemas/advisory-bundle.schema.json"], instance, str(path.relative_to(ROOT)), errors)
+            else:
+                validate_instance(advisory_validator, instance, str(path.relative_to(ROOT)), errors)
         except Exception as exc:  # noqa: BLE001
             errors.append(f"{path.relative_to(ROOT)}: cannot parse: {exc}")
+
+    agentic_validator = validators["schemas/agentic-eval.schema.json"]
+    agentic_cases = ROOT / "evals/agentic/cases.json"
+    if agentic_cases.exists():
+        try:
+            cases = load_json(agentic_cases)
+            if not isinstance(cases, list) or not cases:
+                errors.append("evals/agentic/cases.json: expected a non-empty array")
+            else:
+                for index, case in enumerate(cases):
+                    validate_instance(agentic_validator, case, f"evals/agentic/cases.json[{index}]", errors)
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"evals/agentic/cases.json: cannot parse: {exc}")
 
     source_validator = validators["schemas/source.schema.json"] if "schemas/source.schema.json" in validators else None
     if source_validator:

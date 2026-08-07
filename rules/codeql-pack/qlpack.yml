@@ -1,0 +1,4 @@
+name: hemp-dev/secure-context-atlas-codeql
+version: 0.7.0
+libraryPathDependencies:
+  - codeql-python

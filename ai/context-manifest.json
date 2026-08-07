@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "release": "0.6.0",
+  "release": "0.7.0",
   "format": "jsonl-or-markdown",
   "producer": "scripts/sctx.py",
   "pack_schema": "schemas/context-pack.schema.json",

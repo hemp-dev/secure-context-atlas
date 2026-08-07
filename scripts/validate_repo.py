@@ -10,7 +10,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE_VERSION = "0.6.0"
+RELEASE_VERSION = "0.7.0"
 REQUIRED_VULN_FIELDS = {
     "id", "title", "aliases", "summary", "family", "canonical_cwe", "related_cwe", "capec",
     "owasp_mappings", "asvs_mappings", "wstg_mappings", "masvs_mappings", "api_security_mappings",
@@ -116,7 +116,7 @@ class Validator:
             self.error(f"{rel}: unsafe operational wording without defensive prohibition")
 
     def run(self) -> int:
-        for rel in ["README.md", "AGENTS.md", "CONTRIBUTING.md", "sources/manifest.yaml", "sources/versions.yaml", "sources/licenses.yaml", "sources/lock.json", "schemas/vulnerability.schema.json", "schemas/finding.schema.json", "schemas/evidence.schema.json", "schemas/threat-model.schema.json", "schemas/context-pack.schema.json", "schemas/advisory.schema.json", "schemas/provenance.schema.json", "schemas/eval-fixture.schema.json", "schemas/eval-manifest.schema.json", "schemas/detector-contract.schema.json", "requirements-dev.txt", "release-manifest.schema.json", "taxonomy/families.yaml", "taxonomy/aliases.yaml", "taxonomy/cwe-map.yaml", "taxonomy/capec-map.yaml", "taxonomy/owasp-map.yaml", "taxonomy/priorities.yaml", "taxonomy/agentic-map.yaml", "ai/audit-protocol.md", "ai/routing.yaml", "ai/finding-format.md", "ai/index.json", "ai/maturity-map.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "platforms/ai-agentic.md", "ai/threat-model-examples/agentic-rag.json", "evals/README.md", "evals/manifest.json", "evals/holdout/cases.json", "datasets/manifests.yaml", "advisories/adapters/osv.md", "advisories/adapters/github-advisory-database.md", "advisories/fixtures/osv.json", "advisories/fixtures/github-advisory.json"]:
+        for rel in ["README.md", "AGENTS.md", "CONTRIBUTING.md", "sources/manifest.yaml", "sources/versions.yaml", "sources/licenses.yaml", "sources/lock.json", "schemas/vulnerability.schema.json", "schemas/finding.schema.json", "schemas/evidence.schema.json", "schemas/threat-model.schema.json", "schemas/context-pack.schema.json", "schemas/advisory.schema.json", "schemas/advisory-bundle.schema.json", "schemas/agentic-eval.schema.json", "schemas/sbom.schema.json", "schemas/provenance.schema.json", "schemas/eval-fixture.schema.json", "schemas/eval-manifest.schema.json", "schemas/detector-contract.schema.json", "requirements-dev.txt", "release-manifest.schema.json", "taxonomy/families.yaml", "taxonomy/aliases.yaml", "taxonomy/cwe-map.yaml", "taxonomy/capec-map.yaml", "taxonomy/owasp-map.yaml", "taxonomy/priorities.yaml", "taxonomy/agentic-map.yaml", "ai/audit-protocol.md", "ai/routing.yaml", "ai/finding-format.md", "ai/index.json", "ai/maturity-map.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "ai/sbom.spdx.json", "platforms/ai-agentic.md", "ai/threat-model-examples/agentic-rag.json", "evals/README.md", "evals/manifest.json", "evals/holdout/cases.json", "evals/agentic/cases.json", "datasets/manifests.yaml", "advisories/adapters/osv.md", "advisories/adapters/github-advisory-database.md", "advisories/fixtures/osv.json", "advisories/fixtures/github-advisory.json", "advisories/fixtures/responses/osv-query.json", "advisories/fixtures/responses/github-advisory-list.json"]:
             if not (ROOT / rel).exists():
                 self.error(f"missing required file {rel}")
         for folder, names in [("languages", REQUIRED_LANGUAGES), ("platforms", REQUIRED_PLATFORMS), ("frameworks", REQUIRED_FRAMEWORKS)]:
@@ -213,6 +213,15 @@ class Validator:
                 self.error("evaluation suite must contain at least 100 fixtures")
             if evaluation.get("retrieval_recall_at_5", 0) < 0.9:
                 self.error("evaluation retrieval recall@5 is below 0.90")
+            agentic = evaluation.get("agentic", {})
+            if agentic.get("reviewed_fraction", 0) < 1.0:
+                self.error("agentic benchmark is not fully reviewed")
+            if agentic.get("case_recall_at_5", 0) < 0.7:
+                self.error("agentic benchmark case recall@5 is below 0.70")
+            if agentic.get("target_recall_at_5", 0) < 0.75:
+                self.error("agentic benchmark target recall@5 is below 0.75")
+            if agentic.get("leakage_count", 1) != 0:
+                self.error("agentic benchmark contains leakage")
         except Exception as exc:  # noqa: BLE001
             self.error(f"cannot validate evaluation suite: {exc}")
         maturity_summary = dict(sorted(maturity_counts.items()))

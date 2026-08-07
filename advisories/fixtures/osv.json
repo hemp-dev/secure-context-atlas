@@ -1,22 +1,57 @@
 {
+  "advisories": [
+    {
+      "advisory_id": "OSV-SYNTHETIC-0001",
+      "affected": {
+        "fixed_versions": [
+          "1.2.4"
+        ],
+        "range": "ECOSYSTEM:introduced=0,fixed=1.2.4"
+      },
+      "aliases": [
+        "CVE-SYNTHETIC-0001"
+      ],
+      "modified_at": "2026-08-08T00:00:00Z",
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "example-package",
+        "version": "1.2.3"
+      },
+      "provenance": {
+        "auth_mode": "anonymous",
+        "http_status": 200,
+        "queried_at": "2026-08-08T00:00:00Z",
+        "query": "{\"package\":{\"ecosystem\":\"PyPI\",\"name\":\"example-package\"},\"version\":\"1.2.3\"}",
+        "request_sha256": "071be841f71c537349c1f03c9d328c959ee4469a359c8ce3207816286b65a749",
+        "response_sha256": "7aae51d3047416e9da15f81d4a5262c99b38c9c0343b55d4518d413c24f0327c",
+        "source_url": "https://api.osv.dev/v1/query",
+        "transport": "fixture"
+      },
+      "published_at": "2026-08-08T00:00:00Z",
+      "reachability": {
+        "evidence": [
+          "The adapter matched a package coordinate; application dependency and runtime reachability require a separate evidence check."
+        ],
+        "status": "unknown"
+      },
+      "references": [
+        "https://osv.dev/vulnerability/OSV-SYNTHETIC-0001"
+      ],
+      "schema_version": "1.1",
+      "severity": "high",
+      "source": "osv",
+      "status": "affected"
+    }
+  ],
+  "queried_at": "2026-08-08T00:00:00Z",
+  "query": {
+    "ecosystem": "PyPI",
+    "package": "example-package",
+    "version": "1.2.3"
+  },
+  "request_sha256": "071be841f71c537349c1f03c9d328c959ee4469a359c8ce3207816286b65a749",
+  "response_sha256": "7aae51d3047416e9da15f81d4a5262c99b38c9c0343b55d4518d413c24f0327c",
   "schema_version": "1.0",
   "source": "osv",
-  "advisory_id": "OSV-SYNTHETIC-0001",
-  "aliases": ["CVE-SYNTHETIC-0001"],
-  "package": {"ecosystem": "PyPI", "name": "example-package", "version": "1.2.3"},
-  "affected": {"range": ">=1.0.0,<1.2.4", "fixed_versions": ["1.2.4"]},
-  "status": "affected",
-  "severity": "high",
-  "published_at": "2026-08-08T00:00:00Z",
-  "modified_at": "2026-08-08T00:00:00Z",
-  "references": ["https://osv.dev/vulnerability/OSV-SYNTHETIC-0001"],
-  "provenance": {
-    "queried_at": "2026-08-08T00:00:00Z",
-    "query": "synthetic lockfile coordinate fixture",
-    "source_url": "https://api.osv.dev/v1/query"
-  },
-  "reachability": {
-    "status": "unknown",
-    "evidence": ["No application dependency graph is attached to this synthetic fixture."]
-  }
+  "transport": "fixture"
 }

@@ -1,0 +1,21 @@
+{
+  "vulns": [
+    {
+      "id": "OSV-SYNTHETIC-0001",
+      "summary": "Synthetic package coordinate fixture",
+      "aliases": ["CVE-SYNTHETIC-0001"],
+      "affected": [
+        {
+          "package": {"ecosystem": "PyPI", "name": "example-package"},
+          "ranges": [
+            {"type": "ECOSYSTEM", "events": [{"introduced": "0"}, {"fixed": "1.2.4"}]}
+          ]
+        }
+      ],
+      "references": [{"type": "WEB", "url": "https://osv.dev/vulnerability/OSV-SYNTHETIC-0001"}],
+      "published": "2026-08-08T00:00:00Z",
+      "modified": "2026-08-08T00:00:00Z",
+      "database_specific": {"severity": "high"}
+    }
+  ]
+}

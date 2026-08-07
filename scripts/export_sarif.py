@@ -71,7 +71,7 @@ def main() -> int:
         "$schema": SARIF_SCHEMA,
         "version": SARIF_VERSION,
         "runs": [{
-                "tool": {"driver": {"name": "Secure Context Atlas", "version": "0.6.0", "informationUri": "https://github.com/hemp-dev/secure-context-atlas", "rules": list(rules.values())}},
+                "tool": {"driver": {"name": "Secure Context Atlas", "version": "0.7.0", "informationUri": "https://github.com/hemp-dev/secure-context-atlas", "rules": list(rules.values())}},
             "results": results,
         }],
     }

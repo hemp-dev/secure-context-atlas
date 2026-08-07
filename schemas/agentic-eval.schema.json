@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-context-atlas.invalid/schemas/agentic-eval.schema.json",
+  "title": "Human-reviewed agentic and MCP evaluation case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "category",
+    "review_status",
+    "reviewer",
+    "reviewed_at",
+    "query",
+    "snippet",
+    "vulnerability_ids",
+    "expected_controls",
+    "expected_status",
+    "safe_boundary",
+    "review_notes",
+    "references"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^agentic\\.[a-z0-9][a-z0-9.-]+$"},
+    "category": {
+      "type": "string",
+      "enum": [
+        "prompt-injection",
+        "rag-trust",
+        "tenant-isolation",
+        "tool-authorization",
+        "agent-identity",
+        "memory",
+        "excessive-agency",
+        "agent-loop",
+        "inter-agent-trust",
+        "output-handling",
+        "model-supply-chain",
+        "evaluation-integrity"
+      ]
+    },
+    "review_status": {"type": "string", "const": "reviewed"},
+    "reviewer": {"type": "string", "minLength": 3},
+    "reviewed_at": {"type": "string", "format": "date"},
+    "query": {"type": "string", "minLength": 20},
+    "snippet": {"type": "string", "minLength": 20},
+    "vulnerability_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^vuln\\.[a-z0-9][a-z0-9.-]*$"}
+    },
+    "expected_controls": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 8}
+    },
+    "expected_status": {"type": "string", "enum": ["candidate", "needs-review", "not-applicable"]},
+    "safe_boundary": {"type": "string", "minLength": 20},
+    "review_notes": {"type": "string", "minLength": 20},
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri"}
+    }
+  }
+}

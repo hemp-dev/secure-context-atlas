@@ -1,9 +1,13 @@
-id: rule.semgrep.network.ssrf-url-fetch
-language: generic
-message: "A user-controlled URL reaches a server-side network client. Confirm destination policy, redirect revalidation and network isolation."
-severity: WARNING
-vulnerability_id: vuln.network.ssrf
-pattern_contract:
-  source: request.url
-  sink: server_http_client
-  required_control: destination-policy-and-revalidation
+rules:
+  - id: rule.semgrep.network.ssrf-url-fetch
+    languages: [python]
+    message: "A server-side HTTP client receives a URL. Confirm destination policy and redirect revalidation."
+    severity: WARNING
+    pattern: requests.$METHOD($URL, ...)
+    metadata:
+      atlas_rule_id: rule.semgrep.network.ssrf-url-fetch
+      vulnerability_id: vuln.network.ssrf
+      confidence: low
+      source_signal: request.url
+      sink_signal: server_http_client
+      required_control: destination-policy-and-revalidation

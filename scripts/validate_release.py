@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate final 0.6.0 release invariants and artifact hashes."""
+"""Validate final 0.7.0 release invariants and artifact hashes."""
 from __future__ import annotations
 
 import hashlib
@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE_VERSION = "0.6.0"
+RELEASE_VERSION = "0.7.0"
 
 
 def sha256(path: Path) -> str:
@@ -41,6 +41,11 @@ def main() -> int:
                 errors.append(f"manifest file missing: {entry['path']}")
             elif sha256(path) != entry.get("sha256"):
                 errors.append(f"manifest hash mismatch: {entry['path']}")
+    sbom_path = ROOT / "ai/sbom.spdx.json"
+    if not sbom_path.exists():
+        errors.append("missing ai/sbom.spdx.json")
+    elif manifest_path.exists() and not any(entry.get("path") == "ai/sbom.spdx.json" for entry in manifest.get("files", [])):
+        errors.append("release manifest does not include ai/sbom.spdx.json")
     forbidden_paths = []
     for path in ROOT.rglob("*"):
         if any(part in {"raw", "__pycache__"} for part in path.parts) or path.suffix in {".pyc", ".pyo"}:

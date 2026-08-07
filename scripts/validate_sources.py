@@ -14,8 +14,8 @@ REPOSITORIES = {"patt", "hacktricks", "seclists", "awesome-hacking", "awesome-bu
 def main() -> int:
     lock = json.loads((ROOT / "sources/lock.json").read_text(encoding="utf-8"))
     errors: list[str] = []
-    if lock.get("release") != "0.6.0":
-        errors.append("source lock release must be 0.6.0")
+    if lock.get("release") != "0.7.0":
+        errors.append("source lock release must be 0.7.0")
     pins = lock.get("repository_pins", {})
     if set(pins) != REPOSITORIES:
         errors.append(f"repository pins must be exactly {sorted(REPOSITORIES)}")

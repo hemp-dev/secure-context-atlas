@@ -20,9 +20,9 @@ def digest(path: Path) -> str:
 
 
 def release_paths() -> list[Path]:
-    """Hash the committed release tree, not arbitrary untracked workspace files."""
+    """Hash the release tree, including candidate files before the first commit."""
     try:
-        result = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True)
+        result = subprocess.run(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"], cwd=ROOT, check=True, capture_output=True)
         paths = [ROOT / item for item in result.stdout.decode("utf-8").split("\0") if item]
     except (OSError, subprocess.CalledProcessError):
         paths = list(ROOT.rglob("*"))

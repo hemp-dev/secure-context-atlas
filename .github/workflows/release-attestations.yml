@@ -1,0 +1,32 @@
+name: release-attestations
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - name: Rebuild and validate release artifacts
+        run: |
+          python3 -B scripts/build_sbom.py
+          python3 -B scripts/validate_sbom.py
+          python3 -B scripts/build_release_manifest.py
+          python3 -B scripts/validate_release.py
+      - name: Attest release manifest
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4
+        with:
+          subject-path: ai/release-manifest.json
+      - name: Attest release SBOM
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4
+        with:
+          subject-path: ai/release-manifest.json
+          sbom-path: ai/sbom.spdx.json

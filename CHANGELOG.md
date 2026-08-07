@@ -2,6 +2,36 @@
 
 Все заметные изменения Secure Context Atlas фиксируются здесь. Формат ориентирован на [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.7.0] — 2026-08-08
+
+### Added
+
+- Executable Semgrep detector pack: 7 rules с positive/negative fixture gates.
+- Executable CodeQL pack для dynamic evaluation и явное разделение executable/contract-only rules.
+- OSV и GitHub Advisory Database adapters с normalized bundle и request/response provenance hashes.
+- SPDX 2.3 file-level SBOM, SHA-256 release manifest и GitHub Actions workflow для artifact/SBOM attestations.
+- 27 reviewed synthetic agentic/MCP evaluation cases с expected controls и leakage gate.
+- `advisory-bundle.schema.json`, `agentic-eval.schema.json` и `sbom.schema.json`.
+
+### Changed
+
+- CI выполняет rule runtime tests, advisory fixture checks, agentic benchmark, SBOM coverage и release-manifest validation.
+- `rules/manifest.json` переведён в `execution_mode: mixed`; contract-only records остаются явно неисполняемыми.
+- Compact context, release docs и generated metadata обновлены до 0.7.0.
+
+### Quality
+
+- Base retrieval fixtures: `134`; holdout: `12`.
+- Agentic case recall@5: `0.8519`; target recall@5: `0.8919`.
+- Agentic reviewed fraction: `1.0`; leakage count: `0`.
+- Semgrep executable rules: `7`; CodeQL executable queries: `1`; forbidden operational fixture count: `0`.
+
+### Limitations
+
+- Detector matches и advisory records требуют application-specific evidence/reachability review.
+- Synthetic metrics не заменяют evaluation конкретной LLM, tool policy или production deployment.
+- 194 normalized leaf classes остаются inventory-only; 67 cards scaffolded/needs-review.
+
 ## [0.6.0] — 2026-08-08
 
 ### Added
@@ -89,4 +119,4 @@
 
 ## [Unreleased]
 
-Planned follow-up: executable Semgrep/CodeQL packs, live advisory clients with recorded query provenance, signed artifact attestations/SBOM and a larger human-reviewed agentic/MCP benchmark.
+Planned follow-up: application-configurable CodeQL data-flow models, consumer-side SBOM diff policy, broader multilingual agentic evaluation and independent review workflow.

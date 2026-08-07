@@ -22,7 +22,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_NAME = "Secure Context Atlas"
-RELEASE_VERSION = "0.6.0"
+RELEASE_VERSION = "0.7.0"
 CWE_URL = "https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip"
 CAPEC_URL = "https://capec.mitre.org/data/xml/capec_v3.9.xml"
 CWE_NS = "{http://cwe.mitre.org/cwe-7}"
@@ -48,7 +48,7 @@ def generated_date() -> str:
 
 def fetch(url: str, target: Path) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
-    request = urllib.request.Request(url, headers={"User-Agent": "Secure-Context-Atlas/0.6.0 source-refresh"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Secure-Context-Atlas/0.7.0 source-refresh"})
     last_error: Exception | None = None
     for attempt in range(3):
         try:

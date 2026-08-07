@@ -22,7 +22,7 @@
     "source_hashes_are_required": true
   },
   "project": "Secure Context Atlas",
-  "release": "0.6.0",
+  "release": "0.7.0",
   "repository_pins": {
     "awesome-bug-bounty": {
       "commit": "d63f5f44b41cc2dae0872fa50e211140838e2c87",

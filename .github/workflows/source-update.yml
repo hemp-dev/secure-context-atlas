@@ -21,9 +21,12 @@ jobs:
           python3 -B scripts/build_indexes.py --fetch
           python3 -B scripts/update_sources.py --write-lock --check
           python3 -B scripts/validate_sources.py
-          python3 -B scripts/validate_repo.py
           python3 -B scripts/run_eval.py --output ai/evaluation-report.json
+          python3 -B scripts/validate_advisories.py
+          python3 -B scripts/build_sbom.py
+          python3 -B scripts/validate_sbom.py
           python3 -B scripts/validate_schemas.py
+          python3 -B scripts/validate_repo.py
           python3 -B scripts/validate_rules.py
           python3 -B scripts/validate_threat_models.py
           python3 -B scripts/build_release_manifest.py

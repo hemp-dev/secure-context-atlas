@@ -1,74 +1,73 @@
-# Secure Context Atlas 0.6.0 release checklist
+# Secure Context Atlas 0.7.0 release checklist
 
-Этот checklist предназначен для maintainer/release owner перед публикацией tag или архива.
+Этот checklist предназначен для maintainer/release owner перед публикацией tag и GitHub Release.
 
-## A. Scope and naming
+## A. Scope, naming and provenance
 
-- [ ] Confirm release name, version `0.6.0`, channel `stable-preview` and date in `RELEASE.md`, `CHANGELOG.md`, `sources/versions.yaml` and `ai/index.json`.
-- [ ] Treat `Secure Context Atlas` as a working brand until domain/trademark due diligence is complete.
-- [ ] Confirm release is described as a defensive knowledge base, not a scanner or exploit collection.
+- [ ] Подтверждены `Secure Context Atlas`, версия `0.7.0`, канал `stable-preview` и дата в `RELEASE.md`, `CHANGELOG.md`, `sources/versions.yaml` и generated indexes.
+- [ ] Релиз описан как defensive knowledge base/context layer, а не scanner или exploit collection.
+- [ ] Пять primary research repositories имеют URL, commit SHA, дату наблюдения, license и update strategy в `sources/manifest.yaml`/`sources/lock.json`.
+- [ ] CWE 4.20 и CAPEC 3.9 пересобраны из pinned machine-readable inputs; URL, counts и SHA-256 совпадают.
+- [ ] Advisory feeds остаются dynamic; fixture bundles явно synthetic и не выдаются за production notices.
 
-## B. Source and provenance
-
-- [ ] Review the five primary repositories and update `sources/manifest.yaml`.
-- [ ] Record full commit SHA and observation date for every primary repository in `sources/lock.json`.
-- [ ] Pin/retrieve machine-readable CWE and CAPEC versions.
-- [ ] Record download URL, release date, entry count and SHA-256.
-- [ ] Check upstream license/attribution and excluded content.
-- [ ] Keep OSV/GHSA/advisory feeds dynamic or explicitly pinned; never silently embed stale advisory data.
-- [ ] Validate synthetic advisory fixtures and preserve explicit reachability status.
-
-## C. Generated artifacts
+## B. Generated artifacts
 
 ```sh
 python3 -B scripts/build_indexes.py --fetch
-```
-
-- [ ] `ai/cwe-index.json` contains all entries for the pinned release.
-- [ ] `ai/cwe-coverage.json` distinguishes imported, curated and taxonomy-only entries.
-- [ ] `ai/capec-index.json`, `ai/vulnerability-map.json`, `ai/maturity-map.json`, `ai/aliases.json`, `ai/standards-coverage.json`, `ai/evaluation-report.json` and `ai/index.json` are regenerated.
-- [ ] `ai/source-hashes.json` matches the downloaded inputs.
-- [ ] `sources/lock.json` matches `ai/source-hashes.json`.
-- [ ] `python3 -B scripts/validate_sources.py` succeeds.
-
-## D. Content quality
-
-- [ ] Every atomic card has complete schema frontmatter.
-- [ ] Each card states `SOURCE -> TRANSFORMATIONS -> CONTROL -> SINK`.
-- [ ] Preconditions, trust boundaries, authorization points, false positives, impact, remediation and regression tests are present.
-- [ ] Safe verification is local/staging/mock based and has no real secrets or destructive action.
-- [ ] Evaluation suite has at least 100 base fixtures, an independent holdout, no leakage and holdout recall@5 >= 0.75.
-- [ ] `python3 -B scripts/validate_schemas.py` validates all cards and samples.
-- [ ] Generated cards declare `maturity` and `review_status`; scaffolded cards are not described as reviewed.
-- [ ] Rule manifest and threat-model examples validate.
-- [ ] New aliases do not create an unmarked collision; ambiguous aliases are listed in `ai/aliases.json`.
-- [ ] Language, framework, platform and AI routing references resolve to existing files or explicit wildcard IDs.
-
-## E. Safety and hygiene
-
-- [ ] Search for accidental secrets, credentials, web shells, destructive commands, exploit chains and raw payload datasets.
-- [ ] Remove `__pycache__`, temporary XML/ZIP, raw wordlists and local test data.
-- [ ] Verify `.gitignore` covers caches and raw inputs.
-- [ ] Check CI workflow permissions and pin third-party actions according to the hosting policy.
-- [ ] CI runs `git diff --exit-code` after regeneration and hashes only committed release files.
-- [ ] Resolve runtime warnings from GitHub Actions and keep action versions Node-compatible.
-
-## F. Tests and publication
-
-```sh
-python3 -B scripts/validate_repo.py
+python3 -B scripts/update_sources.py --write-lock --check
 python3 -B scripts/validate_sources.py
+python3 -B scripts/run_eval.py --output ai/evaluation-report.json
+python3 -B scripts/validate_advisories.py
+python3 -B scripts/build_sbom.py
+python3 -B scripts/validate_sbom.py
 python3 -B scripts/validate_schemas.py
+python3 -B scripts/validate_repo.py
 python3 -B scripts/validate_rules.py
 python3 -B scripts/validate_threat_models.py
+python3 -B scripts/build_release_manifest.py
 python3 -B scripts/validate_release.py
 python3 -B -m unittest discover -s tests -v
 ```
 
-- [ ] Validator reports `validation passed`.
-- [ ] Test suite reports `OK`.
-- [ ] Review `ai/coverage-report.json` and include coverage/backlog numbers in release notes.
-- [ ] Review `ai/evaluation-report.json` and publish both base and holdout metrics.
-- [ ] Create the version tag only after generated artifacts are deterministic and reviewed.
-- [ ] Publish `RELEASE.md`, `CHANGELOG.md`, source hashes and license/provenance together.
-- [ ] Keep a rollback copy of the prior generated artifacts and record the previous source versions.
+- [ ] `ai/index.json`, `ai/context-manifest.json`, `ai/maturity-map.json`, `ai/evaluation-report.json`, `ai/coverage-report.json`, `sources/lock.json` и `ai/release-manifest.json` соответствуют 0.7.0.
+- [ ] `ai/sbom.spdx.json` имеет SPDX 2.3, правильную версию package и полный список tracked release files после документированных exclusions.
+- [ ] `git diff --exit-code` после генерации проходит в CI.
+
+## C. Content and schemas
+
+- [ ] Каждая atomic card содержит `SOURCE -> TRANSFORMATIONS -> CONTROL -> SINK`, safe verification, false positives, remediation и regression test.
+- [ ] Scaffolded cards не помечены как reviewed и исключены из default context packs.
+- [ ] Agentic cases имеют reviewer, review date, expected controls, safe boundary, expected status и references; `reviewed_fraction = 1.0`.
+- [ ] Agentic case recall@5 >= 0.70, target recall@5 >= 0.75, leakage count = 0; holdout recall@5 >= 0.75.
+- [ ] Все JSON/YAML samples проходят соответствующие schemas.
+- [ ] Проверены stable `vuln.*` IDs, aliases, CWE/CAPEC IDs и crosswalks.
+
+## D. Detector packs
+
+- [ ] `rules/manifest.json` имеет `execution_mode: mixed`, корректный Semgrep engine version и CodeQL pack path.
+- [ ] Все executable Semgrep rules срабатывают на positive fixtures и не срабатывают на negative fixtures.
+- [ ] CodeQL pack проходит metadata/query validation; при наличии CLI проходит `codeql pack check`.
+- [ ] Для каждого rule указаны canonical vulnerability, required control, confidence и safe fixture.
+- [ ] Ни один detector match не описан как confirmed finding без reachability/evidence review.
+
+## E. Advisory adapters
+
+- [ ] OSV и GitHub adapters принимают explicit ecosystem/package/version coordinate.
+- [ ] Bundle сохраняет `queried_at`, query, source URL, transport и request/response SHA-256.
+- [ ] Offline fixtures дают детерминированный normalized output; tokens не попадают в output.
+- [ ] Reachability остаётся `unknown`, пока потребитель не проверил dependency graph и runtime path.
+
+## F. Safety and hygiene
+
+- [ ] Нет реальных credentials, private keys, raw wordlists, payload datasets, web shells, exploit chains или destructive instructions.
+- [ ] Нет `__pycache__`, временных XML/ZIP, caches или untracked release inputs.
+- [ ] Проверены action SHAs и workflow permissions: quality — read-only, attestations — только `contents: read`, `id-token: write`, `attestations: write`.
+- [ ] `SECURITY.md`, `AGENTS.md` и license/provenance documents согласованы с release scope.
+
+## G. Publication
+
+- [ ] Review `ai/coverage-report.json` и `ai/evaluation-report.json`; release notes публикуют ограничения и backlog.
+- [ ] Создан commit, затем tag `v0.7.0`, затем GitHub Release `v0.7.0` от `hemp-dev`.
+- [ ] В release assets приложены `RELEASE.md`, `CHANGELOG.md`, `ai/sbom.spdx.json` и `ai/release-manifest.json`.
+- [ ] После публикации `release-attestations.yml` завершился успешно и attestations видны в GitHub.
+- [ ] URL release, commit SHA, tag SHA и результаты workflow записаны в handoff.

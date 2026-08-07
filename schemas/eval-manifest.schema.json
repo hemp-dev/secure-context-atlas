@@ -4,7 +4,7 @@
   "title": "Secure Context Atlas evaluation manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "suite", "description", "min_retrieval_recall_at_5", "max_forbidden_fixture_count", "fixtures"],
+  "required": ["schema_version", "suite", "description", "min_retrieval_recall_at_5", "max_forbidden_fixture_count", "fixtures", "agentic_benchmark"],
   "properties": {
     "schema_version": {"type": "string", "const": "1.0"},
     "suite": {"type": "string", "minLength": 3},
@@ -12,7 +12,18 @@
     "min_retrieval_recall_at_5": {"type": "number", "minimum": 0, "maximum": 1},
     "min_holdout_recall_at_5": {"type": "number", "minimum": 0, "maximum": 1},
     "max_forbidden_fixture_count": {"type": "integer", "minimum": 0},
-    "fixtures": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fixture_ref"}}
+    "fixtures": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fixture_ref"}},
+    "agentic_benchmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "min_target_recall_at_5", "min_case_recall_at_5", "min_reviewed_fraction"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "min_target_recall_at_5": {"type": "number", "minimum": 0, "maximum": 1},
+        "min_case_recall_at_5": {"type": "number", "minimum": 0, "maximum": 1},
+        "min_reviewed_fraction": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
   },
   "$defs": {
       "fixture_ref": {

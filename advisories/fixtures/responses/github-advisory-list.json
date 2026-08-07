@@ -1,0 +1,25 @@
+[
+  {
+    "ghsa_id": "GHSA-synthetic-0001-0001-0001",
+    "cve_id": "CVE-SYNTHETIC-0001",
+    "url": "https://api.github.com/advisories/GHSA-synthetic-0001-0001-0001",
+    "html_url": "https://github.com/advisories/GHSA-synthetic-0001-0001-0001",
+    "severity": "medium",
+    "identifiers": [
+      {"type": "GHSA", "value": "GHSA-synthetic-0001-0001-0001"},
+      {"type": "CVE", "value": "CVE-SYNTHETIC-0001"}
+    ],
+    "references": ["https://github.com/advisories/GHSA-synthetic-0001-0001-0001"],
+    "published_at": "2026-08-08T00:00:00Z",
+    "updated_at": "2026-08-08T00:00:00Z",
+    "withdrawn_at": null,
+    "vulnerabilities": [
+      {
+        "package": {"ecosystem": "pip", "name": "example-package"},
+        "vulnerable_version_range": ">=1.0.0,<1.2.4",
+        "first_patched_version": "1.2.4",
+        "vulnerable_functions": []
+      }
+    ]
+  }
+]

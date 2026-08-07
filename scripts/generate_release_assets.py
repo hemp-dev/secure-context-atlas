@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the scaffolded 0.2-0.6 card and evaluation assets.
+"""Generate the scaffolded 0.2-0.7 card and evaluation assets.
 
 The generated cards are defensive, evidence-oriented records. Fixtures are
 synthetic retrieval cases; they are deliberately not executable exploit code.
@@ -225,7 +225,21 @@ def main() -> int:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(fixture, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             fixtures.append({"id": fixture["id"], "path": str(path.relative_to(ROOT)), "vulnerability_id": record["id"], "polarity": polarity})
-    manifest = {"schema_version": "1.0", "suite": "secure-context-atlas-deterministic-v2", "description": "Synthetic retrieval and evidence-contract fixtures for high-priority vulnerability cards.", "min_retrieval_recall_at_5": 0.9, "min_holdout_recall_at_5": 0.75, "max_forbidden_fixture_count": 0, "fixtures": fixtures}
+    manifest = {
+        "schema_version": "1.0",
+        "suite": "secure-context-atlas-deterministic-v3",
+        "description": "Synthetic retrieval and evidence-contract fixtures for high-priority vulnerability cards.",
+        "min_retrieval_recall_at_5": 0.9,
+        "min_holdout_recall_at_5": 0.75,
+        "max_forbidden_fixture_count": 0,
+        "agentic_benchmark": {
+            "path": "evals/agentic/cases.json",
+            "min_target_recall_at_5": 0.75,
+            "min_case_recall_at_5": 0.7,
+            "min_reviewed_fraction": 1.0,
+        },
+        "fixtures": fixtures,
+    }
     (ROOT / "evals" / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"generated {generated} cards and {len(fixtures)} evaluation fixtures")
     return 0

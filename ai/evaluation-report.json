@@ -1,4 +1,554 @@
 {
+  "agentic": {
+    "case_count": 27,
+    "case_hits_at_5": 23,
+    "case_recall_at_5": 0.8519,
+    "cases": [
+      {
+        "case_hit_at_5": true,
+        "category": "prompt-injection",
+        "first_target_rank": 2,
+        "id": "agentic.prompt-injection.retrieved-instruction",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.ai.prompt-injection",
+          "vuln.ai.tool-authorization",
+          "vuln.ai.agent-identity",
+          "vuln.ai.context-leakage"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.prompt-injection"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "prompt-injection",
+        "first_target_rank": 3,
+        "id": "agentic.indirect-prompt-injection.document",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.context-leakage",
+          "vuln.ai.evaluation-leakage",
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.ai.rag-source-trust",
+          "vuln.authorization.tenant-filter"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.ai.rag-source-trust"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "rag-trust",
+        "first_target_rank": 1,
+        "id": "agentic.rag-source-trust.unverified",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.rag-source-trust",
+          "vuln.http.cache-authorization",
+          "vuln.ai.context-leakage",
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.ai.inter-agent-trust"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.rag-source-trust"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "tenant-isolation",
+        "first_target_rank": 1,
+        "id": "agentic.tenant-isolation.vector-filter",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.rag-cross-tenant",
+          "vuln.ai.rag-source-trust",
+          "vuln.ai.context-leakage",
+          "vuln.ai.memory-poisoning",
+          "vuln.browser.xss"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.rag-cross-tenant"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "rag-trust",
+        "first_target_rank": 2,
+        "id": "agentic.context-leakage.system-prompt",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.context-leakage",
+          "vuln.business.replay",
+          "vuln.ai.agent-identity",
+          "vuln.ai.evaluation-leakage"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.context-leakage"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "tool-authorization",
+        "first_target_rank": 2,
+        "id": "agentic.tool-authorization.delete",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.authorization.idor",
+          "vuln.ai.excessive-agency",
+          "vuln.ai.tool-authorization",
+          "vuln.authorization.mass-assignment",
+          "vuln.injection.log"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.tool-authorization",
+          "vuln.ai.excessive-agency"
+        ]
+      },
+      {
+        "case_hit_at_5": false,
+        "category": "tool-authorization",
+        "first_target_rank": 5,
+        "id": "agentic.tool-authorization.destination",
+        "target_count": 2,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 0.5,
+        "top5": [
+          "vuln.ai.inter-agent-trust",
+          "vuln.browser.open-redirect",
+          "vuln.injection.template-command",
+          "vuln.injection.xxe",
+          "vuln.network.ssrf"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.tool-authorization",
+          "vuln.network.ssrf"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "agent-identity",
+        "first_target_rank": 1,
+        "id": "agentic.agent-identity.delegation",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.agent-identity",
+          "vuln.cloud.k8s-service-account",
+          "vuln.injection.command",
+          "vuln.authentication.password-reset",
+          "vuln.authorization.delegated-admin"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.agent-identity"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "agent-loop",
+        "first_target_rank": 1,
+        "id": "agentic.agent-loop.unbounded",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.agent-loop",
+          "vuln.ai.agent-identity",
+          "vuln.ai.context-leakage",
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.indirect-prompt-injection"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.agent-loop"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "inter-agent-trust",
+        "first_target_rank": 1,
+        "id": "agentic.inter-agent-trust.delegation",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.inter-agent-trust",
+          "vuln.ai.tool-output",
+          "vuln.authorization.capability-confusion",
+          "vuln.ai.excessive-agency",
+          "vuln.ai.tool-authorization"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.inter-agent-trust"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "memory",
+        "first_target_rank": 1,
+        "id": "agentic.memory.poisoned-preference",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.agent-identity",
+          "vuln.ai.tool-authorization",
+          "vuln.ai.agent-loop",
+          "vuln.ai.excessive-agency"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.memory-poisoning"
+        ]
+      },
+      {
+        "case_hit_at_5": false,
+        "category": "output-handling",
+        "first_target_rank": 23,
+        "id": "agentic.output-handling.markdown",
+        "target_count": 1,
+        "target_hits_at_5": 0,
+        "target_recall_at_5": 0.0,
+        "top5": [
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.api.websocket",
+          "vuln.hardware.firmware-update",
+          "vuln.ai.agent-loop",
+          "vuln.ai.evaluation-leakage"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.output-handling"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "model-supply-chain",
+        "first_target_rank": 1,
+        "id": "agentic.model-supply-chain.adapter",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.model-supply-chain",
+          "vuln.ai.unsafe-model-loading",
+          "vuln.supply.ci-cd",
+          "vuln.supply.artifact-integrity",
+          "vuln.supply.dependency-risk"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.model-supply-chain",
+          "vuln.ai.unsafe-model-loading"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "model-supply-chain",
+        "first_target_rank": 1,
+        "id": "agentic.unsafe-model-loading.pickle",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.unsafe-model-loading",
+          "vuln.ai.rag-cross-tenant",
+          "vuln.availability.resource-exhaustion",
+          "vuln.http.cache-poisoning",
+          "vuln.serialization.unsafe-deserialization"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.unsafe-model-loading",
+          "vuln.serialization.unsafe-deserialization"
+        ]
+      },
+      {
+        "case_hit_at_5": false,
+        "category": "evaluation-integrity",
+        "first_target_rank": 33,
+        "id": "agentic.evaluation.leakage",
+        "target_count": 1,
+        "target_hits_at_5": 0,
+        "target_recall_at_5": 0.0,
+        "top5": [
+          "vuln.ai.context-leakage",
+          "vuln.ai.rag-source-trust",
+          "vuln.ai.tool-output",
+          "vuln.authorization.service-impersonation",
+          "vuln.network.ssrf"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.evaluation-leakage"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "output-handling",
+        "first_target_rank": 1,
+        "id": "agentic.tool-output.instruction",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.tool-output",
+          "vuln.ai.context-leakage",
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.supply.workflow-injection",
+          "vuln.ai.agent-identity"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.tool-output",
+          "vuln.ai.indirect-prompt-injection"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "tenant-isolation",
+        "first_target_rank": 3,
+        "id": "agentic.rag-citation.private",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.http.cache-authorization",
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.rag-cross-tenant",
+          "vuln.ai.rag-source-trust",
+          "vuln.http.cache-poisoning"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.rag-cross-tenant"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "tool-authorization",
+        "first_target_rank": 2,
+        "id": "agentic.approval-separation.multi-step",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.agent-identity",
+          "vuln.ai.excessive-agency",
+          "vuln.ai.agent-loop",
+          "vuln.ai.inter-agent-trust",
+          "vuln.ai.tool-authorization"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.excessive-agency"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "inter-agent-trust",
+        "first_target_rank": 1,
+        "id": "agentic.callback.replay",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.api.webhook-replay",
+          "vuln.authorization.webhook-signature",
+          "vuln.business.replay",
+          "vuln.authentication.oauth-oidc-jwt",
+          "vuln.authentication.session"
+        ],
+        "vulnerability_ids": [
+          "vuln.api.webhook-replay"
+        ]
+      },
+      {
+        "case_hit_at_5": false,
+        "category": "tool-authorization",
+        "first_target_rank": 2,
+        "id": "agentic.mcp.capability-confusion",
+        "target_count": 2,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 0.5,
+        "top5": [
+          "vuln.authorization.idor",
+          "vuln.ai.tool-authorization",
+          "vuln.ai.excessive-agency",
+          "vuln.authorization.property-level",
+          "vuln.business.race-condition"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.tool-authorization",
+          "vuln.authorization.capability-confusion"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "memory",
+        "first_target_rank": 1,
+        "id": "agentic.memory.cross-tenant",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.rag-cross-tenant",
+          "vuln.ai.context-leakage",
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.rag-source-trust",
+          "vuln.authorization.tenant-filter"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.rag-cross-tenant"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "output-handling",
+        "first_target_rank": 2,
+        "id": "agentic.planner.output-command",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.injection.template-command",
+          "vuln.ai.output-handling",
+          "vuln.files.path-traversal",
+          "vuln.injection.command",
+          "vuln.authentication.mfa-recovery"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.output-handling",
+          "vuln.injection.command"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "agent-identity",
+        "first_target_rank": 1,
+        "id": "agentic.provider.fail-open",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.agent-identity",
+          "vuln.ai.agent-loop",
+          "vuln.ai.inter-agent-trust",
+          "vuln.configuration.insecure-default",
+          "vuln.crypto.key-rotation"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.agent-identity"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "evaluation-integrity",
+        "first_target_rank": 2,
+        "id": "agentic.evaluation.status-ambiguity",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.authorization.property-level",
+          "vuln.ai.evaluation-leakage",
+          "vuln.ai.rag-source-trust",
+          "vuln.authorization.capability-confusion",
+          "vuln.browser.clickjacking"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.evaluation-leakage"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "model-supply-chain",
+        "first_target_rank": 3,
+        "id": "agentic.agentic-supplychain.plugin",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.inter-agent-trust",
+          "vuln.ai.tool-authorization",
+          "vuln.ai.model-supply-chain",
+          "vuln.supply.container-image",
+          "vuln.ai.unsafe-model-loading"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.model-supply-chain"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "agent-loop",
+        "first_target_rank": 1,
+        "id": "agentic.agent-loop.parallel-fanout",
+        "target_count": 1,
+        "target_hits_at_5": 1,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.agent-loop",
+          "vuln.business.idempotency",
+          "vuln.ai.agent-identity",
+          "vuln.ai.tool-authorization",
+          "vuln.api.content-type-confusion"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.agent-loop"
+        ]
+      },
+      {
+        "case_hit_at_5": true,
+        "category": "rag-trust",
+        "first_target_rank": 3,
+        "id": "agentic.source-conflict.confidence",
+        "target_count": 2,
+        "target_hits_at_5": 2,
+        "target_recall_at_5": 1.0,
+        "top5": [
+          "vuln.ai.agent-identity",
+          "vuln.ai.excessive-agency",
+          "vuln.ai.output-handling",
+          "vuln.ai.prompt-injection",
+          "vuln.ai.rag-source-trust"
+        ],
+        "vulnerability_ids": [
+          "vuln.ai.rag-source-trust",
+          "vuln.ai.output-handling"
+        ]
+      }
+    ],
+    "categories": {
+      "agent-identity": 2,
+      "agent-loop": 2,
+      "evaluation-integrity": 2,
+      "inter-agent-trust": 2,
+      "memory": 2,
+      "model-supply-chain": 3,
+      "output-handling": 3,
+      "prompt-injection": 2,
+      "rag-trust": 3,
+      "tenant-isolation": 2,
+      "tool-authorization": 4
+    },
+    "leakage_count": 0,
+    "mrr": 0.6706,
+    "reviewed_count": 27,
+    "reviewed_fraction": 1.0,
+    "target_count": 37,
+    "target_hits_at_5": 33,
+    "target_recall_at_5": 0.8919
+  },
   "cases": [
     {
       "id": "eval.mass-assignment.positive",
@@ -1916,5 +2466,5 @@
   "retrieval_hits_at_5": 134,
   "retrieval_recall_at_5": 1.0,
   "schema_version": "1.1",
-  "suite": "secure-context-atlas-deterministic-v2"
+  "suite": "secure-context-atlas-deterministic-v3"
 }

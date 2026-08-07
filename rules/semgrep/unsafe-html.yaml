@@ -1,9 +1,15 @@
-id: rule.semgrep.browser.unsafe-html
-language: generic
-message: "Untrusted data reaches an HTML/DOM sink. Confirm contextual encoding or a trusted sanitizer."
-severity: WARNING
-vulnerability_id: vuln.browser.xss
-pattern_contract:
-  source: request.value
-  sink: html_or_dom_sink
-  required_control: contextual-encoding
+rules:
+  - id: rule.semgrep.browser.unsafe-html
+    languages: [python]
+    message: "Untrusted data reaches an HTML sink. Confirm contextual encoding or a trusted sanitizer."
+    severity: WARNING
+    pattern-either:
+      - pattern: mark_safe($VALUE)
+      - pattern: Markup($VALUE)
+    metadata:
+      atlas_rule_id: rule.semgrep.browser.unsafe-html
+      vulnerability_id: vuln.browser.xss
+      confidence: medium
+      source_signal: request.value
+      sink_signal: html_or_dom_sink
+      required_control: contextual-encoding

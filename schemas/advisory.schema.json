@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "source", "advisory_id", "package", "affected", "status", "severity", "published_at", "modified_at", "references", "provenance", "reachability"],
   "properties": {
-    "schema_version": {"type": "string", "const": "1.0"},
+    "schema_version": {"type": "string", "const": "1.1"},
     "source": {"type": "string", "enum": ["osv", "github-advisory-database"]},
     "advisory_id": {"type": "string", "minLength": 2},
     "aliases": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
@@ -37,11 +37,16 @@
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["queried_at", "query", "source_url"],
+      "required": ["queried_at", "query", "source_url", "transport", "request_sha256", "response_sha256"],
       "properties": {
         "queried_at": {"type": "string", "format": "date-time"},
         "query": {"type": "string", "minLength": 3},
-        "source_url": {"type": "string", "format": "uri"}
+        "source_url": {"type": "string", "format": "uri"},
+        "transport": {"type": "string", "enum": ["https", "fixture"]},
+        "request_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "response_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "auth_mode": {"type": "string", "enum": ["anonymous", "token"]},
+        "http_status": {"type": "integer", "minimum": 100, "maximum": 599}
       }
     },
     "reachability": {

@@ -8,7 +8,7 @@
   "properties": {
     "schema_version": {"type": "string", "const": "1.0"},
     "project": {"type": "string", "const": "Secure Context Atlas"},
-    "release": {"type": "string", "pattern": "^0\\.6\\.0$"},
+    "release": {"type": "string", "pattern": "^0\\.7\\.0$"},
     "generated_at": {"type": "string", "format": "date"},
     "policy": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
     "pins": {

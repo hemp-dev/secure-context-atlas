@@ -102,6 +102,80 @@ def evaluate_holdout(cards: dict[str, dict]) -> tuple[dict, list[str]]:
     }, errors
 
 
+def evaluate_agentic(cards: dict[str, dict], benchmark: dict) -> tuple[dict, list[str]]:
+    path = ROOT / str(benchmark.get("path", ""))
+    errors: list[str] = []
+    if not path.exists():
+        return {"case_count": 0, "reviewed_count": 0, "reviewed_fraction": 0.0, "target_count": 0, "target_hits_at_5": 0, "target_recall_at_5": 0.0, "case_hits_at_5": 0, "case_recall_at_5": 0.0, "mrr": 0.0, "leakage_count": 0, "categories": {}, "cases": []}, [f"missing agentic benchmark: {benchmark.get('path')}"]
+    cases = json.loads(path.read_text(encoding="utf-8"))
+    results = []
+    reviewed_count = 0
+    target_count = 0
+    target_hits = 0
+    case_hits = 0
+    reciprocal_rank = 0.0
+    leakage_count = 0
+    categories: dict[str, int] = {}
+    for case in cases:
+        case_id = case.get("id")
+        category = str(case.get("category", "unknown"))
+        categories[category] = categories.get(category, 0) + 1
+        if case.get("review_status") == "reviewed":
+            reviewed_count += 1
+        else:
+            errors.append(f"agentic case is not reviewed: {case_id}")
+        targets = list(dict.fromkeys(case.get("vulnerability_ids", [])))
+        unknown = [target for target in targets if target not in cards]
+        if unknown:
+            errors.append(f"agentic case references unknown card(s): {case_id}: {', '.join(unknown)}")
+            continue
+        text = " ".join(str(case.get(key, "")) for key in ["query", "snippet"]).lower()
+        leakage_terms = []
+        for target in targets:
+            record = cards[target]["record"]
+            leakage_terms.extend([target.lower(), str(record.get("title", "")).lower(), str(record.get("canonical_cwe", "")).lower()])
+        leaked = [term for term in leakage_terms if term and term in text]
+        if leaked:
+            leakage_count += 1
+            errors.append(f"agentic benchmark leakage in {case_id}: {', '.join(dict.fromkeys(leaked))}")
+        ranked = rank(str(case.get("query", "")), cards)
+        top5 = [identifier for _, identifier in ranked[:5]]
+        positions = [next((index + 1 for index, item in enumerate(ranked) if item[1] == target), None) for target in targets]
+        hits = sum(int(target in top5) for target in targets)
+        target_count += len(targets)
+        target_hits += hits
+        all_hit = bool(targets) and hits == len(targets)
+        case_hits += int(all_hit)
+        first_position = min((position for position in positions if position is not None), default=None)
+        if first_position:
+            reciprocal_rank += 1 / first_position
+        results.append({"id": case_id, "category": category, "vulnerability_ids": targets, "top5": top5, "target_hits_at_5": hits, "target_count": len(targets), "target_recall_at_5": round(hits / len(targets), 4) if targets else 0.0, "case_hit_at_5": all_hit, "first_target_rank": first_position})
+    total = len(results)
+    report = {
+        "case_count": total,
+        "reviewed_count": reviewed_count,
+        "reviewed_fraction": round(reviewed_count / total, 4) if total else 0.0,
+        "target_count": target_count,
+        "target_hits_at_5": target_hits,
+        "target_recall_at_5": round(target_hits / target_count, 4) if target_count else 0.0,
+        "case_hits_at_5": case_hits,
+        "case_recall_at_5": round(case_hits / total, 4) if total else 0.0,
+        "mrr": round(reciprocal_rank / total, 4) if total else 0.0,
+        "leakage_count": leakage_count,
+        "categories": dict(sorted(categories.items())),
+        "cases": results,
+    }
+    if report["target_recall_at_5"] < float(benchmark.get("min_target_recall_at_5", 0.0)):
+        errors.append(f"agentic target recall {report['target_recall_at_5']:.4f} below threshold")
+    if report["case_recall_at_5"] < float(benchmark.get("min_case_recall_at_5", 0.0)):
+        errors.append(f"agentic case recall {report['case_recall_at_5']:.4f} below threshold")
+    if report["reviewed_fraction"] < float(benchmark.get("min_reviewed_fraction", 0.0)):
+        errors.append(f"agentic reviewed fraction {report['reviewed_fraction']:.4f} below threshold")
+    if leakage_count:
+        errors.append("agentic benchmark contains target leakage")
+    return report, errors
+
+
 def run(output: Path | None) -> int:
     manifest_path = ROOT / "evals/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -148,6 +222,8 @@ def run(output: Path | None) -> int:
     positive_recall = positive_hits / positive_total if positive_total else 0.0
     holdout, holdout_errors = evaluate_holdout(cards)
     errors.extend(holdout_errors)
+    agentic, agentic_errors = evaluate_agentic(cards, manifest.get("agentic_benchmark", {}))
+    errors.extend(agentic_errors)
     report = {
         "schema_version": "1.1",
         "suite": manifest.get("suite"),
@@ -158,6 +234,7 @@ def run(output: Path | None) -> int:
         "positive_recall_at_5": round(positive_recall, 4),
         "forbidden_fixture_count": forbidden_count,
         "holdout": holdout,
+        "agentic": agentic,
         "errors": errors,
         "cases": cases,
     }
@@ -172,7 +249,7 @@ def run(output: Path | None) -> int:
     if output:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered, encoding="utf-8")
-    print(json.dumps({key: report[key] for key in ["suite", "fixture_count", "retrieval_recall_at_5", "positive_recall_at_5", "forbidden_fixture_count", "holdout", "errors"]}, ensure_ascii=False, sort_keys=True))
+    print(json.dumps({key: report[key] for key in ["suite", "fixture_count", "retrieval_recall_at_5", "positive_recall_at_5", "forbidden_fixture_count", "holdout", "agentic", "errors"]}, ensure_ascii=False, sort_keys=True))
     return 1 if errors else 0
 
 

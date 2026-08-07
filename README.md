@@ -2,7 +2,7 @@
 
 Вендорно-нейтральная база знаний для AI-assisted аудита исходного кода, архитектуры, конфигураций, API, cloud, mobile, supply chain и AI/LLM-систем.
 
-Текущий релиз: **Secure Context Atlas 0.6.0 — Provenance and Evaluation Preview**. Подробности, миграция и checklist находятся в [`RELEASE.md`](RELEASE.md).
+Текущий релиз: **Secure Context Atlas 0.7.0 — Executable Detection and Attested Preview**. Подробности, миграция и checklist находятся в [`RELEASE.md`](RELEASE.md) и [`docs/release-0.7.md`](docs/release-0.7.md).
 
 Репозиторий нормализует темы из PayloadsAllTheThings, HackTricks, SecLists, Awesome-Hacking и Awesome-Bug-Bounty, но не копирует payloads, секреты, web shells или готовые exploit chains. Каноническая семантика слабостей — MITRE CWE; CAPEC хранится как отдельный слой attack patterns, а стабильные `vuln.*` ID относятся к атомарным карточкам этого репозитория.
 
@@ -12,17 +12,18 @@
 - `vulnerabilities/` — атомарные defensive-карточки: preconditions, trust boundaries, source/transform/control/sink, сигналы кода, safe verification, false positives, remediation и regression tests.
 - `languages/`, `frameworks/`, `platforms/` — язык-, framework- и platform-specific guidance.
 - `ai/` — компактный контекст, finding format, threat-model protocol, routing и сгенерированные индексы.
-- `evals/` — synthetic retrieval/evidence fixtures, независимый holdout и deterministic evaluation harness.
-- `rules/` — defensive Semgrep/CodeQL detector contracts с canonical `vuln.*` mappings; текущий режим явно `contract-only`.
+- `evals/` — synthetic retrieval/evidence fixtures, независимый holdout, human-reviewed agentic/MCP cases и deterministic evaluation harness.
+- `rules/` — defensive Semgrep/CodeQL detector packs с canonical `vuln.*` mappings; executable engines и contract-only rules разделены в manifest.
 - `regression/` — synthetic finding/SARIF fixtures.
 - `bin/sctx` — CLI для context packs, поиска и SARIF export.
 - `datasets/` — только manifests для wordlists и payload-oriented наборов; загрузка не происходит по умолчанию.
-- `advisories/` — OSV/GitHub Advisory Database contracts и normalized synthetic fixtures, отделённые от статической taxonomy.
+- `advisories/` — OSV/GitHub Advisory Database adapters, provenance-rich normalized bundles и fixture-backed checks, отделённые от статической taxonomy.
+- `ai/sbom.spdx.json` и `ai/release-manifest.json` — воспроизводимый SPDX SBOM и SHA-256 manifest release tree.
 - `scripts/` и `tests/` — воспроизводимая генерация индексов и quality gates.
 
 Полный нормализованный каталог классов и вариантов находится в [`vulnerability-taxonomy-ai.md`](vulnerability-taxonomy-ai.md) и [`vulnerability-taxonomy-ai.json`](vulnerability-taxonomy-ai.json); AI-friendly stable-ID view — [`ai/vulnerability-map.json`](ai/vulnerability-map.json).
 
-Релизные документы: [`RELEASE.md`](RELEASE.md), [`CHANGELOG.md`](CHANGELOG.md), [`SECURITY.md`](SECURITY.md), [`docs/roadmap-0.6.md`](docs/roadmap-0.6.md) и [`docs/release-checklist.md`](docs/release-checklist.md).
+Релизные документы: [`RELEASE.md`](RELEASE.md), [`docs/release-0.7.md`](docs/release-0.7.md), [`CHANGELOG.md`](CHANGELOG.md), [`SECURITY.md`](SECURITY.md), [`docs/roadmap-0.7.md`](docs/roadmap-0.7.md) и [`docs/release-checklist.md`](docs/release-checklist.md).
 
 ## Быстрый старт
 
@@ -30,11 +31,15 @@
 python3 -m pip install -r requirements-dev.txt
 python3 scripts/build_indexes.py
 python3 scripts/run_eval.py --output ai/evaluation-report.json
+python3 scripts/validate_advisories.py
+python3 scripts/build_sbom.py
+python3 scripts/validate_sbom.py
 python3 scripts/validate_sources.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_repo.py
 python3 scripts/validate_rules.py
 python3 scripts/validate_threat_models.py
+python3 scripts/build_release_manifest.py
 ```
 
 Валидатор не запускает найденные значения как команды и не обращается к live targets. `build_indexes.py --fetch` — единственная команда с сетевой загрузкой, только для pinned CWE/CAPEC inputs. Safe verification в карточках рассчитана на локальные unit/integration tests, staging, test tenants, canary markers и mocks.

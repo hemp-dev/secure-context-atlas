@@ -31,7 +31,7 @@ def build_lock() -> dict:
     return {
         "schema_version": "1.0",
         "project": "Secure Context Atlas",
-        "release": expected(text, "release") or "0.6.0",
+        "release": expected(text, "release") or "0.7.0",
         "generated_at": hashes.get("generated_at"),
         "policy": {"raw_inputs_are_temporary": True, "generated_indexes_are_committed": True, "advisory_feeds_are_dynamic": True, "source_hashes_are_required": True},
         "pins": {

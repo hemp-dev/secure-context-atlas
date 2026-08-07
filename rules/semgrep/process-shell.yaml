@@ -1,9 +1,13 @@
-id: rule.semgrep.injection.process-shell
-language: generic
-message: "Request or job data reaches process execution. Confirm fixed executable, typed arguments and worker isolation."
-severity: ERROR
-vulnerability_id: vuln.injection.command
-pattern_contract:
-  source: request.value
-  sink: process.execute
-  required_control: argument-vector-and-capability-boundary
+rules:
+  - id: rule.semgrep.injection.process-shell
+    languages: [python]
+    message: "Process execution enables a shell. Confirm fixed executable, typed arguments and worker isolation."
+    severity: ERROR
+    pattern: subprocess.$FUNC(..., shell=True, ...)
+    metadata:
+      atlas_rule_id: rule.semgrep.injection.process-shell
+      vulnerability_id: vuln.injection.command
+      confidence: high
+      source_signal: request.value
+      sink_signal: process.execute
+      required_control: argument-vector-and-capability-boundary

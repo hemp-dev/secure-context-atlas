@@ -1,239 +1,190 @@
-# Secure Context Atlas 0.6.0
+# Secure Context Atlas 0.7.0
 
-## Provenance and Evaluation Preview
+## Executable Detection and Attested Preview
 
 Дата релиза: **2026-08-08**
-
 Канал: **stable-preview**
+Репозиторий: [hemp-dev/secure-context-atlas](https://github.com/hemp-dev/secure-context-atlas)
 
-Статус: **готов к ограниченному публичному preview-использованию с проверяемыми schemas, provenance и holdout evaluation**
+Secure Context Atlas — defensive knowledge base и context layer для AI-assisted аудита. Релиз не является автономным сканером, exploit framework или коллекцией payloads. Любой detector match или advisory — это сигнал для проверки, а не подтверждённая уязвимость.
 
-## Что нового в 0.6.0
+## Что нового в 0.7.0
 
-- Полная JSON Schema validation для карточек, findings, threat models, context packs, advisories, provenance, evaluation и detector contracts.
-- Сгенерированные карточки разделены на `curated/reviewed` и `scaffolded/needs-review`; незавершённый контент не загружается в `sctx pack` по умолчанию.
-- Добавлен независимый holdout-набор из 12 перефразированных synthetic cases: текущий `recall@5` — **0.8333**, `MRR` — **0.8446**.
-- `sctx pack` получил строгие фильтры по stack/surface/family/maturity, deterministic `pack_id`, card IDs и source provenance.
-- Добавлены normalized advisory schema и synthetic OSV/GHSA fixtures; advisory не превращается автоматически в code finding.
-- Пять primary research repositories закреплены commit SHA в `sources/lock.json`.
-- CI использует pinned action SHAs, least-privilege read permissions для quality job и `git diff --exit-code` после генерации.
-- Detector pack явно объявлен `contract-only`; executable Semgrep/CodeQL packs остаются отдельным следующим этапом.
+- Исполняемые detector packs: семь Semgrep-правил и один CodeQL query pack с positive/negative fixtures; три application-specific CodeQL-контракта остаются явно `executable: false`.
+- Новый `scripts/validate_rules.py`: каждый исполняемый Semgrep rule запускается на безопасной локальной positive/negative паре; CodeQL pack проверяется структурно и через `codeql pack check`, если CLI доступен.
+- Live OSV и GitHub Advisory Database adapters с package coordinate, timestamp, transport, source URL и SHA-256 canonical request/raw response. Advisory не превращается автоматически в code finding.
+- Fixture-backed advisory validation: одинаковый fixture даёт тот же normalized bundle, чтобы provenance и normalization были regression-tested без сети.
+- Deterministic SPDX 2.3 file-level SBOM (`ai/sbom.spdx.json`) и SHA-256 release manifest (`ai/release-manifest.json`).
+- GitHub Actions workflow [`release-attestations.yml`](.github/workflows/release-attestations.yml) после публикации GitHub Release создаёт artifact provenance и SBOM attestation с least-privilege permissions.
+- 27 maintainer-reviewed synthetic agentic/MCP evaluation cases с expected controls, safe boundary, review metadata и OWASP Agentic references.
+- JSON Schema contracts расширены для advisory bundles, reviewed agentic cases и SPDX release SBOM.
+- CI теперь проверяет advisory adapters, agentic metrics, SBOM coverage, release manifest и generated-tree determinism.
 
-## 1. Название и позиционирование
+## Метрики и состав
 
-### Выбранное название: Secure Context Atlas
-
-`Secure Context Atlas` прямо передаёт назначение проекта: безопасный контекст для анализа кода, архитектуры, trust boundaries, стандартов и AI-retrieval маршрутов.
-
-Рекомендуемый tagline:
-
-> Evidence-first security knowledge for AI-assisted audits.
-
-Русский вариант:
-
-> Доказательная база знаний для AI-assisted аудита безопасности.
-
-Название позиционирует проект как knowledge base и audit context layer, а не как сканер, exploit framework или коллекцию payloads.
-
-### Альтернативы
-
-| Вариант | Сильная сторона | Компромисс |
-|---|---|---|
-| `Secure Context Atlas` | Ясно объясняет AI/RAG-направление и роль knowledge base | Длиннее и менее удобно как package/repository name |
-| `BoundaryLens` | Точно подчёркивает анализ границ доверия | Звучит уже и менее явно говорит о vulnerability knowledge |
-| `CWE Compass` | Сразу понятна связь с канонической ontology | Слишком описательное и менее брендируемое |
-| `Secure Context Atlas` | Хорошо объясняет AI/RAG-направление | Длиннее и менее удобно как package/repository name |
-
-В качестве негативного фильтра не использовались `TrustGraph` и `Boundary Atlas`: эти названия уже связаны с существующими AI/context/security-проектами — [TrustGraph](https://docs.trustgraph.ai/) и [Boundary Atlas](https://boundarytitan.wordpress.com/). Это не заменяет полноценную проверку товарных знаков и доменов.
-
-В этом релизе `Secure Context Atlas` используется как выбранное рабочее имя. Для короткого технического slug используется `secure-context-atlas`. Свободность домена, GitHub organization и товарного знака не проверялась; перед публичным брендингом нужна отдельная legal/domain due diligence.
-
-## 2. Что выпускается
-
-Secure Context Atlas — статическая, версионируемая и AI-ориентированная defensive knowledge base для:
-
-- source-code и architecture review;
-- web/API, browser, parser, file, network и business-logic аудитов;
-- cloud, containers/Kubernetes, mobile, CI/CD, SCM и supply-chain review;
-- AI/LLM/RAG/agent/MCP threat modeling и safe verification;
-- evidence-based findings с canonical CWE, CAPEC и стандартными crosswalks.
-
-Внешние payloads, credential lists, web shells, реальные секреты и рабочие exploit chains в релиз не входят.
-
-## 3. Состав и метрики релиза
-
-| Область | В релизе |
+| Область | v0.7.0 |
 |---|---:|
-| Нормализованные классы и варианты | 305 leaf-классов |
+| Нормализованные leaf-классы | 305 |
 | Atomic vulnerability cards | 111: 44 curated, 67 scaffolded |
-| Inventory-only backlog | 194 leaf-класса |
-| CWE 4.20 | 969 импортированных записей, 944 активных, 25 deprecated |
-| Curated CWE mapping | curated/scaffolded состояния разделены; active CWE backlog публикуется отдельно |
-| CAPEC 3.9 | 615 attack patterns |
-| Языки | 13 |
-| Framework guidance | 6 основных профилей |
-| Platform guidance | cloud, containers/Kubernetes, Android, iOS, AI/LLM, CI/CD, enterprise/AD, hardware/IoT |
-| Primary repositories | 5 |
+| Inventory-only backlog | 194 |
+| CWE | 4.20: 969 импортированных, 944 активных, 25 deprecated |
+| CAPEC | 3.9: 615 attack patterns |
+| Языки / frameworks / platforms | 13 / 6 / 8 профилей |
+| Базовые retrieval fixtures | 134 |
+| Независимый holdout | 12 |
+| Reviewed agentic/MCP cases | 27 |
+| Agentic case recall@5 | 0.8519 |
+| Agentic target recall@5 | 0.8919 |
+| Agentic reviewed fraction | 1.0 |
+| Agentic leakage count | 0 |
+| Executable Semgrep rules | 7 |
+| Executable CodeQL queries | 1 |
+| Contract-only detector records | 3 |
 | Dynamic advisory adapters | OSV, GitHub Advisory Database |
-| Deterministic evaluation fixtures | 134 базовых + 12 независимых holdout |
-| Detector contracts | 10 Semgrep/CodeQL adapters |
-| Threat-model examples | 1 валидируемый agentic RAG model |
-| Context-pack CLI | `sctx list/show/search/pack/validate/export-sarif` |
 
-Полный inventory остаётся доступен даже там, где ещё нет отдельной редакторской карточки: `ai/vulnerability-map.json` содержит все 305 stable-ID records, `ai/maturity-map.json` различает `inventory`, `scaffolded` и `curated`, а `ai/cwe-coverage.json` — все записи текущей CWE-выгрузки. В coverage report отдельно отражены карточки scaffolded и 194 leaf без atomic card; это честный backlog, а не скрытая потеря покрытия.
+Базовые значения, holdout, MRR и полный список agentic cases находятся в [`ai/evaluation-report.json`](ai/evaluation-report.json). Эти числа характеризуют воспроизводимый retrieval/evidence contract и не являются оценкой конкретной LLM.
 
-## 4. Источники и provenance
-
-Первичный research охватывает:
-
-1. [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) — гранулярные web/API/parser/auth/file/AI темы.
-2. [HackTricks](https://github.com/HackTricks-wiki/hacktricks) — web, network, cloud, host, mobile, hardware, blockchain и AI/MCP контекст.
-3. [SecLists](https://github.com/danielmiessler/SecLists) — dataset categories и discovery vocabulary; raw lists не загружаются по умолчанию.
-4. [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking) — discovery graph смежных проектов.
-5. [Awesome Bug Bounty](https://github.com/djadmin/awesome-bug-bounty) — report/workflow-oriented topic discovery.
-
-Дополнительные canonical/similar references описаны в [`sources/research-notes.md`](sources/research-notes.md) и [`sources/manifest.yaml`](sources/manifest.yaml): MITRE CWE/CAPEC, OWASP ASVS/WSTG/API/GenAI/Agentic/Mobile, NIST AI RMF, PortSwigger Academy, FuzzDB, Vulhub, CodeQL, Semgrep, Gitleaks, OSV, GitHub Advisory Database, OpenSSF Scorecard, Assetnote Wordlists, InternalAllTheThings, HardwareAllTheThings и другие.
-
-Машинные версии, commit pins и SHA-256 находятся в [`sources/versions.yaml`](sources/versions.yaml), [`sources/lock.json`](sources/lock.json) и [`ai/source-hashes.json`](ai/source-hashes.json). Каноническая ontology опирается на [CWE machine-readable downloads](https://cwe.mitre.org/data/downloads.html); attack-pattern слой хранится отдельно по [CAPEC downloads](https://capec.mitre.org/data/downloads.html).
-
-## 5. Архитектура релиза
+## Архитектура provenance
 
 ```text
-source manifests
-      |
-      v
-canonical CWE/CAPEC indexes ---- standards crosswalks
-      |                                      |
-      +--> normalized vuln.* map -----------+
-                         |
-                         v
-              AI routing + context packs + evaluation
-                         |
-                         v
-         evidence -> finding -> SARIF -> regression test
+source manifests + pinned CWE/CAPEC
+              |
+              v
+       canonical indexes + crosswalks
+              |
+              +--> vuln.* cards --> context packs --> model audit
+              |
+              +--> detector packs --> SARIF/triage --> evidence review
+              |
+              +--> advisory adapters --> normalized bundle --> reachability review
+              |
+              +--> tracked tree --> SPDX SBOM + SHA-256 manifest --> attestations
 ```
 
-Ключевое правило каждой карточки:
+Для статической карточки сохраняется поток:
 
 ```text
 SOURCE -> TRANSFORMATIONS -> CONTROL -> SINK
 ```
 
-Наличие опасного API, библиотеки, endpoint или слова в конфигурации само по себе не является finding. AI должен доказать reachability, missing/ineffective control, preconditions и impact.
+Для advisory bundle дополнительно сохраняются:
 
-## 6. Быстрый старт для потребителя
+```text
+package coordinate -> adapter request -> raw response -> normalized advisories -> dependency/reachability review
+```
 
-### Использовать готовый release artifact
+Для agentic audit external content, retrieved documents, model output и tool result — untrusted data. Authorization capability принадлежит обычному коду и инфраструктуре; модель не является границей авторизации.
 
-Загрузите репозиторий, затем начните с:
-
-1. [`ai/compact-context.md`](ai/compact-context.md) — минимальный context pack.
-2. [`ai/routing.yaml`](ai/routing.yaml) — выбор срезов по стеку и поверхности.
-3. [`ai/finding-format.md`](ai/finding-format.md) — формат результата модели.
-4. [`AGENTS.md`](AGENTS.md) — обязательный порядок аудита.
-5. `vulnerabilities/<family>/<card>.md` — атомарные карточки.
-6. `bin/sctx pack --stack python --surface api` — детерминированный context pack.
-
-### Проверить локальную копию
+## Быстрый старт
 
 ```sh
 python3 -m pip install -r requirements-dev.txt
-python3 -B scripts/validate_repo.py
-python3 -B -m unittest discover -s tests -v
-```
-
-Эти команды не выполняют найденный код, не сканируют внешние адреса и не требуют production credentials.
-
-### Перегенерировать индексы после обновления источников
-
-```sh
-python3 -B scripts/build_indexes.py --fetch
-python3 -B scripts/update_sources.py --write-lock --check
-python3 -B scripts/validate_sources.py
 python3 -B scripts/run_eval.py --output ai/evaluation-report.json
+python3 -B scripts/validate_advisories.py
+python3 -B scripts/build_sbom.py
+python3 -B scripts/validate_sbom.py
 python3 -B scripts/validate_schemas.py
 python3 -B scripts/validate_repo.py
 python3 -B scripts/validate_rules.py
 python3 -B scripts/validate_threat_models.py
 python3 -B scripts/build_release_manifest.py
+python3 -B scripts/validate_release.py
+python3 -B -m unittest discover -s tests -v
 ```
 
-`--fetch` загружает только pinned machine-readable CWE/CAPEC releases, после чего сохраняет компактные индексы, количество записей и SHA-256. `update_sources.py` фиксирует их в `sources/lock.json`. Для обычного использования уже сгенерированные JSON-файлы являются release artifact и сеть не нужна.
+Для обновления pinned machine-readable sources:
 
-## 7. AI integration contract
+```sh
+python3 -B scripts/build_indexes.py --fetch
+python3 -B scripts/update_sources.py --write-lock --check
+python3 -B scripts/validate_sources.py
+```
 
-Модель должна:
+`--fetch` загружает только pinned CWE/CAPEC inputs. Advisory client обращается в сеть только когда maintainer явно передал package coordinate; для тестов используется `--response` с synthetic fixture.
 
-1. определить языки, frameworks, infrastructure и AI-компоненты;
-2. выбрать релевантные slices по `ai/routing.yaml`;
-3. построить карту assets/principals/tenants/trust boundaries;
-4. проследить untrusted input от source до sink;
-5. проверить object/property/function/tenant/transaction authorization;
-6. отдельно проверить parser/interpreter, state/race, error/fail-open, dependencies/CI/secrets;
-7. сопоставить доказательство с CWE и versioned crosswalks;
-8. валидировать finding по [`schemas/finding.schema.json`](schemas/finding.schema.json);
-9. предложить safe verification и regression test;
-10. сообщить finding только при наличии evidence.
+## Detector packs
 
-Для AI-систем external text, retrieved documents, tool results и model output считаются данными, а не authority. Capability, destination, arguments и side effects должны контролироваться обычным кодом и инфраструктурой.
+Manifest [`rules/manifest.json`](rules/manifest.json) — источник истины для engine, executable status, fixture и canonical `vuln.*` mapping.
 
-## 8. Безопасные границы
+Проверка:
 
-Разрешены: local/staging fixtures, synthetic data, test users/tenants, canary markers, mocks, dry-run tools, bounded timeouts и negative assertions.
+```sh
+python3 -B scripts/validate_rules.py
+```
 
-Запрещены в содержимом проекта и release workflow: реальные credentials, public scanning, destructive actions, persistence, stealth/evasion, high-volume requests, exfiltration, web shells и working exploit chains. Подробные правила: [`safe-tests/README.md`](safe-tests/README.md) и [`ai/audit-protocol.md`](ai/audit-protocol.md).
+Semgrep-проверка требует, чтобы каждое executable rule сработало на positive fixture и не сработало на negative fixture. Это проверяет detector contract и снижает false positives, но не заменяет traceability review: найденный API может быть недостижимым, защищённым или использоваться в безопасном режиме.
 
-## 9. Миграция с предварительной версии
+CodeQL pack находится в [`rules/codeql-pack`](rules/codeql-pack). В окружениях с CodeQL CLI валидатор выполняет `codeql pack check`; в минимальном окружении остаются schema/metadata checks. Контрактные правила без executable query не маскируются под работающий scanner.
 
-Предварительные файлы сохранены для обратной совместимости:
+## Advisory adapters
 
-- `vulnerability-taxonomy-ai.json` — полный normalized inventory;
-- `vulnerability-taxonomy-ai.md` — человекочитаемый каталог;
-- `vulnerability-record.schema.json` и `vulnerability-records.examples.jsonl` — legacy JSON-record format.
+Пример безопасного live lookup:
 
-Для нового consumption code используйте:
+```sh
+python3 -B scripts/advisory_adapter.py \
+  --source osv --ecosystem PyPI --package requests --version 2.32.0 \
+  --output /tmp/requests-advisories.json
+```
 
-- `schemas/vulnerability.schema.json` вместо legacy schema;
-- `vuln.*` IDs вместо uppercase `INJ.SQL`/`AUTH.IDOR`-подобных legacy IDs;
-- `canonical_cwe` вместо самодельного numeric vulnerability ID;
-- `ai/vulnerability-map.json` и `ai/aliases.json` для совместимого retrieval;
-    - `ai/maturity-map.json` для различения inventory, scaffolded и curated coverage;
-- `schemas/finding.schema.json` и `scripts/export_sarif.py` для результатов анализа;
-- `bin/sctx` для context packs с token budget и routing trace.
+GitHub Advisory Database использует тот же интерфейс с `--source github-advisory-database`; токен опционален и читается только из `--token`, `GITHUB_TOKEN` или `GH_TOKEN`. Токены не записываются в bundle. В каждом результате фиксируются `query`, `queried_at`, `transport`, `source_url`, `request_sha256` и `response_sha256`.
 
-Старые ID не удаляются без migration window: stable mapping и aliases генерируются в `ai/vulnerability-map.json`.
+Проверка fixture-backed normalization:
 
-## 10. Лицензия и атрибуция
+```sh
+python3 -B scripts/validate_advisories.py
+```
 
-Оригинальные материалы Secure Context Atlas распространяются по CC BY-SA 4.0, если файл не указывает иное. Условия внешних источников не переопределяются; attribution и excluded content описаны в [`sources/licenses.yaml`](sources/licenses.yaml). Advisories и live feeds не зеркалируются в статическую taxonomy.
+Наличие GHSA/OSV записи не доказывает, что зависимость reachable, загружена runtime-кодом или попадает в affected range. Эти условия должен подтвердить потребитель по lockfile, dependency graph и runtime evidence.
 
-## 11. Известные ограничения
+## SBOM и release attestations
 
-- Это knowledge base, а не автономный scanner и не гарантия отсутствия уязвимостей.
-- 305 leaf-классов инвентаризованы; 44 карточки curated, 67 scaffolded/needs-review, 194 остаются inventory-only.
-- CWE/CAPEC и OWASP projects обновляются; перед production audit нужно обновить provenance и regenerated artifacts.
-- Advisory presence не равна reachability/exploitability; нужен package coordinate, version и runtime evidence.
-- AI output нельзя считать доказательством без code/config/architecture evidence.
-- Evaluation suite включает независимый holdout, но всё ещё проверяет deterministic retrieval contract и не заменяет benchmark конкретной LLM.
-- Правовая, domain и trademark проверка названия в этот релиз не входит.
+`scripts/build_sbom.py` строит детерминированный SPDX 2.3 file-level SBOM по committed release tree. Каждый файл получает SHA-256; временные raw XML/ZIP, cache и самогенерируемые manifest artifacts исключены по контракту. `scripts/validate_sbom.py` сравнивает список tracked files и hashes с SBOM.
 
-## 12. Release checklist
+`scripts/build_release_manifest.py` строит SHA-256 manifest того же committed tree. После публикации GitHub Release workflow выполняет оба validator-а и запускает `actions/attest` с `id-token: write` и `attestations: write`. Полученные attestations позволяют потребителю проверить происхождение release manifest и SBOM через GitHub artifact attestation tooling.
 
-Короткая версия checklist:
+SBOM не заменяет license/provenance review: внешние источники и их условия остаются описаны в [`sources/manifest.yaml`](sources/manifest.yaml) и [`sources/licenses.yaml`](sources/licenses.yaml).
 
-- [ ] `sources/manifest.yaml`, `sources/versions.yaml`, licenses и hashes обновлены.
-- [ ] Primary repository commits записаны в `sources/lock.json`; `scripts/validate_sources.py` завершился успешно.
-- [ ] `python3 -B scripts/build_indexes.py` выполнен.
-- [ ] `python3 -B scripts/update_sources.py --check` завершился успешно.
-- [ ] `python3 -B scripts/run_eval.py --output ai/evaluation-report.json` завершился успешно.
-- [ ] `python3 -B scripts/validate_schemas.py` завершился успешно.
-- [ ] `python3 -B scripts/validate_repo.py` завершился `validation passed`.
-- [ ] `python3 -B scripts/validate_rules.py` и `python3 -B scripts/validate_threat_models.py` завершились успешно.
-- [ ] `python3 -B -m unittest discover -s tests -v` завершился `OK`.
-- [ ] `python3 -B scripts/validate_release.py` завершился успешно.
-- [ ] Нет `__pycache__`, raw datasets, secrets или временных XML/ZIP в release tree.
-- [ ] Новые карточки содержат safe verification, false positives, remediation и regression tests.
-- [ ] Проверены mappings и backward compatibility stable IDs.
-- [ ] Changelog, release tag и artifact hashes опубликованы вместе.
+## Agentic/MCP evaluation
 
-Расширенная процедура находится в [`docs/release-checklist.md`](docs/release-checklist.md), а последовательность реализации — в [`docs/roadmap-0.6.md`](docs/roadmap-0.6.md).
+[`evals/agentic/cases.json`](evals/agentic/cases.json) покрывает prompt/indirect injection, RAG trust, tenant isolation, context leakage, tool authorization, MCP capability confusion, agent identity, memory poisoning, loops, inter-agent trust, output handling, model supply chain, callbacks, fail-open и evaluation integrity.
+
+Каждый case содержит:
+
+- reviewer, review status и дату review;
+- primary `vuln.*` target IDs;
+- expected controls и expected status;
+- безопасную synthetic boundary;
+- references на OWASP Agentic guidance;
+- leakage-safe query/snippet без target ID, title и CWE в тексте запроса.
+
+Quality gate требует `reviewed_fraction = 1.0`, case recall@5 не ниже 0.70, target recall@5 не ниже 0.75 и нулевую leakage count. Результат не утверждает, что модель правильно использует tools: для этого нужен отдельный application-specific red-team/evaluation контур.
+
+## Миграция с v0.6
+
+- `rules/manifest.json`: потребитель должен учитывать `execution_mode: mixed` и поле `executable`; contract-only rules нельзя запускать как Semgrep/CodeQL queries.
+- Advisory fixture: старый одиночный advisory record совместим со schema, но новые adapter outputs — это bundle с `advisories[]` и provenance v1.1.
+- `evals/manifest.json`: добавлен `agentic_benchmark`; consumer должен игнорировать его только если явно не использует v0.7 evaluation.
+- В release tree появились `ai/sbom.spdx.json`, `schemas/advisory-bundle.schema.json`, `schemas/agentic-eval.schema.json` и `schemas/sbom.schema.json`.
+- Для нового consumption code используйте `vuln.*`, `canonical_cwe`, `ai/vulnerability-map.json`, `ai/aliases.json` и `schemas/finding.schema.json`; legacy JSON-record files остаются только для compatibility.
+
+## Безопасные границы
+
+Разрешены local/staging fixtures, synthetic data, test users/tenants, canary markers, mocks, dry-run tools, bounded timeouts и negative assertions.
+
+В репозитории и release workflow запрещены реальные credentials, public scanning, destructive actions, persistence, stealth/evasion, high-volume requests, exfiltration, web shells и working exploit chains. Advisory lookups должны использовать минимально необходимые package coordinates и не сохранять токены.
+
+## Ограничения
+
+- Это knowledge base и audit context layer, а не автономный scanner и не гарантия отсутствия уязвимостей.
+- 194 normalized leaf-класса остаются inventory-only; 67 карточек — scaffolded/needs-review.
+- Semgrep/CodeQL match требует evidence review и не является confirmed finding.
+- Advisory presence не равна reachability или exploitability.
+- Synthetic retrieval и reviewed benchmark не заменяют evaluation на коде, инфраструктуре и model/tool policy конкретного потребителя.
+- Attestation workflow запускается GitHub после опубликованного release и зависит от настроек repository Actions и attestations.
+- Legal/domain/trademark due diligence для названия не входит в этот релиз.
+
+## Release checklist
+
+Подробный checklist находится в [`docs/release-checklist.md`](docs/release-checklist.md), roadmap — в [`docs/roadmap-0.7.md`](docs/roadmap-0.7.md). Перед tag/release должны пройти `validate_sources`, `run_eval`, `validate_advisories`, `validate_sbom`, `validate_schemas`, `validate_repo`, `validate_rules`, `validate_threat_models`, unit tests, `build_release_manifest` и `validate_release`. После генерации tracked artifacts рабочее дерево должно быть чистым.
+
+Название `Secure Context Atlas` — рабочее брендирование релиза; перед коммерческим использованием необходима отдельная проверка товарного знака, домена и организации.

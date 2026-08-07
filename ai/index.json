@@ -17,7 +17,7 @@
   "generated_at": "2026-08-08",
   "project": "Secure Context Atlas",
   "record_count": 305,
-  "release": "0.6.0",
+  "release": "0.7.0",
   "release_channel": "stable-preview",
   "retrieval_order": [
     "stack",
