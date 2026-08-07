@@ -2,7 +2,7 @@
 
 Вендорно-нейтральная база знаний для AI-assisted аудита исходного кода, архитектуры, конфигураций, API, cloud, mobile, supply chain и AI/LLM-систем.
 
-Текущий релиз: **Secure Context Atlas 0.7.0 — Executable Detection and Attested Preview**. Подробности, миграция и checklist находятся в [`RELEASE.md`](RELEASE.md) и [`docs/release-0.7.md`](docs/release-0.7.md).
+Текущий релиз: **Secure Context Atlas 0.7.0 — Executable Detection and Attested Preview**. Подробности, миграция и checklist находятся в [`RELEASE.md`](RELEASE.md) и [`docs/roadmap-0.7.md`](docs/roadmap-0.7.md).
 
 Репозиторий нормализует темы из PayloadsAllTheThings, HackTricks, SecLists, Awesome-Hacking и Awesome-Bug-Bounty, но не копирует payloads, секреты, web shells или готовые exploit chains. Каноническая семантика слабостей — MITRE CWE; CAPEC хранится как отдельный слой attack patterns, а стабильные `vuln.*` ID относятся к атомарным карточкам этого репозитория.
 
@@ -23,7 +23,7 @@
 
 Полный нормализованный каталог классов и вариантов находится в [`vulnerability-taxonomy-ai.md`](vulnerability-taxonomy-ai.md) и [`vulnerability-taxonomy-ai.json`](vulnerability-taxonomy-ai.json); AI-friendly stable-ID view — [`ai/vulnerability-map.json`](ai/vulnerability-map.json).
 
-Релизные документы: [`RELEASE.md`](RELEASE.md), [`docs/release-0.7.md`](docs/release-0.7.md), [`CHANGELOG.md`](CHANGELOG.md), [`SECURITY.md`](SECURITY.md), [`docs/roadmap-0.7.md`](docs/roadmap-0.7.md) и [`docs/release-checklist.md`](docs/release-checklist.md).
+Релизные документы: [`RELEASE.md`](RELEASE.md), [`CHANGELOG.md`](CHANGELOG.md), [`SECURITY.md`](SECURITY.md), [`docs/roadmap-0.7.md`](docs/roadmap-0.7.md) и [`docs/release-checklist.md`](docs/release-checklist.md).
 
 ## Быстрый старт
 
