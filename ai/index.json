@@ -1,0 +1,25 @@
+{
+  "artifacts": [
+    "ai/cwe-index.json",
+    "ai/cwe-coverage.json",
+    "ai/capec-index.json",
+    "ai/vulnerability-map.json",
+    "ai/aliases.json",
+    "ai/standards-coverage.json",
+    "ai/compact-context.md"
+  ],
+  "curated_record_count": 44,
+  "generated_at": "2026-08-07",
+  "project": "Secure Context Atlas",
+  "record_count": 305,
+  "release": "0.1.0",
+  "release_channel": "foundational-preview",
+  "retrieval_order": [
+    "stack",
+    "surface",
+    "family",
+    "canonical_cwe",
+    "safe_verification"
+  ],
+  "schema_version": "1.0"
+}

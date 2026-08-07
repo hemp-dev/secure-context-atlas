@@ -1,0 +1,31 @@
+schema_version: "1.0"
+policy: "Aliases aid retrieval; canonical semantics remain CWE and vuln.*"
+aliases:
+  - canonical: vuln.authorization.idor
+    aliases: ["IDOR", "BOLA", "broken object level authorization", "object authorization"]
+  - canonical: vuln.authorization.function-level
+    aliases: ["BFLA", "broken function level authorization", "vertical authorization"]
+  - canonical: vuln.injection.sql
+    aliases: ["SQLi", "SQL injection", "second-order SQL injection"]
+  - canonical: vuln.injection.xxe
+    aliases: ["XXE", "XML external entity", "XML entity expansion"]
+  - canonical: vuln.browser.xss
+    aliases: ["XSS", "cross-site scripting", "reflected XSS", "stored XSS", "DOM XSS"]
+  - canonical: vuln.browser.csrf
+    aliases: ["CSRF", "cross-site request forgery", "session riding"]
+  - canonical: vuln.http.request-smuggling
+    aliases: ["HTTP request smuggling", "desync", "CL.TE", "TE.CL", "client desync"]
+  - canonical: vuln.network.ssrf
+    aliases: ["SSRF", "server-side request forgery", "cloud metadata access"]
+  - canonical: vuln.files.path-traversal
+    aliases: ["directory traversal", "path traversal", "Zip Slip"]
+  - canonical: vuln.serialization.unsafe-deserialization
+    aliases: ["insecure deserialization", "unsafe object deserialization"]
+  - canonical: vuln.business.race-condition
+    aliases: ["race condition", "TOCTOU", "time-of-check time-of-use"]
+  - canonical: vuln.ai.prompt-injection
+    aliases: ["LLM01", "prompt injection", "indirect prompt injection", "agent goal hijack"]
+  - canonical: vuln.ai.excessive-agency
+    aliases: ["LLM06", "excessive agency", "tool misuse", "over-privileged agent"]
+  - canonical: vuln.supply.dependency-risk
+    aliases: ["vulnerable component", "dependency confusion", "typosquatting"]

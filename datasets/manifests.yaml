@@ -1,0 +1,26 @@
+schema_version: "1.0"
+datasets:
+  - id: seclists
+    purpose: "Discovery vocabulary and safe synthetic fixture design"
+    source: https://github.com/danielmiessler/SecLists
+    license: "MIT repository; individual files must be checked"
+    update_mechanism: "Pin a reviewed commit; no default download"
+    relevant_families: [discovery, injection, authentication, secrets]
+    technologies: [web, api, network]
+    isolation: "local/staging only; raw data excluded from model context"
+  - id: assetnote-wordlists
+    purpose: "Opt-in endpoint and asset discovery manifest"
+    source: https://github.com/assetnote/wordlists
+    license: "Upstream terms"
+    update_mechanism: "Explicit pinned download after authorization"
+    relevant_families: [api, files, discovery]
+    technologies: [web, api, cloud]
+    isolation: "bounded requests against owned test scope"
+  - id: fuzzdb
+    purpose: "Parser and response-category fixture vocabulary"
+    source: https://github.com/fuzzdb-project/fuzzdb
+    license: "MIT"
+    update_mechanism: "Pinned commit; no auto-loading"
+    relevant_families: [injection, parser, http, files]
+    technologies: [web, api]
+    isolation: "synthetic local/staging targets only"

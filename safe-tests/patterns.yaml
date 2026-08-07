@@ -1,0 +1,18 @@
+schema_version: "1.0"
+patterns:
+  - id: safe.two-tenant-canary
+    use_for: [authorization, tenant-isolation, rag]
+    setup: "Create two synthetic tenants and one canary object/document per tenant."
+    assertion: "Cross-tenant access is denied before data enters the response or model context."
+  - id: safe.parser-fixture
+    use_for: [xml, archive, serialization, upload]
+    setup: "Use a local fixture with bounded size/depth and a mock resolver."
+    assertion: "No external resolver, side effect or unbounded resource use occurs."
+  - id: safe.outbound-mock
+    use_for: [ssrf, webhook, api-consumption, agent-tools]
+    setup: "Route the client to a local mock and disable external egress."
+    assertion: "Only allowlisted destination and typed request are used; redirects are revalidated."
+  - id: safe.ai-tool-dry-run
+    use_for: [prompt-injection, excessive-agency, output-handling]
+    setup: "Use a deterministic model stub and a dry-run tool with a canary argument."
+    assertion: "Untrusted content cannot change capability, destination or side effect without policy/approval."

@@ -1,0 +1,12 @@
+schema_version: "1.0"
+repository:
+  license: "CC-BY-SA-4.0"
+  note: "Original repository text, schemas and mappings are provided under this license unless a file states otherwise."
+upstream_policy:
+  - "Only metadata, links, IDs and original defensive summaries are retained by default."
+  - "Full upstream terms control any future opt-in dataset import."
+  - "Payloads, credential lists, web shells and exploit code are intentionally excluded."
+attribution:
+  mitre: "CWE and CAPEC metadata are attributed to MITRE; see source URLs and version records."
+  owasp: "OWASP projects are linked and mapped by identifier; see source manifest."
+  github: "GitHub-hosted project names and URLs are used for provenance, not copied content."

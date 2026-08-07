@@ -1,0 +1,7 @@
+{
+  "capec_url": "https://capec.mitre.org/data/xml/capec_v3.9.xml",
+  "capec_xml_sha256": "70279a2dff0cb0ad79e546adb07828335a704ad5210e047e09e986172fc9e34d",
+  "cwe_url": "https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip",
+  "cwe_xml_zip_sha256": "3976f599e5e5200219a3108bb896d06e2a88fbb293369e1883cb423a5e9d7d50",
+  "generated_at": "2026-08-07"
+}

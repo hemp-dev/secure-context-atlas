@@ -1,0 +1,56 @@
+schema_version: "1.0"
+default_slices:
+  - "ai/compact-context.md"
+  - "vulnerabilities/authorization/idor.md"
+  - "vulnerabilities/injection/sql.md"
+  - "vulnerabilities/network/ssrf.md"
+  - "vulnerabilities/supply/dependency-risk.md"
+rules:
+  - id: javascript-web
+    when_any: ["package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "express", "fastify", "next", "react"]
+    load: ["languages/javascript.md", "languages/typescript.md", "frameworks/node-express.md", "vuln.browser.*", "vuln.http.*", "vuln.injection.*", "vuln.network.ssrf"]
+  - id: python-web
+    when_any: ["pyproject.toml", "requirements.txt", "Pipfile", "Django", "Flask", "FastAPI", "Jinja"]
+    load: ["languages/python.md", "frameworks/python-web.md", "vuln.injection.*", "vuln.files.*", "vuln.serialization.*", "vuln.network.ssrf"]
+  - id: jvm
+    when_any: ["pom.xml", "build.gradle", "Spring", "Maven", "Gradle", "Jackson", "SpEL"]
+    load: ["languages/java.md", "frameworks/spring.md", "vuln.authorization.*", "vuln.injection.*", "vuln.serialization.*"]
+  - id: go
+    when_any: ["go.mod", "go.sum", "net/http", "gin", "chi", "grpc"]
+    load: ["languages/go.md", "frameworks/go-services.md", "vuln.network.ssrf", "vuln.files.*", "vuln.authorization.*"]
+  - id: dotnet
+    when_any: [".csproj", "*.sln", "ASP.NET", "EntityFramework", "Razor"]
+    load: ["languages/csharp.md", "frameworks/aspnet.md", "vuln.authorization.*", "vuln.injection.*", "vuln.authentication.*"]
+  - id: php-ruby
+    when_any: ["composer.json", "Gemfile", "Laravel", "Rails", "Twig", "ERB"]
+    load: ["languages/php.md", "languages/ruby.md", "frameworks/php-ruby-web.md", "vuln.injection.*", "vuln.browser.*", "vuln.files.*"]
+  - id: rust-native
+    when_any: ["Cargo.toml", "unsafe", "FFI", "axum", "tokio"]
+    load: ["languages/rust.md", "languages/c.md", "languages/cpp.md", "vuln.native.*", "vuln.serialization.*"]
+  - id: mobile-android
+    when_any: ["AndroidManifest.xml", "androidx", "Gradle Android", "Kotlin"]
+    load: ["languages/kotlin.md", "languages/java.md", "platforms/android.md", "vuln.mobile.*", "vuln.authorization.*"]
+  - id: mobile-ios
+    when_any: [".xcodeproj", ".xcworkspace", "Info.plist", "Swift", "Package.swift"]
+    load: ["languages/swift.md", "platforms/ios.md", "vuln.mobile.*", "vuln.privacy.*"]
+  - id: cloud-container
+    when_any: ["Dockerfile", "compose.yaml", "docker-compose.yml", "*.tf", "Helm", "Kubernetes", "kustomization.yaml"]
+    load: ["platforms/cloud.md", "platforms/containers-kubernetes.md", "vuln.cloud.*", "vuln.container.*", "vuln.configuration.*", "vuln.supply.*"]
+  - id: ci-cd
+    when_any: [".github/workflows", ".gitlab-ci.yml", "Jenkinsfile", "Buildkite", "actions/"]
+    load: ["platforms/ci-cd.md", "vuln.supply.*", "vuln.secrets.*", "vuln.authorization.*"]
+  - id: ai-llm
+    when_any: ["LangChain", "LlamaIndex", "OpenAI", "Anthropic", "MCP", "tool_call", "embedding", "vector store", "RAG"]
+    load: ["platforms/ai-llm.md", "vuln.ai.*", "vuln.authorization.*", "vuln.privacy.*", "vuln.supply.model"]
+  - id: internal-enterprise
+    when_any: ["Active Directory", "Kerberos", "LDAP", "SMB", "NTLM", "PowerShell", "domain controller"]
+    load: ["platforms/enterprise-ad.md", "vuln.internal.*", "vuln.authentication.*", "vuln.authorization.*"]
+  - id: hardware-iot
+    when_any: ["firmware", "UART", "JTAG", "BLE", "CAN bus", "secure boot", "embedded"]
+    load: ["platforms/hardware-iot.md", "vuln.hardware.*", "vuln.native.*", "vuln.crypto.*"]
+selection:
+  max_cards_default: 12
+  max_cards_per_family: 4
+  expand_wildcards_only_after_stack_match: true
+  include_cwe_entries_for: ["canonical_cwe", "related_cwe", "unmapped-high-risk"]
+  exclude_by_default: ["datasets/raw", "payloads", "credentials", "web-shells", "exploit-code"]

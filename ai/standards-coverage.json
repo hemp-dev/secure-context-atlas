@@ -1,0 +1,65 @@
+{
+  "canonical": "MITRE CWE",
+  "coverage": {
+    "mobile": {
+      "MASTG": "test families",
+      "MASVS": "control families",
+      "MASWE": "weakness identifiers"
+    },
+    "owasp_agentic": {
+      "ASI01": "goal-hijack",
+      "ASI02": "tool-misuse",
+      "ASI03": "identity-privilege-abuse",
+      "ASI04": "agentic-supply-chain",
+      "ASI05": "unexpected-code-execution",
+      "ASI06": "memory-context-poisoning",
+      "ASI07": "inter-agent-communication",
+      "ASI08": "cascading-failures",
+      "ASI09": "human-agent-trust",
+      "ASI10": "rogue-agents"
+    },
+    "owasp_api_2023": {
+      "API1": "BOLA",
+      "API10": "unsafe-consumption",
+      "API2": "authentication",
+      "API3": "object-property-authorization",
+      "API4": "resource-consumption",
+      "API5": "function-authorization",
+      "API6": "SSRF",
+      "API7": "automated-threats",
+      "API8": "misconfiguration",
+      "API9": "inventory"
+    },
+    "owasp_genai_llm_2025": {
+      "LLM01": "prompt-injection",
+      "LLM02": "sensitive-information-disclosure",
+      "LLM03": "supply-chain",
+      "LLM04": "data-model-poisoning",
+      "LLM05": "improper-output-handling",
+      "LLM06": "excessive-agency",
+      "LLM07": "system-prompt-leakage",
+      "LLM08": "vector-embedding-weaknesses",
+      "LLM09": "misinformation",
+      "LLM10": "unbounded-consumption"
+    },
+    "owasp_top10_2025": {
+      "A01": "authorization",
+      "A02": "configuration",
+      "A03": "supply-chain",
+      "A04": "crypto",
+      "A05": "injection",
+      "A06": "design",
+      "A07": "authentication",
+      "A08": "integrity",
+      "A09": "logging",
+      "A10": "exceptional-conditions"
+    },
+    "web": {
+      "ASVS": "verification requirements",
+      "WSTG": "testing scenarios"
+    }
+  },
+  "curated_record_count": 44,
+  "generated_at": "2026-08-07",
+  "schema_version": "1.0"
+}

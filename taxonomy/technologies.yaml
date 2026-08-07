@@ -1,0 +1,46 @@
+schema_version: "1.0"
+technologies:
+  - id: node-express
+    match: ["package.json", "express", "fastify", "koa"]
+    surfaces: [web, api, websocket, workers]
+    slices: ["vuln.injection.*", "vuln.browser.*", "vuln.http.*", "vuln.network.ssrf", "vuln.serialization.*"]
+  - id: python-web
+    match: ["pyproject.toml", "requirements.txt", "Django", "Flask", "FastAPI", "Jinja"]
+    surfaces: [web, api, workers, parsers]
+    slices: ["vuln.injection.*", "vuln.files.*", "vuln.network.ssrf", "vuln.serialization.*", "vuln.business.*"]
+  - id: jvm-spring
+    match: ["pom.xml", "build.gradle", "Spring", "Jackson", "JPA", "SpEL"]
+    surfaces: [web, api, messaging, parsers]
+    slices: ["vuln.authorization.*", "vuln.injection.*", "vuln.serialization.*", "vuln.http.*"]
+  - id: go-services
+    match: ["go.mod", "net/http", "gin", "chi", "grpc"]
+    surfaces: [api, grpc, workers, cloud]
+    slices: ["vuln.authorization.*", "vuln.network.ssrf", "vuln.files.*", "vuln.native.*"]
+  - id: dotnet
+    match: [".csproj", "ASP.NET", "EntityFramework", "Razor"]
+    surfaces: [web, api, workers, windows]
+    slices: ["vuln.authorization.*", "vuln.injection.*", "vuln.serialization.*", "vuln.authentication.*"]
+  - id: php-ruby
+    match: ["composer.json", "Gemfile", "Laravel", "Rails", "Twig", "ERB"]
+    surfaces: [web, api, workers]
+    slices: ["vuln.injection.*", "vuln.browser.*", "vuln.files.*", "vuln.business.*"]
+  - id: rust-native
+    match: ["Cargo.toml", "unsafe", "FFI", "tokio", "axum"]
+    surfaces: [api, native, workers, embedded]
+    slices: ["vuln.native.*", "vuln.serialization.*", "vuln.network.ssrf"]
+  - id: android
+    match: ["AndroidManifest.xml", "Gradle Android", "Kotlin", "Java Android"]
+    surfaces: [mobile, ipc, webview, storage]
+    slices: ["vuln.mobile.*", "vuln.authentication.*", "vuln.authorization.*"]
+  - id: ios
+    match: [".xcodeproj", "Package.swift", "Swift", "Info.plist"]
+    surfaces: [mobile, ipc, storage, webview]
+    slices: ["vuln.mobile.*", "vuln.authentication.*", "vuln.privacy.*"]
+  - id: cloud-kubernetes
+    match: ["Dockerfile", "compose.yaml", "*.tf", "*.yaml", "Kubernetes", "Helm"]
+    surfaces: [cloud, container, kubernetes, ci_cd]
+    slices: ["vuln.cloud.*", "vuln.container.*", "vuln.supply.*", "vuln.configuration.*"]
+  - id: ai-llm-agent
+    match: ["LangChain", "LlamaIndex", "OpenAI", "Anthropic", "MCP", "vector", "embedding", "tool_call"]
+    surfaces: [ai_app, agent, rag, mcp, mlops]
+    slices: ["vuln.ai.*", "vuln.privacy.*", "vuln.supply.model", "vuln.authorization.*"]

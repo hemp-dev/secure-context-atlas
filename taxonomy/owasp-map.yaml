@@ -1,0 +1,36 @@
+schema_version: "1.0"
+records:
+  - vuln: vuln.authorization.idor
+    top10_2025: [A01]
+    api_security_2023: [API1, API3]
+    asvs: ["V8", "V4"]
+    wstg: ["WSTG-ATHZ-01", "WSTG-ATHZ-02"]
+  - vuln: vuln.authentication.session
+    top10_2025: [A07]
+    api_security_2023: [API2]
+    asvs: ["V2", "V3"]
+    wstg: ["WSTG-AUTHN-01", "WSTG-SESS-01"]
+  - vuln: vuln.injection.sql
+    top10_2025: [A05]
+    api_security_2023: [API10]
+    asvs: ["V1", "V5"]
+    wstg: ["WSTG-INPV-05"]
+  - vuln: vuln.browser.xss
+    top10_2025: [A05]
+    asvs: ["V5", "V6"]
+    wstg: ["WSTG-INPV-02", "WSTG-CLNT-01"]
+  - vuln: vuln.network.ssrf
+    top10_2025: [A05]
+    api_security_2023: [API7]
+    asvs: ["V5", "V12"]
+    wstg: ["WSTG-SRVS-19"]
+  - vuln: vuln.supply.dependency-risk
+    top10_2025: [A03]
+    asvs: ["V14"]
+    wstg: ["WSTG-CONF-09"]
+  - vuln: vuln.ai.prompt-injection
+    genai_llm_2025: [LLM01, LLM06]
+    agentic_2025: [ASI01, ASI02]
+  - vuln: vuln.ai.output-handling
+    genai_llm_2025: [LLM05]
+    agentic_2025: [ASI02, ASI05]

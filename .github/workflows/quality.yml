@@ -1,0 +1,15 @@
+name: knowledge-quality
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate generated indexes and defensive cards
+        run: |
+          python3 scripts/build_indexes.py
+          python3 scripts/validate_repo.py

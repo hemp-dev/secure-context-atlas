@@ -1,0 +1,32 @@
+schema_version: "1.0"
+project:
+  name: "Secure Context Atlas"
+  release: "0.1.0"
+  release_date: "2026-08-07"
+  release_channel: "foundational-preview"
+generated_at: "2026-08-07"
+machine_readable:
+  cwe:
+    version: "4.20"
+    release_date: "2026-04-30"
+    download_url: https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip
+    entries_total: 969
+    entries_active: 944
+    entries_deprecated: 25
+    generated_files: ["ai/cwe-index.json", "ai/cwe-coverage.json"]
+  capec:
+    version: "3.9"
+    release_date: "2023-01-24"
+    download_url: https://capec.mitre.org/data/xml/capec_v3.9.xml
+    entries_total: 615
+    generated_files: ["ai/capec-index.json"]
+standards:
+  owasp_top10: "2025"
+  owasp_api_security: "2023"
+  owasp_asvs: "5.0.0"
+  owasp_wstg: "v4.2 stable; v5.0 latest development snapshot"
+  owasp_masvs: "current site snapshot 2026-08-07; MASVS/MASWE/MASTG identifiers version-aware"
+  owasp_genai_llm: "2025"
+  owasp_agentic: "current guidance, separately versioned"
+  owasp_masvs_mastg_maswe: "current project release; IDs kept version-aware"
+  cwe_top25: "2025"

@@ -1,0 +1,63 @@
+schema_version: "1.0"
+note: "This is a reviewed high-priority crosswalk; complete machine coverage is in ai/cwe-coverage.json."
+records:
+  - vuln: vuln.authorization.idor
+    canonical_cwe: CWE-862
+    related_cwe: [CWE-639, CWE-863, CWE-732]
+  - vuln: vuln.authorization.function-level
+    canonical_cwe: CWE-862
+    related_cwe: [CWE-863, CWE-276]
+  - vuln: vuln.authentication.session
+    canonical_cwe: CWE-384
+    related_cwe: [CWE-613, CWE-614, CWE-1004]
+  - vuln: vuln.injection.sql
+    canonical_cwe: CWE-89
+    related_cwe: [CWE-20, CWE-943]
+  - vuln: vuln.injection.xxe
+    canonical_cwe: CWE-611
+    related_cwe: [CWE-827, CWE-776]
+  - vuln: vuln.browser.xss
+    canonical_cwe: CWE-79
+    related_cwe: [CWE-116, CWE-829]
+  - vuln: vuln.browser.csrf
+    canonical_cwe: CWE-352
+    related_cwe: [CWE-1275]
+  - vuln: vuln.http.request-smuggling
+    canonical_cwe: CWE-444
+    related_cwe: [CWE-345, CWE-436]
+  - vuln: vuln.network.ssrf
+    canonical_cwe: CWE-918
+    related_cwe: [CWE-441, CWE-610]
+  - vuln: vuln.files.path-traversal
+    canonical_cwe: CWE-22
+    related_cwe: [CWE-23, CWE-36, CWE-73]
+  - vuln: vuln.files.upload
+    canonical_cwe: CWE-434
+    related_cwe: [CWE-20, CWE-79, CWE-22]
+  - vuln: vuln.serialization.unsafe-deserialization
+    canonical_cwe: CWE-502
+    related_cwe: [CWE-915, CWE-1321]
+  - vuln: vuln.business.race-condition
+    canonical_cwe: CWE-362
+    related_cwe: [CWE-367]
+  - vuln: vuln.secrets.hardcoded
+    canonical_cwe: CWE-798
+    related_cwe: [CWE-259, CWE-321, CWE-522]
+  - vuln: vuln.crypto.randomness
+    canonical_cwe: CWE-338
+    related_cwe: [CWE-330, CWE-327]
+  - vuln: vuln.supply.dependency-risk
+    canonical_cwe: CWE-1395
+    related_cwe: [CWE-1104, CWE-494, CWE-829]
+  - vuln: vuln.cloud.iam
+    canonical_cwe: CWE-732
+    related_cwe: [CWE-284, CWE-862, CWE-269]
+  - vuln: vuln.native.memory-safety
+    canonical_cwe: CWE-119
+    related_cwe: [CWE-125, CWE-787, CWE-416]
+  - vuln: vuln.ai.prompt-injection
+    canonical_cwe: CWE-1427
+    related_cwe: [CWE-20, CWE-74, CWE-693]
+  - vuln: vuln.ai.output-handling
+    canonical_cwe: CWE-116
+    related_cwe: [CWE-79, CWE-601]

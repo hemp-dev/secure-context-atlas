@@ -1,0 +1,21 @@
+schema_version: "1.0"
+note: "CAPEC is an attack-pattern mapping layer, not a replacement for CWE root cause."
+records:
+  - vuln: vuln.authorization.idor
+    capec: [CAPEC-1, CAPEC-122]
+  - vuln: vuln.injection.sql
+    capec: [CAPEC-66, CAPEC-108]
+  - vuln: vuln.browser.xss
+    capec: [CAPEC-63, CAPEC-198]
+  - vuln: vuln.network.ssrf
+    capec: [CAPEC-664]
+  - vuln: vuln.files.path-traversal
+    capec: [CAPEC-126, CAPEC-139]
+  - vuln: vuln.serialization.unsafe-deserialization
+    capec: [CAPEC-586]
+  - vuln: vuln.business.race-condition
+    capec: [CAPEC-26, CAPEC-29]
+  - vuln: vuln.ai.prompt-injection
+    capec: [CAPEC-77]
+  - vuln: vuln.ai.excessive-agency
+    capec: [CAPEC-122, CAPEC-664]

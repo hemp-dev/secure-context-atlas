@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-ai-audit.invalid/schemas/technique.schema.json",
+  "title": "Defensive audit technique",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "purpose", "when_to_use", "inputs", "outputs", "safe_boundaries", "references"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^tech\\.[a-z0-9][a-z0-9.-]*$"},
+    "title": {"type": "string", "minLength": 3},
+    "purpose": {"type": "string", "minLength": 10},
+    "when_to_use": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "inputs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "outputs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "safe_boundaries": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "references": {"type": "array", "items": {"type": "string", "format": "uri-reference"}}
+  }
+}

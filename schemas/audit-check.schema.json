@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-ai-audit.invalid/schemas/audit-check.schema.json",
+  "title": "AI audit check",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "surface", "question", "evidence", "safe_test", "failure_mapping", "false_positive"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^check\\.[a-z0-9][a-z0-9.-]*$"},
+    "title": {"type": "string", "minLength": 3},
+    "surface": {"type": "string"},
+    "question": {"type": "string", "minLength": 10},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "safe_test": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "failure_mapping": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "false_positive": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,281 @@
+schema_version: "1.0"
+retrieved_at: "2026-08-07"
+purpose: "Defensive provenance for taxonomy, standards crosswalks and AI audit routing"
+sources:
+  - id: patt
+    name: PayloadsAllTheThings
+    url: https://github.com/swisskyrepo/PayloadsAllTheThings
+    repository: https://github.com/swisskyrepo/PayloadsAllTheThings.git
+    purpose: "Topic discovery and variant vocabulary; payload bodies excluded"
+    license: "MIT; verify upstream terms before redistribution"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["directory/topic names", "defensive topic summaries", "aliases"]
+    content_excluded: ["payloads", "bypass strings", "web shells", "exploit chains"]
+    update_strategy: "Review upstream tree and release/commit quarterly"
+  - id: hacktricks
+    name: HackTricks
+    url: https://github.com/HackTricks-wiki/hacktricks
+    repository: https://github.com/HackTricks-wiki/hacktricks.git
+    purpose: "Broad web, cloud, host, mobile, hardware, blockchain and AI topic discovery"
+    license: "Upstream license applies; excerpts are not embedded"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["topic taxonomy", "defensive control prompts", "source links"]
+    content_excluded: ["operational exploit commands", "secrets", "payloads"]
+    update_strategy: "Review upstream navigation and relevant pages quarterly"
+  - id: seclists
+    name: SecLists
+    url: https://github.com/danielmiessler/SecLists
+    repository: https://github.com/danielmiessler/SecLists.git
+    purpose: "Dataset vocabulary and coverage hints; never auto-loaded into model context"
+    license: "MIT for repository; individual files may have their own terms"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["dataset categories", "safe manifest metadata"]
+    content_excluded: ["passwords", "usernames", "web shells", "raw fuzzing lists"]
+    update_strategy: "Review categories and license metadata before opt-in import"
+  - id: awesome-hacking
+    name: Awesome-Hacking
+    url: https://github.com/Hack-with-Github/Awesome-Hacking
+    repository: https://github.com/Hack-with-Github/Awesome-Hacking.git
+    purpose: "Discovery of related projects and defensive references"
+    license: "Upstream license applies; links are referenced, content is not mirrored"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["related project links", "topic labels"]
+    content_excluded: ["third-party project content", "payloads", "exploit code"]
+    update_strategy: "Review links quarterly and de-duplicate against canonical sources"
+  - id: awesome-bug-bounty
+    name: Awesome Bug Bounty
+    url: https://github.com/djadmin/awesome-bug-bounty
+    repository: https://github.com/djadmin/awesome-bug-bounty.git
+    purpose: "Bug bounty workflow and report-topic discovery"
+    license: "Upstream license applies; reports and links are not copied"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["topic labels", "workflow references"]
+    content_excluded: ["private program data", "unverified write-up steps", "payloads"]
+    update_strategy: "Review links quarterly"
+  - id: mitre-cwe
+    name: MITRE CWE
+    url: https://cwe.mitre.org/data/downloads.html
+    repository: https://cwe.mitre.org/
+    purpose: "Canonical weakness ontology and machine-readable coverage"
+    license: "MITRE terms; see sources/licenses.yaml"
+    version: "4.20"
+    content_included: ["all XML entry metadata", "relationships", "CWE to CAPEC references"]
+    content_excluded: ["none from the compact index; long prose is not copied verbatim"]
+    update_strategy: "Fetch current machine-readable release; regenerate and review count"
+  - id: mitre-capec
+    name: MITRE CAPEC
+    url: https://capec.mitre.org/data/downloads.html
+    repository: https://capec.mitre.org/
+    purpose: "Attack-pattern layer kept separate from root-cause weakness taxonomy"
+    license: "MITRE terms; see sources/licenses.yaml"
+    version: "3.9"
+    content_included: ["all attack-pattern IDs, names, relationships, mappings"]
+    content_excluded: ["long examples and operational attack instructions"]
+    update_strategy: "Fetch current XML release and regenerate compact index"
+  - id: owasp-asvs
+    name: OWASP ASVS
+    url: https://owasp.org/www-project-application-security-verification-standard/
+    purpose: "Testable web application verification requirements"
+    license: "CC BY-SA 4.0"
+    version: "5.0.0"
+    content_included: ["section identifiers and control themes"]
+    content_excluded: ["full standard text"]
+    update_strategy: "Review release and control identifiers on major versions"
+  - id: owasp-wstg
+    name: OWASP Web Security Testing Guide
+    url: https://owasp.org/www-project-web-security-testing-guide/
+    purpose: "Web testing scenario crosswalk and safe verification vocabulary"
+    license: "CC BY-SA 4.0"
+    version: "v4.2 stable; latest development v5.0 observed 2026-08-07"
+    content_included: ["test IDs and topic labels"]
+    content_excluded: ["operational exploitation recipes"]
+    update_strategy: "Review release tags and mappings quarterly"
+  - id: owasp-api
+    name: OWASP API Security Top 10
+    url: https://owasp.org/API-Security/editions/2023/en/0x03-introduction/
+    purpose: "API-specific risk crosswalk"
+    license: "CC BY-SA 4.0"
+    version: "2023"
+    content_included: ["API1-API10 identifiers and themes"]
+    content_excluded: ["full examples and payloads"]
+    update_strategy: "Track new edition separately; never silently relabel prior IDs"
+  - id: owasp-genai
+    name: OWASP GenAI Security Project
+    url: https://genai.owasp.org/llmrisk/
+    purpose: "LLM, RAG, agentic and AI security crosswalk"
+    license: "CC BY-SA 4.0 where stated by project"
+    version: "2025 LLM Top 10 plus current agentic guidance"
+    content_included: ["risk IDs and control themes"]
+    content_excluded: ["jailbreak prompts and abuse recipes"]
+    update_strategy: "Track edition and agentic project updates independently"
+  - id: owasp-mobile
+    name: OWASP MASVS MASTG MASWE
+    url: https://mas.owasp.org/
+    purpose: "Mobile verification, testing and weakness crosswalk"
+    license: "CC BY-SA 4.0"
+    version: "current site snapshot 2026-08-07; MASVS/MASTG/MASWE IDs retained"
+    content_included: ["control/test/weakness identifiers"]
+    content_excluded: ["full test procedures and tooling output"]
+    update_strategy: "Review versioned releases"
+  - id: portswigger-academy
+    name: PortSwigger Web Security Academy
+    url: https://portswigger.net/web-security/all-materials
+    purpose: "Web topic and parser-differential discovery"
+    license: "Upstream terms; links only"
+    version: "current page observed 2026-08-07"
+    content_included: ["topic labels and canonical URLs"]
+    content_excluded: ["lab solutions, payloads, exploit steps"]
+    update_strategy: "Review topic index quarterly"
+  - id: fuzzdb
+    name: FuzzDB
+    url: https://github.com/fuzzdb-project/fuzzdb
+    purpose: "Attack-pattern and predictable-resource vocabulary; opt-in datasets only"
+    license: "MIT"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["directory categories", "safe manifest metadata"]
+    content_excluded: ["raw attack strings and web shells"]
+    update_strategy: "Review repository release and license metadata"
+  - id: vulhub
+    name: Vulhub
+    url: https://github.com/vulhub/vulhub
+    purpose: "Isolated vulnerable-lab references for local/staging verification"
+    license: "Upstream license applies"
+    version: "HEAD observed 2026-08-07"
+    content_included: ["lab names and CVE references"]
+    content_excluded: ["public deployment instructions", "exploit commands"]
+    update_strategy: "Reference only in isolated lab contexts"
+  - id: codeql
+    name: GitHub CodeQL
+    url: https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites
+    purpose: "Static-analysis abstraction and query-suite routing"
+    license: "GitHub terms; docs links only"
+    version: "current documentation observed 2026-08-07"
+    content_included: ["query-suite concepts", "language support labels"]
+    content_excluded: ["proprietary service output"]
+    update_strategy: "Track query-suite and language changes"
+  - id: semgrep
+    name: Semgrep Registry and Community Rules
+    url: https://semgrep.dev/docs/
+    purpose: "Pattern-based static-analysis routing"
+    license: "Per upstream rule/file; references only"
+    version: "current documentation observed 2026-08-07"
+    content_included: ["rule-family labels", "safe pattern concepts"]
+    content_excluded: ["unreviewed copied rules"]
+    update_strategy: "Pin reviewed rule references"
+  - id: gitleaks
+    name: Gitleaks
+    url: https://github.com/gitleaks/gitleaks
+    purpose: "Secret scanning and baseline-diff guidance"
+    license: "MIT"
+    version: "current repository metadata"
+    content_included: ["detector category labels"]
+    content_excluded: ["real secret examples"]
+    update_strategy: "Track releases and detector changes"
+  - id: osv
+    name: OSV.dev
+    url: https://osv.dev/docs/
+    purpose: "Dynamic package vulnerability adapter"
+    license: "OSV terms; API responses are not static taxonomy"
+    version: "live API"
+    content_included: ["adapter contract and normalized fields"]
+    content_excluded: ["cached advisory corpus"]
+    update_strategy: "Query at audit time with explicit package coordinates"
+  - id: github-advisory-db
+    name: GitHub Advisory Database
+    url: https://github.com/github/advisory-database
+    purpose: "Dynamic dependency advisory adapter"
+    license: "Per advisory; do not relicense records"
+    version: "live repository"
+    content_included: ["adapter contract and provenance fields"]
+    content_excluded: ["mirrored advisory corpus"]
+    update_strategy: "Query/pin by advisory identifier at audit time"
+  - id: openssf-scorecard
+    name: OpenSSF Scorecard
+    url: https://github.com/ossf/scorecard
+    purpose: "Supply-chain posture signal routing"
+    license: "Apache-2.0"
+    version: "current repository metadata"
+    content_included: ["check names and evidence guidance"]
+    content_excluded: ["unverified scores as findings"]
+    update_strategy: "Use current score with timestamp and repository context"
+  - id: assetnote-wordlists
+    name: Assetnote Wordlists
+    url: https://github.com/assetnote/wordlists
+    purpose: "Opt-in discovery dataset manifest"
+    license: "Upstream terms; not bundled"
+    version: "current repository metadata"
+    content_included: ["dataset manifest only"]
+    content_excluded: ["raw wordlists"]
+    update_strategy: "Explicitly pin, review and isolate before use"
+  - id: internal-all-the-things
+    name: InternalAllTheThings
+    url: https://github.com/swisskyrepo/InternalAllTheThings
+    purpose: "Internal enterprise/identity/cloud topic discovery"
+    license: "Upstream terms; links and topic labels only"
+    version: "current repository metadata"
+    content_included: ["topic labels"]
+    content_excluded: ["operational commands and secrets"]
+    update_strategy: "Review upstream navigation quarterly"
+  - id: hardware-all-the-things
+    name: HardwareAllTheThings
+    url: https://github.com/swisskyrepo/HardwareAllTheThings
+    purpose: "Hardware, firmware and physical-boundary topic discovery"
+    license: "Upstream terms; links and topic labels only"
+    version: "current repository metadata"
+    content_included: ["topic labels"]
+    content_excluded: ["device-specific intrusive procedures"]
+    update_strategy: "Review upstream navigation quarterly"
+  - id: awesome-web-security
+    name: Awesome Web Security
+    url: https://github.com/qazbnm456/awesome-web-security
+    purpose: "Web reference discovery"
+    license: "Upstream terms; links only"
+    version: "current repository metadata"
+    content_included: ["links and topic labels"]
+    content_excluded: ["third-party copied content"]
+    update_strategy: "Review links quarterly"
+  - id: pentest-book
+    name: Pentest Book
+    url: https://github.com/trimstray/the-book-of-secret-knowledge
+    purpose: "Operational context discovery; only defensive abstractions retained"
+    license: "Upstream terms; links only"
+    version: "current repository metadata"
+    content_included: ["topic labels and defensive controls"]
+    content_excluded: ["commands, secrets, and exploit recipes"]
+    update_strategy: "Review links and scope quarterly"
+  - id: owasp-cheat-sheets
+    name: OWASP Cheat Sheet Series
+    url: https://cheatsheetseries.owasp.org/
+    purpose: "Defensive implementation guidance for web, API, cloud, mobile, AI, supply chain and privacy"
+    license: "CC BY-SA 4.0"
+    version: "current site observed 2026-08-07"
+    content_included: ["sheet names, control themes and links"]
+    content_excluded: ["full copied sheet text", "payloads"]
+    update_strategy: "Review sheet index and major revisions quarterly"
+  - id: mitre-atlas
+    name: MITRE ATLAS
+    url: https://atlas.mitre.org/
+    purpose: "Adversarial AI/ML tactics and techniques crosswalk"
+    license: "MITRE terms; links and IDs only"
+    version: "living knowledge base observed 2026-08-07"
+    content_included: ["technique IDs and defensive mapping prompts"]
+    content_excluded: ["operational attack playbooks"]
+    update_strategy: "Track version/site changes separately from CWE"
+  - id: garak
+    name: NVIDIA garak
+    url: https://github.com/NVIDIA/garak
+    purpose: "AI/LLM probe-category discovery and safe test planning"
+    license: "Upstream license applies; probes are not copied"
+    version: "repository metadata observed 2026-08-07"
+    content_included: ["vulnerability categories and probe concepts"]
+    content_excluded: ["jailbreak strings, abuse prompts and live scanning"]
+    update_strategy: "Review release and probe taxonomy before lab use"
+  - id: promptfoo
+    name: Promptfoo
+    url: https://github.com/promptfoo/promptfoo
+    purpose: "LLM evaluation/red-team category discovery and regression harness concepts"
+    license: "Upstream license applies; configs are not mirrored"
+    version: "repository metadata observed 2026-08-07"
+    content_included: ["evaluation dimensions and safe harness concepts"]
+    content_excluded: ["live target configurations and abuse prompts"]
+    update_strategy: "Pin reviewed release for authorized local evaluation"

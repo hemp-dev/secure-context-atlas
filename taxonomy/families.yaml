@@ -1,0 +1,70 @@
+schema_version: "1.0"
+canonical_namespace: MITRE-CWE
+stable_record_namespace: vuln
+families:
+  - id: authorization-access
+    title: Authorization, access control and tenant isolation
+    triggers: ["IDOR", "BOLA", "BFLA", "mass assignment", "tenant", "object property"]
+  - id: authentication-identity
+    title: Authentication, account lifecycle and identity federation
+    triggers: ["login", "MFA", "password reset", "OAuth", "OIDC", "SAML", "JWT", "session"]
+  - id: injection
+    title: Injection and unsafe interpretation
+    triggers: ["SQL", "NoSQL", "LDAP", "XPath", "XXE", "template", "shell", "expression"]
+  - id: browser-client
+    title: Browser, DOM, cross-origin and client-side trust
+    triggers: ["XSS", "CSRF", "CORS", "postMessage", "clickjacking", "DOM"]
+  - id: http-proxy-cache
+    title: HTTP parsing, proxy, cache and protocol differentials
+    triggers: ["request smuggling", "desync", "cache poisoning", "host header", "redirect"]
+  - id: ssrf-network
+    title: SSRF, network reachability and name resolution
+    triggers: ["SSRF", "DNS rebinding", "metadata", "redirect", "allowlist"]
+  - id: files-paths-storage
+    title: Files, paths, uploads, archives and object storage
+    triggers: ["traversal", "LFI", "RFI", "upload", "Zip Slip", "decompression"]
+  - id: serialization-parsers
+    title: Serialization, deserialization and parser differentials
+    triggers: ["deserialization", "prototype pollution", "parser", "polyglot", "schema"]
+  - id: business-logic-state
+    title: Business logic, workflows and state integrity
+    triggers: ["workflow", "payment", "replay", "race", "idempotency", "TOCTOU"]
+  - id: availability-resources
+    title: Availability, resource exhaustion and algorithmic DoS
+    triggers: ["DoS", "ReDoS", "rate limit", "batch", "parser bomb", "quota"]
+  - id: information-secrets-privacy
+    title: Information disclosure, secrets and privacy
+    triggers: ["secret", "log", "error", "PII", "privacy", "side channel"]
+  - id: crypto-transport
+    title: Cryptography, randomness, key and transport security
+    triggers: ["TLS", "randomness", "password storage", "signature", "replay", "key management"]
+  - id: configuration-deployment
+    title: Configuration, deployment and exceptional conditions
+    triggers: ["misconfiguration", "default", "debug", "fail open", "exception", "timeout"]
+  - id: api-protocols
+    title: REST, GraphQL, gRPC, WebSocket, RPC and webhooks
+    triggers: ["REST", "GraphQL", "gRPC", "WebSocket", "webhook", "API inventory"]
+  - id: supply-chain-cicd
+    title: Dependencies, supply chain, SCM and CI/CD
+    triggers: ["dependency", "typosquatting", "lockfile", "action", "artifact", "secret scanning"]
+  - id: native-memory
+    title: Native code, memory safety and runtime boundaries
+    triggers: ["buffer", "use-after-free", "format string", "FFI", "sandbox"]
+  - id: cloud-containers-infra
+    title: Cloud IAM, storage, containers, Kubernetes and serverless
+    triggers: ["IAM", "metadata", "S3", "Kubernetes", "container", "serverless"]
+  - id: mobile
+    title: Android, iOS, mobile clients and thick clients
+    triggers: ["MASVS", "MASTG", "deep link", "WebView", "IPC", "keystore"]
+  - id: ai-llm-rag-agents
+    title: AI, LLM, RAG, agents and MCP
+    triggers: ["prompt injection", "RAG", "tool", "MCP", "model", "agent", "output"]
+  - id: internal-enterprise
+    title: Internal infrastructure, AD, identity protocols and enterprise services
+    triggers: ["AD", "LDAP", "Kerberos", "SMB", "NTLM", "credential relay"]
+  - id: hardware-firmware-iot
+    title: Hardware, firmware, IoT and physical/safety boundaries
+    triggers: ["firmware", "secure boot", "UART", "JTAG", "BLE", "safety"]
+  - id: web3-smart-contracts
+    title: Blockchain, smart contracts, wallets and dApps
+    triggers: ["reentrancy", "oracle", "bridge", "front-running", "wallet", "upgrade"]

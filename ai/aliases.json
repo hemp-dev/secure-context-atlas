@@ -1,0 +1,314 @@
+{
+  "alias_to_ids": {
+    "agent goal hijack": [
+      "vuln.ai.prompt-injection"
+    ],
+    "authorization bypass through user-controlled key": [
+      "vuln.authorization.idor-bola"
+    ],
+    "bfla": [
+      "vuln.authorization.function-level"
+    ],
+    "bola": [
+      "vuln.authorization.idor"
+    ],
+    "broken function level authorization": [
+      "vuln.authorization.function-level"
+    ],
+    "broken object level authorization": [
+      "vuln.authorization.idor"
+    ],
+    "cl.te": [
+      "vuln.http.request-smuggling"
+    ],
+    "client desync": [
+      "vuln.http.request-smuggling"
+    ],
+    "cloud metadata access": [
+      "vuln.network.ssrf"
+    ],
+    "cross-site request forgery": [
+      "vuln.browser.csrf"
+    ],
+    "cross-site scripting": [
+      "vuln.browser.xss"
+    ],
+    "csrf": [
+      "vuln.browser.csrf"
+    ],
+    "csti": [
+      "vuln.injection.csti"
+    ],
+    "cswsh": [
+      "vuln.browser.cswsh"
+    ],
+    "cwe-639": [
+      "vuln.authorization.idor-bola"
+    ],
+    "dependency confusion": [
+      "vuln.supply.dependency-risk"
+    ],
+    "desync": [
+      "vuln.http.request-smuggling"
+    ],
+    "directory traversal": [
+      "vuln.files.path-traversal"
+    ],
+    "document/operator injection": [
+      "vuln.injection.nosql"
+    ],
+    "dom xss": [
+      "vuln.browser.xss"
+    ],
+    "el": [
+      "vuln.injection.expression"
+    ],
+    "excessive agency": [
+      "vuln.ai.excessive-agency"
+    ],
+    "http request smuggling": [
+      "vuln.http.request-smuggling"
+    ],
+    "idor": [
+      "vuln.authorization.idor"
+    ],
+    "indirect prompt injection": [
+      "vuln.ai.prompt-injection"
+    ],
+    "insecure deserialization": [
+      "vuln.serialization.unsafe-deserialization"
+    ],
+    "llm01": [
+      "vuln.ai.prompt-injection"
+    ],
+    "llm06": [
+      "vuln.ai.excessive-agency"
+    ],
+    "mass assignment": [
+      "vuln.authorization.object-property"
+    ],
+    "mxss": [
+      "vuln.browser.xss-mutated"
+    ],
+    "object authorization": [
+      "vuln.authorization.idor"
+    ],
+    "ognl": [
+      "vuln.injection.expression"
+    ],
+    "orm leak": [
+      "vuln.injection.orm"
+    ],
+    "over-posting": [
+      "vuln.authorization.object-property"
+    ],
+    "over-privileged agent": [
+      "vuln.ai.excessive-agency"
+    ],
+    "path traversal": [
+      "vuln.files.path-traversal"
+    ],
+    "prompt injection": [
+      "vuln.ai.prompt-injection"
+    ],
+    "race condition": [
+      "vuln.business.race-condition"
+    ],
+    "reflected xss": [
+      "vuln.browser.xss"
+    ],
+    "second-order sql injection": [
+      "vuln.injection.sql"
+    ],
+    "server-side request forgery": [
+      "vuln.network.ssrf"
+    ],
+    "session riding": [
+      "vuln.browser.csrf"
+    ],
+    "spel": [
+      "vuln.injection.expression"
+    ],
+    "sql injection": [
+      "vuln.injection.sql"
+    ],
+    "sqli": [
+      "vuln.injection.sql"
+    ],
+    "ssrf": [
+      "vuln.network.ssrf"
+    ],
+    "ssti": [
+      "vuln.injection.ssti"
+    ],
+    "stored xss": [
+      "vuln.browser.xss"
+    ],
+    "te.cl": [
+      "vuln.http.request-smuggling"
+    ],
+    "time-of-check time-of-use": [
+      "vuln.business.race-condition"
+    ],
+    "toctou": [
+      "vuln.business.race-condition"
+    ],
+    "tool misuse": [
+      "vuln.ai.excessive-agency"
+    ],
+    "typosquatting": [
+      "vuln.supply.dependency-risk"
+    ],
+    "unsafe object deserialization": [
+      "vuln.serialization.unsafe-deserialization"
+    ],
+    "vertical authorization": [
+      "vuln.authorization.function-level"
+    ],
+    "vulnerable component": [
+      "vuln.supply.dependency-risk"
+    ],
+    "xml entity expansion": [
+      "vuln.injection.xxe"
+    ],
+    "xml external entity": [
+      "vuln.injection.xxe"
+    ],
+    "xss": [
+      "vuln.browser.xss"
+    ],
+    "xssi": [
+      "vuln.browser.xssi"
+    ],
+    "xxe": [
+      "vuln.injection.xml-xxe",
+      "vuln.injection.xxe"
+    ],
+    "zip slip": [
+      "vuln.files.path-traversal"
+    ]
+  },
+  "aliases": {
+    "vuln.ai.excessive-agency": [
+      "LLM06",
+      "excessive agency",
+      "over-privileged agent",
+      "tool misuse"
+    ],
+    "vuln.ai.prompt-injection": [
+      "LLM01",
+      "agent goal hijack",
+      "indirect prompt injection",
+      "prompt injection"
+    ],
+    "vuln.authorization.function-level": [
+      "BFLA",
+      "broken function level authorization",
+      "vertical authorization"
+    ],
+    "vuln.authorization.idor": [
+      "BOLA",
+      "IDOR",
+      "broken object level authorization",
+      "object authorization"
+    ],
+    "vuln.authorization.idor-bola": [
+      "CWE-639",
+      "authorization bypass through user-controlled key"
+    ],
+    "vuln.authorization.object-property": [
+      "mass assignment",
+      "over-posting"
+    ],
+    "vuln.browser.csrf": [
+      "CSRF",
+      "cross-site request forgery",
+      "session riding"
+    ],
+    "vuln.browser.cswsh": [
+      "CSWSH"
+    ],
+    "vuln.browser.xss": [
+      "DOM XSS",
+      "XSS",
+      "cross-site scripting",
+      "reflected XSS",
+      "stored XSS"
+    ],
+    "vuln.browser.xss-mutated": [
+      "mXSS"
+    ],
+    "vuln.browser.xssi": [
+      "XSSI"
+    ],
+    "vuln.business.race-condition": [
+      "TOCTOU",
+      "race condition",
+      "time-of-check time-of-use"
+    ],
+    "vuln.files.path-traversal": [
+      "Zip Slip",
+      "directory traversal",
+      "path traversal"
+    ],
+    "vuln.http.request-smuggling": [
+      "CL.TE",
+      "HTTP request smuggling",
+      "TE.CL",
+      "client desync",
+      "desync"
+    ],
+    "vuln.injection.csti": [
+      "CSTI"
+    ],
+    "vuln.injection.expression": [
+      "EL",
+      "OGNL",
+      "SpEL"
+    ],
+    "vuln.injection.nosql": [
+      "document/operator injection"
+    ],
+    "vuln.injection.orm": [
+      "ORM leak"
+    ],
+    "vuln.injection.sql": [
+      "SQL injection",
+      "SQLi",
+      "second-order SQL injection"
+    ],
+    "vuln.injection.ssti": [
+      "SSTI"
+    ],
+    "vuln.injection.xml-xxe": [
+      "XXE"
+    ],
+    "vuln.injection.xxe": [
+      "XML entity expansion",
+      "XML external entity",
+      "XXE"
+    ],
+    "vuln.network.ssrf": [
+      "SSRF",
+      "cloud metadata access",
+      "server-side request forgery"
+    ],
+    "vuln.serialization.unsafe-deserialization": [
+      "insecure deserialization",
+      "unsafe object deserialization"
+    ],
+    "vuln.supply.dependency-risk": [
+      "dependency confusion",
+      "typosquatting",
+      "vulnerable component"
+    ]
+  },
+  "ambiguous_aliases": {
+    "xxe": [
+      "vuln.injection.xml-xxe",
+      "vuln.injection.xxe"
+    ]
+  },
+  "generated_at": "2026-08-07",
+  "schema_version": "1.0"
+}
