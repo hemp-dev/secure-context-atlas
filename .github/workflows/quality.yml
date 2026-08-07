@@ -20,4 +20,4 @@ jobs:
           python3 scripts/validate_rules.py
           python3 scripts/validate_threat_models.py
           python3 scripts/validate_release.py
-          python3 -m unittest discover -s tests -v
+          python3 -B -m unittest discover -s tests -v
