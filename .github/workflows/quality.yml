@@ -11,5 +11,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate generated indexes and defensive cards
         run: |
-          python3 scripts/build_indexes.py
+          python3 scripts/build_indexes.py --fetch
           python3 scripts/validate_repo.py
