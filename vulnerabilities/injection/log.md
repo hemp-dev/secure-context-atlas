@@ -37,9 +37,9 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/117.html"]
 source_provenance: ["sources/research-notes.md:normalized defensive topic","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-08"
-maturity: "curated"
+maturity: "scaffolded"
 priority: "P1"
-review_status: "reviewed"
+review_status: "needs-review"
 fixture_ids: ["eval.log.positive","eval.log.negative"]
 detector_refs: []
 ---

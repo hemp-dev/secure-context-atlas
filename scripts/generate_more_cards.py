@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add the cross-family cards and apply reviewed crosswalks to all cards."""
+"""Add the cross-family cards and apply normalized crosswalks to all cards."""
 from __future__ import annotations
 
 import sys

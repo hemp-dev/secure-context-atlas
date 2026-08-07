@@ -1,5 +1,6 @@
 {
   "schema_version": "1.0",
+  "execution_mode": "contract-only",
   "detectors": ["semgrep", "codeql"],
   "rules": [
     {"id": "rule.semgrep.injection.nosql-operator", "detector": "semgrep", "path": "rules/semgrep/nosql-operator.yaml", "vulnerability_id": "vuln.injection.nosql", "fixture": "evals/fixtures/nosql-positive.json"},

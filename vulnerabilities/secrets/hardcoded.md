@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/798.html","https://github.com/gitleaks/gitleaks"]
 source_provenance: ["sources/manifest.yaml:gitleaks","sources/manifest.yaml:mitre-cwe","sources/manifest.yaml:seclists"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Hardcoded secrets and secret residue

@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.cloud.iam","vuln.api.graphql"]
 references: ["https://cwe.mitre.org/data/definitions/918.html","https://owasp.org/API-Security/editions/2023/en/0xa6-server-side-request-forgery/"]
 source_provenance: ["sources/manifest.yaml:owasp-api","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Server-side request forgery and unsafe URL fetching

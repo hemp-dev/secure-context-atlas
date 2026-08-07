@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/400.html","https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/"]
 source_provenance: ["sources/manifest.yaml:owasp-api","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Unbounded resource consumption and algorithmic DoS

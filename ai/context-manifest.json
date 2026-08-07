@@ -1,7 +1,11 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
+  "release": "0.6.0",
   "format": "jsonl-or-markdown",
   "producer": "scripts/sctx.py",
+  "pack_schema": "schemas/context-pack.schema.json",
+  "default_maturity": ["curated", "production-ready", "tested"],
+  "provenance": ["ai/index.json", "sources/lock.json"],
   "supported_commands": ["list", "show", "search", "pack", "validate", "export-sarif"],
   "selection_dimensions": ["stack", "surface", "family", "query", "maturity"],
   "safety": {

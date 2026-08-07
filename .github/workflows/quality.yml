@@ -7,17 +7,23 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Install pinned validation dependencies
+        run: python3 -m pip install --disable-pip-version-check -r requirements-dev.txt
       - name: Validate generated indexes and defensive cards
         run: |
-          python3 scripts/build_indexes.py --fetch
-          python3 scripts/update_sources.py --write-lock --check
-          python3 scripts/run_eval.py --output ai/evaluation-report.json
-          python3 scripts/build_release_manifest.py
-          python3 scripts/validate_schemas.py
-          python3 scripts/validate_repo.py
-          python3 scripts/validate_rules.py
-          python3 scripts/validate_threat_models.py
-          python3 scripts/validate_release.py
+          python3 -B scripts/build_indexes.py --fetch
+          python3 -B scripts/update_sources.py --write-lock --check
+          python3 -B scripts/validate_sources.py
+          python3 -B scripts/run_eval.py --output ai/evaluation-report.json
+          python3 -B scripts/validate_schemas.py
+          python3 -B scripts/validate_repo.py
+          python3 -B scripts/validate_rules.py
+          python3 -B scripts/validate_threat_models.py
+          python3 -B scripts/build_release_manifest.py
+          python3 -B scripts/validate_release.py
           python3 -B -m unittest discover -s tests -v
+          git diff --exit-code

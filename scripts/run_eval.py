@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Run deterministic retrieval and fixture-safety checks."""
+"""Run deterministic retrieval, holdout and fixture-safety checks."""
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +61,47 @@ def rank(query: str, cards: dict[str, dict]) -> list[tuple[int, str]]:
     return sorted(scored, key=lambda item: (-item[0], item[1]))
 
 
+def evaluate_holdout(cards: dict[str, dict]) -> tuple[dict, list[str]]:
+    path = ROOT / "evals/holdout/cases.json"
+    errors: list[str] = []
+    if not path.exists():
+        return {"fixture_count": 0, "hits_at_5": 0, "recall_at_5": 0.0, "mrr": 0.0, "leakage_count": 0, "cases": []}, ["missing holdout: evals/holdout/cases.json"]
+    cases = json.loads(path.read_text(encoding="utf-8"))
+    results = []
+    hits = 0
+    reciprocal_rank = 0.0
+    leakage_count = 0
+    for case in cases:
+        target = case.get("vulnerability_id")
+        if target not in cards:
+            errors.append(f"holdout references unknown card: {target}")
+            continue
+        text = " ".join(str(case.get(key, "")) for key in ["query", "snippet"]).lower()
+        record = cards[target]["record"]
+        leakage_terms = [target.lower(), str(record.get("title", "")).lower(), str(record.get("canonical_cwe", "")).lower()]
+        leaked = [term for term in leakage_terms if term and term in text]
+        if leaked:
+            leakage_count += 1
+            errors.append(f"holdout leakage in {case.get('id')}: {', '.join(leaked)}")
+        ranked = rank(str(case.get("query", "")), cards)
+        ordered = [identifier for _, identifier in ranked[:5]]
+        position = next((index + 1 for index, item in enumerate(ranked) if item[1] == target), None)
+        hit = position is not None and position <= 5
+        hits += int(hit)
+        if position:
+            reciprocal_rank += 1 / position
+        results.append({"id": case.get("id"), "vulnerability_id": target, "retrieval_hit_at_5": hit, "rank": position, "top5": ordered})
+    total = len(results)
+    return {
+        "fixture_count": total,
+        "hits_at_5": hits,
+        "recall_at_5": round(hits / total, 4) if total else 0.0,
+        "mrr": round(reciprocal_rank / total, 4) if total else 0.0,
+        "leakage_count": leakage_count,
+        "cases": results,
+    }, errors
+
+
 def run(output: Path | None) -> int:
     manifest_path = ROOT / "evals/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -70,6 +110,8 @@ def run(output: Path | None) -> int:
     cases: list[dict] = []
     seen: set[str] = set()
     hits = 0
+    positive_hits = 0
+    positive_total = 0
     forbidden_count = 0
     for entry in manifest.get("fixtures", []):
         fixture_id = entry.get("id")
@@ -89,8 +131,6 @@ def run(output: Path | None) -> int:
             continue
         if fixture.get("polarity") not in {"positive", "negative", "ambiguous"}:
             errors.append(f"invalid fixture polarity: {fixture_id}")
-        # The safe_boundary field intentionally says what the fixture must not
-        # use; scan the synthetic case content, not its prohibition language.
         text = " ".join(str(fixture.get(key, "")) for key in ["query", "snippet"])
         if FORBIDDEN.search(text):
             forbidden_count += 1
@@ -98,22 +138,33 @@ def run(output: Path | None) -> int:
         top5 = [identifier for _, identifier in ranked[:5]]
         hit = vulnerability_id in top5
         hits += int(hit)
+        if fixture.get("polarity") == "positive":
+            positive_total += 1
+            positive_hits += int(hit)
         cases.append({"id": fixture_id, "vulnerability_id": vulnerability_id, "polarity": fixture.get("polarity"), "retrieval_hit_at_5": hit, "top5": top5})
 
     total = len(cases)
     recall = hits / total if total else 0.0
+    positive_recall = positive_hits / positive_total if positive_total else 0.0
+    holdout, holdout_errors = evaluate_holdout(cards)
+    errors.extend(holdout_errors)
     report = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "suite": manifest.get("suite"),
         "fixture_count": total,
         "retrieval_hits_at_5": hits,
         "retrieval_recall_at_5": round(recall, 4),
+        "positive_fixture_count": positive_total,
+        "positive_recall_at_5": round(positive_recall, 4),
         "forbidden_fixture_count": forbidden_count,
+        "holdout": holdout,
         "errors": errors,
         "cases": cases,
     }
     if recall < float(manifest.get("min_retrieval_recall_at_5", 0.0)):
         errors.append(f"retrieval recall {recall:.4f} below threshold")
+    if holdout["recall_at_5"] < float(manifest.get("min_holdout_recall_at_5", 0.0)):
+        errors.append(f"holdout recall {holdout['recall_at_5']:.4f} below threshold")
     if forbidden_count > int(manifest.get("max_forbidden_fixture_count", 0)):
         errors.append(f"forbidden fixture count {forbidden_count} above threshold")
     report["errors"] = errors
@@ -121,7 +172,7 @@ def run(output: Path | None) -> int:
     if output:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered, encoding="utf-8")
-    print(json.dumps({key: report[key] for key in ["suite", "fixture_count", "retrieval_hits_at_5", "retrieval_recall_at_5", "forbidden_fixture_count", "errors"]}, ensure_ascii=False, sort_keys=True))
+    print(json.dumps({key: report[key] for key in ["suite", "fixture_count", "retrieval_recall_at_5", "positive_recall_at_5", "forbidden_fixture_count", "holdout", "errors"]}, ensure_ascii=False, sort_keys=True))
     return 1 if errors else 0
 
 

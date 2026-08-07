@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-context-atlas.invalid/schemas/provenance.schema.json",
+  "title": "Secure Context Atlas source lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project", "release", "generated_at", "policy", "pins", "repository_pins"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "project": {"type": "string", "const": "Secure Context Atlas"},
+    "release": {"type": "string", "pattern": "^0\\.6\\.0$"},
+    "generated_at": {"type": "string", "format": "date"},
+    "policy": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
+    "pins": {
+      "type": "object",
+      "required": ["cwe", "capec"],
+      "additionalProperties": false,
+      "properties": {
+        "cwe": {"$ref": "#/$defs/artifact_pin"},
+        "capec": {"$ref": "#/$defs/artifact_pin"}
+      }
+    },
+    "repository_pins": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"$ref": "#/$defs/repository_pin"}
+    }
+  },
+  "$defs": {
+    "artifact_pin": {
+      "type": "object",
+      "required": ["version", "url", "sha256", "entries_total"],
+      "additionalProperties": false,
+      "properties": {
+        "version": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "entries_total": {"type": "integer", "minimum": 1},
+        "entries_active": {"type": "integer", "minimum": 0}
+      }
+    },
+    "repository_pin": {
+      "type": "object",
+      "required": ["url", "repository", "commit", "observed_at"],
+      "additionalProperties": false,
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "repository": {"type": "string", "format": "uri"},
+        "commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "observed_at": {"type": "string", "format": "date"}
+      }
+    }
+  }
+}

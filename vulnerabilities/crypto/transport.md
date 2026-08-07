@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/319.html"]
 source_provenance: ["sources/manifest.yaml:mitre-cwe","sources/manifest.yaml:owasp-asvs"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Cleartext or unauthenticated transport of sensitive data

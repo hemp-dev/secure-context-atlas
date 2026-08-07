@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/352.html","https://owasp.org/www-community/attacks/csrf"]
 source_provenance: ["sources/manifest.yaml:owasp-asvs","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Cross-site request forgery

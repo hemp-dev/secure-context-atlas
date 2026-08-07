@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/359.html"]
 source_provenance: ["sources/manifest.yaml:mitre-cwe","sources/manifest.yaml:owasp-genai"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Excessive collection, retention or secondary use of sensitive data

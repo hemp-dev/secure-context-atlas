@@ -8,7 +8,9 @@ sources:
     repository: https://github.com/swisskyrepo/PayloadsAllTheThings.git
     purpose: "Topic discovery and variant vocabulary; payload bodies excluded"
     license: "MIT; verify upstream terms before redistribution"
-    version: "HEAD observed 2026-08-07"
+    version: "commit a9d97e9a57e901d7cebc865e3037ca27f009d71b observed 2026-08-08"
+    commit: "a9d97e9a57e901d7cebc865e3037ca27f009d71b"
+    retrieved_at: "2026-08-08"
     content_included: ["directory/topic names", "defensive topic summaries", "aliases"]
     content_excluded: ["payloads", "bypass strings", "web shells", "exploit chains"]
     update_strategy: "Review upstream tree and release/commit quarterly"
@@ -18,7 +20,9 @@ sources:
     repository: https://github.com/HackTricks-wiki/hacktricks.git
     purpose: "Broad web, cloud, host, mobile, hardware, blockchain and AI topic discovery"
     license: "Upstream license applies; excerpts are not embedded"
-    version: "HEAD observed 2026-08-07"
+    version: "commit b4a826f21662ea383e31f510df5edcc13f20aff1 observed 2026-08-08"
+    commit: "b4a826f21662ea383e31f510df5edcc13f20aff1"
+    retrieved_at: "2026-08-08"
     content_included: ["topic taxonomy", "defensive control prompts", "source links"]
     content_excluded: ["operational exploit commands", "secrets", "payloads"]
     update_strategy: "Review upstream navigation and relevant pages quarterly"
@@ -28,7 +32,9 @@ sources:
     repository: https://github.com/danielmiessler/SecLists.git
     purpose: "Dataset vocabulary and coverage hints; never auto-loaded into model context"
     license: "MIT for repository; individual files may have their own terms"
-    version: "HEAD observed 2026-08-07"
+    version: "commit 03a61af885d5a724fe86ef8acc1df8771f77cd77 observed 2026-08-08"
+    commit: "03a61af885d5a724fe86ef8acc1df8771f77cd77"
+    retrieved_at: "2026-08-08"
     content_included: ["dataset categories", "safe manifest metadata"]
     content_excluded: ["passwords", "usernames", "web shells", "raw fuzzing lists"]
     update_strategy: "Review categories and license metadata before opt-in import"
@@ -38,7 +44,9 @@ sources:
     repository: https://github.com/Hack-with-Github/Awesome-Hacking.git
     purpose: "Discovery of related projects and defensive references"
     license: "Upstream license applies; links are referenced, content is not mirrored"
-    version: "HEAD observed 2026-08-07"
+    version: "commit b2bb13aa69b4f568a1bab0cbb17b7a00a350dc36 observed 2026-08-08"
+    commit: "b2bb13aa69b4f568a1bab0cbb17b7a00a350dc36"
+    retrieved_at: "2026-08-08"
     content_included: ["related project links", "topic labels"]
     content_excluded: ["third-party project content", "payloads", "exploit code"]
     update_strategy: "Review links quarterly and de-duplicate against canonical sources"
@@ -48,7 +56,9 @@ sources:
     repository: https://github.com/djadmin/awesome-bug-bounty.git
     purpose: "Bug bounty workflow and report-topic discovery"
     license: "Upstream license applies; reports and links are not copied"
-    version: "HEAD observed 2026-08-07"
+    version: "commit d63f5f44b41cc2dae0872fa50e211140838e2c87 observed 2026-08-08"
+    commit: "d63f5f44b41cc2dae0872fa50e211140838e2c87"
+    retrieved_at: "2026-08-08"
     content_included: ["topic labels", "workflow references"]
     content_excluded: ["private program data", "unverified write-up steps", "payloads"]
     update_strategy: "Review links quarterly"

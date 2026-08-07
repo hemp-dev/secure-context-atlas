@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://portswigger.net/web-security/websockets"]
 source_provenance: ["sources/manifest.yaml:portswigger-academy","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # WebSocket origin, authentication and message authorization failure

@@ -4,7 +4,7 @@
 
 Secure Context Atlas is a static defensive knowledge repository. It does not operate a hosted service and does not accept production credentials or live targets.
 
-Report repository security issues such as accidentally committed secrets, unsafe release automation, malicious dependency changes or a genuinely dangerous instruction in the knowledge base through a private maintainer channel. Do not open a public issue containing secrets, personal data or a working exploit chain.
+Report repository security issues such as accidentally committed secrets, unsafe release automation, malicious dependency changes or a genuinely dangerous instruction in the knowledge base through [GitHub private vulnerability reporting](https://github.com/hemp-dev/secure-context-atlas/security/advisories/new). If private reporting is unavailable, contact the repository maintainer through the GitHub profile for `hemp-dev`; do not open a public issue containing secrets, personal data or a working exploit chain. Maintainers target an acknowledgement within 3 business days.
 
 ## Safe reports
 

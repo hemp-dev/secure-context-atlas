@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.files.path-traversal","vuln.injection.xxe"]
 references: ["https://cwe.mitre.org/data/definitions/434.html","https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload"]
 source_provenance: ["sources/manifest.yaml:patt","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Unrestricted file upload and unsafe media processing

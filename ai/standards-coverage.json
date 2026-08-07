@@ -66,7 +66,8 @@
       "WSTG": "testing scenarios"
     }
   },
-  "curated_record_count": 111,
+  "curated_record_count": 44,
   "generated_at": "2026-08-08",
+  "scaffolded_record_count": 67,
   "schema_version": "1.0"
 }

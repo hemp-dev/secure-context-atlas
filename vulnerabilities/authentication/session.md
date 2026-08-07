@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.authentication.oauth-oidc-jwt","vuln.browser.csr
 references: ["https://cwe.mitre.org/data/definitions/384.html","https://owasp.org/www-project-application-security-verification-standard/"]
 source_provenance: ["sources/manifest.yaml:mitre-cwe","sources/manifest.yaml:owasp-asvs"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Session fixation, replay and invalidation failure

@@ -5,1831 +5,2136 @@
       "id": "vuln.injection.sql",
       "legacy_id": "INJ.SQL",
       "maturity": "curated",
-      "path": "vulnerabilities/injection/sql.md"
+      "path": "vulnerabilities/injection/sql.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.injection.nosql",
       "legacy_id": "INJ.NoSQL",
-      "maturity": "curated",
-      "path": "vulnerabilities/injection/nosql.md"
+      "maturity": "scaffolded",
+      "path": "vulnerabilities/injection/nosql.md",
+      "review_status": "needs-review"
     },
     {
       "id": "vuln.injection.orm",
       "legacy_id": "INJ.ORM",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.ldap",
       "legacy_id": "INJ.LDAP",
-      "maturity": "curated",
-      "path": "vulnerabilities/injection/ldap.md"
+      "maturity": "scaffolded",
+      "path": "vulnerabilities/injection/ldap.md",
+      "review_status": "needs-review"
     },
     {
       "id": "vuln.injection.xpath-xquery",
       "legacy_id": "INJ.XPath-XQuery",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.xml-xxe",
       "legacy_id": "INJ.XML-XXE",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.xslt",
       "legacy_id": "INJ.XSLT",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.ssti",
       "legacy_id": "INJ.SSTI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.csti",
       "legacy_id": "INJ.CSTI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.os-command",
       "legacy_id": "INJ.OS-command",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.code-eval",
       "legacy_id": "INJ.Code-Eval",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.expression",
       "legacy_id": "INJ.Expression",
       "maturity": "curated",
-      "path": "vulnerabilities/injection/expression.md"
+      "path": "vulnerabilities/injection/expression.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.injection.ssi-esi",
       "legacy_id": "INJ.SSI-ESI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.header-crlf",
       "legacy_id": "INJ.Header-CRLF",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.csv-formula",
       "legacy_id": "INJ.CSV-Formula",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.latex",
       "legacy_id": "INJ.LaTeX",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.graphql",
       "legacy_id": "INJ.GraphQL",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.parser",
       "legacy_id": "INJ.Parser",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.email-phone",
       "legacy_id": "INJ.Email-Phone",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.external-variable",
       "legacy_id": "INJ.External-Variable",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.injection.parameter-pollution",
       "legacy_id": "INJ.Parameter-Pollution",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xss-reflected",
       "legacy_id": "BRS.XSS-reflected",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xss-stored",
       "legacy_id": "BRS.XSS-stored",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xss-dom",
       "legacy_id": "BRS.XSS-DOM",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xss-blind",
       "legacy_id": "BRS.XSS-blind",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xss-mutated",
       "legacy_id": "BRS.XSS-mutated",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xss-context",
       "legacy_id": "BRS.XSS-context",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.html-dangling-markup",
       "legacy_id": "BRS.HTML-dangling-markup",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.css",
       "legacy_id": "BRS.CSS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.dom-clobbering",
       "legacy_id": "BRS.DOM-clobbering",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.dom-manipulation",
       "legacy_id": "BRS.DOM-manipulation",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.postmessage",
       "legacy_id": "BRS.postMessage",
-      "maturity": "curated",
-      "path": "vulnerabilities/browser/postmessage.md"
+      "maturity": "scaffolded",
+      "path": "vulnerabilities/browser/postmessage.md",
+      "review_status": "needs-review"
     },
     {
       "id": "vuln.browser.clickjacking",
       "legacy_id": "BRS.Clickjacking",
-      "maturity": "curated",
-      "path": "vulnerabilities/browser/clickjacking.md"
+      "maturity": "scaffolded",
+      "path": "vulnerabilities/browser/clickjacking.md",
+      "review_status": "needs-review"
     },
     {
       "id": "vuln.browser.tabnabbing",
       "legacy_id": "BRS.Tabnabbing",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.cors",
       "legacy_id": "BRS.CORS",
-      "maturity": "curated",
-      "path": "vulnerabilities/browser/cors.md"
+      "maturity": "scaffolded",
+      "path": "vulnerabilities/browser/cors.md",
+      "review_status": "needs-review"
     },
     {
       "id": "vuln.browser.csrf",
       "legacy_id": "BRS.CSRF",
       "maturity": "curated",
-      "path": "vulnerabilities/browser/csrf.md"
+      "path": "vulnerabilities/browser/csrf.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.browser.cswsh",
       "legacy_id": "BRS.CSWSH",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xs-leaks",
       "legacy_id": "BRS.XS-Leaks",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.xssi",
       "legacy_id": "BRS.XSSI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.csp",
       "legacy_id": "BRS.CSP",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.cache-browser",
       "legacy_id": "BRS.Cache-browser",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.browser.extension",
       "legacy_id": "BRS.Extension",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.broken-access-control",
       "legacy_id": "AUTH.Broken-Access-Control",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.idor-bola",
       "legacy_id": "AUTH.IDOR-BOLA",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.function-level",
       "legacy_id": "AUTH.Function-Level",
       "maturity": "curated",
-      "path": "vulnerabilities/authorization/function-level.md"
+      "path": "vulnerabilities/authorization/function-level.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.authorization.object-property",
       "legacy_id": "AUTH.Object-Property",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.tenant-isolation",
       "legacy_id": "AUTH.Tenant-Isolation",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.parameter-tampering",
       "legacy_id": "AUTH.Parameter-Tampering",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.login-bypass",
       "legacy_id": "AUTH.Login-Bypass",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.mfa-2fa",
       "legacy_id": "AUTH.MFA-2FA",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.captcha",
       "legacy_id": "AUTH.Captcha",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.registration",
       "legacy_id": "AUTH.Registration",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.password-reset",
       "legacy_id": "AUTH.Password-Reset",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.account-takeover",
       "legacy_id": "AUTH.Account-Takeover",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.brute-force",
       "legacy_id": "AUTH.Brute-Force",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.rate-limit",
       "legacy_id": "AUTH.Rate-Limit",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.session",
       "legacy_id": "AUTH.Session",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.cookie",
       "legacy_id": "AUTH.Cookie",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.jwt",
       "legacy_id": "AUTH.JWT",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.oauth-oidc",
       "legacy_id": "AUTH.OAuth-OIDC",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.saml",
       "legacy_id": "AUTH.SAML",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.type-juggling",
       "legacy_id": "AUTH.Type-Juggling",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.identifier",
       "legacy_id": "AUTH.Identifier",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.default-credentials",
       "legacy_id": "AUTH.Default-Credentials",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.management-interface",
       "legacy_id": "AUTH.Management-Interface",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.authorization.transaction-authorization",
       "legacy_id": "AUTH.Transaction-Authorization",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.rest",
       "legacy_id": "API.REST",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.graphql",
       "legacy_id": "API.GraphQL",
       "maturity": "curated",
-      "path": "vulnerabilities/api/graphql.md"
+      "path": "vulnerabilities/api/graphql.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.api.grpc-webservice",
       "legacy_id": "API.gRPC-WebService",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.websocket",
       "legacy_id": "API.WebSocket",
       "maturity": "curated",
-      "path": "vulnerabilities/api/websocket.md"
+      "path": "vulnerabilities/api/websocket.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.api.rpc-gwt",
       "legacy_id": "API.RPC-GWT",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.http-smuggling",
       "legacy_id": "API.HTTP-Smuggling",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.connection-desync",
       "legacy_id": "API.Connection-Desync",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.hop-by-hop",
       "legacy_id": "API.Hop-by-Hop",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.reverse-proxy",
       "legacy_id": "API.Reverse-Proxy",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.host-header",
       "legacy_id": "API.Host-Header",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.cache-poisoning",
       "legacy_id": "API.Cache-Poisoning",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.content-negotiation",
       "legacy_id": "API.Content-Negotiation",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.open-redirect",
       "legacy_id": "API.Open-Redirect",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.hidden-parameter",
       "legacy_id": "API.Hidden-Parameter",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.virtual-host",
       "legacy_id": "API.Virtual-Host",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.http-method",
       "legacy_id": "API.HTTP-Method",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.api.rate-batch",
       "legacy_id": "API.Rate-Batch",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.path-traversal",
       "legacy_id": "FILE.Path-Traversal",
       "maturity": "curated",
-      "path": "vulnerabilities/files/path-traversal.md"
+      "path": "vulnerabilities/files/path-traversal.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.files.client-side-path-traversal",
       "legacy_id": "FILE.Client-Side-Path-Traversal",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.lfi",
       "legacy_id": "FILE.LFI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.rfi",
       "legacy_id": "FILE.RFI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.arbitrary-file",
       "legacy_id": "FILE.Arbitrary-File",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.upload-type",
       "legacy_id": "FILE.Upload-Type",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.upload-polyglot",
       "legacy_id": "FILE.Upload-Polyglot",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.image-media-parser",
       "legacy_id": "FILE.Image-Media-Parser",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.archive-extraction",
       "legacy_id": "FILE.Archive-Extraction",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.decompression-bomb",
       "legacy_id": "FILE.Decompression-Bomb",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.ssrf",
       "legacy_id": "FILE.SSRF",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.ssrf-protocol",
       "legacy_id": "FILE.SSRF-Protocol",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.ssrf-dns",
       "legacy_id": "FILE.SSRF-DNS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.ssrf-cloud",
       "legacy_id": "FILE.SSRF-Cloud",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.headless-browser",
       "legacy_id": "FILE.Headless-Browser",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.files.pdf-document",
       "legacy_id": "FILE.PDF-Document",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.business-logic",
       "legacy_id": "LOG.Business-Logic",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.race-condition",
       "legacy_id": "LOG.Race-Condition",
       "maturity": "curated",
-      "path": "vulnerabilities/business/race-condition.md"
+      "path": "vulnerabilities/business/race-condition.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.business.payment",
       "legacy_id": "LOG.Payment",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.replay",
       "legacy_id": "LOG.Replay",
-      "maturity": "curated",
-      "path": "vulnerabilities/business/replay.md"
+      "maturity": "scaffolded",
+      "path": "vulnerabilities/business/replay.md",
+      "review_status": "needs-review"
     },
     {
       "id": "vuln.business.resource-exhaustion",
       "legacy_id": "LOG.Resource-Exhaustion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.dos",
       "legacy_id": "LOG.DoS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.redos",
       "legacy_id": "LOG.ReDoS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.parser-bomb",
       "legacy_id": "LOG.Parser-Bomb",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.timing-side-channel",
       "legacy_id": "LOG.Timing-Side-Channel",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.integer-precision",
       "legacy_id": "LOG.Integer-Precision",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.exception-handling",
       "legacy_id": "LOG.Exception-Handling",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.business.notification-workflow",
       "legacy_id": "LOG.Notification-Workflow",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.unsafe-deserialization",
       "legacy_id": "RUN.Unsafe-Deserialization",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.prototype-pollution",
       "legacy_id": "RUN.Prototype-Pollution",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.class-pollution",
       "legacy_id": "RUN.Class-Pollution",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.type-confusion",
       "legacy_id": "RUN.Type-Confusion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.reflection-jndi",
       "legacy_id": "RUN.Reflection-JNDI",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.dynamic-code",
       "legacy_id": "RUN.Dynamic-Code",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.expression",
       "legacy_id": "RUN.Expression",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.memory-corruption",
       "legacy_id": "RUN.Memory-Corruption",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.format-string",
       "legacy_id": "RUN.Format-String",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.integer-memory",
       "legacy_id": "RUN.Integer-Memory",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.sandbox-escape",
       "legacy_id": "RUN.Sandbox-Escape",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.runtime.unsafe-parser",
       "legacy_id": "RUN.Unsafe-Parser",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.secret-leak",
       "legacy_id": "CRY.Secret-Leak",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.scm-leak",
       "legacy_id": "CRY.SCM-Leak",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.hardcoded-secret",
       "legacy_id": "CRY.Hardcoded-Secret",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.log-leak",
       "legacy_id": "CRY.Log-Leak",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.password-storage",
       "legacy_id": "CRY.Password-Storage",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.randomness",
       "legacy_id": "CRY.Randomness",
       "maturity": "curated",
-      "path": "vulnerabilities/crypto/randomness.md"
+      "path": "vulnerabilities/crypto/randomness.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.crypto.tls",
       "legacy_id": "CRY.TLS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.key-management",
       "legacy_id": "CRY.Key-Management",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.signature-replay",
       "legacy_id": "CRY.Signature-Replay",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.data-protection",
       "legacy_id": "CRY.Data-Protection",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.crypto.privacy-reidentification",
       "legacy_id": "CRY.Privacy-Reidentification",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.vulnerable-component",
       "legacy_id": "SUP.Vulnerable-Component",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.dependency-confusion",
       "legacy_id": "SUP.Dependency-Confusion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.typosquatting",
       "legacy_id": "SUP.Typosquatting",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.package-takeover",
       "legacy_id": "SUP.Package-Takeover",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.lockfile",
       "legacy_id": "SUP.Lockfile",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.build-injection",
       "legacy_id": "SUP.Build-Injection",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.action-plugin",
       "legacy_id": "SUP.Action-Plugin",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.artifact-signing",
       "legacy_id": "SUP.Artifact-Signing",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.scm-access",
       "legacy_id": "SUP.SCM-Access",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.container-base",
       "legacy_id": "SUP.Container-Base",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.model-supply-chain",
       "legacy_id": "SUP.Model-Supply-Chain",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.supply.ai-tool-supply",
       "legacy_id": "SUP.AI-Tool-Supply",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.unauthenticated-service",
       "legacy_id": "NET.Unauthenticated-Service",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.default-credential",
       "legacy_id": "NET.Default-Credential",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.cleartext-legacy",
       "legacy_id": "NET.Cleartext-Legacy",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.firewall-acl",
       "legacy_id": "NET.Firewall-ACL",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.dns",
       "legacy_id": "NET.DNS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.name-resolution",
       "legacy_id": "NET.Name-Resolution",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.ipv6-dhcp",
       "legacy_id": "NET.IPv6-DHCP",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.credential-relay",
       "legacy_id": "NET.Credential-Relay",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.file-service",
       "legacy_id": "NET.File-Service",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.remote-access",
       "legacy_id": "NET.Remote-Access",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.directory-service",
       "legacy_id": "NET.Directory-Service",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.database-service",
       "legacy_id": "NET.Database-Service",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.message-service",
       "legacy_id": "NET.Message-Service",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.java-management",
       "legacy_id": "NET.Java-Management",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.container-api",
       "legacy_id": "NET.Container-API",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.container-isolation",
       "legacy_id": "NET.Container-Isolation",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.cloud-storage",
       "legacy_id": "NET.Cloud-Storage",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.cloud-iam",
       "legacy_id": "NET.Cloud-IAM",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.cloud-metadata",
       "legacy_id": "NET.Cloud-Metadata",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.serverless",
       "legacy_id": "NET.Serverless",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.cloud.ot-ics",
       "legacy_id": "NET.OT-ICS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.file-permission",
       "legacy_id": "HOST.File-Permission",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.suid-capability",
       "legacy_id": "HOST.SUID-Capability",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.service-cron",
       "legacy_id": "HOST.Service-Cron",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.path-dll",
       "legacy_id": "HOST.Path-DLL",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.windows-privilege",
       "legacy_id": "HOST.Windows-Privilege",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.kernel",
       "legacy_id": "HOST.Kernel",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.credential-residue",
       "legacy_id": "HOST.Credential-Residue",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.dpapi-tickets",
       "legacy_id": "HOST.DPAPI-Tickets",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.ssh-keys",
       "legacy_id": "HOST.SSH-Keys",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.persistence-config",
       "legacy_id": "HOST.Persistence-Config",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.sandbox-container",
       "legacy_id": "HOST.Sandbox-Container",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.script-macro",
       "legacy_id": "HOST.Script-Macro",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.clipboard",
       "legacy_id": "HOST.Clipboard",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.host.forensic-gap",
       "legacy_id": "HOST.Forensic-Gap",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.local-storage",
       "legacy_id": "MOB.Local-Storage",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.logs-screenshots",
       "legacy_id": "MOB.Logs-Screenshots",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.auth-session",
       "legacy_id": "MOB.Auth-Session",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.ipc-exported",
       "legacy_id": "MOB.IPC-Exported",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.deep-link",
       "legacy_id": "MOB.Deep-Link",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.webview",
       "legacy_id": "MOB.WebView",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.tls",
       "legacy_id": "MOB.TLS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.permissions",
       "legacy_id": "MOB.Permissions",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.debuggable",
       "legacy_id": "MOB.Debuggable",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.update",
       "legacy_id": "MOB.Update",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.tapjacking",
       "legacy_id": "MOB.Tapjacking",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.native-memory",
       "legacy_id": "MOB.Native-Memory",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.api-bola",
       "legacy_id": "MOB.API-BOLA",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.mobile.third-party-sdk",
       "legacy_id": "MOB.Third-Party-SDK",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.default-auth",
       "legacy_id": "IOT.Default-Auth",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.hardcoded-secret",
       "legacy_id": "IOT.Hardcoded-Secret",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.firmware-update",
       "legacy_id": "IOT.Firmware-Update",
       "maturity": "curated",
-      "path": "vulnerabilities/hardware/firmware-update.md"
+      "path": "vulnerabilities/hardware/firmware-update.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.hardware.secure-boot",
       "legacy_id": "IOT.Secure-Boot",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.debug-port",
       "legacy_id": "IOT.Debug-Port",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.memory-safety",
       "legacy_id": "IOT.Memory-Safety",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.network-service",
       "legacy_id": "IOT.Network-Service",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.rf-ble-nfc",
       "legacy_id": "IOT.RF-BLE-NFC",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.physical-tamper",
       "legacy_id": "IOT.Physical-Tamper",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.cloud-backend",
       "legacy_id": "IOT.Cloud-Backend",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.safety-control",
       "legacy_id": "IOT.Safety-Control",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.hardware.side-channel",
       "legacy_id": "IOT.Side-Channel",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.access-control",
       "legacy_id": "WEB3.Access-Control",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.reentrancy",
       "legacy_id": "WEB3.Reentrancy",
       "maturity": "curated",
-      "path": "vulnerabilities/web3/reentrancy.md"
+      "path": "vulnerabilities/web3/reentrancy.md",
+      "review_status": "reviewed"
     },
     {
       "id": "vuln.web3.external-call",
       "legacy_id": "WEB3.External-Call",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.oracle",
       "legacy_id": "WEB3.Oracle",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.flash-loan",
       "legacy_id": "WEB3.Flash-Loan",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.integer-precision",
       "legacy_id": "WEB3.Integer-Precision",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.signature-replay",
       "legacy_id": "WEB3.Signature-Replay",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.front-running",
       "legacy_id": "WEB3.Front-Running",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.upgrade-admin",
       "legacy_id": "WEB3.Upgrade-Admin",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.bridge",
       "legacy_id": "WEB3.Bridge",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.gas-dos",
       "legacy_id": "WEB3.Gas-DoS",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.wallet-key",
       "legacy_id": "WEB3.Wallet-Key",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.web3.dapp",
       "legacy_id": "WEB3.DApp",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.direct",
       "legacy_id": "AI.PROMPT.Direct",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.indirect",
       "legacy_id": "AI.PROMPT.Indirect",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.multimodal",
       "legacy_id": "AI.PROMPT.Multimodal",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.obfuscation",
       "legacy_id": "AI.PROMPT.Obfuscation",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.role-authority",
       "legacy_id": "AI.PROMPT.Role-Authority",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.jailbreak",
       "legacy_id": "AI.PROMPT.Jailbreak",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.leak",
       "legacy_id": "AI.PROMPT.Leak",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.priority-confusion",
       "legacy_id": "AI.PROMPT.Priority-Confusion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.goal-hijack",
       "legacy_id": "AI.PROMPT.Goal-Hijack",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.context-poisoning",
       "legacy_id": "AI.PROMPT.Context-Poisoning",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.prompt.memory-persistence",
       "legacy_id": "AI.PROMPT.Memory-Persistence",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.sensitive-disclosure",
       "legacy_id": "AI.DATA.Sensitive-Disclosure",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.cross-session",
       "legacy_id": "AI.DATA.Cross-Session",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.cross-tenant",
       "legacy_id": "AI.DATA.Cross-Tenant",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.rag-acl",
       "legacy_id": "AI.DATA.RAG-ACL",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.rag-poisoning",
       "legacy_id": "AI.DATA.RAG-Poisoning",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.metadata-injection",
       "legacy_id": "AI.DATA.Metadata-Injection",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.chunk-mixing",
       "legacy_id": "AI.DATA.Chunk-Mixing",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.vector-leak",
       "legacy_id": "AI.DATA.Vector-Leak",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.training-poisoning",
       "legacy_id": "AI.DATA.Training-Poisoning",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.memory-poisoning",
       "legacy_id": "AI.DATA.Memory-Poisoning",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.backdoor",
       "legacy_id": "AI.DATA.Backdoor",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.privacy",
       "legacy_id": "AI.DATA.Privacy",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.data.test-contamination",
       "legacy_id": "AI.DATA.Test-Contamination",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.excessive-agency",
       "legacy_id": "AI.TOOL.Excessive-Agency",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.unauthorized-call",
       "legacy_id": "AI.TOOL.Unauthorized-Call",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.argument-injection",
       "legacy_id": "AI.TOOL.Argument-Injection",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.result-injection",
       "legacy_id": "AI.TOOL.Result-Injection",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.cross-tool",
       "legacy_id": "AI.TOOL.Cross-Tool",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.confused-deputy",
       "legacy_id": "AI.TOOL.Confused-Deputy",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.identity-privilege",
       "legacy_id": "AI.TOOL.Identity-Privilege",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.inter-agent",
       "legacy_id": "AI.TOOL.Inter-Agent",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.mcp-poisoning",
       "legacy_id": "AI.TOOL.MCP-Poisoning",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.code-execution",
       "legacy_id": "AI.TOOL.Code-Execution",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.browser-action",
       "legacy_id": "AI.TOOL.Browser-Action",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.human-trust",
       "legacy_id": "AI.TOOL.Human-Trust",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.rogue-agent",
       "legacy_id": "AI.TOOL.Rogue-Agent",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.tool.cascade",
       "legacy_id": "AI.TOOL.Cascade",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.html",
       "legacy_id": "AI.OUTPUT.HTML",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.sql",
       "legacy_id": "AI.OUTPUT.SQL",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.command",
       "legacy_id": "AI.OUTPUT.Command",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.template",
       "legacy_id": "AI.OUTPUT.Template",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.file",
       "legacy_id": "AI.OUTPUT.File",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.structured",
       "legacy_id": "AI.OUTPUT.Structured",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.parser",
       "legacy_id": "AI.OUTPUT.Parser",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.code-suggestion",
       "legacy_id": "AI.OUTPUT.Code-Suggestion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.dependency",
       "legacy_id": "AI.OUTPUT.Dependency",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.output.provenance",
       "legacy_id": "AI.OUTPUT.Provenance",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.unsafe-load",
       "legacy_id": "AI.MODEL.Unsafe-Load",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.malicious-artifact",
       "legacy_id": "AI.MODEL.Malicious-Artifact",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.registry",
       "legacy_id": "AI.MODEL.Registry",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.extraction",
       "legacy_id": "AI.MODEL.Extraction",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.membership",
       "legacy_id": "AI.MODEL.Membership",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.inversion",
       "legacy_id": "AI.MODEL.Inversion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.adversarial",
       "legacy_id": "AI.MODEL.Adversarial",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.label-feature",
       "legacy_id": "AI.MODEL.Label-Feature",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.gradient",
       "legacy_id": "AI.MODEL.Gradient",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.multi-tenant",
       "legacy_id": "AI.MODEL.Multi-Tenant",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.model.endpoint",
       "legacy_id": "AI.MODEL.Endpoint",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.token-flood",
       "legacy_id": "AI.RESOURCE.Token-Flood",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.loop",
       "legacy_id": "AI.RESOURCE.Loop",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.tool-recursion",
       "legacy_id": "AI.RESOURCE.Tool-Recursion",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.batch",
       "legacy_id": "AI.RESOURCE.Batch",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.denial-of-wallet",
       "legacy_id": "AI.RESOURCE.Denial-of-Wallet",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.model-abuse",
       "legacy_id": "AI.RESOURCE.Model-Abuse",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.stream-queue",
       "legacy_id": "AI.RESOURCE.Stream-Queue",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.resource.graceful-failure",
       "legacy_id": "AI.RESOURCE.Graceful-Failure",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.misinformation",
       "legacy_id": "AI.BEHAVIOR.Misinformation",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.overreliance",
       "legacy_id": "AI.BEHAVIOR.Overreliance",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.bias",
       "legacy_id": "AI.BEHAVIOR.Bias",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.discrimination",
       "legacy_id": "AI.BEHAVIOR.Discrimination",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.safety-failure",
       "legacy_id": "AI.BEHAVIOR.Safety-Failure",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.deepfake",
       "legacy_id": "AI.BEHAVIOR.Deepfake",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.reward-hacking",
       "legacy_id": "AI.BEHAVIOR.Reward-Hacking",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.behavior.automation-bias",
       "legacy_id": "AI.BEHAVIOR.Automation-Bias",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.authz",
       "legacy_id": "AI.PLATFORM.AuthZ",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.secrets",
       "legacy_id": "AI.PLATFORM.Secrets",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.network-egress",
       "legacy_id": "AI.PLATFORM.Network-Egress",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.sandbox",
       "legacy_id": "AI.PLATFORM.Sandbox",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.telemetry",
       "legacy_id": "AI.PLATFORM.Telemetry",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.debug",
       "legacy_id": "AI.PLATFORM.Debug",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.ci-agent",
       "legacy_id": "AI.PLATFORM.CI-Agent",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.connector",
       "legacy_id": "AI.PLATFORM.Connector",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.governance",
       "legacy_id": "AI.PLATFORM.Governance",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     },
     {
       "id": "vuln.ai.platform.incident",
       "legacy_id": "AI.PLATFORM.Incident",
       "maturity": "inventory",
-      "path": null
+      "path": null,
+      "review_status": "unreviewed"
     }
   ],
   "schema_version": "1.0",

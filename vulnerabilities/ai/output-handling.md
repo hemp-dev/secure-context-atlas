@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://genai.owasp.org/llmrisk/llm05-improper-output-handling/","https://cwe.mitre.org/data/definitions/116.html"]
 source_provenance: ["sources/manifest.yaml:owasp-genai","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Unsafe handling of model output at downstream sinks

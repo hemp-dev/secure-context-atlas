@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/636.html","https://owasp.org/Top10/2025/A10_2025-Mishandling_of_Exceptional_Conditions/"]
 source_provenance: ["sources/manifest.yaml:mitre-cwe","sources/manifest.yaml:owasp-asvs"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Fail-open exceptional conditions and unsafe defaults

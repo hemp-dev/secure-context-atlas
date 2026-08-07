@@ -22,7 +22,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_NAME = "Secure Context Atlas"
-RELEASE_VERSION = "0.5.0"
+RELEASE_VERSION = "0.6.0"
 CWE_URL = "https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip"
 CAPEC_URL = "https://capec.mitre.org/data/xml/capec_v3.9.xml"
 CWE_NS = "{http://cwe.mitre.org/cwe-7}"
@@ -48,7 +48,7 @@ def generated_date() -> str:
 
 def fetch(url: str, target: Path) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
-    request = urllib.request.Request(url, headers={"User-Agent": "Secure-Context-Atlas/0.5.0 source-refresh"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Secure-Context-Atlas/0.6.0 source-refresh"})
     last_error: Exception | None = None
     for attempt in range(3):
         try:
@@ -213,7 +213,7 @@ def curated_records() -> list[dict]:
     for path in sorted((ROOT / "vulnerabilities").rglob("*.md")) if (ROOT / "vulnerabilities").exists() else []:
         fm = parse_simple_frontmatter(path)
         if fm.get("id"):
-            records.append({"id": fm["id"], "title": fm.get("title"), "family": fm.get("family"), "path": str(path.relative_to(ROOT)), "canonical_cwe": fm.get("canonical_cwe")})
+            records.append({"id": fm["id"], "title": fm.get("title"), "family": fm.get("family"), "path": str(path.relative_to(ROOT)), "canonical_cwe": fm.get("canonical_cwe"), "maturity": fm.get("maturity", "curated"), "review_status": fm.get("review_status", "reviewed")})
     return records
 
 
@@ -246,19 +246,26 @@ def build(cwe_path: Path, capec_path: Path) -> None:
     capec_meta, capec = capec_entries(capec_path)
     generated_at = generated_date()
     write_json(ROOT / "ai/cwe-index.json", {**cwe_meta, "retrieved_at": generated_at, "entries": cwe})
-    write_json(ROOT / "ai/cwe-coverage.json", {"schema_version": "1.0", "generated_at": generated_at, "source": cwe_meta, "entries": [{"cwe": item["id"], "name": item["name"], "status": item["status"], "coverage_state": "imported", "curation": "curated" if item["id"] in {record["canonical_cwe"] for record in curated_records()} else "taxonomy-only"} for item in cwe]})
+    cards = curated_records()
+    curated = [record for record in cards if record.get("maturity") in {"curated", "tested", "production-ready"}]
+    scaffolded = [record for record in cards if record.get("maturity") == "scaffolded"]
+    curated_cwe = {record["canonical_cwe"] for record in curated}
+    scaffolded_cwe = {record["canonical_cwe"] for record in scaffolded}
+    write_json(ROOT / "ai/cwe-coverage.json", {"schema_version": "1.0", "generated_at": generated_at, "source": cwe_meta, "entries": [{"cwe": item["id"], "name": item["name"], "status": item["status"], "coverage_state": "imported", "curation": "curated" if item["id"] in curated_cwe else ("scaffolded" if item["id"] in scaffolded_cwe else "taxonomy-only")} for item in cwe]})
     write_json(ROOT / "ai/capec-index.json", {**capec_meta, "retrieved_at": generated_at, "entries": capec})
     write_json(ROOT / "ai/source-hashes.json", {"generated_at": generated_at, "cwe_xml_zip_sha256": sha256(cwe_path), "capec_xml_sha256": sha256(capec_path), "cwe_url": CWE_URL, "capec_url": CAPEC_URL})
 
-    curated = curated_records()
     legacy = load_legacy_taxonomy()
+    card_by_id = {item["id"]: item for item in cards}
     curated_ids = {item["id"] for item in curated}
     for record in legacy:
         record["curated"] = record["id"] in curated_ids
-    write_json(ROOT / "ai/vulnerability-map.json", {"schema_version": "1.0", "generated_at": generated_at, "canonical_namespace": "MITRE-CWE", "records": legacy, "curated_records": curated})
+        record["maturity"] = card_by_id.get(record["id"], {}).get("maturity", "inventory")
+    write_json(ROOT / "ai/vulnerability-map.json", {"schema_version": "1.0", "generated_at": generated_at, "canonical_namespace": "MITRE-CWE", "records": legacy, "curated_records": curated, "scaffolded_records": scaffolded})
     maturity_records = []
     for record in legacy:
-        maturity_records.append({"id": record["id"], "legacy_id": record.get("legacy_id"), "maturity": "curated" if record["id"] in curated_ids else "inventory", "path": next((item["path"] for item in curated if item["id"] == record["id"]), None)})
+        card = card_by_id.get(record["id"])
+        maturity_records.append({"id": record["id"], "legacy_id": record.get("legacy_id"), "maturity": card.get("maturity") if card else "inventory", "review_status": card.get("review_status") if card else "unreviewed", "path": card.get("path") if card else None})
     write_json(ROOT / "ai/maturity-map.json", {"schema_version": "1.0", "generated_at": generated_at, "statuses": ["inventory", "scaffolded", "curated", "tested", "production-ready"], "records": maturity_records})
 
     aliases: dict[str, list[str]] = {}
@@ -299,9 +306,10 @@ def build(cwe_path: Path, capec_path: Path) -> None:
             "nist_ai_600_1": "Generative AI risk profile crosswalked in AI and agentic guidance",
         },
         "curated_record_count": len(curated),
+        "scaffolded_record_count": len(scaffolded),
     }
     write_json(ROOT / "ai/standards-coverage.json", standards)
-    write_json(ROOT / "ai/index.json", {"schema_version": "1.0", "project": PROJECT_NAME, "release": RELEASE_VERSION, "release_channel": "stable-preview", "generated_at": generated_at, "retrieval_order": ["stack", "surface", "family", "canonical_cwe", "safe_verification", "maturity"], "record_count": len(legacy), "curated_record_count": len(curated), "artifacts": ["ai/cwe-index.json", "ai/cwe-coverage.json", "ai/capec-index.json", "ai/vulnerability-map.json", "ai/maturity-map.json", "ai/aliases.json", "ai/standards-coverage.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "ai/compact-context.md"]})
+    write_json(ROOT / "ai/index.json", {"schema_version": "1.0", "project": PROJECT_NAME, "release": RELEASE_VERSION, "release_channel": "stable-preview", "generated_at": generated_at, "retrieval_order": ["stack", "surface", "family", "canonical_cwe", "safe_verification", "maturity"], "record_count": len(legacy), "atomic_card_count": len(cards), "curated_record_count": len(curated), "scaffolded_record_count": len(scaffolded), "artifacts": ["ai/cwe-index.json", "ai/cwe-coverage.json", "ai/capec-index.json", "ai/vulnerability-map.json", "ai/maturity-map.json", "ai/aliases.json", "ai/standards-coverage.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "ai/compact-context.md"]})
 
 
 def main() -> int:

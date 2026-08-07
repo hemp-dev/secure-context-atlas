@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/444.html","https://portswigger.net/web-security/request-smuggling"]
 source_provenance: ["sources/manifest.yaml:portswigger-academy","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # HTTP request smuggling and connection desynchronization

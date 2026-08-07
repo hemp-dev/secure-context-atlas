@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/250.html","https://kubernetes.io/docs/concepts/security/"]
 source_provenance: ["sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Container and Kubernetes isolation/configuration failure

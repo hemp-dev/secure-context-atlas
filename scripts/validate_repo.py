@@ -10,6 +10,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+RELEASE_VERSION = "0.6.0"
 REQUIRED_VULN_FIELDS = {
     "id", "title", "aliases", "summary", "family", "canonical_cwe", "related_cwe", "capec",
     "owasp_mappings", "asvs_mappings", "wstg_mappings", "masvs_mappings", "api_security_mappings",
@@ -17,7 +18,7 @@ REQUIRED_VULN_FIELDS = {
     "trust_boundaries", "data_flow", "code_signals", "configuration_signals", "architecture_signals",
     "audit_questions", "safe_verification", "false_positives", "impact", "severity_factors",
     "exploitability_factors", "remediation", "secure_patterns", "regression_tests", "related_vulnerabilities",
-    "references", "source_provenance", "last_reviewed",
+    "references", "source_provenance", "last_reviewed", "maturity", "review_status",
 }
 REQUIRED_LANGUAGES = ["javascript", "typescript", "python", "java", "go", "csharp", "ruby", "php", "rust", "c", "cpp", "swift", "kotlin"]
 REQUIRED_PLATFORMS = ["cloud", "containers-kubernetes", "android", "ios", "ai-llm", "ci-cd", "enterprise-ad", "hardware-iot"]
@@ -81,6 +82,12 @@ class Validator:
             self.error(f"{rel}: summary too short")
         if not isinstance(fm.get("last_reviewed"), str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", fm.get("last_reviewed", "")):
             self.error(f"{rel}: invalid last_reviewed")
+        if fm.get("maturity") not in {"inventory", "scaffolded", "curated", "tested", "production-ready"}:
+            self.error(f"{rel}: invalid maturity {fm.get('maturity')!r}")
+        if fm.get("review_status") not in {"unreviewed", "reviewed", "needs-review"}:
+            self.error(f"{rel}: invalid review_status {fm.get('review_status')!r}")
+        if fm.get("maturity") == "scaffolded" and fm.get("review_status") == "reviewed":
+            self.error(f"{rel}: scaffolded card cannot claim reviewed status")
         for field in ["preconditions", "trust_boundaries", "code_signals", "audit_questions", "safe_verification", "false_positives", "remediation", "secure_patterns", "regression_tests", "source_provenance"]:
             if not isinstance(fm.get(field), list) or not fm[field]:
                 self.error(f"{rel}: {field} must be a non-empty list")
@@ -109,7 +116,7 @@ class Validator:
             self.error(f"{rel}: unsafe operational wording without defensive prohibition")
 
     def run(self) -> int:
-        for rel in ["README.md", "AGENTS.md", "CONTRIBUTING.md", "sources/manifest.yaml", "sources/versions.yaml", "sources/licenses.yaml", "sources/lock.json", "schemas/vulnerability.schema.json", "schemas/finding.schema.json", "schemas/evidence.schema.json", "schemas/threat-model.schema.json", "release-manifest.schema.json", "taxonomy/families.yaml", "taxonomy/aliases.yaml", "taxonomy/cwe-map.yaml", "taxonomy/capec-map.yaml", "taxonomy/owasp-map.yaml", "taxonomy/priorities.yaml", "taxonomy/agentic-map.yaml", "ai/audit-protocol.md", "ai/routing.yaml", "ai/finding-format.md", "ai/index.json", "ai/maturity-map.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "platforms/ai-agentic.md", "ai/threat-model-examples/agentic-rag.json", "evals/README.md", "evals/manifest.json", "datasets/manifests.yaml", "advisories/adapters/osv.md", "advisories/adapters/github-advisory-database.md"]:
+        for rel in ["README.md", "AGENTS.md", "CONTRIBUTING.md", "sources/manifest.yaml", "sources/versions.yaml", "sources/licenses.yaml", "sources/lock.json", "schemas/vulnerability.schema.json", "schemas/finding.schema.json", "schemas/evidence.schema.json", "schemas/threat-model.schema.json", "schemas/context-pack.schema.json", "schemas/advisory.schema.json", "schemas/provenance.schema.json", "schemas/eval-fixture.schema.json", "schemas/eval-manifest.schema.json", "schemas/detector-contract.schema.json", "requirements-dev.txt", "release-manifest.schema.json", "taxonomy/families.yaml", "taxonomy/aliases.yaml", "taxonomy/cwe-map.yaml", "taxonomy/capec-map.yaml", "taxonomy/owasp-map.yaml", "taxonomy/priorities.yaml", "taxonomy/agentic-map.yaml", "ai/audit-protocol.md", "ai/routing.yaml", "ai/finding-format.md", "ai/index.json", "ai/maturity-map.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "platforms/ai-agentic.md", "ai/threat-model-examples/agentic-rag.json", "evals/README.md", "evals/manifest.json", "evals/holdout/cases.json", "datasets/manifests.yaml", "advisories/adapters/osv.md", "advisories/adapters/github-advisory-database.md", "advisories/fixtures/osv.json", "advisories/fixtures/github-advisory.json"]:
             if not (ROOT / rel).exists():
                 self.error(f"missing required file {rel}")
         for folder, names in [("languages", REQUIRED_LANGUAGES), ("platforms", REQUIRED_PLATFORMS), ("frameworks", REQUIRED_FRAMEWORKS)]:
@@ -126,8 +133,8 @@ class Validator:
             return self.finish()
         cwe_ids = {entry.get("id") for entry in cwe_data.get("entries", [])}
         capec_ids = {entry.get("id") for entry in capec_data.get("entries", [])}
-        if index_data.get("project") != "Secure Context Atlas" or index_data.get("release") != "0.5.0" or index_data.get("release_channel") != "stable-preview":
-            self.error("ai/index.json does not identify the 0.5.0 stable-preview release")
+        if index_data.get("project") != "Secure Context Atlas" or index_data.get("release") != RELEASE_VERSION or index_data.get("release_channel") != "stable-preview":
+            self.error(f"ai/index.json does not identify the {RELEASE_VERSION} stable-preview release")
         if cwe_data.get("version") != "4.20" or cwe_data.get("entries_total") != 969 or cwe_data.get("entries_active") != 944:
             self.error("CWE index is not the expected 4.20 969/944 coverage")
         if capec_data.get("version") != "3.9" or capec_data.get("entries_total") != 615:
@@ -156,7 +163,13 @@ class Validator:
                 if isinstance(fm.get("fixture_ids"), list):
                     fixture_references.extend((str(path.relative_to(ROOT)), str(value)) for value in fm["fixture_ids"])
         if card_count < 100:
-            self.error(f"only {card_count} atomic cards found; expected at least 100 for 0.5.0")
+            self.error(f"only {card_count} atomic cards found; expected at least 100 for {RELEASE_VERSION}")
+        if index_data.get("atomic_card_count") != card_count:
+            self.error(f"ai/index.json atomic_card_count mismatch: {index_data.get('atomic_card_count')} / {card_count}")
+        expected_curated = sum(1 for path in (ROOT / "vulnerabilities").rglob("*.md") if path.name != "README.md" and self.parse_frontmatter(path).get("maturity") in {"curated", "tested", "production-ready"})
+        expected_scaffolded = sum(1 for path in (ROOT / "vulnerabilities").rglob("*.md") if path.name != "README.md" and self.parse_frontmatter(path).get("maturity") == "scaffolded")
+        if index_data.get("curated_record_count") != expected_curated or index_data.get("scaffolded_record_count") != expected_scaffolded:
+            self.error("ai/index.json maturity counts do not match vulnerability cards")
         for path in sorted((ROOT / "vulnerabilities").rglob("*.md")) if (ROOT / "vulnerabilities").exists() else []:
             if path.name == "README.md":
                 continue
@@ -174,13 +187,16 @@ class Validator:
         except Exception as exc:  # noqa: BLE001
             self.error(f"cannot validate normalized taxonomy: {exc}")
 
-        curated_cwe = {json.loads((path.read_text(encoding="utf-8").split("---", 2)[1].splitlines()[0].split(":", 1)[1].strip())) for path in []}
         curated_cwe = set()
+        scaffolded_cwe = set()
         for path in (ROOT / "vulnerabilities").rglob("*.md"):
             if path.name != "README.md":
                 fm = self.parse_frontmatter(path)
                 if fm:
-                    curated_cwe.add(fm.get("canonical_cwe"))
+                    if fm.get("maturity") in {"curated", "tested", "production-ready"}:
+                        curated_cwe.add(fm.get("canonical_cwe"))
+                    elif fm.get("maturity") == "scaffolded":
+                        scaffolded_cwe.add(fm.get("canonical_cwe"))
         active_cwe = {entry.get("id") for entry in cwe_data.get("entries", []) if entry.get("status") != "Deprecated"}
         unmapped_active_cwe = sorted(active_cwe - curated_cwe, key=lambda value: int(value.split("-", 1)[1]))
         fixture_manifest = {}
@@ -203,7 +219,7 @@ class Validator:
         maturity_summary["inventory"] = max(0, 305 - card_count)
         report = {
             "schema_version": "1.0", "generated_at": self.generated_date(),
-            "cwe": {"version": cwe_data.get("version"), "imported": len(cwe_ids), "active": cwe_data.get("entries_active"), "deprecated": cwe_data.get("entries_deprecated"), "curated_by_atomic_card": len(curated_cwe), "curated_ids": sorted(curated_cwe, key=lambda value: int(value.split("-", 1)[1])), "unmapped_active_count": len(unmapped_active_cwe), "unmapped_active_ids": unmapped_active_cwe},
+            "cwe": {"version": cwe_data.get("version"), "imported": len(cwe_ids), "active": cwe_data.get("entries_active"), "deprecated": cwe_data.get("entries_deprecated"), "curated_by_atomic_card": len(curated_cwe), "curated_ids": sorted(curated_cwe, key=lambda value: int(value.split("-", 1)[1])), "scaffolded_by_atomic_card": len(scaffolded_cwe), "scaffolded_ids": sorted(scaffolded_cwe, key=lambda value: int(value.split("-", 1)[1])), "unmapped_active_count": len(unmapped_active_cwe), "unmapped_active_ids": unmapped_active_cwe},
             "capec": {"version": capec_data.get("version"), "imported": len(capec_ids)},
             "normalized_taxonomy": {"leaf_count": 305, "atomic_cards": card_count, "unscaffolded_leafs": max(0, 305 - card_count), "maturity": maturity_summary},
             "evaluation": {"suite": fixture_manifest.get("suite"), "fixture_count": len(fixture_manifest.get("fixtures", []))},

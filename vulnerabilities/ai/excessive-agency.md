@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.authorization.function-level","vuln.ai.output-ha
 references: ["https://genai.owasp.org/llmrisk/llm06-excessive-agency/","https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/"]
 source_provenance: ["sources/manifest.yaml:owasp-genai","sources/manifest.yaml:hacktricks"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Excessive agency and over-privileged tool use

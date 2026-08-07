@@ -5,15 +5,20 @@ Use one record per coherent weakness. Markdown is acceptable for humans, but the
 The canonical machine contract is [`schemas/finding.schema.json`](../schemas/finding.schema.json), and each evidence item follows [`schemas/evidence.schema.json`](../schemas/evidence.schema.json). A finding is not complete until the source, sink and missing control are represented by redacted evidence.
 
 ```yaml
+finding_id: finding.authorization.idor
 status: confirmed | probable | needs-review | not-applicable
 title: "Short root-cause title"
-canonical_id: vuln.authorization.idor
+vulnerability_id: vuln.authorization.idor
 canonical_cwe: CWE-639
-severity: low | medium | high | critical
+capec: [CAPEC-1]
+severity: info | low | medium | high | critical
 confidence: low | medium | high
+asset: "tenant object API"
+trust_boundary: "untrusted caller to application data boundary"
 evidence:
   - file: src/example.ts
     lines: "42-49"
+    kind: flow
     excerpt: "short redacted excerpt"
 input_and_prerequisite: "test tenant A can submit object identifier owned by tenant B"
 flow:
@@ -24,11 +29,12 @@ flow:
 missing_control: "object-level authorization at the decision point"
 exploitability: "requires authenticated test user and cross-tenant object reference"
 impact: ["unauthorized read", "tenant isolation failure"]
-mappings: ["CWE-639", "API1:2023", "ASVS-V8"]
 safe_verification: "two test tenants, canary object, expected denial, no real data"
 remediation: ["authorize subject and object at service boundary", "add tenant-aware repository policy"]
 regression_test: "negative integration test asserts 403 and no object body"
 references: ["vulnerabilities/authorization/idor.md"]
 ```
+
+`finding_id`, `vulnerability_id`, `canonical_cwe`, `capec`, `evidence.kind` и остальные поля должны соответствовать [`schemas/finding.schema.json`](../schemas/finding.schema.json). Crosswalks принадлежат карточке уязвимости; finding не должен заменять их произвольным полем `mappings`.
 
 Redact secrets and personal data in evidence. A dangerous-looking API, dependency name or model call is a signal, not a finding, until reachability and missing control are shown.

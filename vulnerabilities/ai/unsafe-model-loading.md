@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/502.html","https://genai.owasp.org/llmrisk/llm03-supply-chain/"]
 source_provenance: ["sources/manifest.yaml:owasp-genai","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Unsafe model, plugin or artifact loading

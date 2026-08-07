@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-context-atlas.invalid/schemas/context-pack.schema.json",
+  "title": "Secure Context Atlas context-pack manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "type", "project", "release", "pack_id", "generated_at", "selection", "card_count", "token_budget", "token_count", "retrieval_order", "safe_boundary", "card_ids", "provenance"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "type": {"type": "string", "const": "context-manifest"},
+    "project": {"type": "string", "const": "Secure Context Atlas"},
+    "release": {"type": "string", "pattern": "^0\\.6\\.0$"},
+    "pack_id": {"type": "string", "pattern": "^pack\\.[a-z0-9][a-z0-9.-]*$"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stack", "surface", "family", "query", "maturity"],
+      "properties": {
+        "stack": {"type": ["string", "null"]},
+        "surface": {"type": ["string", "null"]},
+        "family": {"type": ["string", "null"]},
+        "query": {"type": ["string", "null"]},
+        "maturity": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}
+      }
+    },
+    "card_count": {"type": "integer", "minimum": 0},
+    "token_budget": {"type": "integer", "minimum": 1},
+    "token_count": {"type": "integer", "minimum": 0},
+    "retrieval_order": {"type": "array", "items": {"type": "string"}},
+    "safe_boundary": {"type": "string", "minLength": 20},
+    "card_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^vuln\\.[a-z0-9][a-z0-9.-]*$"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "source_lock"],
+      "properties": {
+        "index": {"type": "string"},
+        "source_lock": {"type": "string"}
+      }
+    }
+  }
+}

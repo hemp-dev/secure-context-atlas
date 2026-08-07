@@ -1,7 +1,7 @@
 schema_version: "1.0"
 project:
   name: "Secure Context Atlas"
-  release: "0.5.0"
+  release: "0.6.0"
   release_date: "2026-08-08"
   release_channel: "stable-preview"
 generated_at: "2026-08-08"

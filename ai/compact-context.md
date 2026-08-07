@@ -12,4 +12,4 @@ Safe verification: test users/tenants, canary markers, local or staging fixtures
 
 Retrieval note: `ai/aliases.json` records alias-to-ID collisions explicitly. Resolve an ambiguous alias such as `XXE` with parser/context evidence before selecting a card; never let an alias alone create a finding.
 
-Release 0.5.0 adds `ai/maturity-map.json`, `evals/manifest.json`, the `sctx` context-pack CLI and SARIF export. Use maturity to distinguish inventory-only records from curated cards; use the evaluation suite as a deterministic retrieval regression, not as proof of a model's correctness.
+Release 0.6.0 adds full schema gates, source commit pins, independent holdout retrieval cases, normalized advisory fixtures and provenance-rich context packs. `sctx pack` excludes `inventory` and `scaffolded` cards by default; use an explicit `--maturity` filter when reviewing unfinished material. Use the evaluation suite as a deterministic retrieval regression, not as proof of a model's correctness.

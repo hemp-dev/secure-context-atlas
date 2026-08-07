@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-context-atlas.invalid/schemas/detector-contract.schema.json",
+  "title": "Secure Context Atlas detector contract manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "execution_mode", "detectors", "rules"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "execution_mode": {"type": "string", "enum": ["contract-only", "semgrep-executable", "codeql-executable", "mixed"]},
+    "detectors": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "detector", "path", "vulnerability_id", "fixture"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^rule\\.[a-z0-9][a-z0-9.-]*$"},
+          "detector": {"type": "string"},
+          "path": {"type": "string"},
+          "vulnerability_id": {"type": "string", "pattern": "^vuln\\."},
+          "fixture": {"type": "string"},
+          "negative_fixture": {"type": "string"}
+        }
+      }
+    }
+  }
+}

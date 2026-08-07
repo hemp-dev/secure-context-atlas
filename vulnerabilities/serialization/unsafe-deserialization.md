@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.ai.unsafe-model-loading","vuln.serialization.pro
 references: ["https://cwe.mitre.org/data/definitions/502.html","https://portswigger.net/web-security/deserialization"]
 source_provenance: ["sources/manifest.yaml:portswigger-academy","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Unsafe deserialization and object graph execution

@@ -26,16 +26,19 @@ def build_lock() -> dict:
     cwe = json.loads((ROOT / "ai/cwe-index.json").read_text(encoding="utf-8"))
     capec = json.loads((ROOT / "ai/capec-index.json").read_text(encoding="utf-8"))
     text = version_metadata()
+    existing_path = ROOT / "sources/lock.json"
+    existing = json.loads(existing_path.read_text(encoding="utf-8")) if existing_path.exists() else {}
     return {
         "schema_version": "1.0",
         "project": "Secure Context Atlas",
-        "release": expected(text, "release") or "0.5.0",
+        "release": expected(text, "release") or "0.6.0",
         "generated_at": hashes.get("generated_at"),
         "policy": {"raw_inputs_are_temporary": True, "generated_indexes_are_committed": True, "advisory_feeds_are_dynamic": True, "source_hashes_are_required": True},
         "pins": {
             "cwe": {"version": cwe.get("version"), "url": hashes.get("cwe_url"), "sha256": hashes.get("cwe_xml_zip_sha256"), "entries_total": cwe.get("entries_total"), "entries_active": cwe.get("entries_active")},
             "capec": {"version": capec.get("version"), "url": hashes.get("capec_url"), "sha256": hashes.get("capec_xml_sha256"), "entries_total": capec.get("entries_total")},
         },
+        "repository_pins": existing.get("repository_pins", {}),
     }
 
 

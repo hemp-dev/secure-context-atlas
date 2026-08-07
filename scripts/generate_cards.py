@@ -31,7 +31,7 @@ def card(id, title, family, cwe, capec, aliases, surfaces, languages, frameworks
         "impact": impact, "severity_factors": severity, "exploitability_factors": exploit,
         "remediation": remediation, "secure_patterns": secure, "regression_tests": regression,
         "related_vulnerabilities": [], "references": refs, "source_provenance": provenance,
-        "last_reviewed": "2026-08-07", "body": body,
+        "last_reviewed": "2026-08-07", "maturity": "curated", "review_status": "reviewed", "body": body,
     }
 
 

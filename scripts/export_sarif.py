@@ -34,7 +34,7 @@ def main() -> int:
         rule_id = finding["vulnerability_id"]
         references = finding.get("references", [])
         rules.setdefault(rule_id, {
-            "id": rule_id,
+                "id": rule_id,
             "name": rule_id,
             "shortDescription": {"text": finding.get("title", rule_id)},
             "helpUri": references[0] if references else None,
@@ -71,7 +71,7 @@ def main() -> int:
         "$schema": SARIF_SCHEMA,
         "version": SARIF_VERSION,
         "runs": [{
-            "tool": {"driver": {"name": "Secure Context Atlas", "version": "0.5.0", "informationUri": "https://github.com/hemp-dev/secure-context-atlas", "rules": list(rules.values())}},
+                "tool": {"driver": {"name": "Secure Context Atlas", "version": "0.6.0", "informationUri": "https://github.com/hemp-dev/secure-context-atlas", "rules": list(rules.values())}},
             "results": results,
         }],
     }

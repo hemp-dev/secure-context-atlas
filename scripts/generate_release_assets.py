@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the reviewed 0.2-0.5 card and evaluation assets.
+"""Generate the scaffolded 0.2-0.6 card and evaluation assets.
 
 The generated cards are defensive, evidence-oriented records. Fixtures are
 synthetic retrieval cases; they are deliberately not executable exploit code.
@@ -164,9 +164,9 @@ def frontmatter(record: dict) -> str:
         "references": [f"https://cwe.mitre.org/data/definitions/{record['cwe'].split('-')[1]}.html"],
         "source_provenance": ["sources/research-notes.md:normalized defensive topic", "sources/manifest.yaml:mitre-cwe"],
         "last_reviewed": REVIEW_DATE,
-        "maturity": "curated",
+        "maturity": "scaffolded",
         "priority": record["priority"],
-        "review_status": "reviewed",
+        "review_status": "needs-review",
         "fixture_ids": [f"eval.{slug(record['id'])}.positive", f"eval.{slug(record['id'])}.negative"],
         "detector_refs": [],
     }
@@ -225,7 +225,7 @@ def main() -> int:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(fixture, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             fixtures.append({"id": fixture["id"], "path": str(path.relative_to(ROOT)), "vulnerability_id": record["id"], "polarity": polarity})
-    manifest = {"schema_version": "1.0", "suite": "secure-context-atlas-deterministic-v1", "description": "Synthetic retrieval and evidence-contract fixtures for high-priority vulnerability cards.", "min_retrieval_recall_at_5": 0.9, "max_forbidden_fixture_count": 0, "fixtures": fixtures}
+    manifest = {"schema_version": "1.0", "suite": "secure-context-atlas-deterministic-v2", "description": "Synthetic retrieval and evidence-contract fixtures for high-priority vulnerability cards.", "min_retrieval_recall_at_5": 0.9, "min_holdout_recall_at_5": 0.75, "max_forbidden_fixture_count": 0, "fixtures": fixtures}
     (ROOT / "evals" / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"generated {generated} cards and {len(fixtures)} evaluation fixtures")
     return 0

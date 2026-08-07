@@ -22,6 +22,38 @@
     "source_hashes_are_required": true
   },
   "project": "Secure Context Atlas",
-  "release": "0.5.0",
+  "release": "0.6.0",
+  "repository_pins": {
+    "awesome-bug-bounty": {
+      "commit": "d63f5f44b41cc2dae0872fa50e211140838e2c87",
+      "observed_at": "2026-08-08",
+      "repository": "https://github.com/djadmin/awesome-bug-bounty.git",
+      "url": "https://github.com/djadmin/awesome-bug-bounty"
+    },
+    "awesome-hacking": {
+      "commit": "b2bb13aa69b4f568a1bab0cbb17b7a00a350dc36",
+      "observed_at": "2026-08-08",
+      "repository": "https://github.com/Hack-with-Github/Awesome-Hacking.git",
+      "url": "https://github.com/Hack-with-Github/Awesome-Hacking"
+    },
+    "hacktricks": {
+      "commit": "b4a826f21662ea383e31f510df5edcc13f20aff1",
+      "observed_at": "2026-08-08",
+      "repository": "https://github.com/HackTricks-wiki/hacktricks.git",
+      "url": "https://github.com/HackTricks-wiki/hacktricks"
+    },
+    "patt": {
+      "commit": "a9d97e9a57e901d7cebc865e3037ca27f009d71b",
+      "observed_at": "2026-08-08",
+      "repository": "https://github.com/swisskyrepo/PayloadsAllTheThings.git",
+      "url": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+    },
+    "seclists": {
+      "commit": "03a61af885d5a724fe86ef8acc1df8771f77cd77",
+      "observed_at": "2026-08-08",
+      "repository": "https://github.com/danielmiessler/SecLists.git",
+      "url": "https://github.com/danielmiessler/SecLists"
+    }
+  },
   "schema_version": "1.0"
 }

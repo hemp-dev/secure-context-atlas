@@ -1746,8 +1746,175 @@
   "errors": [],
   "fixture_count": 134,
   "forbidden_fixture_count": 0,
+  "holdout": {
+    "cases": [
+      {
+        "id": "eval.holdout.tenant-object.positive",
+        "rank": 28,
+        "retrieval_hit_at_5": false,
+        "top5": [
+          "vuln.authentication.account-enumeration",
+          "vuln.authorization.signed-link",
+          "vuln.authorization.tenant-filter",
+          "vuln.business.price-tampering",
+          "vuln.crypto.key-rotation"
+        ],
+        "vulnerability_id": "vuln.authorization.idor"
+      },
+      {
+        "id": "eval.holdout.internal-fetch.positive",
+        "rank": 10,
+        "retrieval_hit_at_5": false,
+        "top5": [
+          "vuln.api.content-type-confusion",
+          "vuln.authorization.mass-assignment",
+          "vuln.authorization.property-level",
+          "vuln.authorization.service-impersonation",
+          "vuln.browser.open-redirect"
+        ],
+        "vulnerability_id": "vuln.network.ssrf"
+      },
+      {
+        "id": "eval.holdout.document-instruction.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.ai.indirect-prompt-injection",
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.rag-source-trust",
+          "vuln.ai.context-leakage",
+          "vuln.ai.tool-authorization"
+        ],
+        "vulnerability_id": "vuln.ai.indirect-prompt-injection"
+      },
+      {
+        "id": "eval.holdout.agent-delete.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.ai.tool-authorization",
+          "vuln.authorization.service-impersonation",
+          "vuln.ai.agent-identity",
+          "vuln.ai.output-handling",
+          "vuln.authentication.account-enumeration"
+        ],
+        "vulnerability_id": "vuln.ai.tool-authorization"
+      },
+      {
+        "id": "eval.holdout.replay-callback.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.api.webhook-replay",
+          "vuln.business.replay",
+          "vuln.availability.queue-amplification",
+          "vuln.ai.inter-agent-trust",
+          "vuln.authorization.tenant-filter"
+        ],
+        "vulnerability_id": "vuln.api.webhook-replay"
+      },
+      {
+        "id": "eval.holdout.redirect-target.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.browser.open-redirect",
+          "vuln.http.host-header",
+          "vuln.internal.credential-relay",
+          "vuln.ai.excessive-agency",
+          "vuln.ai.inter-agent-trust"
+        ],
+        "vulnerability_id": "vuln.browser.open-redirect"
+      },
+      {
+        "id": "eval.holdout.archive-path.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.files.path-traversal",
+          "vuln.files.symlink",
+          "vuln.files.archive-bomb",
+          "vuln.files.temp-file",
+          "vuln.files.upload"
+        ],
+        "vulnerability_id": "vuln.files.path-traversal"
+      },
+      {
+        "id": "eval.holdout.mutable-image.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.supply.container-image",
+          "vuln.supply.ci-cd",
+          "vuln.supply.artifact-integrity",
+          "vuln.ai.model-supply-chain",
+          "vuln.ai.unsafe-model-loading"
+        ],
+        "vulnerability_id": "vuln.supply.container-image"
+      },
+      {
+        "id": "eval.holdout.memory-cross-tenant.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.ai.memory-poisoning",
+          "vuln.ai.inter-agent-trust",
+          "vuln.browser.xss",
+          "vuln.ai.context-leakage",
+          "vuln.ai.tool-authorization"
+        ],
+        "vulnerability_id": "vuln.ai.memory-poisoning"
+      },
+      {
+        "id": "eval.holdout.cdn-private-response.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.http.cache-authorization",
+          "vuln.http.cache-poisoning",
+          "vuln.authentication.account-enumeration",
+          "vuln.browser.open-redirect",
+          "vuln.ai.tool-authorization"
+        ],
+        "vulnerability_id": "vuln.http.cache-authorization"
+      },
+      {
+        "id": "eval.holdout.graphql-field.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.api.graphql",
+          "vuln.authorization.property-level",
+          "vuln.authorization.idor",
+          "vuln.authorization.signed-link",
+          "vuln.injection.xxe"
+        ],
+        "vulnerability_id": "vuln.api.graphql"
+      },
+      {
+        "id": "eval.holdout.signed-firmware.positive",
+        "rank": 1,
+        "retrieval_hit_at_5": true,
+        "top5": [
+          "vuln.hardware.firmware-update",
+          "vuln.ai.inter-agent-trust",
+          "vuln.authorization.webhook-signature",
+          "vuln.business.price-tampering",
+          "vuln.supply.dependency-risk"
+        ],
+        "vulnerability_id": "vuln.hardware.firmware-update"
+      }
+    ],
+    "fixture_count": 12,
+    "hits_at_5": 10,
+    "leakage_count": 0,
+    "mrr": 0.8446,
+    "recall_at_5": 0.8333
+  },
+  "positive_fixture_count": 67,
+  "positive_recall_at_5": 1.0,
   "retrieval_hits_at_5": 134,
   "retrieval_recall_at_5": 1.0,
-  "schema_version": "1.0",
-  "suite": "secure-context-atlas-deterministic-v1"
+  "schema_version": "1.1",
+  "suite": "secure-context-atlas-deterministic-v2"
 }

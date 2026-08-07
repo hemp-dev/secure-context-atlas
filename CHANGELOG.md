@@ -2,6 +2,30 @@
 
 Все заметные изменения Secure Context Atlas фиксируются здесь. Формат ориентирован на [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.6.0] — 2026-08-08
+
+### Added
+
+- Полная JSON Schema validation для карточек, findings, context packs, advisories, provenance, evaluation и detector contracts.
+- 12 независимых holdout retrieval cases поверх 134 базовых synthetic fixtures.
+- Normalized advisory schema и synthetic OSV/GHSA adapter fixtures с явным reachability status.
+- Source commit pins для пяти primary research repositories.
+- Deterministic context-pack IDs, maturity filters и source provenance в `sctx` JSONL packs.
+
+### Changed
+
+- 44 карточки остаются `curated/reviewed`; 67 автоматически созданных карточек переведены в `scaffolded/needs-review`.
+- Default `sctx pack` не включает `inventory` и `scaffolded` material.
+- CI использует pinned action SHAs, pinned `jsonschema` dependency и generated-tree diff gate.
+- Detector manifest явно объявляет текущий режим `contract-only`.
+
+### Quality
+
+- Base retrieval recall@5: `1.0`.
+- Independent holdout recall@5: `0.8333`.
+- Independent holdout MRR: `0.8446`.
+- Forbidden fixture count: `0`.
+
 ## [0.5.0] — 2026-08-08
 
 ### Added
@@ -65,4 +89,4 @@
 
 ## [Unreleased]
 
-Planned follow-up: expand production-ready cards, add provider-specific optional model benchmarks, introduce signed artifact attestations and continue framework coverage.
+Planned follow-up: executable Semgrep/CodeQL packs, live advisory clients with recorded query provenance, signed artifact attestations/SBOM and a larger human-reviewed agentic/MCP benchmark.

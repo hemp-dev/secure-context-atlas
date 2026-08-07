@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/338.html","https://cwe.mitre.org/data/definitions/330.html"]
 source_provenance: ["sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Predictable randomness or weak cryptographic usage

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "source": "github-advisory-database",
+  "advisory_id": "GHSA-synthetic-0001-0001-0001",
+  "aliases": [],
+  "package": {"ecosystem": "npm", "name": "example-package", "version": "4.5.6"},
+  "affected": {"range": ">=4.0.0,<4.5.7", "fixed_versions": ["4.5.7"]},
+  "status": "affected",
+  "severity": "medium",
+  "published_at": "2026-08-08T00:00:00Z",
+  "modified_at": "2026-08-08T00:00:00Z",
+  "references": ["https://github.com/advisories/GHSA-synthetic-0001-0001-0001"],
+  "provenance": {
+    "queried_at": "2026-08-08T00:00:00Z",
+    "query": "synthetic package coordinate fixture",
+    "source_url": "https://github.com/advisories"
+  },
+  "reachability": {
+    "status": "runtime-dependent",
+    "evidence": ["The normalized record requires a separate lockfile and runtime reachability decision."]
+  }
+}

@@ -12,11 +12,12 @@
     "ai/release-manifest.json",
     "ai/compact-context.md"
   ],
-  "curated_record_count": 111,
+  "atomic_card_count": 111,
+  "curated_record_count": 44,
   "generated_at": "2026-08-08",
   "project": "Secure Context Atlas",
   "record_count": 305,
-  "release": "0.5.0",
+  "release": "0.6.0",
   "release_channel": "stable-preview",
   "retrieval_order": [
     "stack",
@@ -26,5 +27,6 @@
     "safe_verification",
     "maturity"
   ],
+  "scaffolded_record_count": 67,
   "schema_version": "1.0"
 }

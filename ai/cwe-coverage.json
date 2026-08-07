@@ -72,7 +72,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-20",
       "name": "Improper Input Validation",
       "status": "Stable"
@@ -338,7 +338,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-59",
       "name": "Improper Link Resolution Before File Access ('Link Following')",
       "status": "Draft"
@@ -527,7 +527,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-90",
       "name": "Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')",
       "status": "Draft"
@@ -583,7 +583,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-98",
       "name": "Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",
       "status": "Draft"
@@ -674,7 +674,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-113",
       "name": "Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting')",
       "status": "Incomplete"
@@ -702,7 +702,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-117",
       "name": "Improper Output Neutralization for Logs",
       "status": "Draft"
@@ -1227,7 +1227,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-200",
       "name": "Exposure of Sensitive Information to an Unauthorized Actor",
       "status": "Draft"
@@ -1255,7 +1255,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-204",
       "name": "Observable Response Discrepancy",
       "status": "Incomplete"
@@ -1283,14 +1283,14 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-208",
       "name": "Observable Timing Discrepancy",
       "status": "Incomplete"
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-209",
       "name": "Generation of Error Message Containing Sensitive Information",
       "status": "Draft"
@@ -1668,7 +1668,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-269",
       "name": "Improper Privilege Management",
       "status": "Draft"
@@ -1787,7 +1787,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-287",
       "name": "Improper Authentication",
       "status": "Draft"
@@ -1836,14 +1836,14 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-294",
       "name": "Authentication Bypass by Capture-replay",
       "status": "Incomplete"
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-295",
       "name": "Improper Certificate Validation",
       "status": "Draft"
@@ -2032,7 +2032,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-324",
       "name": "Use of a Key Past its Expiration Date",
       "status": "Draft"
@@ -2179,7 +2179,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-345",
       "name": "Insufficient Verification of Data Authenticity",
       "status": "Draft"
@@ -2375,7 +2375,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-377",
       "name": "Insecure Temporary File",
       "status": "Incomplete"
@@ -2550,7 +2550,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-409",
       "name": "Improper Handling of Highly Compressed Data (Data Amplification)",
       "status": "Incomplete"
@@ -2711,7 +2711,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-436",
       "name": "Interpretation Conflict",
       "status": "Incomplete"
@@ -3033,7 +3033,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-489",
       "name": "Active Debug Code",
       "status": "Draft"
@@ -3229,7 +3229,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-525",
       "name": "Use of Web Browser Cache Containing Sensitive Information",
       "status": "Incomplete"
@@ -3264,7 +3264,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-530",
       "name": "Exposure of Backup File to an Unauthorized Control Sphere",
       "status": "Incomplete"
@@ -3740,7 +3740,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-601",
       "name": "URL Redirection to Untrusted Site ('Open Redirect')",
       "status": "Draft"
@@ -3957,7 +3957,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-640",
       "name": "Weak Password Recovery Mechanism for Forgotten Password",
       "status": "Incomplete"
@@ -3978,7 +3978,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-643",
       "name": "Improper Neutralization of Data within XPath Expressions ('XPath Injection')",
       "status": "Incomplete"
@@ -4503,7 +4503,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-770",
       "name": "Allocation of Resources Without Limits or Throttling",
       "status": "Incomplete"
@@ -4909,7 +4909,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-863",
       "name": "Incorrect Authorization",
       "status": "Incomplete"
@@ -4965,14 +4965,14 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-915",
       "name": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
       "status": "Incomplete"
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-916",
       "name": "Use of Password Hash With Insufficient Computational Effort",
       "status": "Incomplete"
@@ -5056,7 +5056,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-940",
       "name": "Improper Verification of Source of a Communication Channel",
       "status": "Incomplete"
@@ -5070,14 +5070,14 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-942",
       "name": "Permissive Cross-domain Security Policy with Untrusted Domains",
       "status": "Incomplete"
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-943",
       "name": "Improper Neutralization of Special Elements in Data Query Logic",
       "status": "Incomplete"
@@ -5098,7 +5098,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-1021",
       "name": "Improper Restriction of Rendered UI Layers or Frames",
       "status": "Incomplete"
@@ -5798,7 +5798,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-1188",
       "name": "Initialization of a Resource with an Insecure Default",
       "status": "Incomplete"
@@ -5938,7 +5938,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-1236",
       "name": "Improper Neutralization of Formula Elements in a CSV File",
       "status": "Incomplete"
@@ -6155,7 +6155,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-1269",
       "name": "Product Released in Non-Release Configuration",
       "status": "Incomplete"
@@ -6568,7 +6568,7 @@
     },
     {
       "coverage_state": "imported",
-      "curation": "curated",
+      "curation": "scaffolded",
       "cwe": "CWE-1333",
       "name": "Inefficient Regular Expression Complexity",
       "status": "Draft"

@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.privacy.data-minimization","vuln.authentication.
 references: ["https://mas.owasp.org/","https://cwe.mitre.org/data/definitions/922.html"]
 source_provenance: ["sources/manifest.yaml:owasp-mobile","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Mobile insecure storage, IPC and exported component

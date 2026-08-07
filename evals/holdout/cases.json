@@ -1,0 +1,134 @@
+[
+  {
+    "id": "eval.holdout.tenant-object.positive",
+    "vulnerability_id": "vuln.authorization.idor",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-639",
+    "query": "A customer can replace an invoice identifier and receive a different tenant's record.",
+    "snippet": "The service loads the record by path value and returns it before comparing owner and tenant.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local fixture with two synthetic tenants and a canary object; no network"
+  },
+  {
+    "id": "eval.holdout.internal-fetch.positive",
+    "vulnerability_id": "vuln.network.ssrf",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-918",
+    "query": "A backend image previewer fetches a caller supplied address and follows redirects without destination policy.",
+    "snippet": "The URL reaches the server HTTP client and redirect targets are not rechecked.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local mock HTTP client with synthetic URLs and egress disabled"
+  },
+  {
+    "id": "eval.holdout.document-instruction.positive",
+    "vulnerability_id": "vuln.ai.indirect-prompt-injection",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-20",
+    "query": "A retrieved document tells the assistant to disregard its policy and invoke an external action.",
+    "snippet": "Document text is merged into the instruction channel and the model result can select a capability.",
+    "evidence_required": ["source", "flow", "sink"],
+    "safe_boundary": "local synthetic document and mocked capability with no external side effects"
+  },
+  {
+    "id": "eval.holdout.agent-delete.positive",
+    "vulnerability_id": "vuln.ai.tool-authorization",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-862",
+    "query": "An autonomous assistant can submit an account deletion operation from generated arguments without tenant or user approval.",
+    "snippet": "The tool registry accepts model output and checks neither destination nor side-effect scope.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local mock tool and synthetic account; approval is asserted without executing deletion"
+  },
+  {
+    "id": "eval.holdout.replay-callback.positive",
+    "vulnerability_id": "vuln.api.webhook-replay",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-294",
+    "query": "The same valid payment callback can be delivered twice and causes the order transition twice.",
+    "snippet": "The event identifier is logged but not atomically claimed before the side effect.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local webhook fixture with a synthetic event and idempotency assertion"
+  },
+  {
+    "id": "eval.holdout.redirect-target.positive",
+    "vulnerability_id": "vuln.browser.open-redirect",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-601",
+    "query": "The login completion endpoint accepts an absolute return destination supplied by the browser.",
+    "snippet": "Navigation leaves the trusted origin because the target is not constrained to an allowlist.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local browser test using a canary origin and no public navigation"
+  },
+  {
+    "id": "eval.holdout.archive-path.positive",
+    "vulnerability_id": "vuln.files.path-traversal",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-22",
+    "query": "An uploaded filename is joined to the storage directory and the resolved path can escape the intended root.",
+    "snippet": "Normalization occurs before containment is checked and link handling is not restricted.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local temporary directory with synthetic files and no host-sensitive paths"
+  },
+  {
+    "id": "eval.holdout.mutable-image.positive",
+    "vulnerability_id": "vuln.supply.container-image",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-494",
+    "query": "A deployment runs a mutable container reference without checking the image digest or build identity.",
+    "snippet": "The registry tag can resolve to a different artifact after review and admission has no provenance check.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local manifest fixture and mocked registry metadata; no image pull"
+  },
+  {
+    "id": "eval.holdout.memory-cross-tenant.positive",
+    "vulnerability_id": "vuln.ai.memory-poisoning",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-1321",
+    "query": "A chat note is persisted as a trusted assistant preference and later appears in another tenant's context.",
+    "snippet": "The memory write has no owner or provenance and retrieval ignores tenant scope.",
+    "evidence_required": ["source", "flow", "sink"],
+    "safe_boundary": "local in-memory store with synthetic tenants and canary notes"
+  },
+  {
+    "id": "eval.holdout.cdn-private-response.positive",
+    "vulnerability_id": "vuln.http.cache-authorization",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-525",
+    "query": "A shared edge cache serves a private response to a second user because authorization is absent from the cache policy.",
+    "snippet": "Tenant and principal state are not included in the cache key or privacy directive.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local cache simulator with synthetic users and no real responses"
+  },
+  {
+    "id": "eval.holdout.graphql-field.positive",
+    "vulnerability_id": "vuln.api.graphql",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-285",
+    "query": "A resolver authorizes the parent object but returns an administrator-only field and allows unbounded nested queries.",
+    "snippet": "Field policy and query cost limits are missing at the resolver boundary.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "local GraphQL schema fixture with synthetic roles and bounded query tests"
+  },
+  {
+    "id": "eval.holdout.signed-firmware.positive",
+    "vulnerability_id": "vuln.hardware.firmware-update",
+    "polarity": "positive",
+    "expected_status": "candidate",
+    "expected_cwe": "CWE-494",
+    "query": "A device accepts a newer-looking firmware package without trusted signing or rollback protection.",
+    "snippet": "The updater verifies a digest only and the debug update path remains available in production mode.",
+    "evidence_required": ["source", "sink", "control"],
+    "safe_boundary": "owned-device emulator or offline image verifier with synthetic firmware"
+  }
+]

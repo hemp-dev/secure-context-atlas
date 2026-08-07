@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate final 0.5.0 release invariants and artifact hashes."""
+"""Validate final 0.6.0 release invariants and artifact hashes."""
 from __future__ import annotations
 
 import hashlib
@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+RELEASE_VERSION = "0.6.0"
 
 
 def sha256(path: Path) -> str:
@@ -23,8 +24,8 @@ def main() -> int:
     index = json.loads((ROOT / "ai/index.json").read_text(encoding="utf-8"))
     if index.get("project") != "Secure Context Atlas":
         errors.append("project metadata is not Secure Context Atlas")
-    if index.get("release") != "0.5.0":
-        errors.append("release metadata is not 0.5.0")
+    if index.get("release") != RELEASE_VERSION:
+        errors.append(f"release metadata is not {RELEASE_VERSION}")
     if index.get("release_channel") != "stable-preview":
         errors.append("release channel is not stable-preview")
     manifest_path = ROOT / "ai/release-manifest.json"
@@ -32,7 +33,7 @@ def main() -> int:
         errors.append("missing ai/release-manifest.json")
     else:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        if manifest.get("release") != "0.5.0":
+        if manifest.get("release") != RELEASE_VERSION:
             errors.append("release manifest version mismatch")
         for entry in manifest.get("files", []):
             path = ROOT / entry["path"]

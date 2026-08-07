@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.supply.ci-cd","vuln.ai.unsafe-model-loading"]
 references: ["https://cwe.mitre.org/data/definitions/1104.html","https://osv.dev/docs/","https://github.com/ossf/scorecard"]
 source_provenance: ["sources/manifest.yaml:osv","sources/manifest.yaml:openssf-scorecard","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Vulnerable, confused or unpinned dependency supply chain

@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://portswigger.net/web-security/web-cache-poisoning"]
 source_provenance: ["sources/manifest.yaml:portswigger-academy"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Unsafe cache keying and cache poisoning

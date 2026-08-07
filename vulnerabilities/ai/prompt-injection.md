@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.ai.excessive-agency","vuln.ai.output-handling"]
 references: ["https://genai.owasp.org/llmrisk/llm01-prompt-injection/","https://atlas.mitre.org/"]
 source_provenance: ["sources/manifest.yaml:owasp-genai","sources/manifest.yaml:hacktricks"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Direct and indirect prompt injection / goal hijack

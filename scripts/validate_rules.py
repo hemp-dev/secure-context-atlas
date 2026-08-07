@@ -25,6 +25,8 @@ def frontmatter_id(path: Path) -> str | None:
 def main() -> int:
     errors: list[str] = []
     manifest = json.loads((ROOT / "rules/manifest.json").read_text(encoding="utf-8"))
+    if manifest.get("execution_mode") not in {"contract-only", "semgrep-executable", "codeql-executable", "mixed"}:
+        errors.append("rules manifest must declare a supported execution_mode")
     cards = set()
     for path in (ROOT / "vulnerabilities").rglob("*.md"):
         if path.name != "README.md":
@@ -60,7 +62,7 @@ def main() -> int:
             print(f"ERROR {error}")
         print(f"rule validation failed: {len(errors)} error(s)")
         return 1
-    print(f"rules validation passed: {len(rule_ids)} rules")
+    print(f"rules validation passed: {len(rule_ids)} rules ({manifest.get('execution_mode')})")
     return 0
 
 

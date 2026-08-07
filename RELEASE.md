@@ -1,12 +1,23 @@
-# Secure Context Atlas 0.5.0
+# Secure Context Atlas 0.6.0
 
-## Foundational Defensive Knowledge Release
+## Provenance and Evaluation Preview
 
 Дата релиза: **2026-08-08**
 
 Канал: **stable-preview**
 
-Статус: **готов к ограниченному публичному preview-использованию с machine-readable contract**
+Статус: **готов к ограниченному публичному preview-использованию с проверяемыми schemas, provenance и holdout evaluation**
+
+## Что нового в 0.6.0
+
+- Полная JSON Schema validation для карточек, findings, threat models, context packs, advisories, provenance, evaluation и detector contracts.
+- Сгенерированные карточки разделены на `curated/reviewed` и `scaffolded/needs-review`; незавершённый контент не загружается в `sctx pack` по умолчанию.
+- Добавлен независимый holdout-набор из 12 перефразированных synthetic cases: текущий `recall@5` — **0.8333**, `MRR` — **0.8446**.
+- `sctx pack` получил строгие фильтры по stack/surface/family/maturity, deterministic `pack_id`, card IDs и source provenance.
+- Добавлены normalized advisory schema и synthetic OSV/GHSA fixtures; advisory не превращается автоматически в code finding.
+- Пять primary research repositories закреплены commit SHA в `sources/lock.json`.
+- CI использует pinned action SHAs, least-privilege read permissions для quality job и `git diff --exit-code` после генерации.
+- Detector pack явно объявлен `contract-only`; executable Semgrep/CodeQL packs остаются отдельным следующим этапом.
 
 ## 1. Название и позиционирование
 
@@ -54,22 +65,22 @@ Secure Context Atlas — статическая, версионируемая и
 | Область | В релизе |
 |---|---:|
 | Нормализованные классы и варианты | 305 leaf-классов |
-| Atomic vulnerability cards | 111 |
+| Atomic vulnerability cards | 111: 44 curated, 67 scaffolded |
 | Inventory-only backlog | 194 leaf-класса |
 | CWE 4.20 | 969 импортированных записей, 944 активных, 25 deprecated |
-| Curated CWE mapping | 76 уникальных CWE, 868 active CWE без card mapping |
+| Curated CWE mapping | curated/scaffolded состояния разделены; active CWE backlog публикуется отдельно |
 | CAPEC 3.9 | 615 attack patterns |
 | Языки | 13 |
 | Framework guidance | 6 основных профилей |
 | Platform guidance | cloud, containers/Kubernetes, Android, iOS, AI/LLM, CI/CD, enterprise/AD, hardware/IoT |
 | Primary repositories | 5 |
 | Dynamic advisory adapters | OSV, GitHub Advisory Database |
-| Deterministic evaluation fixtures | 134 |
+| Deterministic evaluation fixtures | 134 базовых + 12 независимых holdout |
 | Detector contracts | 10 Semgrep/CodeQL adapters |
 | Threat-model examples | 1 валидируемый agentic RAG model |
 | Context-pack CLI | `sctx list/show/search/pack/validate/export-sarif` |
 
-Полный inventory остаётся доступен даже там, где ещё нет отдельной редакторской карточки: `ai/vulnerability-map.json` содержит все 305 stable-ID records, `ai/maturity-map.json` различает `inventory` и `curated`, а `ai/cwe-coverage.json` — все записи текущей CWE-выгрузки. В coverage report отражены 194 leaf без atomic card и 868 активных CWE без curated-card mapping; это честный backlog, а не скрытая потеря покрытия.
+Полный inventory остаётся доступен даже там, где ещё нет отдельной редакторской карточки: `ai/vulnerability-map.json` содержит все 305 stable-ID records, `ai/maturity-map.json` различает `inventory`, `scaffolded` и `curated`, а `ai/cwe-coverage.json` — все записи текущей CWE-выгрузки. В coverage report отдельно отражены карточки scaffolded и 194 leaf без atomic card; это честный backlog, а не скрытая потеря покрытия.
 
 ## 4. Источники и provenance
 
@@ -83,7 +94,7 @@ Secure Context Atlas — статическая, версионируемая и
 
 Дополнительные canonical/similar references описаны в [`sources/research-notes.md`](sources/research-notes.md) и [`sources/manifest.yaml`](sources/manifest.yaml): MITRE CWE/CAPEC, OWASP ASVS/WSTG/API/GenAI/Agentic/Mobile, NIST AI RMF, PortSwigger Academy, FuzzDB, Vulhub, CodeQL, Semgrep, Gitleaks, OSV, GitHub Advisory Database, OpenSSF Scorecard, Assetnote Wordlists, InternalAllTheThings, HardwareAllTheThings и другие.
 
-Машинные версии и SHA-256 находятся в [`sources/versions.yaml`](sources/versions.yaml) и [`ai/source-hashes.json`](ai/source-hashes.json). Каноническая ontology опирается на [CWE machine-readable downloads](https://cwe.mitre.org/data/downloads.html); attack-pattern слой хранится отдельно по [CAPEC downloads](https://capec.mitre.org/data/downloads.html).
+Машинные версии, commit pins и SHA-256 находятся в [`sources/versions.yaml`](sources/versions.yaml), [`sources/lock.json`](sources/lock.json) и [`ai/source-hashes.json`](ai/source-hashes.json). Каноническая ontology опирается на [CWE machine-readable downloads](https://cwe.mitre.org/data/downloads.html); attack-pattern слой хранится отдельно по [CAPEC downloads](https://capec.mitre.org/data/downloads.html).
 
 ## 5. Архитектура релиза
 
@@ -126,6 +137,7 @@ SOURCE -> TRANSFORMATIONS -> CONTROL -> SINK
 ### Проверить локальную копию
 
 ```sh
+python3 -m pip install -r requirements-dev.txt
 python3 -B scripts/validate_repo.py
 python3 -B -m unittest discover -s tests -v
 ```
@@ -137,7 +149,9 @@ python3 -B -m unittest discover -s tests -v
 ```sh
 python3 -B scripts/build_indexes.py --fetch
 python3 -B scripts/update_sources.py --write-lock --check
+python3 -B scripts/validate_sources.py
 python3 -B scripts/run_eval.py --output ai/evaluation-report.json
+python3 -B scripts/validate_schemas.py
 python3 -B scripts/validate_repo.py
 python3 -B scripts/validate_rules.py
 python3 -B scripts/validate_threat_models.py
@@ -183,7 +197,7 @@ python3 -B scripts/build_release_manifest.py
 - `vuln.*` IDs вместо uppercase `INJ.SQL`/`AUTH.IDOR`-подобных legacy IDs;
 - `canonical_cwe` вместо самодельного numeric vulnerability ID;
 - `ai/vulnerability-map.json` и `ai/aliases.json` для совместимого retrieval;
-- `ai/maturity-map.json` для различения inventory и curated coverage;
+    - `ai/maturity-map.json` для различения inventory, scaffolded и curated coverage;
 - `schemas/finding.schema.json` и `scripts/export_sarif.py` для результатов анализа;
 - `bin/sctx` для context packs с token budget и routing trace.
 
@@ -196,11 +210,11 @@ python3 -B scripts/build_release_manifest.py
 ## 11. Известные ограничения
 
 - Это knowledge base, а не автономный scanner и не гарантия отсутствия уязвимостей.
-- 305 leaf-классов инвентаризованы, 111 имеют curated-card, 194 остаются backlog.
+- 305 leaf-классов инвентаризованы; 44 карточки curated, 67 scaffolded/needs-review, 194 остаются inventory-only.
 - CWE/CAPEC и OWASP projects обновляются; перед production audit нужно обновить provenance и regenerated artifacts.
 - Advisory presence не равна reachability/exploitability; нужен package coordinate, version и runtime evidence.
 - AI output нельзя считать доказательством без code/config/architecture evidence.
-- Evaluation suite проверяет deterministic retrieval contract; она не заменяет benchmark конкретной LLM.
+- Evaluation suite включает независимый holdout, но всё ещё проверяет deterministic retrieval contract и не заменяет benchmark конкретной LLM.
 - Правовая, domain и trademark проверка названия в этот релиз не входит.
 
 ## 12. Release checklist
@@ -208,9 +222,11 @@ python3 -B scripts/build_release_manifest.py
 Короткая версия checklist:
 
 - [ ] `sources/manifest.yaml`, `sources/versions.yaml`, licenses и hashes обновлены.
+- [ ] Primary repository commits записаны в `sources/lock.json`; `scripts/validate_sources.py` завершился успешно.
 - [ ] `python3 -B scripts/build_indexes.py` выполнен.
 - [ ] `python3 -B scripts/update_sources.py --check` завершился успешно.
 - [ ] `python3 -B scripts/run_eval.py --output ai/evaluation-report.json` завершился успешно.
+- [ ] `python3 -B scripts/validate_schemas.py` завершился успешно.
 - [ ] `python3 -B scripts/validate_repo.py` завершился `validation passed`.
 - [ ] `python3 -B scripts/validate_rules.py` и `python3 -B scripts/validate_threat_models.py` завершились успешно.
 - [ ] `python3 -B -m unittest discover -s tests -v` завершился `OK`.
@@ -220,4 +236,4 @@ python3 -B scripts/build_release_manifest.py
 - [ ] Проверены mappings и backward compatibility stable IDs.
 - [ ] Changelog, release tag и artifact hashes опубликованы вместе.
 
-Расширенная процедура находится в [`docs/release-checklist.md`](docs/release-checklist.md), а последовательность реализации — в [`docs/roadmap-0.5.md`](docs/roadmap-0.5.md).
+Расширенная процедура находится в [`docs/release-checklist.md`](docs/release-checklist.md), а последовательность реализации — в [`docs/roadmap-0.6.md`](docs/roadmap-0.6.md).

@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://cwe.mitre.org/data/definitions/829.html","https://github.com/ossf/scorecard"]
 source_provenance: ["sources/manifest.yaml:openssf-scorecard","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # CI/CD workflow trust and artifact integrity failure

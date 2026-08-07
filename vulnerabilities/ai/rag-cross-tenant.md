@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://genai.owasp.org/llmrisk/llm08-vector-and-embedding-weaknesses/","https://cwe.mitre.org/data/definitions/639.html"]
 source_provenance: ["sources/manifest.yaml:owasp-genai","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # RAG/vector retrieval cross-tenant disclosure

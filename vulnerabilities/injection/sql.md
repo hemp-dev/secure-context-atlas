@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.injection.command","vuln.injection.expression"]
 references: ["https://cwe.mitre.org/data/definitions/89.html","https://owasp.org/www-community/attacks/SQL_Injection"]
 source_provenance: ["sources/manifest.yaml:patt","sources/manifest.yaml:mitre-cwe","sources/manifest.yaml:owasp-asvs"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # SQL injection and unsafe query construction

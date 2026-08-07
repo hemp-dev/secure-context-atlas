@@ -37,6 +37,8 @@ related_vulnerabilities: []
 references: ["https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/"]
 source_provenance: ["sources/manifest.yaml:owasp-api","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # GraphQL field authorization and query complexity failure

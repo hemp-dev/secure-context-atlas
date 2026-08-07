@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,10 +19,20 @@ def digest(path: Path) -> str:
     return value.hexdigest()
 
 
+def release_paths() -> list[Path]:
+    """Hash the committed release tree, not arbitrary untracked workspace files."""
+    try:
+        result = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True)
+        paths = [ROOT / item for item in result.stdout.decode("utf-8").split("\0") if item]
+    except (OSError, subprocess.CalledProcessError):
+        paths = list(ROOT.rglob("*"))
+    return sorted(paths)
+
+
 def main() -> int:
     index = json.loads((ROOT / "ai/index.json").read_text(encoding="utf-8"))
     files = []
-    for path in sorted(ROOT.rglob("*")):
+    for path in release_paths():
         if not path.is_file() or ".git" in path.parts or "__pycache__" in path.parts or path == OUTPUT:
             continue
         if "raw" in path.parts or path.name.endswith((".zip", ".xml")):

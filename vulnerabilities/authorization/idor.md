@@ -37,6 +37,8 @@ related_vulnerabilities: ["vuln.authorization.function-level","vuln.ai.rag-cross
 references: ["https://cwe.mitre.org/data/definitions/639.html","https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/"]
 source_provenance: ["sources/manifest.yaml:patt","sources/manifest.yaml:owasp-api","sources/manifest.yaml:mitre-cwe"]
 last_reviewed: "2026-08-07"
+maturity: "curated"
+review_status: "reviewed"
 ---
 
 # Broken object-level authorization (IDOR/BOLA)
