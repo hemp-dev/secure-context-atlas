@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-409",
+  "expected_status": "not-applicable",
+  "id": "eval.archive-bomb.negative",
+  "polarity": "negative",
+  "query": "Archive expansion and decompression resource exhaustion uploaded archive or provider-supplied package decompressor, filesystem or media parser",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from uploaded archive or provider-supplied package is validated, scoped and denied before decompressor, filesystem or media parser",
+  "vulnerability_id": "vuln.files.archive-bomb"
+}

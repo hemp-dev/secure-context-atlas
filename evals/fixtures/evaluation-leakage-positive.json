@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-200",
+  "expected_status": "candidate",
+  "id": "eval.evaluation-leakage.positive",
+  "polarity": "positive",
+  "query": "Evaluation and feedback data leakage evaluation case, user feedback or grader output model provider, artifact, log or training dataset",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from evaluation case, user feedback or grader output reaches model provider, artifact, log or training dataset without the documented control",
+  "vulnerability_id": "vuln.ai.evaluation-leakage"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-20",
+  "expected_status": "not-applicable",
+  "id": "eval.indirect-prompt-injection.negative",
+  "polarity": "negative",
+  "query": "Indirect prompt injection through retrieved or external content retrieved document, web content or tool result model context, decision or tool call",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from retrieved document, web content or tool result is validated, scoped and denied before model context, decision or tool call",
+  "vulnerability_id": "vuln.ai.indirect-prompt-injection"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-347",
+  "expected_status": "not-applicable",
+  "id": "eval.saml-validation.negative",
+  "polarity": "negative",
+  "query": "SAML assertion and audience validation failure SAML response or assertion principal construction and role mapping",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from SAML response or assertion is validated, scoped and denied before principal construction and role mapping",
+  "vulnerability_id": "vuln.authentication.saml-validation"
+}

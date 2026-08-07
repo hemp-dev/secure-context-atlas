@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-377",
+  "expected_status": "candidate",
+  "id": "eval.temp-file.positive",
+  "polarity": "positive",
+  "query": "Insecure temporary-file and workspace handling temporary name, upload or job identifier temporary filesystem path or cleanup job",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from temporary name, upload or job identifier reaches temporary filesystem path or cleanup job without the documented control",
+  "vulnerability_id": "vuln.files.temp-file"
+}

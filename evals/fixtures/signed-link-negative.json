@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-863",
+  "expected_status": "not-applicable",
+  "id": "eval.signed-link.negative",
+  "polarity": "negative",
+  "query": "Signed-link scope and expiry confusion signed link, capability token or share identifier file read, object mutation or privileged action",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from signed link, capability token or share identifier is validated, scoped and denied before file read, object mutation or privileged action",
+  "vulnerability_id": "vuln.authorization.signed-link"
+}

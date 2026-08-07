@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-829",
+  "expected_status": "not-applicable",
+  "id": "eval.rag-source-trust.negative",
+  "polarity": "negative",
+  "query": "RAG provenance and source-trust confusion document, embedding result or search filter retrieval context, answer or action",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from document, embedding result or search filter is validated, scoped and denied before retrieval context, answer or action",
+  "vulnerability_id": "vuln.ai.rag-source-trust"
+}

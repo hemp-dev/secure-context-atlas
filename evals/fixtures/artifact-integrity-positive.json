@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-494",
+  "expected_status": "candidate",
+  "id": "eval.artifact-integrity.positive",
+  "polarity": "positive",
+  "query": "Unsigned or weakly bound build artifact artifact, digest, manifest or release metadata deployment, package registry or updater",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from artifact, digest, manifest or release metadata reaches deployment, package registry or updater without the documented control",
+  "vulnerability_id": "vuln.supply.artifact-integrity"
+}

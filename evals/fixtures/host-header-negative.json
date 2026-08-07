@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-346",
+  "expected_status": "not-applicable",
+  "id": "eval.host-header.negative",
+  "polarity": "negative",
+  "query": "Host header and forwarded-host trust confusion Host, forwarded host or proxy metadata absolute URL, password-reset link or routing decision",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from Host, forwarded host or proxy metadata is validated, scoped and denied before absolute URL, password-reset link or routing decision",
+  "vulnerability_id": "vuln.http.host-header"
+}

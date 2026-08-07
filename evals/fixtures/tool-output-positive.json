@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-20",
+  "expected_status": "candidate",
+  "id": "eval.tool-output.positive",
+  "polarity": "positive",
+  "query": "Untrusted tool output treated as authority tool result, API response or error model context, next tool call or state mutation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from tool result, API response or error reaches model context, next tool call or state mutation without the documented control",
+  "vulnerability_id": "vuln.ai.tool-output"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-732",
+  "expected_status": "not-applicable",
+  "id": "eval.serverless-iam.negative",
+  "polarity": "negative",
+  "query": "Serverless function privilege and event-source confusion event payload, trigger metadata or function role cloud API, storage or downstream event",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from event payload, trigger metadata or function role is validated, scoped and denied before cloud API, storage or downstream event",
+  "vulnerability_id": "vuln.cloud.serverless-iam"
+}

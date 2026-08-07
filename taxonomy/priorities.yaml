@@ -1,0 +1,20 @@
+schema_version: "1.0"
+description: "Risk-based curation queue for Secure Context Atlas cards. This is a prioritization aid, not a severity assertion."
+scoring:
+  formula: "severity * prevalence * stack_relevance * detectability * business_impact"
+  scale: "1-5 per factor; reviewers may override with rationale"
+statuses: [inventory, scaffolded, curated, tested, production-ready]
+priorities:
+  P0:
+    description: "High-impact, common, cross-stack weaknesses with safe deterministic verification."
+    target: "next release"
+  P1:
+    description: "Important platform, protocol and workflow coverage."
+    target: "following release"
+  P2:
+    description: "Specialized or lower-frequency coverage."
+    target: "backlog"
+review_requirements:
+  curated: [summary, preconditions, trust_boundaries, data_flow, audit_questions, safe_verification, false_positives, remediation, regression_tests, source_provenance]
+  tested: [fixture_positive, fixture_negative, expected_mapping]
+  production-ready: [reviewer, detector_or_reason_for_manual_review, reproducible_regression, release_provenance]

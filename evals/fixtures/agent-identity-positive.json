@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-441",
+  "expected_status": "candidate",
+  "id": "eval.agent-identity.positive",
+  "polarity": "positive",
+  "query": "Agent identity and user-delegation confusion user request, agent session or service token downstream API or workflow action",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from user request, agent session or service token reaches downstream API or workflow action without the documented control",
+  "vulnerability_id": "vuln.ai.agent-identity"
+}

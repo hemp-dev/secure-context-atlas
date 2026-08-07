@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-208",
+  "expected_status": "not-applicable",
+  "id": "eval.timing.negative",
+  "polarity": "negative",
+  "query": "Observable timing side channel candidate secret, identifier or query response timing or resource usage",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from candidate secret, identifier or query is validated, scoped and denied before response timing or resource usage",
+  "vulnerability_id": "vuln.secrets.timing"
+}

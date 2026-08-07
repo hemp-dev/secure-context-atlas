@@ -1,0 +1,1753 @@
+{
+  "cases": [
+    {
+      "id": "eval.mass-assignment.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.mass-assignment",
+        "vuln.injection.nosql",
+        "vuln.authorization.delegated-admin",
+        "vuln.authorization.property-level",
+        "vuln.injection.xxe"
+      ],
+      "vulnerability_id": "vuln.authorization.mass-assignment"
+    },
+    {
+      "id": "eval.mass-assignment.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.mass-assignment",
+        "vuln.injection.nosql",
+        "vuln.authorization.delegated-admin",
+        "vuln.authorization.property-level",
+        "vuln.injection.xxe"
+      ],
+      "vulnerability_id": "vuln.authorization.mass-assignment"
+    },
+    {
+      "id": "eval.property-level.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.property-level",
+        "vuln.authorization.idor",
+        "vuln.authorization.mass-assignment",
+        "vuln.business.idempotency",
+        "vuln.files.object-storage"
+      ],
+      "vulnerability_id": "vuln.authorization.property-level"
+    },
+    {
+      "id": "eval.property-level.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.property-level",
+        "vuln.authorization.idor",
+        "vuln.authorization.mass-assignment",
+        "vuln.business.idempotency",
+        "vuln.files.object-storage"
+      ],
+      "vulnerability_id": "vuln.authorization.property-level"
+    },
+    {
+      "id": "eval.tenant-filter.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.tenant-filter",
+        "vuln.authorization.idor",
+        "vuln.injection.xpath",
+        "vuln.ai.rag-source-trust",
+        "vuln.secrets.timing"
+      ],
+      "vulnerability_id": "vuln.authorization.tenant-filter"
+    },
+    {
+      "id": "eval.tenant-filter.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.tenant-filter",
+        "vuln.authorization.idor",
+        "vuln.injection.xpath",
+        "vuln.ai.rag-source-trust",
+        "vuln.secrets.timing"
+      ],
+      "vulnerability_id": "vuln.authorization.tenant-filter"
+    },
+    {
+      "id": "eval.webhook-signature.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.webhook-signature",
+        "vuln.api.webhook-replay",
+        "vuln.authorization.idor",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.session"
+      ],
+      "vulnerability_id": "vuln.authorization.webhook-signature"
+    },
+    {
+      "id": "eval.webhook-signature.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.webhook-signature",
+        "vuln.api.webhook-replay",
+        "vuln.authorization.idor",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.session"
+      ],
+      "vulnerability_id": "vuln.authorization.webhook-signature"
+    },
+    {
+      "id": "eval.delegated-admin.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.delegated-admin",
+        "vuln.ai.agent-identity",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.session",
+        "vuln.authorization.idor"
+      ],
+      "vulnerability_id": "vuln.authorization.delegated-admin"
+    },
+    {
+      "id": "eval.delegated-admin.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.delegated-admin",
+        "vuln.ai.agent-identity",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.session",
+        "vuln.authorization.idor"
+      ],
+      "vulnerability_id": "vuln.authorization.delegated-admin"
+    },
+    {
+      "id": "eval.signed-link.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.signed-link",
+        "vuln.authorization.idor",
+        "vuln.authentication.session",
+        "vuln.ai.excessive-agency",
+        "vuln.authorization.capability-confusion"
+      ],
+      "vulnerability_id": "vuln.authorization.signed-link"
+    },
+    {
+      "id": "eval.signed-link.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.signed-link",
+        "vuln.authorization.idor",
+        "vuln.authentication.session",
+        "vuln.ai.excessive-agency",
+        "vuln.authorization.capability-confusion"
+      ],
+      "vulnerability_id": "vuln.authorization.signed-link"
+    },
+    {
+      "id": "eval.service-impersonation.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.service-impersonation",
+        "vuln.ai.agent-identity",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.availability.rate-limit",
+        "vuln.cloud.serverless-iam"
+      ],
+      "vulnerability_id": "vuln.authorization.service-impersonation"
+    },
+    {
+      "id": "eval.service-impersonation.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.service-impersonation",
+        "vuln.ai.agent-identity",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.availability.rate-limit",
+        "vuln.cloud.serverless-iam"
+      ],
+      "vulnerability_id": "vuln.authorization.service-impersonation"
+    },
+    {
+      "id": "eval.capability-confusion.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.capability-confusion",
+        "vuln.ai.agent-identity",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.tool-authorization",
+        "vuln.authorization.signed-link"
+      ],
+      "vulnerability_id": "vuln.authorization.capability-confusion"
+    },
+    {
+      "id": "eval.capability-confusion.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authorization.capability-confusion",
+        "vuln.ai.agent-identity",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.tool-authorization",
+        "vuln.authorization.signed-link"
+      ],
+      "vulnerability_id": "vuln.authorization.capability-confusion"
+    },
+    {
+      "id": "eval.password-reset.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.password-reset",
+        "vuln.authentication.session",
+        "vuln.authorization.signed-link",
+        "vuln.browser.csrf",
+        "vuln.ai.agent-identity"
+      ],
+      "vulnerability_id": "vuln.authentication.password-reset"
+    },
+    {
+      "id": "eval.password-reset.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.password-reset",
+        "vuln.authentication.session",
+        "vuln.authorization.signed-link",
+        "vuln.browser.csrf",
+        "vuln.ai.agent-identity"
+      ],
+      "vulnerability_id": "vuln.authentication.password-reset"
+    },
+    {
+      "id": "eval.mfa-recovery.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.mfa-recovery",
+        "vuln.authentication.session",
+        "vuln.ai.agent-identity",
+        "vuln.authentication.password-reset",
+        "vuln.authentication.password-storage"
+      ],
+      "vulnerability_id": "vuln.authentication.mfa-recovery"
+    },
+    {
+      "id": "eval.mfa-recovery.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.mfa-recovery",
+        "vuln.authentication.session",
+        "vuln.ai.agent-identity",
+        "vuln.authentication.password-reset",
+        "vuln.authentication.password-storage"
+      ],
+      "vulnerability_id": "vuln.authentication.mfa-recovery"
+    },
+    {
+      "id": "eval.saml-validation.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.saml-validation",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.cloud.metadata-boundary",
+        "vuln.http.cache-authorization",
+        "vuln.ai.context-leakage"
+      ],
+      "vulnerability_id": "vuln.authentication.saml-validation"
+    },
+    {
+      "id": "eval.saml-validation.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.saml-validation",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.cloud.metadata-boundary",
+        "vuln.http.cache-authorization",
+        "vuln.ai.context-leakage"
+      ],
+      "vulnerability_id": "vuln.authentication.saml-validation"
+    },
+    {
+      "id": "eval.account-enumeration.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.account-enumeration",
+        "vuln.secrets.timing",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.mfa-recovery",
+        "vuln.authentication.password-reset"
+      ],
+      "vulnerability_id": "vuln.authentication.account-enumeration"
+    },
+    {
+      "id": "eval.account-enumeration.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.account-enumeration",
+        "vuln.secrets.timing",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.mfa-recovery",
+        "vuln.authentication.password-reset"
+      ],
+      "vulnerability_id": "vuln.authentication.account-enumeration"
+    },
+    {
+      "id": "eval.password-storage.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.password-storage",
+        "vuln.configuration.insecure-default",
+        "vuln.secrets.backup-exposure",
+        "vuln.ai.rag-source-trust",
+        "vuln.authentication.account-enumeration"
+      ],
+      "vulnerability_id": "vuln.authentication.password-storage"
+    },
+    {
+      "id": "eval.password-storage.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.authentication.password-storage",
+        "vuln.configuration.insecure-default",
+        "vuln.secrets.backup-exposure",
+        "vuln.ai.rag-source-trust",
+        "vuln.authentication.account-enumeration"
+      ],
+      "vulnerability_id": "vuln.authentication.password-storage"
+    },
+    {
+      "id": "eval.nosql.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.nosql",
+        "vuln.authorization.idor",
+        "vuln.injection.sql",
+        "vuln.serialization.prototype-pollution",
+        "vuln.authorization.mass-assignment"
+      ],
+      "vulnerability_id": "vuln.injection.nosql"
+    },
+    {
+      "id": "eval.nosql.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.nosql",
+        "vuln.authorization.idor",
+        "vuln.injection.sql",
+        "vuln.serialization.prototype-pollution",
+        "vuln.authorization.mass-assignment"
+      ],
+      "vulnerability_id": "vuln.injection.nosql"
+    },
+    {
+      "id": "eval.ldap.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.ldap",
+        "vuln.ai.rag-source-trust",
+        "vuln.authorization.delegated-admin",
+        "vuln.availability.rate-limit",
+        "vuln.injection.csv"
+      ],
+      "vulnerability_id": "vuln.injection.ldap"
+    },
+    {
+      "id": "eval.ldap.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.ldap",
+        "vuln.ai.rag-source-trust",
+        "vuln.authorization.delegated-admin",
+        "vuln.availability.rate-limit",
+        "vuln.injection.csv"
+      ],
+      "vulnerability_id": "vuln.injection.ldap"
+    },
+    {
+      "id": "eval.xpath.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.xpath",
+        "vuln.injection.nosql",
+        "vuln.injection.xxe",
+        "vuln.injection.header",
+        "vuln.injection.log"
+      ],
+      "vulnerability_id": "vuln.injection.xpath"
+    },
+    {
+      "id": "eval.xpath.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.xpath",
+        "vuln.injection.nosql",
+        "vuln.injection.xxe",
+        "vuln.injection.header",
+        "vuln.injection.log"
+      ],
+      "vulnerability_id": "vuln.injection.xpath"
+    },
+    {
+      "id": "eval.header.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.header",
+        "vuln.browser.open-redirect",
+        "vuln.cloud.metadata-boundary",
+        "vuln.http.cache-poisoning",
+        "vuln.http.host-header"
+      ],
+      "vulnerability_id": "vuln.injection.header"
+    },
+    {
+      "id": "eval.header.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.header",
+        "vuln.browser.open-redirect",
+        "vuln.cloud.metadata-boundary",
+        "vuln.http.cache-poisoning",
+        "vuln.http.host-header"
+      ],
+      "vulnerability_id": "vuln.injection.header"
+    },
+    {
+      "id": "eval.log.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.log",
+        "vuln.information.logging",
+        "vuln.api.content-type-confusion",
+        "vuln.availability.resource-exhaustion",
+        "vuln.business.workflow"
+      ],
+      "vulnerability_id": "vuln.injection.log"
+    },
+    {
+      "id": "eval.log.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.log",
+        "vuln.information.logging",
+        "vuln.api.content-type-confusion",
+        "vuln.availability.resource-exhaustion",
+        "vuln.business.workflow"
+      ],
+      "vulnerability_id": "vuln.injection.log"
+    },
+    {
+      "id": "eval.csv.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.csv",
+        "vuln.injection.header",
+        "vuln.injection.log",
+        "vuln.ai.agent-identity",
+        "vuln.ai.rag-cross-tenant"
+      ],
+      "vulnerability_id": "vuln.injection.csv"
+    },
+    {
+      "id": "eval.csv.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.csv",
+        "vuln.injection.header",
+        "vuln.injection.log",
+        "vuln.ai.agent-identity",
+        "vuln.ai.rag-cross-tenant"
+      ],
+      "vulnerability_id": "vuln.injection.csv"
+    },
+    {
+      "id": "eval.regex.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.regex",
+        "vuln.availability.resource-exhaustion",
+        "vuln.files.path-traversal",
+        "vuln.injection.ldap",
+        "vuln.injection.template"
+      ],
+      "vulnerability_id": "vuln.injection.regex"
+    },
+    {
+      "id": "eval.regex.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.regex",
+        "vuln.availability.resource-exhaustion",
+        "vuln.files.path-traversal",
+        "vuln.injection.ldap",
+        "vuln.injection.template"
+      ],
+      "vulnerability_id": "vuln.injection.regex"
+    },
+    {
+      "id": "eval.xml-schema.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.xml-schema",
+        "vuln.injection.xxe",
+        "vuln.api.content-type-confusion",
+        "vuln.files.upload",
+        "vuln.api.graphql"
+      ],
+      "vulnerability_id": "vuln.injection.xml-schema"
+    },
+    {
+      "id": "eval.xml-schema.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.injection.xml-schema",
+        "vuln.injection.xxe",
+        "vuln.api.content-type-confusion",
+        "vuln.files.upload",
+        "vuln.api.graphql"
+      ],
+      "vulnerability_id": "vuln.injection.xml-schema"
+    },
+    {
+      "id": "eval.cors.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.cors",
+        "vuln.browser.csrf",
+        "vuln.http.cache-poisoning",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.injection.header"
+      ],
+      "vulnerability_id": "vuln.browser.cors"
+    },
+    {
+      "id": "eval.cors.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.cors",
+        "vuln.browser.csrf",
+        "vuln.http.cache-poisoning",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.injection.header"
+      ],
+      "vulnerability_id": "vuln.browser.cors"
+    },
+    {
+      "id": "eval.clickjacking.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.clickjacking",
+        "vuln.browser.xss",
+        "vuln.ai.rag-source-trust",
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.authentication.session"
+      ],
+      "vulnerability_id": "vuln.browser.clickjacking"
+    },
+    {
+      "id": "eval.clickjacking.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.clickjacking",
+        "vuln.browser.xss",
+        "vuln.ai.rag-source-trust",
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.authentication.session"
+      ],
+      "vulnerability_id": "vuln.browser.clickjacking"
+    },
+    {
+      "id": "eval.postmessage.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.postmessage",
+        "vuln.api.websocket",
+        "vuln.browser.csrf",
+        "vuln.browser.xss",
+        "vuln.ai.inter-agent-trust"
+      ],
+      "vulnerability_id": "vuln.browser.postmessage"
+    },
+    {
+      "id": "eval.postmessage.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.postmessage",
+        "vuln.api.websocket",
+        "vuln.browser.csrf",
+        "vuln.browser.xss",
+        "vuln.ai.inter-agent-trust"
+      ],
+      "vulnerability_id": "vuln.browser.postmessage"
+    },
+    {
+      "id": "eval.open-redirect.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.open-redirect",
+        "vuln.injection.header",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.http.host-header",
+        "vuln.browser.cors"
+      ],
+      "vulnerability_id": "vuln.browser.open-redirect"
+    },
+    {
+      "id": "eval.open-redirect.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.browser.open-redirect",
+        "vuln.injection.header",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.http.host-header",
+        "vuln.browser.cors"
+      ],
+      "vulnerability_id": "vuln.browser.open-redirect"
+    },
+    {
+      "id": "eval.host-header.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.http.host-header",
+        "vuln.browser.open-redirect",
+        "vuln.http.cache-poisoning",
+        "vuln.authorization.service-impersonation",
+        "vuln.internal.credential-relay"
+      ],
+      "vulnerability_id": "vuln.http.host-header"
+    },
+    {
+      "id": "eval.host-header.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.http.host-header",
+        "vuln.browser.open-redirect",
+        "vuln.http.cache-poisoning",
+        "vuln.authorization.service-impersonation",
+        "vuln.internal.credential-relay"
+      ],
+      "vulnerability_id": "vuln.http.host-header"
+    },
+    {
+      "id": "eval.cache-authorization.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.http.cache-authorization",
+        "vuln.authorization.idor",
+        "vuln.http.cache-poisoning",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.session"
+      ],
+      "vulnerability_id": "vuln.http.cache-authorization"
+    },
+    {
+      "id": "eval.cache-authorization.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.http.cache-authorization",
+        "vuln.authorization.idor",
+        "vuln.http.cache-poisoning",
+        "vuln.authentication.oauth-oidc-jwt",
+        "vuln.authentication.session"
+      ],
+      "vulnerability_id": "vuln.http.cache-authorization"
+    },
+    {
+      "id": "eval.webhook-replay.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.api.webhook-replay",
+        "vuln.business.replay",
+        "vuln.authorization.webhook-signature",
+        "vuln.business.idempotency",
+        "vuln.business.workflow"
+      ],
+      "vulnerability_id": "vuln.api.webhook-replay"
+    },
+    {
+      "id": "eval.webhook-replay.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.api.webhook-replay",
+        "vuln.business.replay",
+        "vuln.authorization.webhook-signature",
+        "vuln.business.idempotency",
+        "vuln.business.workflow"
+      ],
+      "vulnerability_id": "vuln.api.webhook-replay"
+    },
+    {
+      "id": "eval.content-type-confusion.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.api.content-type-confusion",
+        "vuln.availability.resource-exhaustion",
+        "vuln.injection.xxe",
+        "vuln.ai.agent-identity",
+        "vuln.authorization.idor"
+      ],
+      "vulnerability_id": "vuln.api.content-type-confusion"
+    },
+    {
+      "id": "eval.content-type-confusion.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.api.content-type-confusion",
+        "vuln.availability.resource-exhaustion",
+        "vuln.injection.xxe",
+        "vuln.ai.agent-identity",
+        "vuln.authorization.idor"
+      ],
+      "vulnerability_id": "vuln.api.content-type-confusion"
+    },
+    {
+      "id": "eval.inventory.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.api.inventory",
+        "vuln.api.graphql",
+        "vuln.secrets.info-disclosure",
+        "vuln.ai.output-handling",
+        "vuln.ai.tool-output"
+      ],
+      "vulnerability_id": "vuln.api.inventory"
+    },
+    {
+      "id": "eval.inventory.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.api.inventory",
+        "vuln.api.graphql",
+        "vuln.secrets.info-disclosure",
+        "vuln.ai.output-handling",
+        "vuln.ai.tool-output"
+      ],
+      "vulnerability_id": "vuln.api.inventory"
+    },
+    {
+      "id": "eval.archive-bomb.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.archive-bomb",
+        "vuln.injection.xxe",
+        "vuln.files.upload",
+        "vuln.api.content-type-confusion",
+        "vuln.availability.resource-exhaustion"
+      ],
+      "vulnerability_id": "vuln.files.archive-bomb"
+    },
+    {
+      "id": "eval.archive-bomb.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.archive-bomb",
+        "vuln.injection.xxe",
+        "vuln.files.upload",
+        "vuln.api.content-type-confusion",
+        "vuln.availability.resource-exhaustion"
+      ],
+      "vulnerability_id": "vuln.files.archive-bomb"
+    },
+    {
+      "id": "eval.symlink.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.symlink",
+        "vuln.files.path-traversal",
+        "vuln.files.temp-file",
+        "vuln.files.archive-bomb",
+        "vuln.business.race-condition"
+      ],
+      "vulnerability_id": "vuln.files.symlink"
+    },
+    {
+      "id": "eval.symlink.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.symlink",
+        "vuln.files.path-traversal",
+        "vuln.files.temp-file",
+        "vuln.files.archive-bomb",
+        "vuln.business.race-condition"
+      ],
+      "vulnerability_id": "vuln.files.symlink"
+    },
+    {
+      "id": "eval.temp-file.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.temp-file",
+        "vuln.files.symlink",
+        "vuln.authorization.tenant-filter",
+        "vuln.files.archive-bomb",
+        "vuln.api.content-type-confusion"
+      ],
+      "vulnerability_id": "vuln.files.temp-file"
+    },
+    {
+      "id": "eval.temp-file.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.temp-file",
+        "vuln.files.symlink",
+        "vuln.authorization.tenant-filter",
+        "vuln.files.archive-bomb",
+        "vuln.api.content-type-confusion"
+      ],
+      "vulnerability_id": "vuln.files.temp-file"
+    },
+    {
+      "id": "eval.object-storage.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.object-storage",
+        "vuln.authorization.signed-link",
+        "vuln.secrets.backup-exposure",
+        "vuln.cloud.iam",
+        "vuln.files.upload"
+      ],
+      "vulnerability_id": "vuln.files.object-storage"
+    },
+    {
+      "id": "eval.object-storage.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.object-storage",
+        "vuln.authorization.signed-link",
+        "vuln.secrets.backup-exposure",
+        "vuln.cloud.iam",
+        "vuln.files.upload"
+      ],
+      "vulnerability_id": "vuln.files.object-storage"
+    },
+    {
+      "id": "eval.include.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.include",
+        "vuln.ai.model-supply-chain",
+        "vuln.files.path-traversal",
+        "vuln.injection.template-command",
+        "vuln.ai.unsafe-model-loading"
+      ],
+      "vulnerability_id": "vuln.files.include"
+    },
+    {
+      "id": "eval.include.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.files.include",
+        "vuln.ai.model-supply-chain",
+        "vuln.files.path-traversal",
+        "vuln.injection.template-command",
+        "vuln.ai.unsafe-model-loading"
+      ],
+      "vulnerability_id": "vuln.files.include"
+    },
+    {
+      "id": "eval.replay.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.replay",
+        "vuln.api.webhook-replay",
+        "vuln.business.idempotency",
+        "vuln.business.workflow",
+        "vuln.authorization.signed-link"
+      ],
+      "vulnerability_id": "vuln.business.replay"
+    },
+    {
+      "id": "eval.replay.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.replay",
+        "vuln.api.webhook-replay",
+        "vuln.business.idempotency",
+        "vuln.business.workflow",
+        "vuln.authorization.signed-link"
+      ],
+      "vulnerability_id": "vuln.business.replay"
+    },
+    {
+      "id": "eval.idempotency.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.idempotency",
+        "vuln.business.race-condition",
+        "vuln.secrets.backup-exposure",
+        "vuln.api.webhook-replay",
+        "vuln.authentication.oauth-oidc-jwt"
+      ],
+      "vulnerability_id": "vuln.business.idempotency"
+    },
+    {
+      "id": "eval.idempotency.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.idempotency",
+        "vuln.business.race-condition",
+        "vuln.secrets.backup-exposure",
+        "vuln.api.webhook-replay",
+        "vuln.authentication.oauth-oidc-jwt"
+      ],
+      "vulnerability_id": "vuln.business.idempotency"
+    },
+    {
+      "id": "eval.price-tampering.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.price-tampering",
+        "vuln.business.workflow",
+        "vuln.api.graphql",
+        "vuln.api.webhook-replay",
+        "vuln.authorization.delegated-admin"
+      ],
+      "vulnerability_id": "vuln.business.price-tampering"
+    },
+    {
+      "id": "eval.price-tampering.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.price-tampering",
+        "vuln.business.workflow",
+        "vuln.api.graphql",
+        "vuln.api.webhook-replay",
+        "vuln.authorization.delegated-admin"
+      ],
+      "vulnerability_id": "vuln.business.price-tampering"
+    },
+    {
+      "id": "eval.approval-separation.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.approval-separation",
+        "vuln.business.replay",
+        "vuln.ai.agent-identity",
+        "vuln.authorization.delegated-admin",
+        "vuln.authorization.mass-assignment"
+      ],
+      "vulnerability_id": "vuln.business.approval-separation"
+    },
+    {
+      "id": "eval.approval-separation.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.business.approval-separation",
+        "vuln.business.replay",
+        "vuln.ai.agent-identity",
+        "vuln.authorization.delegated-admin",
+        "vuln.authorization.mass-assignment"
+      ],
+      "vulnerability_id": "vuln.business.approval-separation"
+    },
+    {
+      "id": "eval.rate-limit.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.availability.rate-limit",
+        "vuln.availability.resource-exhaustion",
+        "vuln.api.content-type-confusion",
+        "vuln.authorization.service-impersonation",
+        "vuln.business.race-condition"
+      ],
+      "vulnerability_id": "vuln.availability.rate-limit"
+    },
+    {
+      "id": "eval.rate-limit.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.availability.rate-limit",
+        "vuln.availability.resource-exhaustion",
+        "vuln.api.content-type-confusion",
+        "vuln.authorization.service-impersonation",
+        "vuln.business.race-condition"
+      ],
+      "vulnerability_id": "vuln.availability.rate-limit"
+    },
+    {
+      "id": "eval.queue-amplification.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.availability.queue-amplification",
+        "vuln.api.webhook-replay",
+        "vuln.ai.agent-loop",
+        "vuln.ai.inter-agent-trust",
+        "vuln.authorization.webhook-signature"
+      ],
+      "vulnerability_id": "vuln.availability.queue-amplification"
+    },
+    {
+      "id": "eval.queue-amplification.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.availability.queue-amplification",
+        "vuln.api.webhook-replay",
+        "vuln.ai.agent-loop",
+        "vuln.ai.inter-agent-trust",
+        "vuln.authorization.webhook-signature"
+      ],
+      "vulnerability_id": "vuln.availability.queue-amplification"
+    },
+    {
+      "id": "eval.info-disclosure.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.info-disclosure",
+        "vuln.information.logging",
+        "vuln.http.cache-authorization",
+        "vuln.cloud.metadata-boundary",
+        "vuln.http.cache-poisoning"
+      ],
+      "vulnerability_id": "vuln.secrets.info-disclosure"
+    },
+    {
+      "id": "eval.info-disclosure.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.info-disclosure",
+        "vuln.information.logging",
+        "vuln.http.cache-authorization",
+        "vuln.cloud.metadata-boundary",
+        "vuln.http.cache-poisoning"
+      ],
+      "vulnerability_id": "vuln.secrets.info-disclosure"
+    },
+    {
+      "id": "eval.error-disclosure.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.error-disclosure",
+        "vuln.information.logging",
+        "vuln.injection.header",
+        "vuln.availability.queue-amplification",
+        "vuln.cloud.serverless-iam"
+      ],
+      "vulnerability_id": "vuln.secrets.error-disclosure"
+    },
+    {
+      "id": "eval.error-disclosure.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.error-disclosure",
+        "vuln.information.logging",
+        "vuln.injection.header",
+        "vuln.availability.queue-amplification",
+        "vuln.cloud.serverless-iam"
+      ],
+      "vulnerability_id": "vuln.secrets.error-disclosure"
+    },
+    {
+      "id": "eval.timing.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.timing",
+        "vuln.authentication.account-enumeration",
+        "vuln.authorization.idor",
+        "vuln.authorization.tenant-filter",
+        "vuln.browser.open-redirect"
+      ],
+      "vulnerability_id": "vuln.secrets.timing"
+    },
+    {
+      "id": "eval.timing.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.timing",
+        "vuln.authentication.account-enumeration",
+        "vuln.authorization.idor",
+        "vuln.authorization.tenant-filter",
+        "vuln.browser.open-redirect"
+      ],
+      "vulnerability_id": "vuln.secrets.timing"
+    },
+    {
+      "id": "eval.backup-exposure.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.backup-exposure",
+        "vuln.authorization.idor",
+        "vuln.secrets.info-disclosure",
+        "vuln.authentication.session",
+        "vuln.cloud.iam"
+      ],
+      "vulnerability_id": "vuln.secrets.backup-exposure"
+    },
+    {
+      "id": "eval.backup-exposure.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.secrets.backup-exposure",
+        "vuln.authorization.idor",
+        "vuln.secrets.info-disclosure",
+        "vuln.authentication.session",
+        "vuln.cloud.iam"
+      ],
+      "vulnerability_id": "vuln.secrets.backup-exposure"
+    },
+    {
+      "id": "eval.key-rotation.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.crypto.key-rotation",
+        "vuln.authentication.session",
+        "vuln.crypto.randomness",
+        "vuln.authorization.idor",
+        "vuln.authorization.signed-link"
+      ],
+      "vulnerability_id": "vuln.crypto.key-rotation"
+    },
+    {
+      "id": "eval.key-rotation.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.crypto.key-rotation",
+        "vuln.authentication.session",
+        "vuln.crypto.randomness",
+        "vuln.authorization.idor",
+        "vuln.authorization.signed-link"
+      ],
+      "vulnerability_id": "vuln.crypto.key-rotation"
+    },
+    {
+      "id": "eval.certificate-validation.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.crypto.certificate-validation",
+        "vuln.crypto.transport",
+        "vuln.http.request-smuggling",
+        "vuln.network.ssrf",
+        "vuln.ai.output-handling"
+      ],
+      "vulnerability_id": "vuln.crypto.certificate-validation"
+    },
+    {
+      "id": "eval.certificate-validation.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.crypto.certificate-validation",
+        "vuln.crypto.transport",
+        "vuln.http.request-smuggling",
+        "vuln.network.ssrf",
+        "vuln.ai.output-handling"
+      ],
+      "vulnerability_id": "vuln.crypto.certificate-validation"
+    },
+    {
+      "id": "eval.insecure-default.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.configuration.insecure-default",
+        "vuln.configuration.fail-open",
+        "vuln.mobile.secure-storage-ipc",
+        "vuln.native.memory-safety",
+        "vuln.serialization.unsafe-deserialization"
+      ],
+      "vulnerability_id": "vuln.configuration.insecure-default"
+    },
+    {
+      "id": "eval.insecure-default.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.configuration.insecure-default",
+        "vuln.configuration.fail-open",
+        "vuln.mobile.secure-storage-ipc",
+        "vuln.native.memory-safety",
+        "vuln.serialization.unsafe-deserialization"
+      ],
+      "vulnerability_id": "vuln.configuration.insecure-default"
+    },
+    {
+      "id": "eval.debug.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.configuration.debug",
+        "vuln.configuration.fail-open",
+        "vuln.hardware.firmware-update",
+        "vuln.configuration.insecure-default",
+        "vuln.secrets.error-disclosure"
+      ],
+      "vulnerability_id": "vuln.configuration.debug"
+    },
+    {
+      "id": "eval.debug.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.configuration.debug",
+        "vuln.configuration.fail-open",
+        "vuln.hardware.firmware-update",
+        "vuln.configuration.insecure-default",
+        "vuln.secrets.error-disclosure"
+      ],
+      "vulnerability_id": "vuln.configuration.debug"
+    },
+    {
+      "id": "eval.artifact-integrity.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.artifact-integrity",
+        "vuln.supply.ci-cd",
+        "vuln.supply.dependency-risk",
+        "vuln.ai.model-supply-chain",
+        "vuln.supply.container-image"
+      ],
+      "vulnerability_id": "vuln.supply.artifact-integrity"
+    },
+    {
+      "id": "eval.artifact-integrity.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.artifact-integrity",
+        "vuln.supply.ci-cd",
+        "vuln.supply.dependency-risk",
+        "vuln.ai.model-supply-chain",
+        "vuln.supply.container-image"
+      ],
+      "vulnerability_id": "vuln.supply.artifact-integrity"
+    },
+    {
+      "id": "eval.workflow-injection.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.workflow-injection",
+        "vuln.supply.ci-cd",
+        "vuln.ai.output-handling",
+        "vuln.ai.unsafe-model-loading",
+        "vuln.business.race-condition"
+      ],
+      "vulnerability_id": "vuln.supply.workflow-injection"
+    },
+    {
+      "id": "eval.workflow-injection.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.workflow-injection",
+        "vuln.supply.ci-cd",
+        "vuln.ai.output-handling",
+        "vuln.ai.unsafe-model-loading",
+        "vuln.business.race-condition"
+      ],
+      "vulnerability_id": "vuln.supply.workflow-injection"
+    },
+    {
+      "id": "eval.container-image.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.container-image",
+        "vuln.supply.ci-cd",
+        "vuln.container.kubernetes",
+        "vuln.supply.artifact-integrity",
+        "vuln.supply.dependency-risk"
+      ],
+      "vulnerability_id": "vuln.supply.container-image"
+    },
+    {
+      "id": "eval.container-image.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.container-image",
+        "vuln.supply.ci-cd",
+        "vuln.container.kubernetes",
+        "vuln.supply.artifact-integrity",
+        "vuln.supply.dependency-risk"
+      ],
+      "vulnerability_id": "vuln.supply.container-image"
+    },
+    {
+      "id": "eval.iac-drift.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.iac-drift",
+        "vuln.cloud.iam",
+        "vuln.configuration.fail-open",
+        "vuln.ai.agent-loop",
+        "vuln.ai.excessive-agency"
+      ],
+      "vulnerability_id": "vuln.supply.iac-drift"
+    },
+    {
+      "id": "eval.iac-drift.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.supply.iac-drift",
+        "vuln.cloud.iam",
+        "vuln.configuration.fail-open",
+        "vuln.ai.agent-loop",
+        "vuln.ai.excessive-agency"
+      ],
+      "vulnerability_id": "vuln.supply.iac-drift"
+    },
+    {
+      "id": "eval.serverless-iam.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.cloud.serverless-iam",
+        "vuln.cloud.iam",
+        "vuln.authorization.service-impersonation",
+        "vuln.availability.queue-amplification",
+        "vuln.availability.rate-limit"
+      ],
+      "vulnerability_id": "vuln.cloud.serverless-iam"
+    },
+    {
+      "id": "eval.serverless-iam.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.cloud.serverless-iam",
+        "vuln.cloud.iam",
+        "vuln.authorization.service-impersonation",
+        "vuln.availability.queue-amplification",
+        "vuln.availability.rate-limit"
+      ],
+      "vulnerability_id": "vuln.cloud.serverless-iam"
+    },
+    {
+      "id": "eval.k8s-service-account.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.cloud.k8s-service-account",
+        "vuln.container.kubernetes",
+        "vuln.authorization.service-impersonation",
+        "vuln.cloud.iam",
+        "vuln.authentication.account-enumeration"
+      ],
+      "vulnerability_id": "vuln.cloud.k8s-service-account"
+    },
+    {
+      "id": "eval.k8s-service-account.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.cloud.k8s-service-account",
+        "vuln.container.kubernetes",
+        "vuln.authorization.service-impersonation",
+        "vuln.cloud.iam",
+        "vuln.authentication.account-enumeration"
+      ],
+      "vulnerability_id": "vuln.cloud.k8s-service-account"
+    },
+    {
+      "id": "eval.metadata-boundary.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.cloud.metadata-boundary",
+        "vuln.network.ssrf",
+        "vuln.cloud.iam",
+        "vuln.http.host-header",
+        "vuln.internal.credential-relay"
+      ],
+      "vulnerability_id": "vuln.cloud.metadata-boundary"
+    },
+    {
+      "id": "eval.metadata-boundary.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.cloud.metadata-boundary",
+        "vuln.network.ssrf",
+        "vuln.cloud.iam",
+        "vuln.http.host-header",
+        "vuln.internal.credential-relay"
+      ],
+      "vulnerability_id": "vuln.cloud.metadata-boundary"
+    },
+    {
+      "id": "eval.indirect-prompt-injection.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.ai.prompt-injection",
+        "vuln.ai.context-leakage",
+        "vuln.ai.memory-poisoning",
+        "vuln.ai.tool-output"
+      ],
+      "vulnerability_id": "vuln.ai.indirect-prompt-injection"
+    },
+    {
+      "id": "eval.indirect-prompt-injection.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.ai.prompt-injection",
+        "vuln.ai.context-leakage",
+        "vuln.ai.memory-poisoning",
+        "vuln.ai.tool-output"
+      ],
+      "vulnerability_id": "vuln.ai.indirect-prompt-injection"
+    },
+    {
+      "id": "eval.tool-authorization.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.tool-authorization",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.agent-loop",
+        "vuln.ai.tool-output",
+        "vuln.ai.prompt-injection"
+      ],
+      "vulnerability_id": "vuln.ai.tool-authorization"
+    },
+    {
+      "id": "eval.tool-authorization.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.tool-authorization",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.agent-loop",
+        "vuln.ai.tool-output",
+        "vuln.ai.prompt-injection"
+      ],
+      "vulnerability_id": "vuln.ai.tool-authorization"
+    },
+    {
+      "id": "eval.memory-poisoning.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.memory-poisoning",
+        "vuln.ai.context-leakage",
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.ai.prompt-injection",
+        "vuln.injection.template-command"
+      ],
+      "vulnerability_id": "vuln.ai.memory-poisoning"
+    },
+    {
+      "id": "eval.memory-poisoning.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.memory-poisoning",
+        "vuln.ai.context-leakage",
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.ai.prompt-injection",
+        "vuln.injection.template-command"
+      ],
+      "vulnerability_id": "vuln.ai.memory-poisoning"
+    },
+    {
+      "id": "eval.rag-source-trust.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.rag-source-trust",
+        "vuln.ai.rag-cross-tenant",
+        "vuln.ai.memory-poisoning",
+        "vuln.ai.context-leakage",
+        "vuln.ai.indirect-prompt-injection"
+      ],
+      "vulnerability_id": "vuln.ai.rag-source-trust"
+    },
+    {
+      "id": "eval.rag-source-trust.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.rag-source-trust",
+        "vuln.ai.rag-cross-tenant",
+        "vuln.ai.memory-poisoning",
+        "vuln.ai.context-leakage",
+        "vuln.ai.indirect-prompt-injection"
+      ],
+      "vulnerability_id": "vuln.ai.rag-source-trust"
+    },
+    {
+      "id": "eval.tool-output.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.tool-output",
+        "vuln.ai.output-handling",
+        "vuln.ai.context-leakage",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.indirect-prompt-injection"
+      ],
+      "vulnerability_id": "vuln.ai.tool-output"
+    },
+    {
+      "id": "eval.tool-output.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.tool-output",
+        "vuln.ai.output-handling",
+        "vuln.ai.context-leakage",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.indirect-prompt-injection"
+      ],
+      "vulnerability_id": "vuln.ai.tool-output"
+    },
+    {
+      "id": "eval.agent-identity.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.agent-identity",
+        "vuln.business.replay",
+        "vuln.authentication.session",
+        "vuln.authorization.service-impersonation",
+        "vuln.ai.excessive-agency"
+      ],
+      "vulnerability_id": "vuln.ai.agent-identity"
+    },
+    {
+      "id": "eval.agent-identity.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.agent-identity",
+        "vuln.business.replay",
+        "vuln.authentication.session",
+        "vuln.authorization.service-impersonation",
+        "vuln.ai.excessive-agency"
+      ],
+      "vulnerability_id": "vuln.ai.agent-identity"
+    },
+    {
+      "id": "eval.agent-loop.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.agent-loop",
+        "vuln.ai.tool-output",
+        "vuln.ai.prompt-injection",
+        "vuln.ai.tool-authorization",
+        "vuln.api.webhook-replay"
+      ],
+      "vulnerability_id": "vuln.ai.agent-loop"
+    },
+    {
+      "id": "eval.agent-loop.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.agent-loop",
+        "vuln.ai.tool-output",
+        "vuln.ai.prompt-injection",
+        "vuln.ai.tool-authorization",
+        "vuln.api.webhook-replay"
+      ],
+      "vulnerability_id": "vuln.ai.agent-loop"
+    },
+    {
+      "id": "eval.model-supply-chain.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.model-supply-chain",
+        "vuln.ai.unsafe-model-loading",
+        "vuln.supply.dependency-risk",
+        "vuln.supply.ci-cd",
+        "vuln.api.graphql"
+      ],
+      "vulnerability_id": "vuln.ai.model-supply-chain"
+    },
+    {
+      "id": "eval.model-supply-chain.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.model-supply-chain",
+        "vuln.ai.unsafe-model-loading",
+        "vuln.supply.dependency-risk",
+        "vuln.supply.ci-cd",
+        "vuln.api.graphql"
+      ],
+      "vulnerability_id": "vuln.ai.model-supply-chain"
+    },
+    {
+      "id": "eval.context-leakage.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.context-leakage",
+        "vuln.information.logging",
+        "vuln.ai.tool-output",
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.ai.memory-poisoning"
+      ],
+      "vulnerability_id": "vuln.ai.context-leakage"
+    },
+    {
+      "id": "eval.context-leakage.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.context-leakage",
+        "vuln.information.logging",
+        "vuln.ai.tool-output",
+        "vuln.ai.indirect-prompt-injection",
+        "vuln.ai.memory-poisoning"
+      ],
+      "vulnerability_id": "vuln.ai.context-leakage"
+    },
+    {
+      "id": "eval.inter-agent-trust.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.inter-agent-trust",
+        "vuln.ai.agent-loop",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.tool-authorization",
+        "vuln.ai.tool-output"
+      ],
+      "vulnerability_id": "vuln.ai.inter-agent-trust"
+    },
+    {
+      "id": "eval.inter-agent-trust.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.inter-agent-trust",
+        "vuln.ai.agent-loop",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.tool-authorization",
+        "vuln.ai.tool-output"
+      ],
+      "vulnerability_id": "vuln.ai.inter-agent-trust"
+    },
+    {
+      "id": "eval.evaluation-leakage.positive",
+      "polarity": "positive",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.evaluation-leakage",
+        "vuln.ai.unsafe-model-loading",
+        "vuln.privacy.data-minimization",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.model-supply-chain"
+      ],
+      "vulnerability_id": "vuln.ai.evaluation-leakage"
+    },
+    {
+      "id": "eval.evaluation-leakage.negative",
+      "polarity": "negative",
+      "retrieval_hit_at_5": true,
+      "top5": [
+        "vuln.ai.evaluation-leakage",
+        "vuln.ai.unsafe-model-loading",
+        "vuln.privacy.data-minimization",
+        "vuln.ai.excessive-agency",
+        "vuln.ai.model-supply-chain"
+      ],
+      "vulnerability_id": "vuln.ai.evaluation-leakage"
+    }
+  ],
+  "errors": [],
+  "fixture_count": 134,
+  "forbidden_fixture_count": 0,
+  "retrieval_hits_at_5": 134,
+  "retrieval_recall_at_5": 1.0,
+  "schema_version": "1.0",
+  "suite": "secure-context-atlas-deterministic-v1"
+}

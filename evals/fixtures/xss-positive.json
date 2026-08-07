@@ -1,0 +1,11 @@
+{
+  "id": "eval.xss.positive",
+  "vulnerability_id": "vuln.browser.xss",
+  "polarity": "positive",
+  "expected_status": "candidate",
+  "expected_cwe": "CWE-79",
+  "query": "cross-site scripting untrusted request value HTML DOM sink",
+  "snippet": "synthetic request value reaches an HTML sink without contextual encoding",
+  "evidence_required": ["source", "sink", "control"],
+  "safe_boundary": "local synthetic fixture; no network and no real credentials"
+}

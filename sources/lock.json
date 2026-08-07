@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-08",
+  "pins": {
+    "capec": {
+      "entries_total": 615,
+      "sha256": "70279a2dff0cb0ad79e546adb07828335a704ad5210e047e09e986172fc9e34d",
+      "url": "https://capec.mitre.org/data/xml/capec_v3.9.xml",
+      "version": "3.9"
+    },
+    "cwe": {
+      "entries_active": 944,
+      "entries_total": 969,
+      "sha256": "3976f599e5e5200219a3108bb896d06e2a88fbb293369e1883cb423a5e9d7d50",
+      "url": "https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip",
+      "version": "4.20"
+    }
+  },
+  "policy": {
+    "advisory_feeds_are_dynamic": true,
+    "generated_indexes_are_committed": true,
+    "raw_inputs_are_temporary": true,
+    "source_hashes_are_required": true
+  },
+  "project": "Secure Context Atlas",
+  "release": "0.5.0",
+  "schema_version": "1.0"
+}

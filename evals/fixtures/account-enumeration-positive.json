@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-204",
+  "expected_status": "candidate",
+  "id": "eval.account-enumeration.positive",
+  "polarity": "positive",
+  "query": "Account and recovery-state enumeration login, registration or recovery identifier response, timing, error or notification behaviour",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from login, registration or recovery identifier reaches response, timing, error or notification behaviour without the documented control",
+  "vulnerability_id": "vuln.authentication.account-enumeration"
+}

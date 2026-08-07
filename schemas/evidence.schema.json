@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-context-atlas.invalid/schemas/evidence.schema.json",
+  "title": "Evidence attached to a defensive security finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["file", "lines", "kind", "excerpt"],
+  "properties": {
+    "file": {"type": "string", "minLength": 1},
+    "lines": {"type": "string", "pattern": "^[0-9]+(-[0-9]+)?$"},
+    "kind": {"type": "string", "enum": ["source", "sink", "control", "flow", "configuration", "architecture", "test"]},
+    "excerpt": {"type": "string", "minLength": 1, "maxLength": 1200},
+    "redacted": {"type": "boolean", "default": true},
+    "note": {"type": "string"}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-287",
+  "expected_status": "candidate",
+  "id": "eval.mfa-recovery.positive",
+  "polarity": "positive",
+  "query": "MFA recovery and step-up bypass recovery factor, support action or device enrollment session elevation or credential change",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from recovery factor, support action or device enrollment reaches session elevation or credential change without the documented control",
+  "vulnerability_id": "vuln.authentication.mfa-recovery"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-611",
+  "expected_status": "not-applicable",
+  "id": "eval.xml-schema.negative",
+  "polarity": "negative",
+  "query": "XML schema and entity processing ambiguity XML body, upload or provider response XML parser, resolver or schema validator",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from XML body, upload or provider response is validated, scoped and denied before XML parser, resolver or schema validator",
+  "vulnerability_id": "vuln.injection.xml-schema"
+}

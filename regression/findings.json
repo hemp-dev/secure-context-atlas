@@ -1,0 +1,21 @@
+{
+  "findings": [
+    {
+      "finding_id": "finding.demo.ssrf",
+      "status": "needs-review",
+      "title": "Request-derived URL reaches a server-side HTTP client",
+      "vulnerability_id": "vuln.network.ssrf",
+      "canonical_cwe": "CWE-918",
+      "severity": "high",
+      "confidence": "medium",
+      "evidence": [{"file": "fixtures/url_fetch.py", "lines": "12-14", "kind": "flow", "excerpt": "synthetic canary value only"}],
+      "flow": {"source": "request.url", "transformations": ["parse"], "controls": [], "sink": "server_http_client"},
+      "missing_control": "destination policy and redirect revalidation",
+      "impact": ["network boundary exposure"],
+      "safe_verification": "local mock client and synthetic canary",
+      "remediation": ["bind destination policy before connection"],
+      "regression_test": "assert disallowed synthetic destination is rejected",
+      "references": ["https://cwe.mitre.org/data/definitions/918.html"]
+    }
+  ]
+}

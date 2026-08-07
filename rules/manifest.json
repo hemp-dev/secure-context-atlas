@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "detectors": ["semgrep", "codeql"],
+  "rules": [
+    {"id": "rule.semgrep.injection.nosql-operator", "detector": "semgrep", "path": "rules/semgrep/nosql-operator.yaml", "vulnerability_id": "vuln.injection.nosql", "fixture": "evals/fixtures/nosql-positive.json"},
+    {"id": "rule.semgrep.network.ssrf-url-fetch", "detector": "semgrep", "path": "rules/semgrep/ssrf-url-fetch.yaml", "vulnerability_id": "vuln.network.ssrf", "fixture": "evals/fixtures/ssrf-positive.json"},
+    {"id": "rule.semgrep.files.path-resolution", "detector": "semgrep", "path": "rules/semgrep/path-resolution.yaml", "vulnerability_id": "vuln.files.path-traversal", "fixture": "evals/fixtures/path-traversal-positive.json"},
+    {"id": "rule.semgrep.injection.process-shell", "detector": "semgrep", "path": "rules/semgrep/process-shell.yaml", "vulnerability_id": "vuln.injection.command", "fixture": "evals/fixtures/command-positive.json"},
+    {"id": "rule.semgrep.browser.unsafe-html", "detector": "semgrep", "path": "rules/semgrep/unsafe-html.yaml", "vulnerability_id": "vuln.browser.xss", "fixture": "evals/fixtures/xss-positive.json"},
+    {"id": "rule.codeql.authorization.mass-assignment", "detector": "codeql", "path": "rules/codeql/mass-assignment.yaml", "vulnerability_id": "vuln.authorization.mass-assignment", "fixture": "evals/fixtures/mass-assignment-positive.json"},
+    {"id": "rule.semgrep.secrets.literal", "detector": "semgrep", "path": "rules/semgrep/literal-secret.yaml", "vulnerability_id": "vuln.secrets.hardcoded", "fixture": "evals/fixtures/hardcoded-positive.json"},
+    {"id": "rule.codeql.serialization.untrusted-object", "detector": "codeql", "path": "rules/codeql/untrusted-object.yaml", "vulnerability_id": "vuln.serialization.unsafe-deserialization", "fixture": "evals/fixtures/unsafe-deserialization-positive.json"},
+    {"id": "rule.codeql.supply.untrusted-workflow-input", "detector": "codeql", "path": "rules/codeql/untrusted-workflow-input.yaml", "vulnerability_id": "vuln.supply.workflow-injection", "fixture": "evals/fixtures/workflow-injection-positive.json"},
+    {"id": "rule.semgrep.ai.tool-arguments", "detector": "semgrep", "path": "rules/semgrep/ai-tool-arguments.yaml", "vulnerability_id": "vuln.ai.tool-authorization", "fixture": "evals/fixtures/tool-authorization-positive.json"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-436",
+  "expected_status": "candidate",
+  "id": "eval.content-type-confusion.positive",
+  "polarity": "positive",
+  "query": "Content-type and parser confusion request body, content-type and filename parser, validator or downstream service",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request body, content-type and filename reaches parser, validator or downstream service without the documented control",
+  "vulnerability_id": "vuln.api.content-type-confusion"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-841",
+  "expected_status": "not-applicable",
+  "id": "eval.idempotency.negative",
+  "polarity": "negative",
+  "query": "Idempotency-key scope and atomicity failure idempotency key, request body and principal database write, payment or external call",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from idempotency key, request body and principal is validated, scoped and denied before database write, payment or external call",
+  "vulnerability_id": "vuln.business.idempotency"
+}

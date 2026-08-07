@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-200",
+  "expected_status": "candidate",
+  "id": "eval.context-leakage.positive",
+  "polarity": "positive",
+  "query": "Sensitive context and cross-tenant prompt disclosure prompt, retrieval result, memory or tool response model output, trace, provider or tool",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from prompt, retrieval result, memory or tool response reaches model output, trace, provider or tool without the documented control",
+  "vulnerability_id": "vuln.ai.context-leakage"
+}

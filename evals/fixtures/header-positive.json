@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-113",
+  "expected_status": "candidate",
+  "id": "eval.header.positive",
+  "polarity": "positive",
+  "query": "HTTP header injection and response splitting request value, filename or redirect target response header, cookie or proxy message",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request value, filename or redirect target reaches response header, cookie or proxy message without the documented control",
+  "vulnerability_id": "vuln.injection.header"
+}

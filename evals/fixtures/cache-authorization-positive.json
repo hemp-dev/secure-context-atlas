@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-525",
+  "expected_status": "candidate",
+  "id": "eval.cache-authorization.positive",
+  "polarity": "positive",
+  "query": "Shared-cache authorization and privacy confusion authenticated request and cache metadata shared cache response",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from authenticated request and cache metadata reaches shared cache response without the documented control",
+  "vulnerability_id": "vuln.http.cache-authorization"
+}

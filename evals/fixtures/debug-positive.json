@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-489",
+  "expected_status": "candidate",
+  "id": "eval.debug.positive",
+  "polarity": "positive",
+  "query": "Debug and diagnostic mode exposed in deployment deployment flag, debug route or error state diagnostic endpoint, console or response",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from deployment flag, debug route or error state reaches diagnostic endpoint, console or response without the documented control",
+  "vulnerability_id": "vuln.configuration.debug"
+}

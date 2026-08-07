@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-200",
+  "expected_status": "candidate",
+  "id": "eval.info-disclosure.positive",
+  "polarity": "positive",
+  "query": "Sensitive information exposure through responses or metadata request and internal object/error state HTTP response, metadata or export",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request and internal object/error state reaches HTTP response, metadata or export without the documented control",
+  "vulnerability_id": "vuln.secrets.info-disclosure"
+}

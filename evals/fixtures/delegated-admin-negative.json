@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-269",
+  "expected_status": "not-applicable",
+  "id": "eval.delegated-admin.negative",
+  "polarity": "negative",
+  "query": "Delegated administration privilege escalation role assignment, delegation request or group claim privileged operation or policy update",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from role assignment, delegation request or group claim is validated, scoped and denied before privileged operation or policy update",
+  "vulnerability_id": "vuln.authorization.delegated-admin"
+}

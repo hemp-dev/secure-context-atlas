@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secure-context-atlas.invalid/schemas/threat-model.schema.json",
+  "title": "Secure Context Atlas threat model",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "system", "assets", "principals", "trust_boundaries", "data_flows", "capabilities", "controls"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^tm\\.[a-z0-9][a-z0-9.-]*$"},
+    "system": {"type": "string", "minLength": 3},
+    "version": {"type": "string"},
+    "assets": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entity"}},
+    "principals": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entity"}},
+    "trust_boundaries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/boundary"}},
+    "data_flows": {"type": "array", "items": {"$ref": "#/$defs/flow"}},
+    "capabilities": {"type": "array", "items": {"$ref": "#/$defs/capability"}},
+    "controls": {"type": "array", "items": {"$ref": "#/$defs/control"}},
+    "residual_risk": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+      "entity": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "trust_level"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "trust_level": {"type": "string", "enum": ["untrusted", "external", "tenant", "service", "privileged", "system"]},
+          "classification": {"type": "string"}
+        }
+      },
+      "boundary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "from", "to", "decision_points"],
+        "properties": {
+          "id": {"type": "string"},
+          "from": {"type": "string"},
+          "to": {"type": "string"},
+          "decision_points": {"type": "array", "items": {"type": "string"}},
+          "required_controls": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "flow": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source", "destination", "data", "controls"],
+        "properties": {
+          "id": {"type": "string"},
+          "source": {"type": "string"},
+          "destination": {"type": "string"},
+          "data": {"type": "array", "items": {"type": "string"}},
+          "controls": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "capability": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "owner", "actions", "limits"],
+        "properties": {
+          "id": {"type": "string"},
+          "owner": {"type": "string"},
+          "actions": {"type": "array", "items": {"type": "string"}},
+          "limits": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "control": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "status"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"type": "string", "enum": ["preventive", "detective", "corrective", "compensating"]},
+          "status": {"type": "string", "enum": ["present", "missing", "partial", "unknown"]},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }

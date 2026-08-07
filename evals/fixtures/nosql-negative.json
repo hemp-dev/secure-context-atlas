@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-943",
+  "expected_status": "not-applicable",
+  "id": "eval.nosql.negative",
+  "polarity": "negative",
+  "query": "NoSQL operator and query injection JSON body, query parameter or filter object NoSQL query, update or aggregation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from JSON body, query parameter or filter object is validated, scoped and denied before NoSQL query, update or aggregation",
+  "vulnerability_id": "vuln.injection.nosql"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-530",
+  "expected_status": "not-applicable",
+  "id": "eval.backup-exposure.negative",
+  "polarity": "negative",
+  "query": "Backup, snapshot and export exposure backup job, snapshot or export request archive, snapshot store or restore path",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from backup job, snapshot or export request is validated, scoped and denied before archive, snapshot store or restore path",
+  "vulnerability_id": "vuln.secrets.backup-exposure"
+}

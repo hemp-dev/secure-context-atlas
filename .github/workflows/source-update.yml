@@ -1,0 +1,33 @@
+name: source-update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Refresh pinned machine-readable sources
+        run: |
+          python3 scripts/build_indexes.py --fetch
+          python3 scripts/update_sources.py --write-lock --check
+          python3 scripts/validate_repo.py
+          python3 scripts/run_eval.py --output ai/evaluation-report.json
+          python3 scripts/build_release_manifest.py
+          python3 scripts/validate_schemas.py
+          python3 scripts/validate_rules.py
+          python3 scripts/validate_threat_models.py
+      - name: Open update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Refresh machine-readable security sources"
+          title: "Refresh machine-readable security sources"
+          body: "Automated pinned CWE/CAPEC refresh with generated hashes and coverage report."
+          branch: automation/source-refresh

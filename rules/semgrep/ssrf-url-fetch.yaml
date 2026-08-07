@@ -1,0 +1,9 @@
+id: rule.semgrep.network.ssrf-url-fetch
+language: generic
+message: "A user-controlled URL reaches a server-side network client. Confirm destination policy, redirect revalidation and network isolation."
+severity: WARNING
+vulnerability_id: vuln.network.ssrf
+pattern_contract:
+  source: request.url
+  sink: server_http_client
+  required_control: destination-policy-and-revalidation

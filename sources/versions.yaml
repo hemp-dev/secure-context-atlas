@@ -1,10 +1,10 @@
 schema_version: "1.0"
 project:
   name: "Secure Context Atlas"
-  release: "0.1.0"
-  release_date: "2026-08-07"
-  release_channel: "foundational-preview"
-generated_at: "2026-08-07"
+  release: "0.5.0"
+  release_date: "2026-08-08"
+  release_channel: "stable-preview"
+generated_at: "2026-08-08"
 machine_readable:
   cwe:
     version: "4.20"

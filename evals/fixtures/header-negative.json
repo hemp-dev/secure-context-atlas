@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-113",
+  "expected_status": "not-applicable",
+  "id": "eval.header.negative",
+  "polarity": "negative",
+  "query": "HTTP header injection and response splitting request value, filename or redirect target response header, cookie or proxy message",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request value, filename or redirect target is validated, scoped and denied before response header, cookie or proxy message",
+  "vulnerability_id": "vuln.injection.header"
+}

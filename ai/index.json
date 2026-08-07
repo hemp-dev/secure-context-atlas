@@ -4,22 +4,27 @@
     "ai/cwe-coverage.json",
     "ai/capec-index.json",
     "ai/vulnerability-map.json",
+    "ai/maturity-map.json",
     "ai/aliases.json",
     "ai/standards-coverage.json",
+    "ai/evaluation-report.json",
+    "ai/context-manifest.json",
+    "ai/release-manifest.json",
     "ai/compact-context.md"
   ],
-  "curated_record_count": 44,
-  "generated_at": "2026-08-07",
+  "curated_record_count": 111,
+  "generated_at": "2026-08-08",
   "project": "Secure Context Atlas",
   "record_count": 305,
-  "release": "0.1.0",
-  "release_channel": "foundational-preview",
+  "release": "0.5.0",
+  "release_channel": "stable-preview",
   "retrieval_order": [
     "stack",
     "surface",
     "family",
     "canonical_cwe",
-    "safe_verification"
+    "safe_verification",
+    "maturity"
   ],
   "schema_version": "1.0"
 }

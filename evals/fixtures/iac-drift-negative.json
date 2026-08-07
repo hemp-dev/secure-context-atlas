@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-1269",
+  "expected_status": "not-applicable",
+  "id": "eval.iac-drift.negative",
+  "polarity": "negative",
+  "query": "Infrastructure-as-code drift and unmanaged privilege manual change, generated plan or provider state cloud resource, IAM policy or network boundary",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from manual change, generated plan or provider state is validated, scoped and denied before cloud resource, IAM policy or network boundary",
+  "vulnerability_id": "vuln.supply.iac-drift"
+}

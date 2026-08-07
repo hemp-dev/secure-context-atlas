@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-942",
+  "expected_status": "candidate",
+  "id": "eval.cors.positive",
+  "polarity": "positive",
+  "query": "Overbroad CORS and credentialed cross-origin access Origin header and credentialed browser request CORS response policy and browser-readable response",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from Origin header and credentialed browser request reaches CORS response policy and browser-readable response without the documented control",
+  "vulnerability_id": "vuln.browser.cors"
+}

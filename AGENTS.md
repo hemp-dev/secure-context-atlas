@@ -21,10 +21,13 @@
 11. Проверь exception paths, fallback, retries, timeouts и fail-open behaviour.
 12. Проверь preconditions и compensating controls безопасным способом: test identities/tenants, canaries, local/staging, unit/integration tests, mocks; не используй реальные секреты, destructive actions, persistence, evasion или exfiltration.
 13. Отчитай только то, что подтверждается evidence. Если поток не доказан, пометь finding как hypothesis/needs-review, а не как уязвимость.
+14. Для agentic AI отдельно разделяй external content, model output, tool result и executable capability; модель не является authorization boundary.
 
 ## Обязательные поля finding
 
 Каждый finding должен содержать: title, evidence с file/line или config key, input/prerequisite, data flow, missing control, exploitability, impact, confidence, canonical CWE и relevant crosswalks, remediation и regression test. Допустимые состояния: `confirmed`, `probable`, `needs-review`, `not-applicable`.
+
+Канонический machine-readable контракт находится в `schemas/finding.schema.json`; evidence использует `schemas/evidence.schema.json`. Для SARIF используй `scripts/export_sarif.py`.
 
 ## Нормализация
 
@@ -36,4 +39,16 @@
 
 ## Изменения и проверки
 
-Перед PR запусти `python3 scripts/build_indexes.py` и `python3 scripts/validate_repo.py`. Изменения в исходных источниках требуют обновления provenance и generated artifacts. Новая карточка обязана иметь machine-readable frontmatter из `schemas/vulnerability.schema.json`, safe verification, false positives, remediation и regression tests.
+Перед PR запусти:
+
+```sh
+python3 -B scripts/build_indexes.py --fetch
+python3 -B scripts/update_sources.py --write-lock --check
+python3 -B scripts/run_eval.py --output ai/evaluation-report.json
+python3 -B scripts/validate_repo.py
+python3 -B scripts/validate_rules.py
+python3 -B scripts/validate_threat_models.py
+python3 -B -m unittest discover -s tests -v
+```
+
+Для потребителя context packs используй `bin/sctx pack --stack <stack> --surface <surface>`. Изменения в исходных источниках требуют обновления provenance и generated artifacts. Новая карточка обязана иметь machine-readable frontmatter из `schemas/vulnerability.schema.json`, safe verification, false positives, remediation и regression tests.

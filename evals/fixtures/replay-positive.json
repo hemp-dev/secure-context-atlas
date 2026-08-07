@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-294",
+  "expected_status": "candidate",
+  "id": "eval.replay.positive",
+  "polarity": "positive",
+  "query": "Replay of security-sensitive business actions request, signed action or queued event state transition or external side effect",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request, signed action or queued event reaches state transition or external side effect without the documented control",
+  "vulnerability_id": "vuln.business.replay"
+}

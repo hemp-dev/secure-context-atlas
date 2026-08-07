@@ -1,0 +1,9 @@
+id: rule.semgrep.injection.process-shell
+language: generic
+message: "Request or job data reaches process execution. Confirm fixed executable, typed arguments and worker isolation."
+severity: ERROR
+vulnerability_id: vuln.injection.command
+pattern_contract:
+  source: request.value
+  sink: process.execute
+  required_control: argument-vector-and-capability-boundary

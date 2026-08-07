@@ -1,0 +1,813 @@
+{
+  "description": "Synthetic retrieval and evidence-contract fixtures for high-priority vulnerability cards.",
+  "fixtures": [
+    {
+      "id": "eval.mass-assignment.positive",
+      "path": "evals/fixtures/mass-assignment-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.mass-assignment"
+    },
+    {
+      "id": "eval.mass-assignment.negative",
+      "path": "evals/fixtures/mass-assignment-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.mass-assignment"
+    },
+    {
+      "id": "eval.property-level.positive",
+      "path": "evals/fixtures/property-level-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.property-level"
+    },
+    {
+      "id": "eval.property-level.negative",
+      "path": "evals/fixtures/property-level-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.property-level"
+    },
+    {
+      "id": "eval.tenant-filter.positive",
+      "path": "evals/fixtures/tenant-filter-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.tenant-filter"
+    },
+    {
+      "id": "eval.tenant-filter.negative",
+      "path": "evals/fixtures/tenant-filter-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.tenant-filter"
+    },
+    {
+      "id": "eval.webhook-signature.positive",
+      "path": "evals/fixtures/webhook-signature-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.webhook-signature"
+    },
+    {
+      "id": "eval.webhook-signature.negative",
+      "path": "evals/fixtures/webhook-signature-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.webhook-signature"
+    },
+    {
+      "id": "eval.delegated-admin.positive",
+      "path": "evals/fixtures/delegated-admin-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.delegated-admin"
+    },
+    {
+      "id": "eval.delegated-admin.negative",
+      "path": "evals/fixtures/delegated-admin-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.delegated-admin"
+    },
+    {
+      "id": "eval.signed-link.positive",
+      "path": "evals/fixtures/signed-link-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.signed-link"
+    },
+    {
+      "id": "eval.signed-link.negative",
+      "path": "evals/fixtures/signed-link-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.signed-link"
+    },
+    {
+      "id": "eval.service-impersonation.positive",
+      "path": "evals/fixtures/service-impersonation-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.service-impersonation"
+    },
+    {
+      "id": "eval.service-impersonation.negative",
+      "path": "evals/fixtures/service-impersonation-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.service-impersonation"
+    },
+    {
+      "id": "eval.capability-confusion.positive",
+      "path": "evals/fixtures/capability-confusion-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authorization.capability-confusion"
+    },
+    {
+      "id": "eval.capability-confusion.negative",
+      "path": "evals/fixtures/capability-confusion-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authorization.capability-confusion"
+    },
+    {
+      "id": "eval.password-reset.positive",
+      "path": "evals/fixtures/password-reset-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authentication.password-reset"
+    },
+    {
+      "id": "eval.password-reset.negative",
+      "path": "evals/fixtures/password-reset-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authentication.password-reset"
+    },
+    {
+      "id": "eval.mfa-recovery.positive",
+      "path": "evals/fixtures/mfa-recovery-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authentication.mfa-recovery"
+    },
+    {
+      "id": "eval.mfa-recovery.negative",
+      "path": "evals/fixtures/mfa-recovery-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authentication.mfa-recovery"
+    },
+    {
+      "id": "eval.saml-validation.positive",
+      "path": "evals/fixtures/saml-validation-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authentication.saml-validation"
+    },
+    {
+      "id": "eval.saml-validation.negative",
+      "path": "evals/fixtures/saml-validation-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authentication.saml-validation"
+    },
+    {
+      "id": "eval.account-enumeration.positive",
+      "path": "evals/fixtures/account-enumeration-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authentication.account-enumeration"
+    },
+    {
+      "id": "eval.account-enumeration.negative",
+      "path": "evals/fixtures/account-enumeration-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authentication.account-enumeration"
+    },
+    {
+      "id": "eval.password-storage.positive",
+      "path": "evals/fixtures/password-storage-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.authentication.password-storage"
+    },
+    {
+      "id": "eval.password-storage.negative",
+      "path": "evals/fixtures/password-storage-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.authentication.password-storage"
+    },
+    {
+      "id": "eval.nosql.positive",
+      "path": "evals/fixtures/nosql-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.nosql"
+    },
+    {
+      "id": "eval.nosql.negative",
+      "path": "evals/fixtures/nosql-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.nosql"
+    },
+    {
+      "id": "eval.ldap.positive",
+      "path": "evals/fixtures/ldap-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.ldap"
+    },
+    {
+      "id": "eval.ldap.negative",
+      "path": "evals/fixtures/ldap-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.ldap"
+    },
+    {
+      "id": "eval.xpath.positive",
+      "path": "evals/fixtures/xpath-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.xpath"
+    },
+    {
+      "id": "eval.xpath.negative",
+      "path": "evals/fixtures/xpath-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.xpath"
+    },
+    {
+      "id": "eval.header.positive",
+      "path": "evals/fixtures/header-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.header"
+    },
+    {
+      "id": "eval.header.negative",
+      "path": "evals/fixtures/header-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.header"
+    },
+    {
+      "id": "eval.log.positive",
+      "path": "evals/fixtures/log-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.log"
+    },
+    {
+      "id": "eval.log.negative",
+      "path": "evals/fixtures/log-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.log"
+    },
+    {
+      "id": "eval.csv.positive",
+      "path": "evals/fixtures/csv-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.csv"
+    },
+    {
+      "id": "eval.csv.negative",
+      "path": "evals/fixtures/csv-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.csv"
+    },
+    {
+      "id": "eval.regex.positive",
+      "path": "evals/fixtures/regex-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.regex"
+    },
+    {
+      "id": "eval.regex.negative",
+      "path": "evals/fixtures/regex-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.regex"
+    },
+    {
+      "id": "eval.xml-schema.positive",
+      "path": "evals/fixtures/xml-schema-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.injection.xml-schema"
+    },
+    {
+      "id": "eval.xml-schema.negative",
+      "path": "evals/fixtures/xml-schema-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.injection.xml-schema"
+    },
+    {
+      "id": "eval.cors.positive",
+      "path": "evals/fixtures/cors-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.browser.cors"
+    },
+    {
+      "id": "eval.cors.negative",
+      "path": "evals/fixtures/cors-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.browser.cors"
+    },
+    {
+      "id": "eval.clickjacking.positive",
+      "path": "evals/fixtures/clickjacking-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.browser.clickjacking"
+    },
+    {
+      "id": "eval.clickjacking.negative",
+      "path": "evals/fixtures/clickjacking-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.browser.clickjacking"
+    },
+    {
+      "id": "eval.postmessage.positive",
+      "path": "evals/fixtures/postmessage-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.browser.postmessage"
+    },
+    {
+      "id": "eval.postmessage.negative",
+      "path": "evals/fixtures/postmessage-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.browser.postmessage"
+    },
+    {
+      "id": "eval.open-redirect.positive",
+      "path": "evals/fixtures/open-redirect-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.browser.open-redirect"
+    },
+    {
+      "id": "eval.open-redirect.negative",
+      "path": "evals/fixtures/open-redirect-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.browser.open-redirect"
+    },
+    {
+      "id": "eval.host-header.positive",
+      "path": "evals/fixtures/host-header-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.http.host-header"
+    },
+    {
+      "id": "eval.host-header.negative",
+      "path": "evals/fixtures/host-header-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.http.host-header"
+    },
+    {
+      "id": "eval.cache-authorization.positive",
+      "path": "evals/fixtures/cache-authorization-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.http.cache-authorization"
+    },
+    {
+      "id": "eval.cache-authorization.negative",
+      "path": "evals/fixtures/cache-authorization-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.http.cache-authorization"
+    },
+    {
+      "id": "eval.webhook-replay.positive",
+      "path": "evals/fixtures/webhook-replay-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.api.webhook-replay"
+    },
+    {
+      "id": "eval.webhook-replay.negative",
+      "path": "evals/fixtures/webhook-replay-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.api.webhook-replay"
+    },
+    {
+      "id": "eval.content-type-confusion.positive",
+      "path": "evals/fixtures/content-type-confusion-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.api.content-type-confusion"
+    },
+    {
+      "id": "eval.content-type-confusion.negative",
+      "path": "evals/fixtures/content-type-confusion-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.api.content-type-confusion"
+    },
+    {
+      "id": "eval.inventory.positive",
+      "path": "evals/fixtures/inventory-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.api.inventory"
+    },
+    {
+      "id": "eval.inventory.negative",
+      "path": "evals/fixtures/inventory-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.api.inventory"
+    },
+    {
+      "id": "eval.archive-bomb.positive",
+      "path": "evals/fixtures/archive-bomb-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.files.archive-bomb"
+    },
+    {
+      "id": "eval.archive-bomb.negative",
+      "path": "evals/fixtures/archive-bomb-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.files.archive-bomb"
+    },
+    {
+      "id": "eval.symlink.positive",
+      "path": "evals/fixtures/symlink-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.files.symlink"
+    },
+    {
+      "id": "eval.symlink.negative",
+      "path": "evals/fixtures/symlink-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.files.symlink"
+    },
+    {
+      "id": "eval.temp-file.positive",
+      "path": "evals/fixtures/temp-file-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.files.temp-file"
+    },
+    {
+      "id": "eval.temp-file.negative",
+      "path": "evals/fixtures/temp-file-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.files.temp-file"
+    },
+    {
+      "id": "eval.object-storage.positive",
+      "path": "evals/fixtures/object-storage-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.files.object-storage"
+    },
+    {
+      "id": "eval.object-storage.negative",
+      "path": "evals/fixtures/object-storage-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.files.object-storage"
+    },
+    {
+      "id": "eval.include.positive",
+      "path": "evals/fixtures/include-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.files.include"
+    },
+    {
+      "id": "eval.include.negative",
+      "path": "evals/fixtures/include-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.files.include"
+    },
+    {
+      "id": "eval.replay.positive",
+      "path": "evals/fixtures/replay-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.business.replay"
+    },
+    {
+      "id": "eval.replay.negative",
+      "path": "evals/fixtures/replay-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.business.replay"
+    },
+    {
+      "id": "eval.idempotency.positive",
+      "path": "evals/fixtures/idempotency-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.business.idempotency"
+    },
+    {
+      "id": "eval.idempotency.negative",
+      "path": "evals/fixtures/idempotency-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.business.idempotency"
+    },
+    {
+      "id": "eval.price-tampering.positive",
+      "path": "evals/fixtures/price-tampering-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.business.price-tampering"
+    },
+    {
+      "id": "eval.price-tampering.negative",
+      "path": "evals/fixtures/price-tampering-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.business.price-tampering"
+    },
+    {
+      "id": "eval.approval-separation.positive",
+      "path": "evals/fixtures/approval-separation-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.business.approval-separation"
+    },
+    {
+      "id": "eval.approval-separation.negative",
+      "path": "evals/fixtures/approval-separation-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.business.approval-separation"
+    },
+    {
+      "id": "eval.rate-limit.positive",
+      "path": "evals/fixtures/rate-limit-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.availability.rate-limit"
+    },
+    {
+      "id": "eval.rate-limit.negative",
+      "path": "evals/fixtures/rate-limit-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.availability.rate-limit"
+    },
+    {
+      "id": "eval.queue-amplification.positive",
+      "path": "evals/fixtures/queue-amplification-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.availability.queue-amplification"
+    },
+    {
+      "id": "eval.queue-amplification.negative",
+      "path": "evals/fixtures/queue-amplification-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.availability.queue-amplification"
+    },
+    {
+      "id": "eval.info-disclosure.positive",
+      "path": "evals/fixtures/info-disclosure-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.secrets.info-disclosure"
+    },
+    {
+      "id": "eval.info-disclosure.negative",
+      "path": "evals/fixtures/info-disclosure-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.secrets.info-disclosure"
+    },
+    {
+      "id": "eval.error-disclosure.positive",
+      "path": "evals/fixtures/error-disclosure-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.secrets.error-disclosure"
+    },
+    {
+      "id": "eval.error-disclosure.negative",
+      "path": "evals/fixtures/error-disclosure-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.secrets.error-disclosure"
+    },
+    {
+      "id": "eval.timing.positive",
+      "path": "evals/fixtures/timing-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.secrets.timing"
+    },
+    {
+      "id": "eval.timing.negative",
+      "path": "evals/fixtures/timing-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.secrets.timing"
+    },
+    {
+      "id": "eval.backup-exposure.positive",
+      "path": "evals/fixtures/backup-exposure-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.secrets.backup-exposure"
+    },
+    {
+      "id": "eval.backup-exposure.negative",
+      "path": "evals/fixtures/backup-exposure-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.secrets.backup-exposure"
+    },
+    {
+      "id": "eval.key-rotation.positive",
+      "path": "evals/fixtures/key-rotation-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.crypto.key-rotation"
+    },
+    {
+      "id": "eval.key-rotation.negative",
+      "path": "evals/fixtures/key-rotation-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.crypto.key-rotation"
+    },
+    {
+      "id": "eval.certificate-validation.positive",
+      "path": "evals/fixtures/certificate-validation-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.crypto.certificate-validation"
+    },
+    {
+      "id": "eval.certificate-validation.negative",
+      "path": "evals/fixtures/certificate-validation-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.crypto.certificate-validation"
+    },
+    {
+      "id": "eval.insecure-default.positive",
+      "path": "evals/fixtures/insecure-default-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.configuration.insecure-default"
+    },
+    {
+      "id": "eval.insecure-default.negative",
+      "path": "evals/fixtures/insecure-default-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.configuration.insecure-default"
+    },
+    {
+      "id": "eval.debug.positive",
+      "path": "evals/fixtures/debug-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.configuration.debug"
+    },
+    {
+      "id": "eval.debug.negative",
+      "path": "evals/fixtures/debug-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.configuration.debug"
+    },
+    {
+      "id": "eval.artifact-integrity.positive",
+      "path": "evals/fixtures/artifact-integrity-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.supply.artifact-integrity"
+    },
+    {
+      "id": "eval.artifact-integrity.negative",
+      "path": "evals/fixtures/artifact-integrity-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.supply.artifact-integrity"
+    },
+    {
+      "id": "eval.workflow-injection.positive",
+      "path": "evals/fixtures/workflow-injection-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.supply.workflow-injection"
+    },
+    {
+      "id": "eval.workflow-injection.negative",
+      "path": "evals/fixtures/workflow-injection-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.supply.workflow-injection"
+    },
+    {
+      "id": "eval.container-image.positive",
+      "path": "evals/fixtures/container-image-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.supply.container-image"
+    },
+    {
+      "id": "eval.container-image.negative",
+      "path": "evals/fixtures/container-image-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.supply.container-image"
+    },
+    {
+      "id": "eval.iac-drift.positive",
+      "path": "evals/fixtures/iac-drift-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.supply.iac-drift"
+    },
+    {
+      "id": "eval.iac-drift.negative",
+      "path": "evals/fixtures/iac-drift-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.supply.iac-drift"
+    },
+    {
+      "id": "eval.serverless-iam.positive",
+      "path": "evals/fixtures/serverless-iam-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.cloud.serverless-iam"
+    },
+    {
+      "id": "eval.serverless-iam.negative",
+      "path": "evals/fixtures/serverless-iam-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.cloud.serverless-iam"
+    },
+    {
+      "id": "eval.k8s-service-account.positive",
+      "path": "evals/fixtures/k8s-service-account-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.cloud.k8s-service-account"
+    },
+    {
+      "id": "eval.k8s-service-account.negative",
+      "path": "evals/fixtures/k8s-service-account-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.cloud.k8s-service-account"
+    },
+    {
+      "id": "eval.metadata-boundary.positive",
+      "path": "evals/fixtures/metadata-boundary-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.cloud.metadata-boundary"
+    },
+    {
+      "id": "eval.metadata-boundary.negative",
+      "path": "evals/fixtures/metadata-boundary-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.cloud.metadata-boundary"
+    },
+    {
+      "id": "eval.indirect-prompt-injection.positive",
+      "path": "evals/fixtures/indirect-prompt-injection-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.indirect-prompt-injection"
+    },
+    {
+      "id": "eval.indirect-prompt-injection.negative",
+      "path": "evals/fixtures/indirect-prompt-injection-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.indirect-prompt-injection"
+    },
+    {
+      "id": "eval.tool-authorization.positive",
+      "path": "evals/fixtures/tool-authorization-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.tool-authorization"
+    },
+    {
+      "id": "eval.tool-authorization.negative",
+      "path": "evals/fixtures/tool-authorization-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.tool-authorization"
+    },
+    {
+      "id": "eval.memory-poisoning.positive",
+      "path": "evals/fixtures/memory-poisoning-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.memory-poisoning"
+    },
+    {
+      "id": "eval.memory-poisoning.negative",
+      "path": "evals/fixtures/memory-poisoning-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.memory-poisoning"
+    },
+    {
+      "id": "eval.rag-source-trust.positive",
+      "path": "evals/fixtures/rag-source-trust-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.rag-source-trust"
+    },
+    {
+      "id": "eval.rag-source-trust.negative",
+      "path": "evals/fixtures/rag-source-trust-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.rag-source-trust"
+    },
+    {
+      "id": "eval.tool-output.positive",
+      "path": "evals/fixtures/tool-output-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.tool-output"
+    },
+    {
+      "id": "eval.tool-output.negative",
+      "path": "evals/fixtures/tool-output-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.tool-output"
+    },
+    {
+      "id": "eval.agent-identity.positive",
+      "path": "evals/fixtures/agent-identity-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.agent-identity"
+    },
+    {
+      "id": "eval.agent-identity.negative",
+      "path": "evals/fixtures/agent-identity-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.agent-identity"
+    },
+    {
+      "id": "eval.agent-loop.positive",
+      "path": "evals/fixtures/agent-loop-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.agent-loop"
+    },
+    {
+      "id": "eval.agent-loop.negative",
+      "path": "evals/fixtures/agent-loop-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.agent-loop"
+    },
+    {
+      "id": "eval.model-supply-chain.positive",
+      "path": "evals/fixtures/model-supply-chain-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.model-supply-chain"
+    },
+    {
+      "id": "eval.model-supply-chain.negative",
+      "path": "evals/fixtures/model-supply-chain-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.model-supply-chain"
+    },
+    {
+      "id": "eval.context-leakage.positive",
+      "path": "evals/fixtures/context-leakage-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.context-leakage"
+    },
+    {
+      "id": "eval.context-leakage.negative",
+      "path": "evals/fixtures/context-leakage-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.context-leakage"
+    },
+    {
+      "id": "eval.inter-agent-trust.positive",
+      "path": "evals/fixtures/inter-agent-trust-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.inter-agent-trust"
+    },
+    {
+      "id": "eval.inter-agent-trust.negative",
+      "path": "evals/fixtures/inter-agent-trust-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.inter-agent-trust"
+    },
+    {
+      "id": "eval.evaluation-leakage.positive",
+      "path": "evals/fixtures/evaluation-leakage-positive.json",
+      "polarity": "positive",
+      "vulnerability_id": "vuln.ai.evaluation-leakage"
+    },
+    {
+      "id": "eval.evaluation-leakage.negative",
+      "path": "evals/fixtures/evaluation-leakage-negative.json",
+      "polarity": "negative",
+      "vulnerability_id": "vuln.ai.evaluation-leakage"
+    }
+  ],
+  "max_forbidden_fixture_count": 0,
+  "min_retrieval_recall_at_5": 0.9,
+  "schema_version": "1.0",
+  "suite": "secure-context-atlas-deterministic-v1"
+}

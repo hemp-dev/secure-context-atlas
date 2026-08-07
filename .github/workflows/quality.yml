@@ -8,8 +8,16 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Validate generated indexes and defensive cards
         run: |
           python3 scripts/build_indexes.py --fetch
+          python3 scripts/update_sources.py --write-lock --check
+          python3 scripts/run_eval.py --output ai/evaluation-report.json
+          python3 scripts/build_release_manifest.py
+          python3 scripts/validate_schemas.py
           python3 scripts/validate_repo.py
+          python3 scripts/validate_rules.py
+          python3 scripts/validate_threat_models.py
+          python3 scripts/validate_release.py
+          python3 -m unittest discover -s tests -v

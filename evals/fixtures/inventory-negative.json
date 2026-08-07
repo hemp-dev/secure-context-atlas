@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-200",
+  "expected_status": "not-applicable",
+  "id": "eval.inventory.negative",
+  "polarity": "negative",
+  "query": "Incomplete API inventory and shadow endpoint exposure route, schema, version or protocol discovery shadow endpoint or deprecated handler",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from route, schema, version or protocol discovery is validated, scoped and denied before shadow endpoint or deprecated handler",
+  "vulnerability_id": "vuln.api.inventory"
+}

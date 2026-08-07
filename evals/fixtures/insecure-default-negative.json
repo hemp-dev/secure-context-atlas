@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-1188",
+  "expected_status": "not-applicable",
+  "id": "eval.insecure-default.negative",
+  "polarity": "negative",
+  "query": "Insecure default configuration missing configuration or deployment value startup policy, listener or access decision",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from missing configuration or deployment value is validated, scoped and denied before startup policy, listener or access decision",
+  "vulnerability_id": "vuln.configuration.insecure-default"
+}

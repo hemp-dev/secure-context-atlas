@@ -12,6 +12,7 @@ import json
 import re
 import shutil
 import tempfile
+import time
 import urllib.request
 import zipfile
 from collections import Counter
@@ -20,6 +21,8 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
+PROJECT_NAME = "Secure Context Atlas"
+RELEASE_VERSION = "0.5.0"
 CWE_URL = "https://cwe.mitre.org/data/xml/cwec_v4.20.xml.zip"
 CAPEC_URL = "https://capec.mitre.org/data/xml/capec_v3.9.xml"
 CWE_NS = "{http://cwe.mitre.org/cwe-7}"
@@ -34,10 +37,29 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def generated_date() -> str:
+    metadata = ROOT / "sources/versions.yaml"
+    if metadata.exists():
+        match = re.search(r"^generated_at:\s*[\"']?([^\"'\s]+)", metadata.read_text(encoding="utf-8"), re.M)
+        if match:
+            return match.group(1)
+    return date.today().isoformat()
+
+
 def fetch(url: str, target: Path) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
-    with urllib.request.urlopen(url, timeout=90) as response, target.open("wb") as out:
-        shutil.copyfileobj(response, out)
+    request = urllib.request.Request(url, headers={"User-Agent": "Secure-Context-Atlas/0.5.0 source-refresh"})
+    last_error: Exception | None = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=90) as response, target.open("wb") as out:
+                shutil.copyfileobj(response, out)
+            return
+        except Exception as exc:  # noqa: BLE001
+            last_error = exc
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"failed to fetch {url} after 3 attempts: {last_error}")
 
 
 def text(node: ET.Element | None) -> str:
@@ -222,7 +244,7 @@ def write_json(path: Path, value: object) -> None:
 def build(cwe_path: Path, capec_path: Path) -> None:
     cwe_meta, cwe = cwe_entries(cwe_path)
     capec_meta, capec = capec_entries(capec_path)
-    generated_at = date.today().isoformat()
+    generated_at = generated_date()
     write_json(ROOT / "ai/cwe-index.json", {**cwe_meta, "retrieved_at": generated_at, "entries": cwe})
     write_json(ROOT / "ai/cwe-coverage.json", {"schema_version": "1.0", "generated_at": generated_at, "source": cwe_meta, "entries": [{"cwe": item["id"], "name": item["name"], "status": item["status"], "coverage_state": "imported", "curation": "curated" if item["id"] in {record["canonical_cwe"] for record in curated_records()} else "taxonomy-only"} for item in cwe]})
     write_json(ROOT / "ai/capec-index.json", {**capec_meta, "retrieved_at": generated_at, "entries": capec})
@@ -234,6 +256,10 @@ def build(cwe_path: Path, capec_path: Path) -> None:
     for record in legacy:
         record["curated"] = record["id"] in curated_ids
     write_json(ROOT / "ai/vulnerability-map.json", {"schema_version": "1.0", "generated_at": generated_at, "canonical_namespace": "MITRE-CWE", "records": legacy, "curated_records": curated})
+    maturity_records = []
+    for record in legacy:
+        maturity_records.append({"id": record["id"], "legacy_id": record.get("legacy_id"), "maturity": "curated" if record["id"] in curated_ids else "inventory", "path": next((item["path"] for item in curated if item["id"] == record["id"]), None)})
+    write_json(ROOT / "ai/maturity-map.json", {"schema_version": "1.0", "generated_at": generated_at, "statuses": ["inventory", "scaffolded", "curated", "tested", "production-ready"], "records": maturity_records})
 
     aliases: dict[str, list[str]] = {}
     alias_path = ROOT / "taxonomy/aliases.yaml"
@@ -269,11 +295,13 @@ def build(cwe_path: Path, capec_path: Path) -> None:
             "owasp_agentic": {f"ASI{i:02d}": label for i, label in enumerate(["goal-hijack", "tool-misuse", "identity-privilege-abuse", "agentic-supply-chain", "unexpected-code-execution", "memory-context-poisoning", "inter-agent-communication", "cascading-failures", "human-agent-trust", "rogue-agents"], 1)},
             "mobile": {"MASVS": "control families", "MASTG": "test families", "MASWE": "weakness identifiers"},
             "web": {"ASVS": "verification requirements", "WSTG": "testing scenarios"},
+            "nist_ai_rmf": {"govern": "policy and accountability", "map": "context and risk framing", "measure": "evaluation and evidence", "manage": "controls and residual risk"},
+            "nist_ai_600_1": "Generative AI risk profile crosswalked in AI and agentic guidance",
         },
         "curated_record_count": len(curated),
     }
     write_json(ROOT / "ai/standards-coverage.json", standards)
-    write_json(ROOT / "ai/index.json", {"schema_version": "1.0", "project": "Secure Context Atlas", "release": "0.1.0", "release_channel": "foundational-preview", "generated_at": generated_at, "retrieval_order": ["stack", "surface", "family", "canonical_cwe", "safe_verification"], "record_count": len(legacy), "curated_record_count": len(curated), "artifacts": ["ai/cwe-index.json", "ai/cwe-coverage.json", "ai/capec-index.json", "ai/vulnerability-map.json", "ai/aliases.json", "ai/standards-coverage.json", "ai/compact-context.md"]})
+    write_json(ROOT / "ai/index.json", {"schema_version": "1.0", "project": PROJECT_NAME, "release": RELEASE_VERSION, "release_channel": "stable-preview", "generated_at": generated_at, "retrieval_order": ["stack", "surface", "family", "canonical_cwe", "safe_verification", "maturity"], "record_count": len(legacy), "curated_record_count": len(curated), "artifacts": ["ai/cwe-index.json", "ai/cwe-coverage.json", "ai/capec-index.json", "ai/vulnerability-map.json", "ai/maturity-map.json", "ai/aliases.json", "ai/standards-coverage.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "ai/compact-context.md"]})
 
 
 def main() -> int:

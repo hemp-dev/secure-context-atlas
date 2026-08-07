@@ -1,10 +1,10 @@
-# Secure Context Atlas release checklist
+# Secure Context Atlas 0.5.0 release checklist
 
 Этот checklist предназначен для maintainer/release owner перед публикацией tag или архива.
 
 ## A. Scope and naming
 
-- [ ] Confirm release name, version, channel and date in `RELEASE.md`, `CHANGELOG.md`, `sources/versions.yaml` and `ai/index.json`.
+- [ ] Confirm release name, version `0.5.0`, channel `stable-preview` and date in `RELEASE.md`, `CHANGELOG.md`, `sources/versions.yaml` and `ai/index.json`.
 - [ ] Treat `Secure Context Atlas` as a working brand until domain/trademark due diligence is complete.
 - [ ] Confirm release is described as a defensive knowledge base, not a scanner or exploit collection.
 
@@ -24,8 +24,9 @@ python3 -B scripts/build_indexes.py --fetch
 
 - [ ] `ai/cwe-index.json` contains all entries for the pinned release.
 - [ ] `ai/cwe-coverage.json` distinguishes imported, curated and taxonomy-only entries.
-- [ ] `ai/capec-index.json`, `ai/vulnerability-map.json`, `ai/aliases.json`, `ai/standards-coverage.json` and `ai/index.json` are regenerated.
+- [ ] `ai/capec-index.json`, `ai/vulnerability-map.json`, `ai/maturity-map.json`, `ai/aliases.json`, `ai/standards-coverage.json`, `ai/evaluation-report.json` and `ai/index.json` are regenerated.
 - [ ] `ai/source-hashes.json` matches the downloaded inputs.
+- [ ] `sources/lock.json` matches `ai/source-hashes.json`.
 
 ## D. Content quality
 
@@ -33,6 +34,8 @@ python3 -B scripts/build_indexes.py --fetch
 - [ ] Each card states `SOURCE -> TRANSFORMATIONS -> CONTROL -> SINK`.
 - [ ] Preconditions, trust boundaries, authorization points, false positives, impact, remediation and regression tests are present.
 - [ ] Safe verification is local/staging/mock based and has no real secrets or destructive action.
+- [ ] Evaluation suite has at least 100 fixtures and recall@5 >= 0.90.
+- [ ] Rule manifest and threat-model examples validate.
 - [ ] New aliases do not create an unmarked collision; ambiguous aliases are listed in `ai/aliases.json`.
 - [ ] Language, framework, platform and AI routing references resolve to existing files or explicit wildcard IDs.
 
@@ -42,11 +45,15 @@ python3 -B scripts/build_indexes.py --fetch
 - [ ] Remove `__pycache__`, temporary XML/ZIP, raw wordlists and local test data.
 - [ ] Verify `.gitignore` covers caches and raw inputs.
 - [ ] Check CI workflow permissions and pin third-party actions according to the hosting policy.
+- [ ] Resolve runtime warnings from GitHub Actions and keep action versions Node-compatible.
 
 ## F. Tests and publication
 
 ```sh
 python3 -B scripts/validate_repo.py
+python3 -B scripts/validate_rules.py
+python3 -B scripts/validate_threat_models.py
+python3 -B scripts/validate_release.py
 python3 -B -m unittest discover -s tests -v
 ```
 

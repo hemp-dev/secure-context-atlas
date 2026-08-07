@@ -1,0 +1,11 @@
+{
+  "id": "eval.unsafe-deserialization.positive",
+  "vulnerability_id": "vuln.serialization.unsafe-deserialization",
+  "polarity": "positive",
+  "expected_status": "candidate",
+  "expected_cwe": "CWE-502",
+  "query": "unsafe deserialization untrusted serialized value object deserializer",
+  "snippet": "synthetic serialized value reaches object rehydration without an allowlist",
+  "evidence_required": ["source", "sink", "control"],
+  "safe_boundary": "local synthetic fixture; no network and no real credentials"
+}

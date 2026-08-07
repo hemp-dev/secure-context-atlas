@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-915",
+  "expected_status": "candidate",
+  "id": "eval.mass-assignment.positive",
+  "polarity": "positive",
+  "query": "Mass assignment and unsafe property binding request body or patch document model update or security-sensitive property",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request body or patch document reaches model update or security-sensitive property without the documented control",
+  "vulnerability_id": "vuln.authorization.mass-assignment"
+}

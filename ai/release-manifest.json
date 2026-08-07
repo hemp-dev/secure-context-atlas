@@ -1,0 +1,1935 @@
+{
+  "file_count": 385,
+  "files": [
+    {
+      "bytes": 743,
+      "path": ".github/workflows/quality.yml",
+      "sha256": "696ad6d26c1fea3b10d92d8f4fd4edc9c0019f491e4e9fb91d002809acc94326"
+    },
+    {
+      "bytes": 1096,
+      "path": ".github/workflows/source-update.yml",
+      "sha256": "2c8f0ef75fdda564618a820b08af06595316654fe36b3ccff6405697ae7f9ee4"
+    },
+    {
+      "bytes": 60,
+      "path": ".gitignore",
+      "sha256": "c2c24d748d3ee2623e1bc8968d314e0fbeef022dbe024f742452010f1a2bb833"
+    },
+    {
+      "bytes": 5093,
+      "path": "AGENTS.md",
+      "sha256": "d2894dc11b65361b5a687fb99c827e25edcde930a185e8898d5b1d4e9d1e1c2e"
+    },
+    {
+      "bytes": 3584,
+      "path": "CHANGELOG.md",
+      "sha256": "bd9e5314cb8d5e30c6e7aa88c584e80e4c1b9bbdb83348774bc871533593da79"
+    },
+    {
+      "bytes": 1793,
+      "path": "CONTRIBUTING.md",
+      "sha256": "1838850c6eee0f7cd961b5ff0b8e46855218c7625c24b7c3b36309d2b60436c1"
+    },
+    {
+      "bytes": 472,
+      "path": "LICENSE.md",
+      "sha256": "64007da4c26e98c3102e4ea28f24105247e41c9fecccf888587d80c469e02b1d"
+    },
+    {
+      "bytes": 5176,
+      "path": "README.md",
+      "sha256": "b6144ccd3bfdab25748e388a711d7509a1ea6135b8120ca47e02b898809bcfda"
+    },
+    {
+      "bytes": 15577,
+      "path": "RELEASE.md",
+      "sha256": "9d60bb6d3cdd27cf8c108fc0140a6248efa871fdde803f42ae37426678e8e726"
+    },
+    {
+      "bytes": 1102,
+      "path": "SECURITY.md",
+      "sha256": "5bb47fc4f7168ce9cffed59852f159796617501a2b20db5f68bb3509834d62cb"
+    },
+    {
+      "bytes": 426,
+      "path": "advisories/README.md",
+      "sha256": "16e82a25772d3ae6c13901df02b3b486a6a33ddfc237e61ec97e6680f5a7bf08"
+    },
+    {
+      "bytes": 521,
+      "path": "advisories/adapters/github-advisory-database.md",
+      "sha256": "aff3136fe7ced45c42d53646393fcec5230f3d55dacf7a73fac6346c0c68f75b"
+    },
+    {
+      "bytes": 553,
+      "path": "advisories/adapters/osv.md",
+      "sha256": "b1ccfa0f55e6748da1ebe130c105e1236b72d2f18dc695e38b27756df618ec6c"
+    },
+    {
+      "bytes": 6662,
+      "path": "ai/aliases.json",
+      "sha256": "8a6af45cf199a94956e2be1a285a5e4c6e04c265c00a67433bf0fe5beaf4c11b"
+    },
+    {
+      "bytes": 2569,
+      "path": "ai/audit-protocol.md",
+      "sha256": "37923de3973f9b53133246da9d8c87662f4708e7f325fc124a4b6a463b066da0"
+    },
+    {
+      "bytes": 419120,
+      "path": "ai/capec-index.json",
+      "sha256": "5804e2b58dbd77c80e3713a96f5de33acba5658797172d3f3e82dfac5d1f40d7"
+    },
+    {
+      "bytes": 1924,
+      "path": "ai/compact-context.md",
+      "sha256": "2f0e043b365db23e11ad6ef17184578128eb87ee5cb55d6fc8d1143b5fb43538"
+    },
+    {
+      "bytes": 407,
+      "path": "ai/context-manifest.json",
+      "sha256": "10c283d178bd16e55f339d0e5052fca0043aecf204ddb019c5e7b3a850909213"
+    },
+    {
+      "bytes": 18055,
+      "path": "ai/coverage-report.json",
+      "sha256": "934390f4fa40a6029c8febd7b2657c6dca97b7e1ca70f176f9430d93d3913cae"
+    },
+    {
+      "bytes": 192506,
+      "path": "ai/cwe-coverage.json",
+      "sha256": "46517d0d5ecb49bbd46eaa97dca853e6983ea2d58305f69eb2b882ebad8a8349"
+    },
+    {
+      "bytes": 995367,
+      "path": "ai/cwe-index.json",
+      "sha256": "eeec0cab049b2cb8b09fe91add8ffaf62b453b3f3780bcad02048fb1ce998c04"
+    },
+    {
+      "bytes": 52339,
+      "path": "ai/evaluation-report.json",
+      "sha256": "4c9a7971ddfb3442023e7ee3874ada5d1d4fdf6337826e65d8dc2039035a011e"
+    },
+    {
+      "bytes": 1804,
+      "path": "ai/finding-format.md",
+      "sha256": "7f142990b6b323ed410cde8e541042608195e85cdf8f20e3ff0136333e0306d1"
+    },
+    {
+      "bytes": 690,
+      "path": "ai/index.json",
+      "sha256": "233690ec27bc039db489e385d90d6e610f1c34dae88b39aaaa97aabeedd1b789"
+    },
+    {
+      "bytes": 44855,
+      "path": "ai/maturity-map.json",
+      "sha256": "9afe41343429558309b6350915efcb18d0b349545fc6af52fd0f2b173f599203"
+    },
+    {
+      "bytes": 3894,
+      "path": "ai/routing.yaml",
+      "sha256": "1b3dda7ba602e42c5564364d5581ca6c4154618a7b1a5724c5e3cce602154d95"
+    },
+    {
+      "bytes": 349,
+      "path": "ai/source-hashes.json",
+      "sha256": "cacb62f30ff03f3ee5e31cf2738ff4f9ccbb82d34e9ce790f1a67fa7c80dd22e"
+    },
+    {
+      "bytes": 2171,
+      "path": "ai/standards-coverage.json",
+      "sha256": "692ceb7a027400573398c8fce39679b09e5b4e015f3482d318449d1d44e8ac81"
+    },
+    {
+      "bytes": 2658,
+      "path": "ai/threat-model-examples/agentic-rag.json",
+      "sha256": "8217be0f170aac658fad53c70e3b8ced23eceafbf2e5baeb5d62a5809ee8b749"
+    },
+    {
+      "bytes": 1214,
+      "path": "ai/threat-modeling.md",
+      "sha256": "3644fdaa99c256909058d3d094d88d304709bf326564a83b9a6c36e272ee4a67"
+    },
+    {
+      "bytes": 122205,
+      "path": "ai/vulnerability-map.json",
+      "sha256": "82488bfd4d47db3e4385188f770e61bb7ec039a03f87af21dfdb9fbf86216f44"
+    },
+    {
+      "bytes": 73,
+      "path": "bin/sctx",
+      "sha256": "947f4c325b561256ccbe7cd9325ef4a476922c15a53629951177622d57a1f396"
+    },
+    {
+      "bytes": 243,
+      "path": "checklists/README.md",
+      "sha256": "5d23f5865cf34398d8e5f79ede43d8a00805091adca64794e1eb4581ef91e02d"
+    },
+    {
+      "bytes": 542,
+      "path": "checklists/cloud-mobile-ai.md",
+      "sha256": "6c6df71c875844b2d0070610481ad86a7ac3f28b49488b81d4edce22f6e7f9e5"
+    },
+    {
+      "bytes": 493,
+      "path": "checklists/supply-chain.md",
+      "sha256": "ea49211df4f64ac87f50458d3560ee87060f355b19379596f14773ae9f391a33"
+    },
+    {
+      "bytes": 606,
+      "path": "checklists/web-api.md",
+      "sha256": "64c33880dd17f7fc4242330fabb477c00febc7aee911357710939a2ca4054db7"
+    },
+    {
+      "bytes": 451,
+      "path": "datasets/README.md",
+      "sha256": "b74f17da3766fc7a91cb527d88a5c7b4a179833ca085f5dafe39428c802b86f0"
+    },
+    {
+      "bytes": 1212,
+      "path": "datasets/manifests.yaml",
+      "sha256": "47b2f2d92617e30f2de211d0cd2b00655f298ea90090915278a2af982b0514ae"
+    },
+    {
+      "bytes": 3441,
+      "path": "docs/release-checklist.md",
+      "sha256": "781956237b418fdc2fc85e19d7b8c39563ac60d8dccf19d11e7cdcfca35a7c35"
+    },
+    {
+      "bytes": 1638,
+      "path": "docs/roadmap-0.5.md",
+      "sha256": "472de7a15b04b591d148e0f4300e68dd21c97dc8189044343341492bc3078083"
+    },
+    {
+      "bytes": 899,
+      "path": "evals/README.md",
+      "sha256": "48e66536dbbe565407c94af0018f6e77cdf80c4f434db4444b0750efc72a0337"
+    },
+    {
+      "bytes": 675,
+      "path": "evals/fixtures/account-enumeration-negative.json",
+      "sha256": "91c89d258eccdc25c4747a6b4e683ec7c287834b2a35136eb90545067ce7267e"
+    },
+    {
+      "bytes": 670,
+      "path": "evals/fixtures/account-enumeration-positive.json",
+      "sha256": "90ebad7fe06bbed6f6a107c090d1fbcb503bd2adf1b43ef668152b51ea7cecab"
+    },
+    {
+      "bytes": 631,
+      "path": "evals/fixtures/agent-identity-negative.json",
+      "sha256": "49d4b24b1553c4a785f79c63f51dabf993b0c25fc080fc2688e602a75f3ed16c"
+    },
+    {
+      "bytes": 626,
+      "path": "evals/fixtures/agent-identity-positive.json",
+      "sha256": "ccad68035b95037f5f8ec446be7abfcb043b3be25c66fa3090ed44ac0a986988"
+    },
+    {
+      "bytes": 639,
+      "path": "evals/fixtures/agent-loop-negative.json",
+      "sha256": "8d06064bbfb194b9b2fd746875deb45d04487c744a046ec875a70f00897a3255"
+    },
+    {
+      "bytes": 634,
+      "path": "evals/fixtures/agent-loop-positive.json",
+      "sha256": "77399a8e69219b62559bb50ff6eb7e8cbba3ae06123c62002f0527ee271a0adb"
+    },
+    {
+      "bytes": 670,
+      "path": "evals/fixtures/approval-separation-negative.json",
+      "sha256": "28366de45981be6928112ec7987de00ce281c313f49577e1e544f8c66b897deb"
+    },
+    {
+      "bytes": 665,
+      "path": "evals/fixtures/approval-separation-positive.json",
+      "sha256": "0a4994d9431c3de44a73b9efdeae0d705dbc8253cdff9098d095cae6017f1b29"
+    },
+    {
+      "bytes": 657,
+      "path": "evals/fixtures/archive-bomb-negative.json",
+      "sha256": "146e675df45cd2bdfbc3a9cdb93ca7058711c7c5fc48ce2a9388d7fdedde0516"
+    },
+    {
+      "bytes": 652,
+      "path": "evals/fixtures/archive-bomb-positive.json",
+      "sha256": "00c55bb19b02f49f68e91841e7fe097d3c4f5ac1a7ded6413dddea404dd0e317"
+    },
+    {
+      "bytes": 654,
+      "path": "evals/fixtures/artifact-integrity-negative.json",
+      "sha256": "c8239731b137b125d966848db5e9b1469ec9168c697ea1237347dd39fa416b83"
+    },
+    {
+      "bytes": 649,
+      "path": "evals/fixtures/artifact-integrity-positive.json",
+      "sha256": "9d2d0f61e592aa9dea54a3b3e7a730e0b19a76b86c7144266bc9f82dbfec358a"
+    },
+    {
+      "bytes": 630,
+      "path": "evals/fixtures/backup-exposure-negative.json",
+      "sha256": "4351169ed46a06f91069ebeebc9050fc118d8dd3896f8339c7bba9a32227037d"
+    },
+    {
+      "bytes": 625,
+      "path": "evals/fixtures/backup-exposure-positive.json",
+      "sha256": "6f6c5ac1f87dca7262b3e23bdd23c2c74cb6c0f0db0b8d98370e16a56fca81ec"
+    },
+    {
+      "bytes": 615,
+      "path": "evals/fixtures/cache-authorization-negative.json",
+      "sha256": "3061952958141f1f5049dc2a5a5a6bf4134a0725e238da0213df793e2139d1ae"
+    },
+    {
+      "bytes": 610,
+      "path": "evals/fixtures/cache-authorization-positive.json",
+      "sha256": "ca1258223345dd53d181a0d83dde6894c828314f9b23325da7af8b09d4cf4d8b"
+    },
+    {
+      "bytes": 666,
+      "path": "evals/fixtures/capability-confusion-negative.json",
+      "sha256": "3a4a453b4fbe4112db0bfe499926888424505f16b43c11fbd29c6ec1676bbcd2"
+    },
+    {
+      "bytes": 661,
+      "path": "evals/fixtures/capability-confusion-positive.json",
+      "sha256": "68298430c9f253517e9d2b1bef4ba6638342564b30f923986aa11496c12ac4b6"
+    },
+    {
+      "bytes": 620,
+      "path": "evals/fixtures/certificate-validation-negative.json",
+      "sha256": "4e82ff8109b5903f37a0dbe2992f075926087fbfbf7fea1014fbe313ac95c317"
+    },
+    {
+      "bytes": 615,
+      "path": "evals/fixtures/certificate-validation-positive.json",
+      "sha256": "ed13202436209c142d75b98bc256da06374f24ba15dbab5f5bf3e3918b9faba5"
+    },
+    {
+      "bytes": 610,
+      "path": "evals/fixtures/clickjacking-negative.json",
+      "sha256": "9fda1c50015e830e014c9bbafbc13e65d9a7e089b92212814d1bbb2d7d59b22f"
+    },
+    {
+      "bytes": 605,
+      "path": "evals/fixtures/clickjacking-positive.json",
+      "sha256": "af5df4e639e70372525f80a44a741909fb0a7e08f72ac4d72e01eaf588830b08"
+    },
+    {
+      "bytes": 471,
+      "path": "evals/fixtures/command-positive.json",
+      "sha256": "16ffe8b8144ce868be3dab335328a26db1edea4221fe3cd16f934eb93f3c94d5"
+    },
+    {
+      "bytes": 669,
+      "path": "evals/fixtures/container-image-negative.json",
+      "sha256": "63afef515c15626cd1bbe0a38f6e5e54cc7a9424f32c5d77691181b86bb0dc2e"
+    },
+    {
+      "bytes": 664,
+      "path": "evals/fixtures/container-image-positive.json",
+      "sha256": "27c44ac18d4b88cdb183fe677a74eb97828dd217e25941d12c2e420a77c3f083"
+    },
+    {
+      "bytes": 639,
+      "path": "evals/fixtures/content-type-confusion-negative.json",
+      "sha256": "5e693b02f8209e0bc0d81f862de4c84b90e8edc8743ee0b1077e2a7169f2fbe4"
+    },
+    {
+      "bytes": 634,
+      "path": "evals/fixtures/content-type-confusion-positive.json",
+      "sha256": "4ffb874c0d9a934cc0e79d188f1c5d0807495b9650f8addfcbb400b1a2c50347"
+    },
+    {
+      "bytes": 659,
+      "path": "evals/fixtures/context-leakage-negative.json",
+      "sha256": "64b04054c095b1aef419004a7b7f95a015ea2229a6d651e38fb73ee2cbd1fb89"
+    },
+    {
+      "bytes": 654,
+      "path": "evals/fixtures/context-leakage-positive.json",
+      "sha256": "0f91b9b0c4bd921464b76f1d7b8ad4326ee69fec89edeb91e7b5a64b606df4d3"
+    },
+    {
+      "bytes": 661,
+      "path": "evals/fixtures/cors-negative.json",
+      "sha256": "7762aa624a4a2596ecc938884866ef70f1ab4b6bd870235bc031a75b20483934"
+    },
+    {
+      "bytes": 656,
+      "path": "evals/fixtures/cors-positive.json",
+      "sha256": "2a578f3c6e7eb721ff18af810f415d5a11667e285bd0c719afdad9a961a9e12c"
+    },
+    {
+      "bytes": 618,
+      "path": "evals/fixtures/csv-negative.json",
+      "sha256": "79ae17578cef7f666e447a6cb55d82fd3b9fa26c43222c9f422bcb52cd90c472"
+    },
+    {
+      "bytes": 613,
+      "path": "evals/fixtures/csv-positive.json",
+      "sha256": "d74015869be78b0c011d099c646bb5d60acfd05f4ff12804b1df3dc87eebf377"
+    },
+    {
+      "bytes": 639,
+      "path": "evals/fixtures/debug-negative.json",
+      "sha256": "ddf87ce4dabe7d685e38d9fcf669e3eeefd4fdf283bbb9d8e35e2d7587d9340d"
+    },
+    {
+      "bytes": 634,
+      "path": "evals/fixtures/debug-positive.json",
+      "sha256": "0c9e65e55d25aad8bc293c7bbb21b7ae03c9041db7f9d7ef9cf06e8fdeb8c571"
+    },
+    {
+      "bytes": 665,
+      "path": "evals/fixtures/delegated-admin-negative.json",
+      "sha256": "0916015fd23a2cb207f7a7fdfba06bd854960207e01092cda2934a5f14d87e36"
+    },
+    {
+      "bytes": 660,
+      "path": "evals/fixtures/delegated-admin-positive.json",
+      "sha256": "f0d4aa5edab5aec12df72b13db1c73c33d0a1a6b17f8f3087ac3cd159d0547d5"
+    },
+    {
+      "bytes": 641,
+      "path": "evals/fixtures/error-disclosure-negative.json",
+      "sha256": "e795933a81b7ef9ef2f073ec45a22153242bf362b69111637407bf1faf4e6a11"
+    },
+    {
+      "bytes": 636,
+      "path": "evals/fixtures/error-disclosure-positive.json",
+      "sha256": "ad9b7ef32df4b0b99a451051db4e3c7c05f5b94aa3d56ec8001a5c6073f9c1db"
+    },
+    {
+      "bytes": 669,
+      "path": "evals/fixtures/evaluation-leakage-negative.json",
+      "sha256": "0ef85c472286a0b569da99789b96c96c681a155f40aae3515c139fb97344f672"
+    },
+    {
+      "bytes": 664,
+      "path": "evals/fixtures/evaluation-leakage-positive.json",
+      "sha256": "08baabe72b5764bbe6a6525dc8a666d3dc918d28aaf0f0283c7b1e2cbb751069"
+    },
+    {
+      "bytes": 490,
+      "path": "evals/fixtures/hardcoded-positive.json",
+      "sha256": "7b0d000ecbfd5100ab5aee81ee97cb948287ff6c430e11ca0d744a9d58dc46e2"
+    },
+    {
+      "bytes": 632,
+      "path": "evals/fixtures/header-negative.json",
+      "sha256": "cb2dad3889fcbce5586acf498a4982abb1dd669f6a7776a6fc87f124e8cc8972"
+    },
+    {
+      "bytes": 627,
+      "path": "evals/fixtures/header-positive.json",
+      "sha256": "209020da21ad3805fc745917737bd80b70258ab3755497ff68d7c532fce24cf4"
+    },
+    {
+      "bytes": 657,
+      "path": "evals/fixtures/host-header-negative.json",
+      "sha256": "5717c468d7ebccdf5dfd79f0a93893f95aab556b9cd61f10f7393c7616fe1e3a"
+    },
+    {
+      "bytes": 652,
+      "path": "evals/fixtures/host-header-positive.json",
+      "sha256": "c6031fb9e355479a905797eba9a6a6d4ac05988e40c4f531d4c48a0040786044"
+    },
+    {
+      "bytes": 666,
+      "path": "evals/fixtures/iac-drift-negative.json",
+      "sha256": "cba897a3e45c30e3c2674592a3c06f6f3b150fa676b4edf86e1d98d5b744f3d1"
+    },
+    {
+      "bytes": 661,
+      "path": "evals/fixtures/iac-drift-positive.json",
+      "sha256": "7b458f6b2150300628da0f15ef8aac710af5abf8a2959c19c6d373a8dfece4dc"
+    },
+    {
+      "bytes": 642,
+      "path": "evals/fixtures/idempotency-negative.json",
+      "sha256": "a6d5166d62571994429e7d730188fba9fa23fdebed4c4e068f992bd1dc0e4ee9"
+    },
+    {
+      "bytes": 637,
+      "path": "evals/fixtures/idempotency-positive.json",
+      "sha256": "65b3832c38879d113b13e3f92603dd45c872d69a5785bd3e334a9a97e0582af8"
+    },
+    {
+      "bytes": 650,
+      "path": "evals/fixtures/include-negative.json",
+      "sha256": "e221bad74834e7ace8cc27cf0a38f24b299771de0fb38b690a5a96d5cbe3f0f1"
+    },
+    {
+      "bytes": 645,
+      "path": "evals/fixtures/include-positive.json",
+      "sha256": "2ef72be8ed0ddd2c1b6b40cceec26a4483925269deee4d2e0a11dfa06fabf36a"
+    },
+    {
+      "bytes": 681,
+      "path": "evals/fixtures/indirect-prompt-injection-negative.json",
+      "sha256": "a5b6fa9c34106406faaa1bd72631e9e80c3afb05b4f9173c956365dee44ed3ad"
+    },
+    {
+      "bytes": 676,
+      "path": "evals/fixtures/indirect-prompt-injection-positive.json",
+      "sha256": "cbec5ed30be547735ed6c81f04fce3ca85bc7c0fdcff512975c113b60461e9ae"
+    },
+    {
+      "bytes": 644,
+      "path": "evals/fixtures/info-disclosure-negative.json",
+      "sha256": "636fdd878ace587dc6bd0bde45d2c39251e52f6e4c4d1b7e48cf2e75fd11228d"
+    },
+    {
+      "bytes": 639,
+      "path": "evals/fixtures/info-disclosure-positive.json",
+      "sha256": "8876260a42a776dbb8bba2a3124f6e8a487cb31d537e0806a7e8d74c7b7ce407"
+    },
+    {
+      "bytes": 647,
+      "path": "evals/fixtures/insecure-default-negative.json",
+      "sha256": "be78a67594b1b36b192f838c10e4aedddfc9255500dec820045ff765c8f59c3c"
+    },
+    {
+      "bytes": 642,
+      "path": "evals/fixtures/insecure-default-positive.json",
+      "sha256": "6d0a6c21f7c90ce0dfd18a6789b3288c74cc4f0f94e9d312d5ad989dc2b41d26"
+    },
+    {
+      "bytes": 663,
+      "path": "evals/fixtures/inter-agent-trust-negative.json",
+      "sha256": "a973cf7592e45baf50538d4c6cc183c228da10c22dcd504596055c0ca92b9ea2"
+    },
+    {
+      "bytes": 658,
+      "path": "evals/fixtures/inter-agent-trust-positive.json",
+      "sha256": "bfad7a4b5e8d9b7a43bddeb110c20aab369027dec002206b1a8c390a19d482e8"
+    },
+    {
+      "bytes": 639,
+      "path": "evals/fixtures/inventory-negative.json",
+      "sha256": "5883f8eaed85a0984b62ff484312cdaaf6cb461ff1eda7b2026083dcadbc1d8b"
+    },
+    {
+      "bytes": 634,
+      "path": "evals/fixtures/inventory-positive.json",
+      "sha256": "d685d5e755f41a9679b590468190fa218f711fa21e4f671520a71e235836e62d"
+    },
+    {
+      "bytes": 692,
+      "path": "evals/fixtures/k8s-service-account-negative.json",
+      "sha256": "764501f33f64c06100a84dc16e0146c67a7c92e8f480fe7d5b3df182fb2766f7"
+    },
+    {
+      "bytes": 687,
+      "path": "evals/fixtures/k8s-service-account-positive.json",
+      "sha256": "0577b997a4392ff193055afcfb3603537cc95d149f967e3584b4583c7d6de655"
+    },
+    {
+      "bytes": 629,
+      "path": "evals/fixtures/key-rotation-negative.json",
+      "sha256": "de72a5672c06f495879bbf835e24c7c96b54aca30010f309ce70f2590333f477"
+    },
+    {
+      "bytes": 624,
+      "path": "evals/fixtures/key-rotation-positive.json",
+      "sha256": "f0b3af9119cccc383ca077640943ad03900295bf8adffb8a688041ded386a78b"
+    },
+    {
+      "bytes": 619,
+      "path": "evals/fixtures/ldap-negative.json",
+      "sha256": "6c86a691f84abbde2f54096529b12651c544bc79b98c6cc130379b6dcb35de8d"
+    },
+    {
+      "bytes": 614,
+      "path": "evals/fixtures/ldap-positive.json",
+      "sha256": "43165d483ab1654bea9a8183e5b6b38b0e56d5c1a9b9d54f5356424a343cdb34"
+    },
+    {
+      "bytes": 611,
+      "path": "evals/fixtures/log-negative.json",
+      "sha256": "77111399293df47f5714bd5a340425235857eb5ce6ee6bde99f23f47f0ab328c"
+    },
+    {
+      "bytes": 606,
+      "path": "evals/fixtures/log-positive.json",
+      "sha256": "f6daca9a7198d030b372a1aab5a406db75f338a72c1ad5aa876ad36b6a7d6689"
+    },
+    {
+      "bytes": 635,
+      "path": "evals/fixtures/mass-assignment-negative.json",
+      "sha256": "20ffb9ffc82702ccaca163370cdbd86c41960fe620aeb698fb3d706b8a9c619b"
+    },
+    {
+      "bytes": 630,
+      "path": "evals/fixtures/mass-assignment-positive.json",
+      "sha256": "aa1828f22f3f09f1704e681407820d8fc9d99d93a95025572ca472727edecddf"
+    },
+    {
+      "bytes": 640,
+      "path": "evals/fixtures/memory-poisoning-negative.json",
+      "sha256": "5438673ff2d9df29bdeaed2dbe36d99860054d22de16df44bf0815c9b12f6631"
+    },
+    {
+      "bytes": 635,
+      "path": "evals/fixtures/memory-poisoning-positive.json",
+      "sha256": "8a3174da52cd0101bc7e647eacf00a4a107cfbcbb5b98d5986f2dc712e93381b"
+    },
+    {
+      "bytes": 633,
+      "path": "evals/fixtures/metadata-boundary-negative.json",
+      "sha256": "15347cf9a8bc665fb703969314e9850dd4264d34c827b5294ac55e8242b069f9"
+    },
+    {
+      "bytes": 628,
+      "path": "evals/fixtures/metadata-boundary-positive.json",
+      "sha256": "f43a957f35003112d586d469cb012da8ccf290bffa31365fd74b348b4ebb136c"
+    },
+    {
+      "bytes": 652,
+      "path": "evals/fixtures/mfa-recovery-negative.json",
+      "sha256": "d122522a8176b054a3569a408010d0f6b918522287aebf935b3d27d6643f85e6"
+    },
+    {
+      "bytes": 647,
+      "path": "evals/fixtures/mfa-recovery-positive.json",
+      "sha256": "6d13eb1c65008ffd921d477ace4ae8f63860c5d079591c6e2d3b3c5c829d11a6"
+    },
+    {
+      "bytes": 673,
+      "path": "evals/fixtures/model-supply-chain-negative.json",
+      "sha256": "2d4bafeba5640d3d063fc0e58b85f850306452e2d4675e650a5e22415f0d3548"
+    },
+    {
+      "bytes": 668,
+      "path": "evals/fixtures/model-supply-chain-positive.json",
+      "sha256": "00b9096418542d4505cfe5ee75f27d9c9bdd9d15c024374a7d67398ad7bfe413"
+    },
+    {
+      "bytes": 610,
+      "path": "evals/fixtures/nosql-negative.json",
+      "sha256": "1e020eca0247fb961a3a275c14ffbe0aa964654761a956821566b41c4d67782a"
+    },
+    {
+      "bytes": 605,
+      "path": "evals/fixtures/nosql-positive.json",
+      "sha256": "5176d8d7ba43c6205c2709711bc628b8d76f5c59d0066c555289b9d6261a14fa"
+    },
+    {
+      "bytes": 616,
+      "path": "evals/fixtures/object-storage-negative.json",
+      "sha256": "bd87d50f94d4316d4f4d9384c6db0bb6a013cad570249812529668f98ee17756"
+    },
+    {
+      "bytes": 611,
+      "path": "evals/fixtures/object-storage-positive.json",
+      "sha256": "e83077e27d7e03810eefb2569ecd2b851f289752c9b9cb0bd2006408d595c073"
+    },
+    {
+      "bytes": 678,
+      "path": "evals/fixtures/open-redirect-negative.json",
+      "sha256": "45fa9350259113cebd40f4160405076c9ca27e4c18928c3a48a290eb89b8925e"
+    },
+    {
+      "bytes": 673,
+      "path": "evals/fixtures/open-redirect-positive.json",
+      "sha256": "4b4519090b7f1a8b59830d6c85ada5a6e06ad473b639c3075f90639dbbc50db1"
+    },
+    {
+      "bytes": 643,
+      "path": "evals/fixtures/password-reset-negative.json",
+      "sha256": "03ba2e70993e077009cc253184cd1f3c18431ab447b0b3978a9cbbf94ef76b9a"
+    },
+    {
+      "bytes": 638,
+      "path": "evals/fixtures/password-reset-positive.json",
+      "sha256": "d4a38832fa269b6059a5e7859516c9b840b3fe9e339d5817099b043292afa3d2"
+    },
+    {
+      "bytes": 625,
+      "path": "evals/fixtures/password-storage-negative.json",
+      "sha256": "43ce3c3372ea511320d7cff5c759715d295ebadcc94a02688f58bdd23fedbce9"
+    },
+    {
+      "bytes": 620,
+      "path": "evals/fixtures/password-storage-positive.json",
+      "sha256": "d1998818d3a54e4847c20d9dd43c49f18a5adc53779cd39676129b35fe41feea"
+    },
+    {
+      "bytes": 468,
+      "path": "evals/fixtures/path-traversal-positive.json",
+      "sha256": "86e9560678181b7d6aca226578b5b319b5905b806cb81d13be0ff829348da237"
+    },
+    {
+      "bytes": 657,
+      "path": "evals/fixtures/postmessage-negative.json",
+      "sha256": "5c94bedb6d5eb2f2dc5319a1771f80ad8b042711cf54114cfab118e529367e80"
+    },
+    {
+      "bytes": 652,
+      "path": "evals/fixtures/postmessage-positive.json",
+      "sha256": "80b8c015612fc62d92b56b5cab6a9aec6a42e972986d928efe17a4bf3bdff912"
+    },
+    {
+      "bytes": 641,
+      "path": "evals/fixtures/price-tampering-negative.json",
+      "sha256": "7974c999c9b3832cb1cd7b050bfaabc88e08502612df07bc50fb64395f863798"
+    },
+    {
+      "bytes": 636,
+      "path": "evals/fixtures/price-tampering-positive.json",
+      "sha256": "ce4e73093df8dcdebf3e8089f4e03ef4527da7854c15d90bc313529b58b32889"
+    },
+    {
+      "bytes": 638,
+      "path": "evals/fixtures/property-level-negative.json",
+      "sha256": "0e1585bf0cca60166c67998c0587b299519a52c3cb6199296400e359cc84eae0"
+    },
+    {
+      "bytes": 633,
+      "path": "evals/fixtures/property-level-positive.json",
+      "sha256": "4ca4a8a6b884d1805cc672828f9e15b7d645cb681f67cb6df03567b752e41aab"
+    },
+    {
+      "bytes": 618,
+      "path": "evals/fixtures/queue-amplification-negative.json",
+      "sha256": "a96fe11c91c84b17358278454a939016be99122391c49d6a72481e5b0ad89d4d"
+    },
+    {
+      "bytes": 613,
+      "path": "evals/fixtures/queue-amplification-positive.json",
+      "sha256": "6fa2bfa54b55ae871759544c7749bb15dc539be25a04a0ff711e552f9845af8a"
+    },
+    {
+      "bytes": 634,
+      "path": "evals/fixtures/rag-source-trust-negative.json",
+      "sha256": "7585e677a0a57b1edad09bffd1822182ea73cc5164e0bae10d9afb565d1da2e4"
+    },
+    {
+      "bytes": 629,
+      "path": "evals/fixtures/rag-source-trust-positive.json",
+      "sha256": "c117968bac31526f64fb4fa73936bf5d789f7af1706d24425f2aa5010b68a5d6"
+    },
+    {
+      "bytes": 641,
+      "path": "evals/fixtures/rate-limit-negative.json",
+      "sha256": "b0c85f7640b17d3ac119bcf9e8b3625236137e64dca0916d8f7b22102c440415"
+    },
+    {
+      "bytes": 636,
+      "path": "evals/fixtures/rate-limit-positive.json",
+      "sha256": "e069e8ca479fb97c9cd57d3a984b9a262f50f5f5a9e68894d152e9fea88a42ed"
+    },
+    {
+      "bytes": 627,
+      "path": "evals/fixtures/regex-negative.json",
+      "sha256": "d5e52bc392ce6ef55cdf082f991438763f2b4868e4205aba672568dd0ebee787"
+    },
+    {
+      "bytes": 622,
+      "path": "evals/fixtures/regex-positive.json",
+      "sha256": "bf627c20ee19f9e6ec4ee627738622bde32e3615279c6734acd4f0e74b5675df"
+    },
+    {
+      "bytes": 624,
+      "path": "evals/fixtures/replay-negative.json",
+      "sha256": "3b1a6d267e3fe3eb5222ef0986845f59ca20cafc93ed6155695e5d9214d39466"
+    },
+    {
+      "bytes": 619,
+      "path": "evals/fixtures/replay-positive.json",
+      "sha256": "59269ccb85d67cdffc97b52dfde01a62ae49bf6831f1340cdc4bb5cd53f3b136"
+    },
+    {
+      "bytes": 623,
+      "path": "evals/fixtures/saml-validation-negative.json",
+      "sha256": "bd1385674f71c6f14d5b71ef7d7ed9f742189e1cd588b1d960bc5f75d74f2ea9"
+    },
+    {
+      "bytes": 618,
+      "path": "evals/fixtures/saml-validation-positive.json",
+      "sha256": "d633a5dbfd352c96bf4e3562f83ee0dca3c1d33dbd5f3d3bcc0a9ffe4f57f02f"
+    },
+    {
+      "bytes": 664,
+      "path": "evals/fixtures/serverless-iam-negative.json",
+      "sha256": "f59cf007e4dd106d1b45deea6a43c7dc14573bd728aa63287812a7849dca6282"
+    },
+    {
+      "bytes": 659,
+      "path": "evals/fixtures/serverless-iam-positive.json",
+      "sha256": "c91385630859784c3ec81ef82265875c35a3bea84f7903e6abe5bee2954e3d59"
+    },
+    {
+      "bytes": 679,
+      "path": "evals/fixtures/service-impersonation-negative.json",
+      "sha256": "dff8fac5bdf6eccf8a82e2ca13fbf300603cb2f9c7febcca4b3ccc311419d03b"
+    },
+    {
+      "bytes": 674,
+      "path": "evals/fixtures/service-impersonation-positive.json",
+      "sha256": "ec4359f8589c7a5a5d255b7f05c901332740df30f42ee1ac342be8317d19952d"
+    },
+    {
+      "bytes": 668,
+      "path": "evals/fixtures/signed-link-negative.json",
+      "sha256": "38211b0d532d3350e7c733c10c32838ea3073522b8f5490ece6d802a2d7d1451"
+    },
+    {
+      "bytes": 663,
+      "path": "evals/fixtures/signed-link-positive.json",
+      "sha256": "862599bf5426b590c93416bccf22462ebefbc162df018ea30b2c83dec30bad57"
+    },
+    {
+      "bytes": 481,
+      "path": "evals/fixtures/ssrf-positive.json",
+      "sha256": "91627edd4550da6fd3bdd2e3bad7671e06f4f4d36026d46193e0a6a4bfd12b7d"
+    },
+    {
+      "bytes": 616,
+      "path": "evals/fixtures/symlink-negative.json",
+      "sha256": "2d3ba38ffe3e526579cd3e560733fd8442f6ee28e5cdb0701d5a323ce1b36cb1"
+    },
+    {
+      "bytes": 611,
+      "path": "evals/fixtures/symlink-positive.json",
+      "sha256": "984d20501976f17569bffa63d43d0268edaf00620c107fc41a89dd0bddaeec4b"
+    },
+    {
+      "bytes": 632,
+      "path": "evals/fixtures/temp-file-negative.json",
+      "sha256": "72462d2ee633f90fb4e8027452f5a9a3003f34ebec570364881a000cd62d235f"
+    },
+    {
+      "bytes": 627,
+      "path": "evals/fixtures/temp-file-positive.json",
+      "sha256": "d429a647c2e2906781daa3fc4830d4dcdfd7977797983fe34fa5b13d21fcc131"
+    },
+    {
+      "bytes": 676,
+      "path": "evals/fixtures/tenant-filter-negative.json",
+      "sha256": "6cc63f549b81f1a445ee2d049fc7963f10733d487efe62bdb0c5957d91ad12b2"
+    },
+    {
+      "bytes": 671,
+      "path": "evals/fixtures/tenant-filter-positive.json",
+      "sha256": "3b55164d7ec038be2f43987b4bc39b1ba5fba2b2405fcd7d42f3980f99007c04"
+    },
+    {
+      "bytes": 592,
+      "path": "evals/fixtures/timing-negative.json",
+      "sha256": "9b37f704ce150c0f9a9c19b74b565a22dde5eb5c3f28b568acc23f5e72d4e995"
+    },
+    {
+      "bytes": 587,
+      "path": "evals/fixtures/timing-positive.json",
+      "sha256": "16c4d1d4d0f6936a5534f7b27ac4d4aeb954c54c37373739a92fdef00151afa5"
+    },
+    {
+      "bytes": 671,
+      "path": "evals/fixtures/tool-authorization-negative.json",
+      "sha256": "db479062b6c8c323f3c129fc6a2786de5412c67a7ade8f4de0a737064bf5babd"
+    },
+    {
+      "bytes": 666,
+      "path": "evals/fixtures/tool-authorization-positive.json",
+      "sha256": "208f11103c66df0ad3118b5aa8dd6e3ed0e0bd4dc86946c9b6893a786613c885"
+    },
+    {
+      "bytes": 630,
+      "path": "evals/fixtures/tool-output-negative.json",
+      "sha256": "ff2e2b4375eff0f18a9f5fc62b178cc11e85863dfde28079acd29607a50ca8bb"
+    },
+    {
+      "bytes": 625,
+      "path": "evals/fixtures/tool-output-positive.json",
+      "sha256": "c15e284a04b01bd85d5741ce8bdd78e7191db5159344b918b4f18c5fd00d5d70"
+    },
+    {
+      "bytes": 518,
+      "path": "evals/fixtures/unsafe-deserialization-positive.json",
+      "sha256": "5977c3de0077aa9e8ffbbfc14d9f3b6f388a316f365b8bcd560562b0b92dbc3b"
+    },
+    {
+      "bytes": 629,
+      "path": "evals/fixtures/webhook-replay-negative.json",
+      "sha256": "970d7339bf72c78f1cffa38e4d8f672c0e5a038e6810a9347ea86a9fb2f80899"
+    },
+    {
+      "bytes": 624,
+      "path": "evals/fixtures/webhook-replay-positive.json",
+      "sha256": "6cacc611c431fe24c8e2030d75b14c60189d257f302645cac40c5544d6410883"
+    },
+    {
+      "bytes": 653,
+      "path": "evals/fixtures/webhook-signature-negative.json",
+      "sha256": "ce290e190760e37975a4e6f7b304d1619593250f75119eddcd4bef521fd5af53"
+    },
+    {
+      "bytes": 648,
+      "path": "evals/fixtures/webhook-signature-positive.json",
+      "sha256": "446dd05a7c66e1163fdd91f7c321a9a5ca7b9d8ae10ad5c064b7f99f2e9bc151"
+    },
+    {
+      "bytes": 681,
+      "path": "evals/fixtures/workflow-injection-negative.json",
+      "sha256": "e5ea90095b8c15b219ae82e9e70f699865da026da64cc3ea686bde8108a8a77a"
+    },
+    {
+      "bytes": 676,
+      "path": "evals/fixtures/workflow-injection-positive.json",
+      "sha256": "c49edf7710674d61912935a39f5794accd8bd49306a935dcff2f6cf669f2a700"
+    },
+    {
+      "bytes": 628,
+      "path": "evals/fixtures/xml-schema-negative.json",
+      "sha256": "12bc7f130f2c1d1a80d8b078a96bcd70cf91493bfd7bfb9e1cbaf243fa242822"
+    },
+    {
+      "bytes": 623,
+      "path": "evals/fixtures/xml-schema-positive.json",
+      "sha256": "99d35e0443e21ff9d4b1af0d657afa5d0d8ec17156b8f93d8ba67d0472b91c29"
+    },
+    {
+      "bytes": 579,
+      "path": "evals/fixtures/xpath-negative.json",
+      "sha256": "17a7cc250bdb195262021b04c988b117a567f588c7dcf13011029f5b9bc22d44"
+    },
+    {
+      "bytes": 574,
+      "path": "evals/fixtures/xpath-positive.json",
+      "sha256": "b0f6ef37dcf872913be1b603e31e296b5cc40cc5c624f4aa50e425ad1d3f65cd"
+    },
+    {
+      "bytes": 460,
+      "path": "evals/fixtures/xss-positive.json",
+      "sha256": "66c2d4ed5d6bbe7f8671e2d32892d144b5c9a3d05ce4134e022285b4cd4dbc42"
+    },
+    {
+      "bytes": 27344,
+      "path": "evals/manifest.json",
+      "sha256": "e37efc88034a99b615b2a43547b1d307ddb9d1e8f4936ddb72b6af0a953f004e"
+    },
+    {
+      "bytes": 221,
+      "path": "frameworks/README.md",
+      "sha256": "13df2e9ff9ed5f5fc267f884913135a93dd56d8d488c12b506779b9dd94e322c"
+    },
+    {
+      "bytes": 458,
+      "path": "frameworks/aspnet.md",
+      "sha256": "d3b4a0258e494dbde7e2e7a4d0dce4ccd4cd1c4daeb6e008f7e5b1e881b542b3"
+    },
+    {
+      "bytes": 479,
+      "path": "frameworks/go-services.md",
+      "sha256": "aba010ab80a7cbdbfdcd1e7d1155d699fca6499d338c92ae7584ae2ff915d936"
+    },
+    {
+      "bytes": 559,
+      "path": "frameworks/node-express.md",
+      "sha256": "c135d2adb9062db221fc0aefed8e5c3be82735e1044cc1ba18f695d94160daa4"
+    },
+    {
+      "bytes": 479,
+      "path": "frameworks/php-ruby-web.md",
+      "sha256": "077e88cbeeec6d20761aea8cd5eb2d4ac723b65e7915ae81f24cae3ce7eb5ffb"
+    },
+    {
+      "bytes": 517,
+      "path": "frameworks/python-web.md",
+      "sha256": "7ddd90f09c9c0d053f46f8b8ea17b096613df341af90b76547d8af0c990b9b34"
+    },
+    {
+      "bytes": 515,
+      "path": "frameworks/spring.md",
+      "sha256": "99cdf18afa7b618b276380898ae65159ac801e22451e04069e82d4838bb9f6d6"
+    },
+    {
+      "bytes": 365,
+      "path": "languages/README.md",
+      "sha256": "3ef140959c23dbcd9dd2f838bf57d6f6e98bbd84244faf23cd2dc5158cbc4ab2"
+    },
+    {
+      "bytes": 400,
+      "path": "languages/c.md",
+      "sha256": "5cc22ff624554d15c16859ed87546899993e7b13011a16617d16cdddfc70218a"
+    },
+    {
+      "bytes": 456,
+      "path": "languages/cpp.md",
+      "sha256": "26781b8c071fd80d51ea4a8bf51580e650b87493b965c2a17fe30b81b23b9616"
+    },
+    {
+      "bytes": 448,
+      "path": "languages/csharp.md",
+      "sha256": "04738d90a8c7ee72de7bb1e12f698ed8b6566d1fb895f0e7e5a9d59eabc63e92"
+    },
+    {
+      "bytes": 457,
+      "path": "languages/go.md",
+      "sha256": "7bbe7b827f1d84b60807abe659f72b7192415ec6ce0914f4eb2fa9fea138bada"
+    },
+    {
+      "bytes": 477,
+      "path": "languages/java.md",
+      "sha256": "2bbae8c18c58b90f8a7f84cfb8d81e523f0e37e55994d5f2b021dacda8571fb6"
+    },
+    {
+      "bytes": 591,
+      "path": "languages/javascript.md",
+      "sha256": "f44b6f94068b199c4c276fe94ca382b32960d265ad2071f1c74fe6b5d1e2ef06"
+    },
+    {
+      "bytes": 444,
+      "path": "languages/kotlin.md",
+      "sha256": "e9ff92e7b65a287bb4a6cd0d9e4f0cc355f6822ed56b6d5fe114dd9aa5afa0f8"
+    },
+    {
+      "bytes": 412,
+      "path": "languages/php.md",
+      "sha256": "3b1cdf9bc174406989641a00fbb23ce9e1c9182b01684fa7a7b75016e13f41b0"
+    },
+    {
+      "bytes": 511,
+      "path": "languages/python.md",
+      "sha256": "696559184151f9c158c9936f88ff38532c08fdb727df0126fcd03f25314d34f8"
+    },
+    {
+      "bytes": 405,
+      "path": "languages/ruby.md",
+      "sha256": "3f787906301915728a487c61865bc2f7031f242b509249fed16cf681b2354617"
+    },
+    {
+      "bytes": 515,
+      "path": "languages/rust.md",
+      "sha256": "6c63cf55e61e53be9fcf6a96f850074685826f56579c985b7b64f4cf45d616de"
+    },
+    {
+      "bytes": 412,
+      "path": "languages/swift.md",
+      "sha256": "f26fd03939405cb20dd505b637a8522d89bb932c9ccb2d7d9fce153a426db755"
+    },
+    {
+      "bytes": 463,
+      "path": "languages/typescript.md",
+      "sha256": "a07b45197643f1e70d0ef44cd7624317d98efd7e48d973d01448ab0820ba5180"
+    },
+    {
+      "bytes": 277,
+      "path": "platforms/README.md",
+      "sha256": "849596940b1b841bf099410c5769b8a5fcf8acea68e6ea051c0ca0c591b69b43"
+    },
+    {
+      "bytes": 1553,
+      "path": "platforms/ai-agentic.md",
+      "sha256": "57d83b3a7f707245927b7e237cf8ed674d9520fef3cd2bf4a07f08c43910d7ce"
+    },
+    {
+      "bytes": 563,
+      "path": "platforms/ai-llm.md",
+      "sha256": "3ff6cba46d87edf0e71e20ca7703510a524b77a5fee1b57b2ff8ef690213063b"
+    },
+    {
+      "bytes": 386,
+      "path": "platforms/android.md",
+      "sha256": "8ed5c2eab764a9740f785de4175662a62610ee7f100ccc927abfd2831a476370"
+    },
+    {
+      "bytes": 453,
+      "path": "platforms/ci-cd.md",
+      "sha256": "b66ee2020c6118ebb6c27bfbd2368ddd7fb604614b603085a94fa094814b85e6"
+    },
+    {
+      "bytes": 507,
+      "path": "platforms/cloud.md",
+      "sha256": "94397d1ac8df5eeb5d2257c97adde5d711af3db8afd3cece86420753e91543af"
+    },
+    {
+      "bytes": 477,
+      "path": "platforms/containers-kubernetes.md",
+      "sha256": "2cecc2d1917e49011ec935fc13b7eb018764ff267c3e8a77d0c41013ef632b1e"
+    },
+    {
+      "bytes": 541,
+      "path": "platforms/enterprise-ad.md",
+      "sha256": "411358f348b1dcac6176419ad95ded079c4705abc564ec4cdf83edf4b4568249"
+    },
+    {
+      "bytes": 483,
+      "path": "platforms/hardware-iot.md",
+      "sha256": "e2859776518cdfea446a91908202f5fe7fe9cb9f920ed7ac5699c7dc1f728e7b"
+    },
+    {
+      "bytes": 394,
+      "path": "platforms/ios.md",
+      "sha256": "b6d2a21b155f3dc3d8b659f359d03245c93ea15a65f8e720b5f40043b6a233ca"
+    },
+    {
+      "bytes": 310,
+      "path": "regression/README.md",
+      "sha256": "72c14eb02f62df3e429f58dd2bd8239f6300e14718844368a8b2fe49f591412d"
+    },
+    {
+      "bytes": 975,
+      "path": "regression/findings.json",
+      "sha256": "f9523ad366a29734e982ca145706dd1ca8dc7f37708df3da2f1ed72c9656955a"
+    },
+    {
+      "bytes": 1601,
+      "path": "regression/findings.sarif",
+      "sha256": "8013440d3d947f72fc429de6c66c7f88359bda5b8afbd3b46fe9199f7d1b0cf1"
+    },
+    {
+      "bytes": 405,
+      "path": "regression/fixtures/url_fetch.py",
+      "sha256": "25bc9dd7fd63124a631daef11f895de1da99c9682717444c13d30ea7543d2420"
+    },
+    {
+      "bytes": 943,
+      "path": "release-manifest.schema.json",
+      "sha256": "e00d5510b7fb822afb7d5bb59d879de2668061cf100e6a1617d859b26ebb3b87"
+    },
+    {
+      "bytes": 661,
+      "path": "rules/README.md",
+      "sha256": "175f5e85a4885f38fb83191f25cb8715e4c25ea784d1d963b616a131bf7edfd6"
+    },
+    {
+      "bytes": 405,
+      "path": "rules/codeql/mass-assignment.yaml",
+      "sha256": "bb5b7166e962a3eaaf653bc777af17e84e070a195a32191088b8a4c9defe86fb"
+    },
+    {
+      "bytes": 407,
+      "path": "rules/codeql/untrusted-object.yaml",
+      "sha256": "209b0e93b7bcefc3670045afb6d720a145b98b0867a5864c991d3d2d9bd6931b"
+    },
+    {
+      "bytes": 398,
+      "path": "rules/codeql/untrusted-workflow-input.yaml",
+      "sha256": "53fe7b4749ede6b208bd83ace5aa229616f536ad729bee115ddd0dfce2203130"
+    },
+    {
+      "bytes": 2338,
+      "path": "rules/manifest.json",
+      "sha256": "7264f3ffdb8f2fd3ac8e7ac4c9a28c242fa1490d87c7c130f46c3e1d74fccab5"
+    },
+    {
+      "bytes": 381,
+      "path": "rules/semgrep/ai-tool-arguments.yaml",
+      "sha256": "0d0286dbee045c3c4acd43ad1c908dfdb23193bb7e462ac969b85cd18dea5982"
+    },
+    {
+      "bytes": 394,
+      "path": "rules/semgrep/literal-secret.yaml",
+      "sha256": "aa285198f883e4dc9d297d4f3715502e1704a2324fb1c141c333dd8501ec14d2"
+    },
+    {
+      "bytes": 399,
+      "path": "rules/semgrep/nosql-operator.yaml",
+      "sha256": "09de98fcb060da586bb89a98a221bfa6ae43b948b8cdb6b37f8db6e0a6bee65e"
+    },
+    {
+      "bytes": 364,
+      "path": "rules/semgrep/path-resolution.yaml",
+      "sha256": "4cc06cbd1c904fa602b4071182b78b3965997975f8d2949fe68001c402b9b086"
+    },
+    {
+      "bytes": 364,
+      "path": "rules/semgrep/process-shell.yaml",
+      "sha256": "b6a2f6d0a0d3a256ee438d79d1972d25c3f463e86a073e10145360d590686d09"
+    },
+    {
+      "bytes": 379,
+      "path": "rules/semgrep/ssrf-url-fetch.yaml",
+      "sha256": "35d3aa0e3af953ee37787ddc8ce633ed66d9fd95b7ae90e60b50d773a0a55eb3"
+    },
+    {
+      "bytes": 319,
+      "path": "rules/semgrep/unsafe-html.yaml",
+      "sha256": "c51da4d503b4355910164b673e0a439a557259143ebb6a4b2437dfc3e1c420c4"
+    },
+    {
+      "bytes": 439,
+      "path": "safe-tests/README.md",
+      "sha256": "5fd764d3936978d2a5e366e9372495d1a4f4b7df2b53110d753cce5640bae46d"
+    },
+    {
+      "bytes": 1097,
+      "path": "safe-tests/patterns.yaml",
+      "sha256": "4cc0feb25146c1eac36398dfef7009520860ece63d36ce3db13ae29c391849f0"
+    },
+    {
+      "bytes": 646,
+      "path": "schemas/README.md",
+      "sha256": "f9fc95ac2f6cf2abe3488bbd43de72b21d84fa258644a7cfa43a54315a92cfec"
+    },
+    {
+      "bytes": 901,
+      "path": "schemas/audit-check.schema.json",
+      "sha256": "10885d41d53d0e9decf539cc1c580436e7cf14a6d3e00ddbe7f9ee98682b9dd4"
+    },
+    {
+      "bytes": 723,
+      "path": "schemas/evidence.schema.json",
+      "sha256": "92af615f50131e4868aa4202fe8345488d3dd05605c66228969d777d57cce65b"
+    },
+    {
+      "bytes": 2543,
+      "path": "schemas/finding.schema.json",
+      "sha256": "5ae3231959f9096ddb030165040cdcd3bc6d38ecd7e5052b6121158d6b34065d"
+    },
+    {
+      "bytes": 981,
+      "path": "schemas/source.schema.json",
+      "sha256": "e01b2a65dc74b5b4e6d4376cd6acd2086a47db3fd6f3364dc101f3587c3af121"
+    },
+    {
+      "bytes": 954,
+      "path": "schemas/technique.schema.json",
+      "sha256": "7a26e523fcba00b58d6547bd3ff46f0ed58c3870b69c44d275f6e71e14d54c7a"
+    },
+    {
+      "bytes": 3335,
+      "path": "schemas/threat-model.schema.json",
+      "sha256": "7f02aff452250d405102b987a4329df006820f17fd1fe44bd9b646f74faa9680"
+    },
+    {
+      "bytes": 5027,
+      "path": "schemas/vulnerability.schema.json",
+      "sha256": "42da5dcc49bff9c7ccbc22d35eb8642de2394c61fcd63edc1bf8833b49057522"
+    },
+    {
+      "bytes": 16814,
+      "path": "scripts/build_indexes.py",
+      "sha256": "430bdac6edd8ff2902f9a32875998916d4f73e5f3228c8bcf75c62094922cd57"
+    },
+    {
+      "bytes": 1505,
+      "path": "scripts/build_release_manifest.py",
+      "sha256": "b81bb9adabe2ed6945977d476d49d8bac9f968010044338d9054fdecf9e9cfc7"
+    },
+    {
+      "bytes": 1276,
+      "path": "scripts/diff_sources.py",
+      "sha256": "d1948471da3d59fc06f2c96782af0c642761af86e6cf39ea78f168b913c21f69"
+    },
+    {
+      "bytes": 3274,
+      "path": "scripts/export_sarif.py",
+      "sha256": "301288694b43a85577aadf371af5545a20783cb3598adb447b8bb8e6e2f777df"
+    },
+    {
+      "bytes": 28622,
+      "path": "scripts/generate_cards.py",
+      "sha256": "9056ce8943a587cc8892a814225ee20644199f6f2b39310831d0af3d28eec10d"
+    },
+    {
+      "bytes": 47540,
+      "path": "scripts/generate_more_cards.py",
+      "sha256": "d6420d4e060bf1f1b233e5511644243f7580eeac02081b1ed7c73319b07e9496"
+    },
+    {
+      "bytes": 45962,
+      "path": "scripts/generate_release_assets.py",
+      "sha256": "0f4e4696cad778191dc91b20e818c380816e7013cd2f3da7acab59c15753d72d"
+    },
+    {
+      "bytes": 5447,
+      "path": "scripts/run_eval.py",
+      "sha256": "b79a33eb3e226dedb6093cd69335e3afbdc14c24f8f5d7531265725ca214267b"
+    },
+    {
+      "bytes": 8011,
+      "path": "scripts/sctx.py",
+      "sha256": "05b8e56bdad01c2aaf6435fdb1ddafe6e6544cc8b710164c83122186697020fa"
+    },
+    {
+      "bytes": 2875,
+      "path": "scripts/update_sources.py",
+      "sha256": "3b7749a7930b2cea40197d6b99351c3dda671d34b8596199f0106498c2f10f5a"
+    },
+    {
+      "bytes": 2460,
+      "path": "scripts/validate_release.py",
+      "sha256": "22d30821339e1f314312ebc343b0291e3d0461a8be0d41f06a773a1b253e8278"
+    },
+    {
+      "bytes": 15426,
+      "path": "scripts/validate_repo.py",
+      "sha256": "25caa5b1afde7e71c95503c494bae7482c303ee15eb3ffd138bd51c1b1c47d94"
+    },
+    {
+      "bytes": 2675,
+      "path": "scripts/validate_rules.py",
+      "sha256": "90bc5e929809f4345fdbdece46f1cdebb005a730a6c461f109bba38b440fa032"
+    },
+    {
+      "bytes": 1875,
+      "path": "scripts/validate_schemas.py",
+      "sha256": "439a25043588170d82a8599fb0fb8a262b78408e92643f4a45c62370af6a86b8"
+    },
+    {
+      "bytes": 1632,
+      "path": "scripts/validate_threat_models.py",
+      "sha256": "3631a592b156d93ec68cecde46b50fdb20af829fdb07322475a71f3203ffb481"
+    },
+    {
+      "bytes": 733,
+      "path": "sources/licenses.yaml",
+      "sha256": "4126b30770b81fba7dd022ed3445585637824a654417f71876f292ba850884a7"
+    },
+    {
+      "bytes": 790,
+      "path": "sources/lock.json",
+      "sha256": "ad245d434553b6cabbb4a68d9282ba17e04529235e1382f89db0476430cea018"
+    },
+    {
+      "bytes": 15681,
+      "path": "sources/manifest.yaml",
+      "sha256": "06dff054c5cbf46304483cebfe3de1f11c40ee7ec3ff429b046b1532994d186e"
+    },
+    {
+      "bytes": 3451,
+      "path": "sources/research-notes.md",
+      "sha256": "718eb480da494d4dbd8e1737ab46dd75752f9e05bef79153b20f7eb5443a2bf9"
+    },
+    {
+      "bytes": 1073,
+      "path": "sources/versions.yaml",
+      "sha256": "0520eb11386dba3e3eb827af9d12b48980276f09dc5e49037612d68ee1912c62"
+    },
+    {
+      "bytes": 1313,
+      "path": "taxonomy/agentic-map.yaml",
+      "sha256": "91044dccffd1ebc5fa57eb22a406be6ade0d14748e59617d84e57407621a3039"
+    },
+    {
+      "bytes": 1771,
+      "path": "taxonomy/aliases.yaml",
+      "sha256": "029f4a95be2f9306b66223b96e8552318e419bec1d9457b7c2aa8b6ee7dea3c1"
+    },
+    {
+      "bytes": 700,
+      "path": "taxonomy/capec-map.yaml",
+      "sha256": "07a532f0c90fef829535b4c886e71287a90fbbfb557652a41dad70b1b8b23c4b"
+    },
+    {
+      "bytes": 2137,
+      "path": "taxonomy/cwe-map.yaml",
+      "sha256": "f58d7012afaa86c310fcdb0c0a1256190b3e06c821442a636cdeee640d21eb3a"
+    },
+    {
+      "bytes": 3872,
+      "path": "taxonomy/families.yaml",
+      "sha256": "829d546a01825245898a81781686f00403e1e97d25f98e8671d2c8c8e880ce7f"
+    },
+    {
+      "bytes": 1027,
+      "path": "taxonomy/owasp-map.yaml",
+      "sha256": "f068ea7bc2d7c91137a8859a8a2b9027b5df70aa9a84bd337a1d053335e4544b"
+    },
+    {
+      "bytes": 1092,
+      "path": "taxonomy/priorities.yaml",
+      "sha256": "26de28ce94a0cf212b7652d88d3080522a15e52fb58b5817a88d26fb0cfd70d4"
+    },
+    {
+      "bytes": 2546,
+      "path": "taxonomy/technologies.yaml",
+      "sha256": "32b16b1fa08fe5cc8749afaa4fc32de2365c6d80ef0e7bfc988c20744e75f079"
+    },
+    {
+      "bytes": 2018,
+      "path": "tests/test_repository.py",
+      "sha256": "44e2cd3d57de9f2471962afef827153a64cd38dc825769ccae93b22fef8de8ee"
+    },
+    {
+      "bytes": 1304,
+      "path": "vulnerabilities/README.md",
+      "sha256": "0df63fd030c7f24732e6093c704673067c9b890efd207d111031c31b1a344aca"
+    },
+    {
+      "bytes": 4865,
+      "path": "vulnerabilities/ai/agent-identity.md",
+      "sha256": "abe95bfc6b770dc58c061558303b2be1569fd977acda75913416bbd9b0ffb001"
+    },
+    {
+      "bytes": 4803,
+      "path": "vulnerabilities/ai/agent-loop.md",
+      "sha256": "9b6618a33888c94dba4985da40acfbf4114a4ea9afc4a1f7485d4e4b8a4e8467"
+    },
+    {
+      "bytes": 4931,
+      "path": "vulnerabilities/ai/context-leakage.md",
+      "sha256": "8658a3e58d7ecbe239d26649e642e7636661a8029375027d938025c875a08725"
+    },
+    {
+      "bytes": 4894,
+      "path": "vulnerabilities/ai/evaluation-leakage.md",
+      "sha256": "e5cc5750dc3000cb7c1ce1bc57dbca036e3f8d0e91b5228dfbea6459f10d80c6"
+    },
+    {
+      "bytes": 4137,
+      "path": "vulnerabilities/ai/excessive-agency.md",
+      "sha256": "5a590a3c663c99c3670d99135d75339bc0a7696de0db5734ee07f62d31b4c7d2"
+    },
+    {
+      "bytes": 5059,
+      "path": "vulnerabilities/ai/indirect-prompt-injection.md",
+      "sha256": "76d665f700968b1459f3ae7a36871150edd9c738d1b4a42becf6811faa978ecf"
+    },
+    {
+      "bytes": 4940,
+      "path": "vulnerabilities/ai/inter-agent-trust.md",
+      "sha256": "1fcbabe503796d7cdddf8d7b1721a8c7885280a114049a271e8a48ce1fe14c37"
+    },
+    {
+      "bytes": 4782,
+      "path": "vulnerabilities/ai/memory-poisoning.md",
+      "sha256": "951eecbf7e4aa3cec4d321119503fcb8ee1f3101101fb58f541f0c9654debe5b"
+    },
+    {
+      "bytes": 4913,
+      "path": "vulnerabilities/ai/model-supply-chain.md",
+      "sha256": "a41829a17af1af9f58a2cd56b518c8e94c1fdfb8127516536016688ea34f0c9c"
+    },
+    {
+      "bytes": 4037,
+      "path": "vulnerabilities/ai/output-handling.md",
+      "sha256": "3a7322fccb79b5fb776c6954688114732725b23bf24cc183a28f4ddc901db3b8"
+    },
+    {
+      "bytes": 4203,
+      "path": "vulnerabilities/ai/prompt-injection.md",
+      "sha256": "eecadbe199401fa988e65a7194466344ec48fa06a4fbc08f04ddf215bf31f474"
+    },
+    {
+      "bytes": 4032,
+      "path": "vulnerabilities/ai/rag-cross-tenant.md",
+      "sha256": "d205afe6cd5ad60941e9668ed386109672a2e350c93706d01913882e4ac57222"
+    },
+    {
+      "bytes": 4847,
+      "path": "vulnerabilities/ai/rag-source-trust.md",
+      "sha256": "ceb1e163be8df71522a22c917fadc2a6daf2b77f01fe5fffcb84ebb4d5251dbe"
+    },
+    {
+      "bytes": 4938,
+      "path": "vulnerabilities/ai/tool-authorization.md",
+      "sha256": "bd76b03d81a536836520d1f6be484067c9ed41883082d1c125d521ec15d2779c"
+    },
+    {
+      "bytes": 4839,
+      "path": "vulnerabilities/ai/tool-output.md",
+      "sha256": "89861c42ce846a5ca5451bd202b243a138d09b5dc5a4fdc2059ce3e773bd2a55"
+    },
+    {
+      "bytes": 4098,
+      "path": "vulnerabilities/ai/unsafe-model-loading.md",
+      "sha256": "42b3451a055e08b6451a88a02ff98c40abc0f938707a0d0ffcf32ce879aa7c67"
+    },
+    {
+      "bytes": 4803,
+      "path": "vulnerabilities/api/content-type-confusion.md",
+      "sha256": "0c846f581414da27d58cc95ee11208ef3427ab77abf0cdf3c4b445268163a6b1"
+    },
+    {
+      "bytes": 3990,
+      "path": "vulnerabilities/api/graphql.md",
+      "sha256": "e56b80cb9f0e349b716c75739ea30f07b975663856f9a497e1f11ae8113c0762"
+    },
+    {
+      "bytes": 4916,
+      "path": "vulnerabilities/api/inventory.md",
+      "sha256": "1bc66f57efd33a8facb67f2cb0959e6c9f6a96b2c26e076104af71c44e7e45ac"
+    },
+    {
+      "bytes": 4825,
+      "path": "vulnerabilities/api/webhook-replay.md",
+      "sha256": "c1196abcd0ebc5ec7c25573981d4faf7541df28b1b5111ce85a4e5756a24b942"
+    },
+    {
+      "bytes": 4053,
+      "path": "vulnerabilities/api/websocket.md",
+      "sha256": "bd04f29c4182aa39238321ef20f7755108d3ced7a1d2899938c63ef8ec6651a8"
+    },
+    {
+      "bytes": 4846,
+      "path": "vulnerabilities/authentication/account-enumeration.md",
+      "sha256": "dcc0c3d07515461380e5a7362200f7471ba44b2a57b3566e422ea458702b0193"
+    },
+    {
+      "bytes": 4837,
+      "path": "vulnerabilities/authentication/mfa-recovery.md",
+      "sha256": "4129435bed750195dc64582f6faf9d3bd6d2aa4b7801a9ad89df330ab1f5d329"
+    },
+    {
+      "bytes": 4110,
+      "path": "vulnerabilities/authentication/oauth-oidc-jwt.md",
+      "sha256": "0afcd07c6c3dc343f3f6a25694d2cd18267b40f7b5813aeadeddcf6287708d96"
+    },
+    {
+      "bytes": 4839,
+      "path": "vulnerabilities/authentication/password-reset.md",
+      "sha256": "a0e92930557184d825143568d2f3dcc8f923efd7e87183add356a7a4254cd26c"
+    },
+    {
+      "bytes": 4852,
+      "path": "vulnerabilities/authentication/password-storage.md",
+      "sha256": "dc83810738c3f8a7f7ba8e735ead23ccb8f26d459e5b7acf60325a4e11db173f"
+    },
+    {
+      "bytes": 4893,
+      "path": "vulnerabilities/authentication/saml-validation.md",
+      "sha256": "7ca1a0551b6d30eba7b2ee71b69779eb95798ede625b7aa0e539f870439bdd8b"
+    },
+    {
+      "bytes": 4110,
+      "path": "vulnerabilities/authentication/session.md",
+      "sha256": "756d40fec1181ed8b9cc5fd726393f34d40eff272fe60206917f3a17ab7ebe8d"
+    },
+    {
+      "bytes": 4828,
+      "path": "vulnerabilities/authorization/capability-confusion.md",
+      "sha256": "02e5d91052a3f86e5ebfb389dc9ea40467319e1ad72bf6b5af1cef66ad5848ba"
+    },
+    {
+      "bytes": 4859,
+      "path": "vulnerabilities/authorization/delegated-admin.md",
+      "sha256": "6bc864395f8e8be2b649e3097d4312f1b06f1f72d718855db98a2dcda6f2de56"
+    },
+    {
+      "bytes": 3922,
+      "path": "vulnerabilities/authorization/function-level.md",
+      "sha256": "edc2d4c320c36b11e4443cd2ce8f5b22c6d45322fcf2981fd5d5e6697e1c3057"
+    },
+    {
+      "bytes": 4632,
+      "path": "vulnerabilities/authorization/idor.md",
+      "sha256": "7e490ef9db8e5577980c5d0c8995ccaedc029e413b4454877ce2f10ea7817c59"
+    },
+    {
+      "bytes": 4869,
+      "path": "vulnerabilities/authorization/mass-assignment.md",
+      "sha256": "0e9c617cce8b57a8fa47df56feeb7b228e3a57ac8fb7fc7329486189329f04ee"
+    },
+    {
+      "bytes": 4842,
+      "path": "vulnerabilities/authorization/property-level.md",
+      "sha256": "9840da163542162296955601c01a17cdff6e753cebdf030bfc68dc5421549947"
+    },
+    {
+      "bytes": 4979,
+      "path": "vulnerabilities/authorization/service-impersonation.md",
+      "sha256": "243c9784c44ec6b1b8e335e08c6939252fbf5ba52061dec08773afe1cb055c93"
+    },
+    {
+      "bytes": 4872,
+      "path": "vulnerabilities/authorization/signed-link.md",
+      "sha256": "b5f8b4b27e503d46754bd210fc94a47c3aee33d95452077ff30cd4d139d9b268"
+    },
+    {
+      "bytes": 4920,
+      "path": "vulnerabilities/authorization/tenant-filter.md",
+      "sha256": "7d4254fe7db969e62ed511ea0a8bdbdb2caa386d52c6f5be66ef79f5ffc2b610"
+    },
+    {
+      "bytes": 4859,
+      "path": "vulnerabilities/authorization/webhook-signature.md",
+      "sha256": "3dfb3470ac31e2a0c288ff5476eea6d48dba386fbc6bf9e58a819872d97b12ee"
+    },
+    {
+      "bytes": 4766,
+      "path": "vulnerabilities/availability/queue-amplification.md",
+      "sha256": "fd62fe9d07e447f30fea93b1c2d2023e17fec27f0dde0af501aa0d132c728bc5"
+    },
+    {
+      "bytes": 4826,
+      "path": "vulnerabilities/availability/rate-limit.md",
+      "sha256": "a45ad2e4eba223a19c1c47343a2b06ad32e798f2131c624b8e9995ecb015353f"
+    },
+    {
+      "bytes": 4074,
+      "path": "vulnerabilities/availability/resource-exhaustion.md",
+      "sha256": "31e46fc7adba5c4345f757c02e5935d785f0e5cde058de32b593c72063466de4"
+    },
+    {
+      "bytes": 4766,
+      "path": "vulnerabilities/browser/clickjacking.md",
+      "sha256": "0b82b4660c93c249bd96ef52c17a165fde72726312d656cdeae29c9f381125a3"
+    },
+    {
+      "bytes": 4804,
+      "path": "vulnerabilities/browser/cors.md",
+      "sha256": "cba06438fcbc3a927fd942688051b6f14288df1757ccea9b6d26d790f13ad3e8"
+    },
+    {
+      "bytes": 3915,
+      "path": "vulnerabilities/browser/csrf.md",
+      "sha256": "04d752290181b20504e606a396b7f9fd846d41abfae863239933148e89979b62"
+    },
+    {
+      "bytes": 4835,
+      "path": "vulnerabilities/browser/open-redirect.md",
+      "sha256": "e422b8e96313cb9b0fbde451a01a0d54e235ddd73119e0b0386a30787550e46e"
+    },
+    {
+      "bytes": 4870,
+      "path": "vulnerabilities/browser/postmessage.md",
+      "sha256": "393ba2712845af03260d080fe935265a28e4d6228e2511715ac37aca183d0aba"
+    },
+    {
+      "bytes": 4270,
+      "path": "vulnerabilities/browser/xss.md",
+      "sha256": "44f03c986cc3634fa87322a7a400f96a93c2be3c783a06c1780a55eafe8e554d"
+    },
+    {
+      "bytes": 4826,
+      "path": "vulnerabilities/business/approval-separation.md",
+      "sha256": "b12e53e0939166db5c5b16c190bfe656e0c0eee2ff7c179d05464b5431169edc"
+    },
+    {
+      "bytes": 4816,
+      "path": "vulnerabilities/business/idempotency.md",
+      "sha256": "5554c062b02dfaee20861a666d6ac3aa9aa40969616f42e065fe42dcdb540a10"
+    },
+    {
+      "bytes": 4883,
+      "path": "vulnerabilities/business/price-tampering.md",
+      "sha256": "db4f390e4b2ffb00198432a442ce70bf044dac20c007f2c1e178f5798f7f38c4"
+    },
+    {
+      "bytes": 4041,
+      "path": "vulnerabilities/business/race-condition.md",
+      "sha256": "ed14a2ddb71867d40a536695a7fede91026c5ee90c78685608be58567e703c46"
+    },
+    {
+      "bytes": 4843,
+      "path": "vulnerabilities/business/replay.md",
+      "sha256": "bc4c8ac2681acfdb5157e43719e82fc50a9d38200e2f9f5b547719191fde80c9"
+    },
+    {
+      "bytes": 3925,
+      "path": "vulnerabilities/business/workflow.md",
+      "sha256": "ec2d471b6d8240fbb5ff8328c367b9b38e8038309a109360ae4c8a73b1c88481"
+    },
+    {
+      "bytes": 4033,
+      "path": "vulnerabilities/cloud/iam.md",
+      "sha256": "0ab767846ce95ba5bbedbc595af029a48e42fdf5d97af1eaf7837ca1036878b5"
+    },
+    {
+      "bytes": 4957,
+      "path": "vulnerabilities/cloud/k8s-service-account.md",
+      "sha256": "0fd920f155afabab197100153ce8d3979bf271b48b17a145fa8330c0b7fa5093"
+    },
+    {
+      "bytes": 4017,
+      "path": "vulnerabilities/cloud/kubernetes.md",
+      "sha256": "8678597542772de7652f3b03762896f221df4003e83059828c84d78967fe5748"
+    },
+    {
+      "bytes": 4892,
+      "path": "vulnerabilities/cloud/metadata-boundary.md",
+      "sha256": "d50af50f311769b40c2dedcf9284c05b55caff3be6e7ba6dc81b214a8791f806"
+    },
+    {
+      "bytes": 4901,
+      "path": "vulnerabilities/cloud/serverless-iam.md",
+      "sha256": "1b89621db4577f4c20ff01f67b8e0ff978eebea1e9c7806d587283c1effadfe7"
+    },
+    {
+      "bytes": 4798,
+      "path": "vulnerabilities/configuration/debug.md",
+      "sha256": "841901f19178bb12f5f3679d8db8ba224b4859aab06b5502a764f18332e997f8"
+    },
+    {
+      "bytes": 4133,
+      "path": "vulnerabilities/configuration/fail-open.md",
+      "sha256": "285bbcf675ba9e2d0a41b900884a340429a603ef28623cfb11f64201ae1f403a"
+    },
+    {
+      "bytes": 4852,
+      "path": "vulnerabilities/configuration/insecure-default.md",
+      "sha256": "e0e51a7aecdd071cd5bac59d9d4660eb1cc2bf13401cccf7186fbba23f7d1e14"
+    },
+    {
+      "bytes": 4896,
+      "path": "vulnerabilities/crypto/certificate-validation.md",
+      "sha256": "e53aa0caca5b973ced1236df126d646dd61bdad85ccbeaa839d8351f461dd3a7"
+    },
+    {
+      "bytes": 4769,
+      "path": "vulnerabilities/crypto/key-rotation.md",
+      "sha256": "0542f59d6fb16e1b8457f77caf22258096c6221e40e3afbf8e8dd5a829bc48c0"
+    },
+    {
+      "bytes": 3944,
+      "path": "vulnerabilities/crypto/randomness.md",
+      "sha256": "79385362f7d3f5e31b195eeac16e9cac6f577c9163f5b7de3fe621ebb22aef15"
+    },
+    {
+      "bytes": 3906,
+      "path": "vulnerabilities/crypto/transport.md",
+      "sha256": "fbfec472b27213de327256b4342a938b0ae573219149dd9269ca2fe4e1752da9"
+    },
+    {
+      "bytes": 4877,
+      "path": "vulnerabilities/files/archive-bomb.md",
+      "sha256": "7fe747dee0e4a04544e8e92fa3567cd1b50460cf723e27b1b13e0cb0cc7c5159"
+    },
+    {
+      "bytes": 4873,
+      "path": "vulnerabilities/files/include.md",
+      "sha256": "beaecb23c0c7af2270934d8e277631b82a3471ad6eb6d70468a1dd8549689ee4"
+    },
+    {
+      "bytes": 4823,
+      "path": "vulnerabilities/files/object-storage.md",
+      "sha256": "747489d3e7a7f07108d78800fd9334cd418225aab328d7fd807e8d6229b85d28"
+    },
+    {
+      "bytes": 4080,
+      "path": "vulnerabilities/files/path-traversal.md",
+      "sha256": "91b9afb6b772844466829346688b5aaf503a2177064aadd10e83605631378250"
+    },
+    {
+      "bytes": 4824,
+      "path": "vulnerabilities/files/symlink.md",
+      "sha256": "8c7eb0564dd6bf205d702b1f5b6d559d54ac56c6623ad4c73930e768f6486a82"
+    },
+    {
+      "bytes": 4795,
+      "path": "vulnerabilities/files/temp-file.md",
+      "sha256": "5af5741b20c37552cb7df7fb793b59dbe1793652f9c74aab07e7a875b3450ea0"
+    },
+    {
+      "bytes": 4115,
+      "path": "vulnerabilities/files/upload.md",
+      "sha256": "43a44ce59a2a9c9b35ee49b51f9989c7bdc7b41af7bddaffeb113bd9259a10ef"
+    },
+    {
+      "bytes": 3907,
+      "path": "vulnerabilities/hardware/firmware-update.md",
+      "sha256": "b62015150f1d72b861451ef8c48ef274174636fce14358ccb22b29bdbd0612d7"
+    },
+    {
+      "bytes": 4876,
+      "path": "vulnerabilities/http/cache-authorization.md",
+      "sha256": "dbfb181a922d481756791b6329d7cfdccef075edd153253af2441440f262e5c4"
+    },
+    {
+      "bytes": 3783,
+      "path": "vulnerabilities/http/cache-poisoning.md",
+      "sha256": "8dcf68d31921a20d625613de00718b6ad033c09d21f09168eed485ec2ad28bd0"
+    },
+    {
+      "bytes": 4860,
+      "path": "vulnerabilities/http/host-header.md",
+      "sha256": "31e5d68cdf2ab61c715e043bbae8bb82274866ec0db5b4cb0fef95a99b99f037"
+    },
+    {
+      "bytes": 4084,
+      "path": "vulnerabilities/http/request-smuggling.md",
+      "sha256": "f3c8d1a9b42e79b2d943a9156cb23b0e0c9bfb88a5ed283e9b24426d639e5669"
+    },
+    {
+      "bytes": 3704,
+      "path": "vulnerabilities/injection/command.md",
+      "sha256": "f52a8f0341e48839bb64d33e9f10808a92863818d190180d30536a822e0edaf0"
+    },
+    {
+      "bytes": 4782,
+      "path": "vulnerabilities/injection/csv.md",
+      "sha256": "1015be3e2126a5e8878f1cd19655b3bf79564bd5f5bb266615a8b2fb2180985e"
+    },
+    {
+      "bytes": 3794,
+      "path": "vulnerabilities/injection/expression.md",
+      "sha256": "ed374b990b0e3eb8b94b24bd61bc24d10951b71bd7702229d827ab44f1eddfef"
+    },
+    {
+      "bytes": 4821,
+      "path": "vulnerabilities/injection/header.md",
+      "sha256": "e903674cd87e76b149dda6194a892b50844adc3fb43be0169e8844bcfa85d837"
+    },
+    {
+      "bytes": 4740,
+      "path": "vulnerabilities/injection/ldap.md",
+      "sha256": "bdb4a72074e39cd44d917501aebfbeefec5e01536e506531766e34a8aa8c9b0a"
+    },
+    {
+      "bytes": 4833,
+      "path": "vulnerabilities/injection/log.md",
+      "sha256": "ebed0bf2c785eeaf6463787bd4ad347c54fb6ea5bfb9e51780b2cd6762b70925"
+    },
+    {
+      "bytes": 4724,
+      "path": "vulnerabilities/injection/nosql.md",
+      "sha256": "37289094033a211c51cbc4a84e19f312c4bec4cfa1792f2dd410513e3ad825b3"
+    },
+    {
+      "bytes": 4770,
+      "path": "vulnerabilities/injection/regex.md",
+      "sha256": "482baca63630db3699857f2280f72e2870398c1cf8fd5e372bfb5b9dc0aadd03"
+    },
+    {
+      "bytes": 4280,
+      "path": "vulnerabilities/injection/sql.md",
+      "sha256": "98ded1a68d8976c579f4b67cac9a813ede961ab6bd150ad45c639f0224d91180"
+    },
+    {
+      "bytes": 4217,
+      "path": "vulnerabilities/injection/template-command.md",
+      "sha256": "80987b34c5b97e6521b776667f48b55088a03802597e8e2c44f123e425e4f208"
+    },
+    {
+      "bytes": 3979,
+      "path": "vulnerabilities/injection/template.md",
+      "sha256": "a0a008e9904b228488f226faea6e56039ce60a0b665aeeae4bd76273c4410071"
+    },
+    {
+      "bytes": 4845,
+      "path": "vulnerabilities/injection/xml-schema.md",
+      "sha256": "64e480c2194497bb98e0e1e5542fc02ccfe067892ebcf6410712fc27700d7f8c"
+    },
+    {
+      "bytes": 4585,
+      "path": "vulnerabilities/injection/xpath.md",
+      "sha256": "4a5dee24333fcfa06ca171393a457617037ba8003a130d6b26d11e6b70239bf5"
+    },
+    {
+      "bytes": 3981,
+      "path": "vulnerabilities/injection/xxe.md",
+      "sha256": "902bad07bf9d86e26db9622eed3df621b8b613a6fcfac7369c9952981ece60bd"
+    },
+    {
+      "bytes": 4088,
+      "path": "vulnerabilities/internal/credential-relay.md",
+      "sha256": "e810b847ac5da6e20c43b24a24924a8b69137a4f949d2eb96ae969bfbf7add60"
+    },
+    {
+      "bytes": 4136,
+      "path": "vulnerabilities/mobile/secure-storage-ipc.md",
+      "sha256": "76108937a009e816aa03168cf67c219ca489ef97e0d3653e5d72d71da8b3d080"
+    },
+    {
+      "bytes": 3968,
+      "path": "vulnerabilities/native/memory-safety.md",
+      "sha256": "ab2b847e4edc0d61da84db138986000be92500c24d15ce9d8c51639aef636efb"
+    },
+    {
+      "bytes": 4181,
+      "path": "vulnerabilities/network/ssrf.md",
+      "sha256": "e30f01b067b10e6e5cfc3cc026959a765ff50746d14b1f521712743ce7f607a8"
+    },
+    {
+      "bytes": 4804,
+      "path": "vulnerabilities/secrets/backup-exposure.md",
+      "sha256": "8b6ae0b59e413bd7dff2756c27489ec17007421687059400ca2d61bdb2d860d6"
+    },
+    {
+      "bytes": 4009,
+      "path": "vulnerabilities/secrets/data-minimization.md",
+      "sha256": "bce2d1c38a7e33b313565f9c9a2e5edead02c84af6534afbd88d4f8d909e354b"
+    },
+    {
+      "bytes": 4790,
+      "path": "vulnerabilities/secrets/error-disclosure.md",
+      "sha256": "366767f0f03e58019ea17b311aa03b20568b0fc32c0249014452a23528a0b733"
+    },
+    {
+      "bytes": 4012,
+      "path": "vulnerabilities/secrets/hardcoded.md",
+      "sha256": "96f05d8f7f7734fb7cb9f66c384199a5e853a192651772d250a7394db1cb9390"
+    },
+    {
+      "bytes": 4928,
+      "path": "vulnerabilities/secrets/info-disclosure.md",
+      "sha256": "48c86bb2c3c20849bf287e426403a0d310d0f89213b2a694c2b3c32a3cc94101"
+    },
+    {
+      "bytes": 4085,
+      "path": "vulnerabilities/secrets/logging.md",
+      "sha256": "09c947481b3a7a12a30fa32916ddecfeabf5a24eaa0f2d0f2fb7b8bc19259228"
+    },
+    {
+      "bytes": 4744,
+      "path": "vulnerabilities/secrets/timing.md",
+      "sha256": "b34dba134413e9291675855d57fe21967d4817162cab8954ca5920635517586d"
+    },
+    {
+      "bytes": 3934,
+      "path": "vulnerabilities/serialization/prototype-pollution.md",
+      "sha256": "e4f1c435a95137a617d6a2cf3b45e465ec0630f86a8b4852cdfec8dde4bb0500"
+    },
+    {
+      "bytes": 4214,
+      "path": "vulnerabilities/serialization/unsafe-deserialization.md",
+      "sha256": "6a1ccc45ad2c48653f261745e95b4d9eb7fbb93430b76b7742dc1531d5906766"
+    },
+    {
+      "bytes": 4839,
+      "path": "vulnerabilities/supply/artifact-integrity.md",
+      "sha256": "48ef69d9aae0b5b7068708dea163e8bd237eb00103de91f53888c69f7c198cee"
+    },
+    {
+      "bytes": 4045,
+      "path": "vulnerabilities/supply/ci-cd.md",
+      "sha256": "732eeab0aad611ddce5d87b48ffe77dc22f6d88dce0c1b052a2d4249a17f331d"
+    },
+    {
+      "bytes": 4873,
+      "path": "vulnerabilities/supply/container-image.md",
+      "sha256": "f069dc569958be545485203e9516e1873c737e0cb1bd3a690f988f01bdc1e6f6"
+    },
+    {
+      "bytes": 4239,
+      "path": "vulnerabilities/supply/dependency-risk.md",
+      "sha256": "0f394d41b599d13ec671bca319e9bce9553b3871cf8bcb54d8fc4c7a335fc3e2"
+    },
+    {
+      "bytes": 4870,
+      "path": "vulnerabilities/supply/iac-drift.md",
+      "sha256": "9e80defe80eba1127c88ade510625b3e1917578d1c41ef8eb0dceb3a07e7da23"
+    },
+    {
+      "bytes": 4913,
+      "path": "vulnerabilities/supply/workflow-injection.md",
+      "sha256": "0d6793b13c2a765d05a286e67e1a41aee040115abbf94a1083c7381126eb4168"
+    },
+    {
+      "bytes": 3968,
+      "path": "vulnerabilities/web3/reentrancy.md",
+      "sha256": "ab0dff6f3ffa73d36533517dd54ca1d39d439a468677a74c802a36a070d33b1f"
+    },
+    {
+      "bytes": 3323,
+      "path": "vulnerability-record.schema.json",
+      "sha256": "6c0d1da3151a601f48a096a98da4d7e730e35bd9f85396e5a691920dc4d0ce92"
+    },
+    {
+      "bytes": 11905,
+      "path": "vulnerability-records.examples.jsonl",
+      "sha256": "e8f4927b8f46a4c6b605ecf945c1cdcbc6242832c3a93ab64d607cb9dbebf1dd"
+    },
+    {
+      "bytes": 41520,
+      "path": "vulnerability-taxonomy-ai.json",
+      "sha256": "427259d3e39db73ed51761b861fd7e9316f542979d7912778c85402980924754"
+    },
+    {
+      "bytes": 51665,
+      "path": "vulnerability-taxonomy-ai.md",
+      "sha256": "4afbef9c4cfdd05dd9ba6bdea3f9778ce1b4903bcc58dc3356cc805a846699a1"
+    }
+  ],
+  "generated_at": "2026-08-08",
+  "hash_algorithm": "sha256",
+  "project": "Secure Context Atlas",
+  "release": "0.5.0",
+  "schema_version": "1.0"
+}

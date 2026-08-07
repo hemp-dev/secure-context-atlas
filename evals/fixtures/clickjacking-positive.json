@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-1021",
+  "expected_status": "candidate",
+  "id": "eval.clickjacking.positive",
+  "polarity": "positive",
+  "query": "UI redress and framing policy failure browser navigation and embedding context framed sensitive action or UI",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from browser navigation and embedding context reaches framed sensitive action or UI without the documented control",
+  "vulnerability_id": "vuln.browser.clickjacking"
+}

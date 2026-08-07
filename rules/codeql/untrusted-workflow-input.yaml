@@ -1,0 +1,9 @@
+id: rule.codeql.supply.untrusted-workflow-input
+language: generic
+message: "Untrusted SCM metadata reaches a privileged workflow operation. Confirm event isolation and shell-safe data handling."
+severity: ERROR
+vulnerability_id: vuln.supply.workflow-injection
+query_contract:
+  source: pull_request_or_issue_metadata
+  sink: privileged_runner_or_deploy
+  required_control: trust-separated-workflow

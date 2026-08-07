@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-1333",
+  "expected_status": "candidate",
+  "id": "eval.regex.positive",
+  "polarity": "positive",
+  "query": "Regular-expression denial of service regex pattern, search string or user-defined rule regex engine or repeated validation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from regex pattern, search string or user-defined rule reaches regex engine or repeated validation without the documented control",
+  "vulnerability_id": "vuln.injection.regex"
+}

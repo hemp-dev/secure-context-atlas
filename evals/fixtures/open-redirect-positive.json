@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-601",
+  "expected_status": "candidate",
+  "id": "eval.open-redirect.positive",
+  "polarity": "positive",
+  "query": "Unvalidated redirect and navigation target return URL, link parameter or provider response Location header, browser navigation or OAuth redirect",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from return URL, link parameter or provider response reaches Location header, browser navigation or OAuth redirect without the documented control",
+  "vulnerability_id": "vuln.browser.open-redirect"
+}

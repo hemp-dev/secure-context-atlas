@@ -1,0 +1,9 @@
+id: rule.codeql.serialization.untrusted-object
+language: generic
+message: "Untrusted bytes flow into object rehydration. Confirm data-only format or a type allowlist and isolated parser."
+severity: ERROR
+vulnerability_id: vuln.serialization.unsafe-deserialization
+query_contract:
+  source: untrusted_serialized_value
+  sink: object_deserializer
+  required_control: authenticated_allowlisted_deserialization

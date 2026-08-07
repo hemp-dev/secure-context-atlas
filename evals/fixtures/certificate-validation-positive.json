@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-295",
+  "expected_status": "candidate",
+  "id": "eval.certificate-validation.positive",
+  "polarity": "positive",
+  "query": "Certificate and peer-identity validation bypass provider URL and certificate chain TLS/mTLS client connection",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from provider URL and certificate chain reaches TLS/mTLS client connection without the documented control",
+  "vulnerability_id": "vuln.crypto.certificate-validation"
+}

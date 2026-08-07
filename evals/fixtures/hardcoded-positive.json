@@ -1,0 +1,11 @@
+{
+  "id": "eval.hardcoded.positive",
+  "vulnerability_id": "vuln.secrets.hardcoded",
+  "polarity": "positive",
+  "expected_status": "candidate",
+  "expected_cwe": "CWE-798",
+  "query": "hardcoded secret source literal authentication provider client",
+  "snippet": "synthetic secret-like literal reaches a provider client without managed secret policy",
+  "evidence_required": ["source", "sink", "control"],
+  "safe_boundary": "local synthetic fixture; no network and no real credentials"
+}

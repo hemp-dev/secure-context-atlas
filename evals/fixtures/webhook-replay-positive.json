@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-294",
+  "expected_status": "candidate",
+  "id": "eval.webhook-replay.positive",
+  "polarity": "positive",
+  "query": "Webhook replay and duplicate side effects webhook body, event ID and timestamp payment, provisioning or state transition",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from webhook body, event ID and timestamp reaches payment, provisioning or state transition without the documented control",
+  "vulnerability_id": "vuln.api.webhook-replay"
+}

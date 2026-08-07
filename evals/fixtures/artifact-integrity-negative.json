@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-494",
+  "expected_status": "not-applicable",
+  "id": "eval.artifact-integrity.negative",
+  "polarity": "negative",
+  "query": "Unsigned or weakly bound build artifact artifact, digest, manifest or release metadata deployment, package registry or updater",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from artifact, digest, manifest or release metadata is validated, scoped and denied before deployment, package registry or updater",
+  "vulnerability_id": "vuln.supply.artifact-integrity"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "eval.command.positive",
+  "vulnerability_id": "vuln.injection.command",
+  "polarity": "positive",
+  "expected_status": "candidate",
+  "expected_cwe": "CWE-78",
+  "query": "OS command injection request value process execution",
+  "snippet": "synthetic request value reaches process execution without typed argument policy",
+  "evidence_required": ["source", "sink", "control"],
+  "safe_boundary": "local synthetic fixture; no network and no real credentials"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-770",
+  "expected_status": "candidate",
+  "id": "eval.rate-limit.positive",
+  "polarity": "positive",
+  "query": "Rate-limit identity and quota bypass request, identity, tenant or proxy metadata rate limiter, queue or downstream resource",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request, identity, tenant or proxy metadata reaches rate limiter, queue or downstream resource without the documented control",
+  "vulnerability_id": "vuln.availability.rate-limit"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-940",
+  "expected_status": "candidate",
+  "id": "eval.postmessage.positive",
+  "polarity": "positive",
+  "query": "Cross-window message origin and data validation failure postMessage event, iframe or extension message DOM action, token use or state mutation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from postMessage event, iframe or extension message reaches DOM action, token use or state mutation without the documented control",
+  "vulnerability_id": "vuln.browser.postmessage"
+}

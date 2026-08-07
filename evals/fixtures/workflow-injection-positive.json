@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-829",
+  "expected_status": "candidate",
+  "id": "eval.workflow-injection.positive",
+  "polarity": "positive",
+  "query": "Untrusted CI metadata reaches privileged workflow code commit metadata, PR title, branch or changed file runner command, action input or deployment",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from commit metadata, PR title, branch or changed file reaches runner command, action input or deployment without the documented control",
+  "vulnerability_id": "vuln.supply.workflow-injection"
+}

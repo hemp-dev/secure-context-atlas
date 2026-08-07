@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-345",
+  "expected_status": "not-applicable",
+  "id": "eval.inter-agent-trust.negative",
+  "polarity": "negative",
+  "query": "Inter-agent message authenticity and scope failure agent message, task envelope or queue event next agent, tool call or workflow transition",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from agent message, task envelope or queue event is validated, scoped and denied before next agent, tool call or workflow transition",
+  "vulnerability_id": "vuln.ai.inter-agent-trust"
+}

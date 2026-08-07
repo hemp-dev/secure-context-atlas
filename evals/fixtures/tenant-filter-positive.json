@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-639",
+  "expected_status": "candidate",
+  "id": "eval.tenant-filter.positive",
+  "polarity": "positive",
+  "query": "Missing tenant predicate in shared data access tenant claim, route identifier or background job context database query, cache or search result",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from tenant claim, route identifier or background job context reaches database query, cache or search result without the documented control",
+  "vulnerability_id": "vuln.authorization.tenant-filter"
+}

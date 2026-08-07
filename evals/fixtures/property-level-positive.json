@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-285",
+  "expected_status": "candidate",
+  "id": "eval.property-level.positive",
+  "polarity": "positive",
+  "query": "Broken object-property authorization field selection, request body or object serializer sensitive field read or write",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from field selection, request body or object serializer reaches sensitive field read or write without the documented control",
+  "vulnerability_id": "vuln.authorization.property-level"
+}

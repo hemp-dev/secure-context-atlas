@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-295",
+  "expected_status": "not-applicable",
+  "id": "eval.certificate-validation.negative",
+  "polarity": "negative",
+  "query": "Certificate and peer-identity validation bypass provider URL and certificate chain TLS/mTLS client connection",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from provider URL and certificate chain is validated, scoped and denied before TLS/mTLS client connection",
+  "vulnerability_id": "vuln.crypto.certificate-validation"
+}

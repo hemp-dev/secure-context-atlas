@@ -11,3 +11,5 @@ AI-specific control rule: untrusted text, retrieved documents, tool output and m
 Safe verification: test users/tenants, canary markers, local or staging fixtures, mocks, negative assertions, bounded timeouts and synthetic data. Never use real secrets, destructive state, persistence, stealth, public scanning or exfiltration.
 
 Retrieval note: `ai/aliases.json` records alias-to-ID collisions explicitly. Resolve an ambiguous alias such as `XXE` with parser/context evidence before selecting a card; never let an alias alone create a finding.
+
+Release 0.5.0 adds `ai/maturity-map.json`, `evals/manifest.json`, the `sctx` context-pack CLI and SARIF export. Use maturity to distinguish inventory-only records from curated cards; use the evaluation suite as a deterministic retrieval regression, not as proof of a model's correctness.

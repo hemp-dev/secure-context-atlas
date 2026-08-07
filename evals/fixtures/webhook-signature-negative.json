@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-345",
+  "expected_status": "not-applicable",
+  "id": "eval.webhook-signature.negative",
+  "polarity": "negative",
+  "query": "Webhook signature verification bypass webhook body, headers and timestamp state change, job enqueue or downstream API call",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from webhook body, headers and timestamp is validated, scoped and denied before state change, job enqueue or downstream API call",
+  "vulnerability_id": "vuln.authorization.webhook-signature"
+}

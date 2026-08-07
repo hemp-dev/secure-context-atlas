@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-841",
+  "expected_status": "candidate",
+  "id": "eval.approval-separation.positive",
+  "polarity": "positive",
+  "query": "Missing maker-checker separation in approvals approval request, role and workflow state release, payment, access grant or policy change",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from approval request, role and workflow state reaches release, payment, access grant or policy change without the documented control",
+  "vulnerability_id": "vuln.business.approval-separation"
+}

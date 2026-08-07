@@ -1,0 +1,9 @@
+id: rule.semgrep.injection.nosql-operator
+language: generic
+message: "Structured request data reaches a document query without an explicit operator allowlist. Confirm the source, query sink and schema control."
+severity: WARNING
+vulnerability_id: vuln.injection.nosql
+pattern_contract:
+  source: request.body.filter
+  sink: document_collection.find
+  required_control: schema-and-operator-allowlist

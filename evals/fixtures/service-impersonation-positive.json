@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-441",
+  "expected_status": "candidate",
+  "id": "eval.service-impersonation.positive",
+  "polarity": "positive",
+  "query": "Service identity and end-user impersonation confusion forwarded identity, service token or queue metadata downstream authorization decision",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from forwarded identity, service token or queue metadata reaches downstream authorization decision without the documented control",
+  "vulnerability_id": "vuln.authorization.service-impersonation"
+}

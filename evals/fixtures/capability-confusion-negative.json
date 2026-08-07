@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-441",
+  "expected_status": "not-applicable",
+  "id": "eval.capability-confusion.negative",
+  "polarity": "negative",
+  "query": "Capability and destination confusion destination, tool name or capability token network call, cloud action or tool invocation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from destination, tool name or capability token is validated, scoped and denied before network call, cloud action or tool invocation",
+  "vulnerability_id": "vuln.authorization.capability-confusion"
+}

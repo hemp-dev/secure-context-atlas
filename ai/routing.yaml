@@ -40,8 +40,8 @@ rules:
     when_any: [".github/workflows", ".gitlab-ci.yml", "Jenkinsfile", "Buildkite", "actions/"]
     load: ["platforms/ci-cd.md", "vuln.supply.*", "vuln.secrets.*", "vuln.authorization.*"]
   - id: ai-llm
-    when_any: ["LangChain", "LlamaIndex", "OpenAI", "Anthropic", "MCP", "tool_call", "embedding", "vector store", "RAG"]
-    load: ["platforms/ai-llm.md", "vuln.ai.*", "vuln.authorization.*", "vuln.privacy.*", "vuln.supply.model"]
+    when_any: ["LangChain", "LlamaIndex", "OpenAI", "Anthropic", "MCP", "tool_call", "embedding", "vector store", "RAG", "agent", "function calling"]
+    load: ["platforms/ai-llm.md", "platforms/ai-agentic.md", "taxonomy/agentic-map.yaml", "vuln.ai.*", "vuln.authorization.*", "vuln.secrets.*", "vuln.supply.*", "vuln.availability.*", "vuln.network.ssrf"]
   - id: internal-enterprise
     when_any: ["Active Directory", "Kerberos", "LDAP", "SMB", "NTLM", "PowerShell", "domain controller"]
     load: ["platforms/enterprise-ad.md", "vuln.internal.*", "vuln.authentication.*", "vuln.authorization.*"]

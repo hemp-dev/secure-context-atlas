@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""Run deterministic retrieval and fixture-safety checks."""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+TOKEN_RE = re.compile(r"[a-z0-9][a-z0-9_.-]{1,}")
+FORBIDDEN = re.compile(r"\b(?:curl|wget|nc|netcat|bash|powershell)\b|rm\s+-rf|real\s+credential|public\s+target|exfiltration|web\s+shell", re.I)
+
+
+def parse_frontmatter(path: Path) -> dict:
+    lines = path.read_text(encoding="utf-8").splitlines()
+    if not lines or lines[0].strip() != "---":
+        return {}
+    result: dict = {}
+    for line in lines[1:]:
+        if line.strip() == "---":
+            break
+        if ":" not in line:
+            continue
+        key, raw = line.split(":", 1)
+        try:
+            result[key.strip()] = json.loads(raw.strip())
+        except json.JSONDecodeError:
+            result[key.strip()] = raw.strip().strip('"')
+    return result
+
+
+def tokens(value: str) -> set[str]:
+    return set(TOKEN_RE.findall(value.lower()))
+
+
+def card_index() -> dict[str, dict]:
+    cards: dict[str, dict] = {}
+    for path in sorted((ROOT / "vulnerabilities").rglob("*.md")):
+        if path.name == "README.md":
+            continue
+        record = parse_frontmatter(path)
+        if not record.get("id"):
+            continue
+        body = path.read_text(encoding="utf-8")
+        searchable = " ".join([
+            str(record.get("id", "")), str(record.get("title", "")), str(record.get("summary", "")),
+            str(record.get("family", "")), " ".join(record.get("aliases", [])), body,
+        ])
+        cards[record["id"]] = {"path": str(path.relative_to(ROOT)), "record": record, "tokens": tokens(searchable)}
+    return cards
+
+
+def rank(query: str, cards: dict[str, dict]) -> list[tuple[int, str]]:
+    query_tokens = tokens(query)
+    scored = []
+    for identifier, card in cards.items():
+        overlap = len(query_tokens & card["tokens"])
+        exact_title = str(card["record"].get("title", "")).lower() in query.lower()
+        scored.append((overlap + (100 if exact_title else 0), identifier))
+    return sorted(scored, key=lambda item: (-item[0], item[1]))
+
+
+def run(output: Path | None) -> int:
+    manifest_path = ROOT / "evals/manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    cards = card_index()
+    errors: list[str] = []
+    cases: list[dict] = []
+    seen: set[str] = set()
+    hits = 0
+    forbidden_count = 0
+    for entry in manifest.get("fixtures", []):
+        fixture_id = entry.get("id")
+        if fixture_id in seen:
+            errors.append(f"duplicate fixture id: {fixture_id}")
+        seen.add(fixture_id)
+        fixture_path = ROOT / entry["path"]
+        if not fixture_path.exists():
+            errors.append(f"missing fixture: {entry['path']}")
+            continue
+        fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+        if fixture.get("id") != fixture_id:
+            errors.append(f"fixture id mismatch: {entry['path']}")
+        vulnerability_id = fixture.get("vulnerability_id")
+        if vulnerability_id not in cards:
+            errors.append(f"fixture references unknown card: {vulnerability_id}")
+            continue
+        if fixture.get("polarity") not in {"positive", "negative", "ambiguous"}:
+            errors.append(f"invalid fixture polarity: {fixture_id}")
+        # The safe_boundary field intentionally says what the fixture must not
+        # use; scan the synthetic case content, not its prohibition language.
+        text = " ".join(str(fixture.get(key, "")) for key in ["query", "snippet"])
+        if FORBIDDEN.search(text):
+            forbidden_count += 1
+        ranked = rank(str(fixture.get("query", "")), cards)
+        top5 = [identifier for _, identifier in ranked[:5]]
+        hit = vulnerability_id in top5
+        hits += int(hit)
+        cases.append({"id": fixture_id, "vulnerability_id": vulnerability_id, "polarity": fixture.get("polarity"), "retrieval_hit_at_5": hit, "top5": top5})
+
+    total = len(cases)
+    recall = hits / total if total else 0.0
+    report = {
+        "schema_version": "1.0",
+        "suite": manifest.get("suite"),
+        "fixture_count": total,
+        "retrieval_hits_at_5": hits,
+        "retrieval_recall_at_5": round(recall, 4),
+        "forbidden_fixture_count": forbidden_count,
+        "errors": errors,
+        "cases": cases,
+    }
+    if recall < float(manifest.get("min_retrieval_recall_at_5", 0.0)):
+        errors.append(f"retrieval recall {recall:.4f} below threshold")
+    if forbidden_count > int(manifest.get("max_forbidden_fixture_count", 0)):
+        errors.append(f"forbidden fixture count {forbidden_count} above threshold")
+    report["errors"] = errors
+    rendered = json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    if output:
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered, encoding="utf-8")
+    print(json.dumps({key: report[key] for key in ["suite", "fixture_count", "retrieval_hits_at_5", "retrieval_recall_at_5", "forbidden_fixture_count", "errors"]}, ensure_ascii=False, sort_keys=True))
+    return 1 if errors else 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    return run(args.output)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,10 +1,12 @@
-# Secure Context Atlas 0.1.0
+# Secure Context Atlas 0.5.0
 
 ## Foundational Defensive Knowledge Release
 
-Дата релиза: **2026-08-07**  
-Канал: **foundational-preview**  
-Статус: **готов к внутреннему и ограниченному публичному preview-использованию**
+Дата релиза: **2026-08-08**
+
+Канал: **stable-preview**
+
+Статус: **готов к ограниченному публичному preview-использованию с machine-readable contract**
 
 ## 1. Название и позиционирование
 
@@ -33,7 +35,7 @@
 
 В качестве негативного фильтра не использовались `TrustGraph` и `Boundary Atlas`: эти названия уже связаны с существующими AI/context/security-проектами — [TrustGraph](https://docs.trustgraph.ai/) и [Boundary Atlas](https://boundarytitan.wordpress.com/). Это не заменяет полноценную проверку товарных знаков и доменов.
 
-В этом релизе `Secure Context Atlas` используется как выбранное рабочее имя. Для короткого технического slug можно использовать `secure-context-atlas`. Свободность домена, GitHub organization и товарного знака не проверялась; перед публичным брендингом нужна отдельная legal/domain due diligence.
+В этом релизе `Secure Context Atlas` используется как выбранное рабочее имя. Для короткого технического slug используется `secure-context-atlas`. Свободность домена, GitHub organization и товарного знака не проверялась; перед публичным брендингом нужна отдельная legal/domain due diligence.
 
 ## 2. Что выпускается
 
@@ -52,16 +54,22 @@ Secure Context Atlas — статическая, версионируемая и
 | Область | В релизе |
 |---|---:|
 | Нормализованные классы и варианты | 305 leaf-классов |
-| Atomic vulnerability cards | 44 |
+| Atomic vulnerability cards | 111 |
+| Inventory-only backlog | 194 leaf-класса |
 | CWE 4.20 | 969 импортированных записей, 944 активных, 25 deprecated |
+| Curated CWE mapping | 76 уникальных CWE, 868 active CWE без card mapping |
 | CAPEC 3.9 | 615 attack patterns |
 | Языки | 13 |
 | Framework guidance | 6 основных профилей |
 | Platform guidance | cloud, containers/Kubernetes, Android, iOS, AI/LLM, CI/CD, enterprise/AD, hardware/IoT |
 | Primary repositories | 5 |
 | Dynamic advisory adapters | OSV, GitHub Advisory Database |
+| Deterministic evaluation fixtures | 134 |
+| Detector contracts | 10 Semgrep/CodeQL adapters |
+| Threat-model examples | 1 валидируемый agentic RAG model |
+| Context-pack CLI | `sctx list/show/search/pack/validate/export-sarif` |
 
-Полный inventory остаётся доступен даже там, где ещё нет отдельной редакторской карточки: `ai/vulnerability-map.json` содержит все 305 stable-ID records, а `ai/cwe-coverage.json` — все записи текущей CWE-выгрузки. В coverage report отражены 261 leaf без atomic card и 905 активных CWE без curated-card mapping; это честный backlog, а не скрытая потеря покрытия.
+Полный inventory остаётся доступен даже там, где ещё нет отдельной редакторской карточки: `ai/vulnerability-map.json` содержит все 305 stable-ID records, `ai/maturity-map.json` различает `inventory` и `curated`, а `ai/cwe-coverage.json` — все записи текущей CWE-выгрузки. В coverage report отражены 194 leaf без atomic card и 868 активных CWE без curated-card mapping; это честный backlog, а не скрытая потеря покрытия.
 
 ## 4. Источники и provenance
 
@@ -73,7 +81,7 @@ Secure Context Atlas — статическая, версионируемая и
 4. [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking) — discovery graph смежных проектов.
 5. [Awesome Bug Bounty](https://github.com/djadmin/awesome-bug-bounty) — report/workflow-oriented topic discovery.
 
-Дополнительные canonical/similar references описаны в [`sources/research-notes.md`](sources/research-notes.md) и [`sources/manifest.yaml`](sources/manifest.yaml): MITRE CWE/CAPEC, OWASP ASVS/WSTG/API/GenAI/Mobile, PortSwigger Academy, FuzzDB, Vulhub, CodeQL, Semgrep, Gitleaks, OSV, GitHub Advisory Database, OpenSSF Scorecard, Assetnote Wordlists, InternalAllTheThings, HardwareAllTheThings и другие.
+Дополнительные canonical/similar references описаны в [`sources/research-notes.md`](sources/research-notes.md) и [`sources/manifest.yaml`](sources/manifest.yaml): MITRE CWE/CAPEC, OWASP ASVS/WSTG/API/GenAI/Agentic/Mobile, NIST AI RMF, PortSwigger Academy, FuzzDB, Vulhub, CodeQL, Semgrep, Gitleaks, OSV, GitHub Advisory Database, OpenSSF Scorecard, Assetnote Wordlists, InternalAllTheThings, HardwareAllTheThings и другие.
 
 Машинные версии и SHA-256 находятся в [`sources/versions.yaml`](sources/versions.yaml) и [`ai/source-hashes.json`](ai/source-hashes.json). Каноническая ontology опирается на [CWE machine-readable downloads](https://cwe.mitre.org/data/downloads.html); attack-pattern слой хранится отдельно по [CAPEC downloads](https://capec.mitre.org/data/downloads.html).
 
@@ -88,10 +96,10 @@ canonical CWE/CAPEC indexes ---- standards crosswalks
       +--> normalized vuln.* map -----------+
                          |
                          v
-              AI routing + compact context
+              AI routing + context packs + evaluation
                          |
                          v
-             evidence -> finding -> regression test
+         evidence -> finding -> SARIF -> regression test
 ```
 
 Ключевое правило каждой карточки:
@@ -113,6 +121,7 @@ SOURCE -> TRANSFORMATIONS -> CONTROL -> SINK
 3. [`ai/finding-format.md`](ai/finding-format.md) — формат результата модели.
 4. [`AGENTS.md`](AGENTS.md) — обязательный порядок аудита.
 5. `vulnerabilities/<family>/<card>.md` — атомарные карточки.
+6. `bin/sctx pack --stack python --surface api` — детерминированный context pack.
 
 ### Проверить локальную копию
 
@@ -127,10 +136,15 @@ python3 -B -m unittest discover -s tests -v
 
 ```sh
 python3 -B scripts/build_indexes.py --fetch
+python3 -B scripts/update_sources.py --write-lock --check
+python3 -B scripts/run_eval.py --output ai/evaluation-report.json
 python3 -B scripts/validate_repo.py
+python3 -B scripts/validate_rules.py
+python3 -B scripts/validate_threat_models.py
+python3 -B scripts/build_release_manifest.py
 ```
 
-`--fetch` загружает только pinned machine-readable CWE/CAPEC releases, после чего сохраняет компактные индексы, количество записей и SHA-256. Для обычного использования уже сгенерированные JSON-файлы являются release artifact и сеть не нужна.
+`--fetch` загружает только pinned machine-readable CWE/CAPEC releases, после чего сохраняет компактные индексы, количество записей и SHA-256. `update_sources.py` фиксирует их в `sources/lock.json`. Для обычного использования уже сгенерированные JSON-файлы являются release artifact и сеть не нужна.
 
 ## 7. AI integration contract
 
@@ -143,8 +157,9 @@ python3 -B scripts/validate_repo.py
 5. проверить object/property/function/tenant/transaction authorization;
 6. отдельно проверить parser/interpreter, state/race, error/fail-open, dependencies/CI/secrets;
 7. сопоставить доказательство с CWE и versioned crosswalks;
-8. предложить safe verification и regression test;
-9. сообщить finding только при наличии evidence.
+8. валидировать finding по [`schemas/finding.schema.json`](schemas/finding.schema.json);
+9. предложить safe verification и regression test;
+10. сообщить finding только при наличии evidence.
 
 Для AI-систем external text, retrieved documents, tool results и model output считаются данными, а не authority. Capability, destination, arguments и side effects должны контролироваться обычным кодом и инфраструктурой.
 
@@ -167,7 +182,10 @@ python3 -B scripts/validate_repo.py
 - `schemas/vulnerability.schema.json` вместо legacy schema;
 - `vuln.*` IDs вместо uppercase `INJ.SQL`/`AUTH.IDOR`-подобных legacy IDs;
 - `canonical_cwe` вместо самодельного numeric vulnerability ID;
-- `ai/vulnerability-map.json` и `ai/aliases.json` для совместимого retrieval.
+- `ai/vulnerability-map.json` и `ai/aliases.json` для совместимого retrieval;
+- `ai/maturity-map.json` для различения inventory и curated coverage;
+- `schemas/finding.schema.json` и `scripts/export_sarif.py` для результатов анализа;
+- `bin/sctx` для context packs с token budget и routing trace.
 
 Старые ID не удаляются без migration window: stable mapping и aliases генерируются в `ai/vulnerability-map.json`.
 
@@ -178,10 +196,11 @@ python3 -B scripts/validate_repo.py
 ## 11. Известные ограничения
 
 - Это knowledge base, а не автономный scanner и не гарантия отсутствия уязвимостей.
-- 305 leaf-классов инвентаризованы, но не каждый leaf имеет отдельную curated-card.
+- 305 leaf-классов инвентаризованы, 111 имеют curated-card, 194 остаются backlog.
 - CWE/CAPEC и OWASP projects обновляются; перед production audit нужно обновить provenance и regenerated artifacts.
 - Advisory presence не равна reachability/exploitability; нужен package coordinate, version и runtime evidence.
 - AI output нельзя считать доказательством без code/config/architecture evidence.
+- Evaluation suite проверяет deterministic retrieval contract; она не заменяет benchmark конкретной LLM.
 - Правовая, domain и trademark проверка названия в этот релиз не входит.
 
 ## 12. Release checklist
@@ -190,11 +209,15 @@ python3 -B scripts/validate_repo.py
 
 - [ ] `sources/manifest.yaml`, `sources/versions.yaml`, licenses и hashes обновлены.
 - [ ] `python3 -B scripts/build_indexes.py` выполнен.
+- [ ] `python3 -B scripts/update_sources.py --check` завершился успешно.
+- [ ] `python3 -B scripts/run_eval.py --output ai/evaluation-report.json` завершился успешно.
 - [ ] `python3 -B scripts/validate_repo.py` завершился `validation passed`.
+- [ ] `python3 -B scripts/validate_rules.py` и `python3 -B scripts/validate_threat_models.py` завершились успешно.
 - [ ] `python3 -B -m unittest discover -s tests -v` завершился `OK`.
+- [ ] `python3 -B scripts/validate_release.py` завершился успешно.
 - [ ] Нет `__pycache__`, raw datasets, secrets или временных XML/ZIP в release tree.
 - [ ] Новые карточки содержат safe verification, false positives, remediation и regression tests.
 - [ ] Проверены mappings и backward compatibility stable IDs.
 - [ ] Changelog, release tag и artifact hashes опубликованы вместе.
 
-Расширенная процедура находится в [`docs/release-checklist.md`](docs/release-checklist.md).
+Расширенная процедура находится в [`docs/release-checklist.md`](docs/release-checklist.md), а последовательность реализации — в [`docs/roadmap-0.5.md`](docs/roadmap-0.5.md).

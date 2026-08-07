@@ -6,6 +6,13 @@
       "MASVS": "control families",
       "MASWE": "weakness identifiers"
     },
+    "nist_ai_600_1": "Generative AI risk profile crosswalked in AI and agentic guidance",
+    "nist_ai_rmf": {
+      "govern": "policy and accountability",
+      "manage": "controls and residual risk",
+      "map": "context and risk framing",
+      "measure": "evaluation and evidence"
+    },
     "owasp_agentic": {
       "ASI01": "goal-hijack",
       "ASI02": "tool-misuse",
@@ -59,7 +66,7 @@
       "WSTG": "testing scenarios"
     }
   },
-  "curated_record_count": 44,
-  "generated_at": "2026-08-07",
+  "curated_record_count": 111,
+  "generated_at": "2026-08-08",
   "schema_version": "1.0"
 }

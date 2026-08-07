@@ -1,0 +1,11 @@
+{
+  "id": "eval.ssrf.positive",
+  "vulnerability_id": "vuln.network.ssrf",
+  "polarity": "positive",
+  "expected_status": "candidate",
+  "expected_cwe": "CWE-918",
+  "query": "server-side request forgery user-controlled URL server HTTP client",
+  "snippet": "synthetic canary URL reaches the server HTTP client without destination validation",
+  "evidence_required": ["source", "sink", "control"],
+  "safe_boundary": "local synthetic fixture; no network and no real credentials"
+}

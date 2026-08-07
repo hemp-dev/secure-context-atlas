@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-1321",
+  "expected_status": "not-applicable",
+  "id": "eval.memory-poisoning.negative",
+  "polarity": "negative",
+  "query": "Agent memory and context poisoning conversation, document or tool result memory store, retrieval context or agent policy",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from conversation, document or tool result is validated, scoped and denied before memory store, retrieval context or agent policy",
+  "vulnerability_id": "vuln.ai.memory-poisoning"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-269",
+  "expected_status": "candidate",
+  "id": "eval.delegated-admin.positive",
+  "polarity": "positive",
+  "query": "Delegated administration privilege escalation role assignment, delegation request or group claim privileged operation or policy update",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from role assignment, delegation request or group claim reaches privileged operation or policy update without the documented control",
+  "vulnerability_id": "vuln.authorization.delegated-admin"
+}

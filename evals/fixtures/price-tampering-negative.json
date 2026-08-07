@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-841",
+  "expected_status": "not-applicable",
+  "id": "eval.price-tampering.negative",
+  "polarity": "negative",
+  "query": "Client-controlled price, quantity or entitlement price, quantity, coupon or entitlement fields order, invoice, grant or refund",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from price, quantity, coupon or entitlement fields is validated, scoped and denied before order, invoice, grant or refund",
+  "vulnerability_id": "vuln.business.price-tampering"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-862",
+  "expected_status": "candidate",
+  "id": "eval.tool-authorization.positive",
+  "polarity": "positive",
+  "query": "AI tool authorization and capability-scope failure model output, tool name and arguments tool/MCP server, cloud API or state-changing function",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from model output, tool name and arguments reaches tool/MCP server, cloud API or state-changing function without the documented control",
+  "vulnerability_id": "vuln.ai.tool-authorization"
+}

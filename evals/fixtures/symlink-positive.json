@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-59",
+  "expected_status": "candidate",
+  "id": "eval.symlink.positive",
+  "polarity": "positive",
+  "query": "Symlink and mount escape during file processing filename, archive member or workspace path filesystem read/write or cleanup",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from filename, archive member or workspace path reaches filesystem read/write or cleanup without the documented control",
+  "vulnerability_id": "vuln.files.symlink"
+}

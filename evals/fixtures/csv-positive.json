@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-1236",
+  "expected_status": "candidate",
+  "id": "eval.csv.positive",
+  "polarity": "positive",
+  "query": "CSV and spreadsheet formula injection user name, search term or database field CSV/XLSX export or downstream spreadsheet",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from user name, search term or database field reaches CSV/XLSX export or downstream spreadsheet without the documented control",
+  "vulnerability_id": "vuln.injection.csv"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-829",
+  "expected_status": "not-applicable",
+  "id": "eval.model-supply-chain.negative",
+  "polarity": "negative",
+  "query": "Model, adapter and prompt supply-chain trust failure model URI, artifact, plugin or prompt package model loader, inference runtime or deployment",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from model URI, artifact, plugin or prompt package is validated, scoped and denied before model loader, inference runtime or deployment",
+  "vulnerability_id": "vuln.ai.model-supply-chain"
+}

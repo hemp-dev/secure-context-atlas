@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "format": "jsonl-or-markdown",
+  "producer": "scripts/sctx.py",
+  "supported_commands": ["list", "show", "search", "pack", "validate", "export-sarif"],
+  "selection_dimensions": ["stack", "surface", "family", "query", "maturity"],
+  "safety": {
+    "no_live_targets": true,
+    "no_credentials": true,
+    "no_payloads": true,
+    "evidence_required_for_findings": true
+  }
+}

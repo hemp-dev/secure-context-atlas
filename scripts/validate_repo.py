@@ -32,6 +32,11 @@ class Validator:
     def error(self, message: str) -> None:
         self.errors.append(message)
 
+    def generated_date(self) -> str:
+        metadata = ROOT / "sources/versions.yaml"
+        match = re.search(r"^generated_at:\s*[\"']?([^\"'\s]+)", metadata.read_text(encoding="utf-8"), re.M)
+        return match.group(1) if match else date.today().isoformat()
+
     def parse_frontmatter(self, path: Path) -> dict:
         lines = path.read_text(encoding="utf-8").splitlines()
         if not lines or lines[0].strip() != "---":
@@ -104,7 +109,7 @@ class Validator:
             self.error(f"{rel}: unsafe operational wording without defensive prohibition")
 
     def run(self) -> int:
-        for rel in ["README.md", "AGENTS.md", "CONTRIBUTING.md", "sources/manifest.yaml", "sources/versions.yaml", "sources/licenses.yaml", "schemas/vulnerability.schema.json", "taxonomy/families.yaml", "taxonomy/aliases.yaml", "taxonomy/cwe-map.yaml", "taxonomy/capec-map.yaml", "taxonomy/owasp-map.yaml", "ai/audit-protocol.md", "ai/routing.yaml", "ai/finding-format.md", "datasets/manifests.yaml", "advisories/adapters/osv.md", "advisories/adapters/github-advisory-database.md"]:
+        for rel in ["README.md", "AGENTS.md", "CONTRIBUTING.md", "sources/manifest.yaml", "sources/versions.yaml", "sources/licenses.yaml", "sources/lock.json", "schemas/vulnerability.schema.json", "schemas/finding.schema.json", "schemas/evidence.schema.json", "schemas/threat-model.schema.json", "release-manifest.schema.json", "taxonomy/families.yaml", "taxonomy/aliases.yaml", "taxonomy/cwe-map.yaml", "taxonomy/capec-map.yaml", "taxonomy/owasp-map.yaml", "taxonomy/priorities.yaml", "taxonomy/agentic-map.yaml", "ai/audit-protocol.md", "ai/routing.yaml", "ai/finding-format.md", "ai/index.json", "ai/maturity-map.json", "ai/evaluation-report.json", "ai/context-manifest.json", "ai/release-manifest.json", "platforms/ai-agentic.md", "ai/threat-model-examples/agentic-rag.json", "evals/README.md", "evals/manifest.json", "datasets/manifests.yaml", "advisories/adapters/osv.md", "advisories/adapters/github-advisory-database.md"]:
             if not (ROOT / rel).exists():
                 self.error(f"missing required file {rel}")
         for folder, names in [("languages", REQUIRED_LANGUAGES), ("platforms", REQUIRED_PLATFORMS), ("frameworks", REQUIRED_FRAMEWORKS)]:
@@ -115,11 +120,14 @@ class Validator:
         try:
             cwe_data = json.loads((ROOT / "ai/cwe-index.json").read_text(encoding="utf-8"))
             capec_data = json.loads((ROOT / "ai/capec-index.json").read_text(encoding="utf-8"))
+            index_data = json.loads((ROOT / "ai/index.json").read_text(encoding="utf-8"))
         except Exception as exc:  # noqa: BLE001
             self.error(f"cannot load generated indexes: {exc}")
             return self.finish()
         cwe_ids = {entry.get("id") for entry in cwe_data.get("entries", [])}
         capec_ids = {entry.get("id") for entry in capec_data.get("entries", [])}
+        if index_data.get("project") != "Secure Context Atlas" or index_data.get("release") != "0.5.0" or index_data.get("release_channel") != "stable-preview":
+            self.error("ai/index.json does not identify the 0.5.0 stable-preview release")
         if cwe_data.get("version") != "4.20" or cwe_data.get("entries_total") != 969 or cwe_data.get("entries_active") != 944:
             self.error("CWE index is not the expected 4.20 969/944 coverage")
         if capec_data.get("version") != "3.9" or capec_data.get("entries_total") != 615:
@@ -132,6 +140,8 @@ class Validator:
         ids: set[str] = set()
         aliases: set[str] = set()
         card_count = 0
+        maturity_counts: Counter[str] = Counter()
+        fixture_references: list[tuple[str, str]] = []
         for path in sorted((ROOT / "vulnerabilities").rglob("*.md")) if (ROOT / "vulnerabilities").exists() else []:
             if path.name == "README.md":
                 continue
@@ -139,8 +149,14 @@ class Validator:
             if fm:
                 card_count += 1
                 self.validate_card(path, fm, cwe_ids, capec_ids, ids, aliases)
-        if card_count < 30:
-            self.error(f"only {card_count} atomic cards found; expected at least 30")
+                maturity = fm.get("maturity", "curated")
+                if maturity not in {"inventory", "scaffolded", "curated", "tested", "production-ready"}:
+                    self.error(f"{path.relative_to(ROOT)}: invalid maturity {maturity!r}")
+                maturity_counts[maturity] += 1
+                if isinstance(fm.get("fixture_ids"), list):
+                    fixture_references.extend((str(path.relative_to(ROOT)), str(value)) for value in fm["fixture_ids"])
+        if card_count < 100:
+            self.error(f"only {card_count} atomic cards found; expected at least 100 for 0.5.0")
         for path in sorted((ROOT / "vulnerabilities").rglob("*.md")) if (ROOT / "vulnerabilities").exists() else []:
             if path.name == "README.md":
                 continue
@@ -167,11 +183,30 @@ class Validator:
                     curated_cwe.add(fm.get("canonical_cwe"))
         active_cwe = {entry.get("id") for entry in cwe_data.get("entries", []) if entry.get("status") != "Deprecated"}
         unmapped_active_cwe = sorted(active_cwe - curated_cwe, key=lambda value: int(value.split("-", 1)[1]))
+        fixture_manifest = {}
+        try:
+            fixture_manifest = json.loads((ROOT / "evals/manifest.json").read_text(encoding="utf-8"))
+            fixture_ids = {item.get("id") for item in fixture_manifest.get("fixtures", [])}
+            for card_path, fixture_id in fixture_references:
+                if fixture_id not in fixture_ids:
+                    self.error(f"{card_path}: fixture reference not in eval manifest: {fixture_id}")
+            evaluation = json.loads((ROOT / "ai/evaluation-report.json").read_text(encoding="utf-8")) if (ROOT / "ai/evaluation-report.json").exists() else {}
+            if evaluation.get("errors"):
+                self.error("evaluation report contains errors")
+            if evaluation.get("fixture_count", 0) < 100:
+                self.error("evaluation suite must contain at least 100 fixtures")
+            if evaluation.get("retrieval_recall_at_5", 0) < 0.9:
+                self.error("evaluation retrieval recall@5 is below 0.90")
+        except Exception as exc:  # noqa: BLE001
+            self.error(f"cannot validate evaluation suite: {exc}")
+        maturity_summary = dict(sorted(maturity_counts.items()))
+        maturity_summary["inventory"] = max(0, 305 - card_count)
         report = {
-            "schema_version": "1.0", "generated_at": date.today().isoformat(),
+            "schema_version": "1.0", "generated_at": self.generated_date(),
             "cwe": {"version": cwe_data.get("version"), "imported": len(cwe_ids), "active": cwe_data.get("entries_active"), "deprecated": cwe_data.get("entries_deprecated"), "curated_by_atomic_card": len(curated_cwe), "curated_ids": sorted(curated_cwe, key=lambda value: int(value.split("-", 1)[1])), "unmapped_active_count": len(unmapped_active_cwe), "unmapped_active_ids": unmapped_active_cwe},
             "capec": {"version": capec_data.get("version"), "imported": len(capec_ids)},
-            "normalized_taxonomy": {"leaf_count": 305, "atomic_cards": card_count, "unscaffolded_leafs": 305 - card_count},
+            "normalized_taxonomy": {"leaf_count": 305, "atomic_cards": card_count, "unscaffolded_leafs": max(0, 305 - card_count), "maturity": maturity_summary},
+            "evaluation": {"suite": fixture_manifest.get("suite"), "fixture_count": len(fixture_manifest.get("fixtures", []))},
             "standards": {"owasp_top10_2025": "crosswalked", "owasp_api_2023": "crosswalked", "asvs": "crosswalked", "wstg": "crosswalked", "masvs_mastg_maswe": "mobile guidance and mappings", "genai": "LLM and agentic mappings"},
             "topic_coverage": {"primary_repositories": "normalized in vulnerability-taxonomy-ai.json and sources/research-notes.md", "portswigger": "web/parser topic references in cards and manifest", "cwe": "all entries imported; curated/unmapped lists above", "language_framework_platform": "required files checked below"},
             "source_families": ["PayloadsAllTheThings", "HackTricks", "SecLists", "Awesome-Hacking", "Awesome Bug Bounty"],

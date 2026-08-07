@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-829",
+  "expected_status": "candidate",
+  "id": "eval.model-supply-chain.positive",
+  "polarity": "positive",
+  "query": "Model, adapter and prompt supply-chain trust failure model URI, artifact, plugin or prompt package model loader, inference runtime or deployment",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from model URI, artifact, plugin or prompt package reaches model loader, inference runtime or deployment without the documented control",
+  "vulnerability_id": "vuln.ai.model-supply-chain"
+}

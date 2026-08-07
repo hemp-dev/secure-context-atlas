@@ -1,0 +1,11 @@
+{
+  "id": "eval.path-traversal.positive",
+  "vulnerability_id": "vuln.files.path-traversal",
+  "polarity": "positive",
+  "expected_status": "candidate",
+  "expected_cwe": "CWE-22",
+  "query": "path traversal request path filesystem read write",
+  "snippet": "synthetic path reaches filesystem access without resolved containment",
+  "evidence_required": ["source", "sink", "control"],
+  "safe_boundary": "local synthetic fixture; no network and no real credentials"
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-732",
+  "expected_status": "not-applicable",
+  "id": "eval.object-storage.negative",
+  "polarity": "negative",
+  "query": "Object-storage public exposure and key-scope failure object key, bucket policy or signed URL object storage API or CDN",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from object key, bucket policy or signed URL is validated, scoped and denied before object storage API or CDN",
+  "vulnerability_id": "vuln.files.object-storage"
+}

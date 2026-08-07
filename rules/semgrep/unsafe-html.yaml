@@ -1,0 +1,9 @@
+id: rule.semgrep.browser.unsafe-html
+language: generic
+message: "Untrusted data reaches an HTML/DOM sink. Confirm contextual encoding or a trusted sanitizer."
+severity: WARNING
+vulnerability_id: vuln.browser.xss
+pattern_contract:
+  source: request.value
+  sink: html_or_dom_sink
+  required_control: contextual-encoding

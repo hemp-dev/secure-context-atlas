@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-601",
+  "expected_status": "not-applicable",
+  "id": "eval.open-redirect.negative",
+  "polarity": "negative",
+  "query": "Unvalidated redirect and navigation target return URL, link parameter or provider response Location header, browser navigation or OAuth redirect",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from return URL, link parameter or provider response is validated, scoped and denied before Location header, browser navigation or OAuth redirect",
+  "vulnerability_id": "vuln.browser.open-redirect"
+}

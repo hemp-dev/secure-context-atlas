@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-117",
+  "expected_status": "not-applicable",
+  "id": "eval.log.negative",
+  "polarity": "negative",
+  "query": "Log injection and event-integrity failure request, username, filename or model output logger, audit sink or SIEM parser",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request, username, filename or model output is validated, scoped and denied before logger, audit sink or SIEM parser",
+  "vulnerability_id": "vuln.injection.log"
+}

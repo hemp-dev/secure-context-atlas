@@ -1,0 +1,9 @@
+id: rule.semgrep.ai.tool-arguments
+language: generic
+message: "Model-produced tool arguments reach a capability boundary. Confirm user/tenant authorization and argument validation."
+severity: ERROR
+vulnerability_id: vuln.ai.tool-authorization
+pattern_contract:
+  source: model.tool_call.arguments
+  sink: tool_or_mcp.invoke
+  required_control: capability-policy-before-side-effect

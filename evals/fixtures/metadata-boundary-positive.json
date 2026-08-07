@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-918",
+  "expected_status": "candidate",
+  "id": "eval.metadata-boundary.positive",
+  "polarity": "positive",
+  "query": "Cloud metadata and instance-identity boundary failure URL, redirect or proxy request metadata endpoint or credential service",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from URL, redirect or proxy request reaches metadata endpoint or credential service without the documented control",
+  "vulnerability_id": "vuln.cloud.metadata-boundary"
+}

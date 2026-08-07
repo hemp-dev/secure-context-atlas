@@ -2,6 +2,8 @@
 
 Use one record per coherent weakness. Markdown is acceptable for humans, but the fields below must be machine-extractable.
 
+The canonical machine contract is [`schemas/finding.schema.json`](../schemas/finding.schema.json), and each evidence item follows [`schemas/evidence.schema.json`](../schemas/evidence.schema.json). A finding is not complete until the source, sink and missing control are represented by redacted evidence.
+
 ```yaml
 status: confirmed | probable | needs-review | not-applicable
 title: "Short root-cause title"

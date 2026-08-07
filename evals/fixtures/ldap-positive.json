@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-90",
+  "expected_status": "candidate",
+  "id": "eval.ldap.positive",
+  "polarity": "positive",
+  "query": "LDAP filter and distinguished-name injection username, group, filter or directory path LDAP search, bind or modify operation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from username, group, filter or directory path reaches LDAP search, bind or modify operation without the documented control",
+  "vulnerability_id": "vuln.injection.ldap"
+}

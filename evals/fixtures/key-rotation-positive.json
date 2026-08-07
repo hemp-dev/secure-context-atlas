@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-324",
+  "expected_status": "candidate",
+  "id": "eval.key-rotation.positive",
+  "polarity": "positive",
+  "query": "Key lifecycle and rotation failure key identifier, secret reference or encrypted record decrypt/sign/verify operation",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from key identifier, secret reference or encrypted record reaches decrypt/sign/verify operation without the documented control",
+  "vulnerability_id": "vuln.crypto.key-rotation"
+}

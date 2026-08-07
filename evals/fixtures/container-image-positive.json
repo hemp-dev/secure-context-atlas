@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-494",
+  "expected_status": "candidate",
+  "id": "eval.container-image.positive",
+  "polarity": "positive",
+  "query": "Untrusted container image and mutable tag resolution image reference, registry response or build context container runtime or cluster admission",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from image reference, registry response or build context reaches container runtime or cluster admission without the documented control",
+  "vulnerability_id": "vuln.supply.container-image"
+}

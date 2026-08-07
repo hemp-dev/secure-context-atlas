@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-643",
+  "expected_status": "not-applicable",
+  "id": "eval.xpath.negative",
+  "polarity": "negative",
+  "query": "XPath injection request, XML field or identity attribute XPath query or policy predicate",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request, XML field or identity attribute is validated, scoped and denied before XPath query or policy predicate",
+  "vulnerability_id": "vuln.injection.xpath"
+}

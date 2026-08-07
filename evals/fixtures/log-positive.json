@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-117",
+  "expected_status": "candidate",
+  "id": "eval.log.positive",
+  "polarity": "positive",
+  "query": "Log injection and event-integrity failure request, username, filename or model output logger, audit sink or SIEM parser",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from request, username, filename or model output reaches logger, audit sink or SIEM parser without the documented control",
+  "vulnerability_id": "vuln.injection.log"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "tm.agentic-rag-demo",
+  "system": "Synthetic tenant-aware retrieval agent with a mock ticket tool",
+  "version": "1.0",
+  "assets": [
+    {"id": "asset.docs", "name": "tenant documents", "trust_level": "tenant", "classification": "confidential"},
+    {"id": "asset.ticket", "name": "ticket creation capability", "trust_level": "privileged", "classification": "side-effect"}
+  ],
+  "principals": [
+    {"id": "principal.user", "name": "synthetic user", "trust_level": "tenant"},
+    {"id": "principal.agent", "name": "retrieval agent", "trust_level": "service"},
+    {"id": "principal.docs", "name": "retrieved document", "trust_level": "untrusted"},
+    {"id": "principal.tool", "name": "mock ticket tool", "trust_level": "privileged"}
+  ],
+  "trust_boundaries": [
+    {"id": "boundary.retrieval", "from": "principal.docs", "to": "principal.agent", "decision_points": ["provenance and tenant filter", "instruction/data separation"], "required_controls": ["vuln.ai.indirect-prompt-injection", "vuln.ai.rag-source-trust"]},
+    {"id": "boundary.tool", "from": "principal.agent", "to": "principal.tool", "decision_points": ["user/tenant authorization", "argument schema", "side-effect confirmation"], "required_controls": ["vuln.ai.tool-authorization", "vuln.ai.tool-output"]}
+  ],
+  "data_flows": [
+    {"id": "flow.query", "source": "principal.user", "destination": "principal.agent", "data": ["synthetic query", "tenant id"], "controls": ["authentication", "tenant scope"]},
+    {"id": "flow.docs", "source": "principal.docs", "destination": "principal.agent", "data": ["retrieved text", "source metadata"], "controls": ["provenance", "content/data separation"]},
+    {"id": "flow.tool", "source": "principal.agent", "destination": "principal.tool", "data": ["typed ticket arguments"], "controls": ["capability policy", "mock-only side effect"]}
+  ],
+  "capabilities": [
+    {"id": "capability.ticket.create", "owner": "principal.agent", "actions": ["create synthetic ticket"], "limits": ["current tenant only", "mock destination", "one call per request"]}
+  ],
+  "controls": [
+    {"id": "control.provenance", "type": "preventive", "status": "present", "evidence": ["retrieval metadata includes tenant and source"]},
+    {"id": "control.tool-policy", "type": "preventive", "status": "present", "evidence": ["mock registry checks tenant, action and arguments"]},
+    {"id": "control.evaluation", "type": "detective", "status": "present", "evidence": ["synthetic positive and negative fixtures"]}
+  ],
+  "residual_risk": ["model may summarize untrusted text incorrectly", "provider and trace retention require separate data-minimization review"]
+}

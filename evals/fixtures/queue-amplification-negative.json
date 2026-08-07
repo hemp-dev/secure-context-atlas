@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-400",
+  "expected_status": "not-applicable",
+  "id": "eval.queue-amplification.negative",
+  "polarity": "negative",
+  "query": "Queue and retry amplification message, failure or callback retry scheduler, queue or fan-out worker",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from message, failure or callback is validated, scoped and denied before retry scheduler, queue or fan-out worker",
+  "vulnerability_id": "vuln.availability.queue-amplification"
+}

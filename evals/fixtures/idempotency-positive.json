@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-841",
+  "expected_status": "candidate",
+  "id": "eval.idempotency.positive",
+  "polarity": "positive",
+  "query": "Idempotency-key scope and atomicity failure idempotency key, request body and principal database write, payment or external call",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from idempotency key, request body and principal reaches database write, payment or external call without the documented control",
+  "vulnerability_id": "vuln.business.idempotency"
+}

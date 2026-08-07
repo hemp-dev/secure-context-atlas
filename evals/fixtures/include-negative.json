@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-98",
+  "expected_status": "not-applicable",
+  "id": "eval.include.negative",
+  "polarity": "negative",
+  "query": "Local or remote file inclusion through dynamic path selection template name, locale, plugin or path parameter include, module loader or interpreter",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from template name, locale, plugin or path parameter is validated, scoped and denied before include, module loader or interpreter",
+  "vulnerability_id": "vuln.files.include"
+}

@@ -1,0 +1,9 @@
+id: rule.semgrep.files.path-resolution
+language: generic
+message: "A request-derived path reaches filesystem access. Confirm canonical containment after resolution and link policy."
+severity: WARNING
+vulnerability_id: vuln.files.path-traversal
+pattern_contract:
+  source: request.path
+  sink: filesystem.read_or_write
+  required_control: resolved-path-containment

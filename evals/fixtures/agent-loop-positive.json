@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-400",
+  "expected_status": "candidate",
+  "id": "eval.agent-loop.positive",
+  "polarity": "positive",
+  "query": "Unbounded agent loop and tool-call consumption model output, tool failure or retry state agent loop, queue, provider or external API",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from model output, tool failure or retry state reaches agent loop, queue, provider or external API without the documented control",
+  "vulnerability_id": "vuln.ai.agent-loop"
+}

@@ -1,0 +1,9 @@
+id: rule.codeql.authorization.mass-assignment
+language: generic
+message: "Request properties flow into a privileged object update without a visible property policy. Confirm field-level authorization."
+severity: WARNING
+vulnerability_id: vuln.authorization.mass-assignment
+query_contract:
+  source: request_object_properties
+  sink: privileged_model_update
+  required_control: allowlisted_property_binding

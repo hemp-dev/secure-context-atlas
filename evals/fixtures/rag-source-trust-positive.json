@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-829",
+  "expected_status": "candidate",
+  "id": "eval.rag-source-trust.positive",
+  "polarity": "positive",
+  "query": "RAG provenance and source-trust confusion document, embedding result or search filter retrieval context, answer or action",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from document, embedding result or search filter reaches retrieval context, answer or action without the documented control",
+  "vulnerability_id": "vuln.ai.rag-source-trust"
+}

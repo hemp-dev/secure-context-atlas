@@ -1,0 +1,15 @@
+{
+  "evidence_required": [
+    "source",
+    "sink",
+    "control"
+  ],
+  "expected_cwe": "CWE-209",
+  "expected_status": "candidate",
+  "id": "eval.error-disclosure.positive",
+  "polarity": "positive",
+  "query": "Detailed error and stack-trace disclosure exception, parse error or downstream failure HTTP error, log or monitoring event",
+  "safe_boundary": "local synthetic fixture; no network and no real credentials",
+  "snippet": "synthetic canary from exception, parse error or downstream failure reaches HTTP error, log or monitoring event without the documented control",
+  "vulnerability_id": "vuln.secrets.error-disclosure"
+}

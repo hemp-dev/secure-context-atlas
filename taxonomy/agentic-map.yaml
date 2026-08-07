@@ -1,0 +1,18 @@
+schema_version: "1.0"
+canonical: "OWASP Agentic Applications plus NIST AI RMF"
+controls:
+  ASI01_goal_hijack: ["vuln.ai.indirect-prompt-injection", "vuln.ai.rag-source-trust"]
+  ASI02_tool_misuse: ["vuln.ai.tool-authorization", "vuln.ai.tool-output"]
+  ASI03_identity_privilege_abuse: ["vuln.ai.agent-identity", "vuln.authorization.capability-confusion"]
+  ASI04_agentic_supply_chain: ["vuln.ai.model-supply-chain", "vuln.supply.artifact-integrity"]
+  ASI05_unexpected_code_execution: ["vuln.ai.tool-output", "vuln.injection.command"]
+  ASI06_memory_context_poisoning: ["vuln.ai.memory-poisoning", "vuln.ai.context-leakage"]
+  ASI07_inter_agent_communication: ["vuln.ai.inter-agent-trust"]
+  ASI08_cascading_failures: ["vuln.ai.agent-loop", "vuln.availability.queue-amplification"]
+  ASI09_human_agent_trust: ["vuln.ai.agent-identity", "vuln.ai.evaluation-leakage"]
+  ASI10_rogue_agents: ["vuln.ai.tool-authorization", "vuln.ai.agent-loop"]
+nist_ai_rmf:
+  govern: ["ownership", "policy", "provenance", "reviewer", "accountability"]
+  map: ["assets", "principals", "trust_boundaries", "data_flows", "capabilities"]
+  measure: ["evaluation", "evidence", "retrieval_recall", "false_positive_rate", "redaction"]
+  manage: ["preventive_controls", "safe_verification", "residual_risk", "rollback", "incident_response"]
